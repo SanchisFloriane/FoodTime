@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC71EBB530A6055E3310F1CE /* Pods_FoodTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6AB2096487B6331FEF3FFA1 /* Pods_FoodTime.framework */; };
 		C4923A2520F556F500641EA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4923A2420F556F500641EA9 /* AppDelegate.swift */; };
 		C4923A2720F556F500641EA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4923A2620F556F500641EA9 /* ViewController.swift */; };
 		C4923A2A20F556F500641EA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4923A2820F556F500641EA9 /* Main.storyboard */; };
 		C4923A2C20F556FD00641EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4923A2B20F556FD00641EA9 /* Assets.xcassets */; };
 		C4923A2F20F556FD00641EA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4923A2D20F556FD00641EA9 /* LaunchScreen.storyboard */; };
+		C4923A3720F5573100641EA9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4923A3620F5573100641EA9 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F2167EDE4B7B1C0E2D9FDDC /* Pods-FoodTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodTime/Pods-FoodTime.debug.xcconfig"; sourceTree = "<group>"; };
+		B6AB2096487B6331FEF3FFA1 /* Pods_FoodTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4923A2120F556F500641EA9 /* FoodTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4923A2420F556F500641EA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4923A2620F556F500641EA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		C4923A2B20F556FD00641EA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4923A2E20F556FD00641EA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4923A3020F556FD00641EA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4923A3620F5573100641EA9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DD15A0B6A377C607834AE140 /* Pods-FoodTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodTime/Pods-FoodTime.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC71EBB530A6055E3310F1CE /* Pods_FoodTime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C6D6E0A64D34B1E97F89CFB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5F2167EDE4B7B1C0E2D9FDDC /* Pods-FoodTime.debug.xcconfig */,
+				DD15A0B6A377C607834AE140 /* Pods-FoodTime.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BD1943D70EDDFAA1BFE4DD11 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6AB2096487B6331FEF3FFA1 /* Pods_FoodTime.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C4923A1820F556F400641EA9 = {
 			isa = PBXGroup;
 			children = (
 				C4923A2320F556F500641EA9 /* FoodTime */,
 				C4923A2220F556F500641EA9 /* Products */,
+				7C6D6E0A64D34B1E97F89CFB /* Pods */,
+				BD1943D70EDDFAA1BFE4DD11 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +86,7 @@
 				C4923A2B20F556FD00641EA9 /* Assets.xcassets */,
 				C4923A2D20F556FD00641EA9 /* LaunchScreen.storyboard */,
 				C4923A3020F556FD00641EA9 /* Info.plist */,
+				C4923A3620F5573100641EA9 /* GoogleService-Info.plist */,
 			);
 			path = FoodTime;
 			sourceTree = "<group>";
@@ -71,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4923A3320F556FD00641EA9 /* Build configuration list for PBXNativeTarget "FoodTime" */;
 			buildPhases = (
+				3F05900F344DD4685EB04E08 /* [CP] Check Pods Manifest.lock */,
 				C4923A1D20F556F500641EA9 /* Sources */,
 				C4923A1E20F556F500641EA9 /* Frameworks */,
 				C4923A1F20F556F500641EA9 /* Resources */,
+				11926D72C417DEEB977DBDA2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,12 +152,54 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4923A2F20F556FD00641EA9 /* LaunchScreen.storyboard in Resources */,
+				C4923A3720F5573100641EA9 /* GoogleService-Info.plist in Resources */,
 				C4923A2C20F556FD00641EA9 /* Assets.xcassets in Resources */,
 				C4923A2A20F556F500641EA9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11926D72C417DEEB977DBDA2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FoodTime/Pods-FoodTime-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoodTime/Pods-FoodTime-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F05900F344DD4685EB04E08 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FoodTime-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C4923A1D20F556F500641EA9 /* Sources */ = {
@@ -278,6 +349,7 @@
 		};
 		C4923A3420F556FD00641EA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F2167EDE4B7B1C0E2D9FDDC /* Pods-FoodTime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -295,6 +367,7 @@
 		};
 		C4923A3520F556FD00641EA9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD15A0B6A377C607834AE140 /* Pods-FoodTime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
