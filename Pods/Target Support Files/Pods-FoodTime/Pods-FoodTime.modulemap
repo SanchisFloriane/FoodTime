@@ -1,0 +1,6 @@
+framework module Pods_FoodTime {
+  umbrella header "Pods-FoodTime-umbrella.h"
+
+  export *
+  module * { export * }
+}

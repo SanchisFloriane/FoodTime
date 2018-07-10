@@ -6,5 +6,11 @@ target 'FoodTime' do
 
   # Pods for FoodTime
   pod 'Firebase/Core'
-	
+  pod 'Firebase/Database'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/Crash'
+  pod 'Firebase/Auth'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+
 end
