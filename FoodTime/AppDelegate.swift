@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  FoodTime
 //
-//  Created by sanchis floriane on 7/10/18.
+//  Created by Sanchis Floriane on 7/10/18.
 //  Copyright © 2018 sanchisfloriane. All rights reserved.
 //
 
