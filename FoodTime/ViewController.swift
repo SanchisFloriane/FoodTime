@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  FoodTime
 //
-//  Created by bob on 7/10/18.
+//  Created by sanchis floriane on 7/10/18.
 //  Copyright © 2018 sanchisfloriane. All rights reserved.
 //
 
