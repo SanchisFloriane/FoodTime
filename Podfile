@@ -5,12 +5,18 @@ target 'FoodTime' do
   use_frameworks!
 
   # Pods for FoodTime
+  pod 'Firebase/Auth'
   pod 'Firebase/Core'
+  pod 'Firebase/Crash'
   pod 'Firebase/Database'
   pod 'Firebase/Messaging'
-  pod 'Firebase/Crash'
-  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
   pod 'FacebookCore'
   pod 'FacebookLogin'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKShareKit'
+  pod 'FBSDKLoginKit'
+  pod 'JGProgressHUD'
+  pod 'SwiftyJSON'
 
 end

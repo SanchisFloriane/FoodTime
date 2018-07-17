@@ -99,15 +99,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaB-P8-Nsv">
-                                <rect key="frame" x="50" y="623" width="130" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="oe9-xe-n1W"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qc5-9R-0bY">
+                                <rect key="frame" x="50" y="628" width="275" height="27"/>
+                                <color key="backgroundColor" red="0.44085565154992401" green="0.32183452612338503" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Sign up with Facebook"/>
+                                <state key="normal" title="Sign in with Facebook" image="FacebookButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleSignInWithFBButtonTapped" destination="kSb-fA-lWN" eventType="touchUpInside" id="KcX-ph-9NZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0D5-co-1bm">
                                 <rect key="frame" x="16" y="50" width="30" height="30"/>
@@ -117,22 +118,13 @@
                                     <action selector="dismiss" destination="kSb-fA-lWN" eventType="touchUpInside" id="6a0-uK-9YI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wX2-m6-T8Y">
-                                <rect key="frame" x="195" y="623" width="130" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="JYr-Pt-tCs"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Sign up with Google"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xd-FY-dzv">
-                                <rect key="frame" x="50" y="733" width="275" height="30"/>
+                                <rect key="frame" x="50" y="735" width="275" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="By sign up, you agree to our Terms &amp; Private policy"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkQ-SE-Icw">
-                                <rect key="frame" x="50" y="678" width="275" height="30"/>
+                                <rect key="frame" x="50" y="680" width="275" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -143,21 +135,20 @@
                         <constraints>
                             <constraint firstItem="SZN-wy-SjU" firstAttribute="trailing" secondItem="IkQ-SE-Icw" secondAttribute="trailing" constant="50" id="1wj-LS-TiU"/>
                             <constraint firstItem="IkQ-SE-Icw" firstAttribute="leading" secondItem="gHc-6K-XUr" secondAttribute="leading" constant="50" id="4fc-RO-w5j"/>
-                            <constraint firstItem="gaB-P8-Nsv" firstAttribute="leading" secondItem="SZN-wy-SjU" secondAttribute="leading" constant="50" id="Dnx-aC-yA6"/>
-                            <constraint firstItem="IkQ-SE-Icw" firstAttribute="top" secondItem="gaB-P8-Nsv" secondAttribute="bottom" constant="25" id="LBE-3p-heV"/>
-                            <constraint firstItem="IkQ-SE-Icw" firstAttribute="top" secondItem="wX2-m6-T8Y" secondAttribute="bottom" constant="25" id="XZ7-PM-1TZ"/>
-                            <constraint firstItem="wX2-m6-T8Y" firstAttribute="width" secondItem="gaB-P8-Nsv" secondAttribute="width" id="cqh-KB-LNf"/>
-                            <constraint firstItem="SZN-wy-SjU" firstAttribute="trailing" secondItem="wX2-m6-T8Y" secondAttribute="trailing" constant="50" id="dyL-nd-x1t"/>
+                            <constraint firstItem="qc5-9R-0bY" firstAttribute="leading" secondItem="SZN-wy-SjU" secondAttribute="leading" constant="50" id="Wfv-Ro-sKd"/>
+                            <constraint firstItem="IkQ-SE-Icw" firstAttribute="top" secondItem="qc5-9R-0bY" secondAttribute="bottom" constant="25" id="dmh-wt-RFO"/>
                             <constraint firstItem="4Xd-FY-dzv" firstAttribute="top" secondItem="IkQ-SE-Icw" secondAttribute="bottom" constant="25" id="eJP-dG-X54"/>
-                            <constraint firstItem="IkQ-SE-Icw" firstAttribute="top" secondItem="wX2-m6-T8Y" secondAttribute="bottom" constant="25" id="eJy-c1-h2b"/>
-                            <constraint firstItem="wX2-m6-T8Y" firstAttribute="leading" secondItem="gaB-P8-Nsv" secondAttribute="trailing" constant="15" id="eXC-vm-x5Q"/>
                             <constraint firstItem="SZN-wy-SjU" firstAttribute="trailing" secondItem="4Xd-FY-dzv" secondAttribute="trailing" constant="50" id="nC1-bT-kOs"/>
                             <constraint firstItem="4Xd-FY-dzv" firstAttribute="leading" secondItem="SZN-wy-SjU" secondAttribute="leading" constant="50" id="sqW-g7-Xsw"/>
+                            <constraint firstItem="SZN-wy-SjU" firstAttribute="trailing" secondItem="qc5-9R-0bY" secondAttribute="trailing" constant="50" id="ysg-ub-Toz"/>
                             <constraint firstItem="SZN-wy-SjU" firstAttribute="bottom" secondItem="4Xd-FY-dzv" secondAttribute="bottom" constant="15" id="zUr-3V-ONb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SZN-wy-SjU"/>
                     </view>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="signInWithFBButton" destination="qc5-9R-0bY" id="MKw-Fo-opK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SJ4-Ce-1bE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -165,6 +156,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="FacebookButton" width="27" height="27"/>
         <image name="cross" width="37" height="38"/>
         <image name="logo banderole" width="576" height="89"/>
     </resources>
