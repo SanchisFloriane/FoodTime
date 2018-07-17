@@ -1,0 +1,18 @@
+
+/* Class = "UIButton"; normalTitle = "By sign up, you agree to our Terms & Private policy"; ObjectID = "TermsPrivatePolicyButton; */
+"TermsPrivatePolicyButton" = "En vous inscrivant, vous acceptez nos CGU & Confidentialité";
+
+/* Class = "UIButton"; normalTitle = "Use your email"; ObjectID = "EmailConnectionButton"; */
+"EmailConnectionButton" = "Utiliser votre email";
+
+/* Class = "UIButton"; normalTitle = "Get started"; ObjectID = "GetStartedButton = "Get started"; */
+"GetStartedButton" = "Démarrer";
+
+/* Class = "UITextView"; text = "Track your favourite food and drink place"; ObjectID = "TaglineTextMainPage"; */
+"TaglineTextMainPage" = "Gérer vos endroits préférés";
+
+/* Class = "UIButton"; normalTitle = "Have an account ? Log in"; ObjectID = "LogginButton; */
+"LogginButton" = "Vous avez un compte ? Se connecter";
+
+/* Class = "UIButton"; normalTitle = "Sign in with Facebook"; ObjectID = "FBConnectionButton"; */
+"FBConnectionButton" = "Se connecter avec Facebook";

@@ -10,6 +10,7 @@
 		BC71EBB530A6055E3310F1CE /* Pods_FoodTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6AB2096487B6331FEF3FFA1 /* Pods_FoodTime.framework */; };
 		C414FECD20F68EB1008D5AE5 /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C414FECC20F68EB1008D5AE5 /* GetStartedViewController.swift */; };
 		C45C9BFE20F69A32004A4369 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C9BFD20F69A32004A4369 /* LoginViewController.swift */; };
+		C45C9C0220FEAD58004A4369 /* UILabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C9C0120FEAD58004A4369 /* UILabels.swift */; };
 		C4923A2520F556F500641EA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4923A2420F556F500641EA9 /* AppDelegate.swift */; };
 		C4923A2A20F556F500641EA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4923A2820F556F500641EA9 /* Main.storyboard */; };
 		C4923A2C20F556FD00641EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4923A2B20F556FD00641EA9 /* Assets.xcassets */; };
@@ -23,6 +24,10 @@
 		B6AB2096487B6331FEF3FFA1 /* Pods_FoodTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C414FECC20F68EB1008D5AE5 /* GetStartedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
 		C45C9BFD20F69A32004A4369 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C45C9C0020FEAAEC004A4369 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		C45C9C0120FEAD58004A4369 /* UILabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabels.swift; sourceTree = "<group>"; };
+		C45C9C0320FEB1B1004A4369 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		C45C9C0420FEB1B1004A4369 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C4923A2120F556F500641EA9 /* FoodTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4923A2420F556F500641EA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4923A2920F556F500641EA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -98,6 +103,7 @@
 				C4923A3020F556FD00641EA9 /* Info.plist */,
 				C4923A3620F5573100641EA9 /* GoogleService-Info.plist */,
 				F42998B320FD50820035A717 /* Service.swift */,
+				C45C9C0120FEAD58004A4369 /* UILabels.swift */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -276,6 +282,7 @@
 			files = (
 				C45C9BFE20F69A32004A4369 /* LoginViewController.swift in Sources */,
 				F42998B420FD50820035A717 /* Service.swift in Sources */,
+				C45C9C0220FEAD58004A4369 /* UILabels.swift in Sources */,
 				C4923A2520F556F500641EA9 /* AppDelegate.swift in Sources */,
 				C414FECD20F68EB1008D5AE5 /* GetStartedViewController.swift in Sources */,
 			);
@@ -288,6 +295,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				C4923A2920F556F500641EA9 /* Base */,
+				C45C9C0020FEAAEC004A4369 /* en */,
+				C45C9C0320FEB1B1004A4369 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -296,6 +305,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C4923A2E20F556FD00641EA9 /* Base */,
+				C45C9C0420FEB1B1004A4369 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -307,6 +317,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -367,6 +378,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

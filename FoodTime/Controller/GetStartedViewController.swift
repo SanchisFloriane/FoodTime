@@ -10,10 +10,16 @@ import UIKit
 
 class GetStartedViewController: UIViewController {
 
+    @IBOutlet weak var LogginButton: UIButton!
+    @IBOutlet weak var GetStartedButton: UIButton!
+    @IBOutlet weak var TaglineText: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        LogginButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().LogginButton), for: .normal)
+        GetStartedButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().GetStartedButton), for: .normal)            
+        TaglineText.text = UILabels().localizeWithoutComment(key: UILabels().TaglineTextMainPage)
     }
 
     override func didReceiveMemoryWarning() {

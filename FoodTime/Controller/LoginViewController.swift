@@ -18,6 +18,8 @@ import FirebaseDatabase
 class LoginViewController: UIViewController {
         
     @IBOutlet weak var signInWithFBButton: UIButton!
+    @IBOutlet weak var TermsPrivatePolicyButton: UIButton!
+    @IBOutlet weak var EmailConnectionButton: UIButton!
     
     var lastname: String? = ""
     var firstname: String? = ""
@@ -33,7 +35,7 @@ class LoginViewController: UIViewController {
     
     func initSignInFBButton() {
         
-        signInWithFBButton.setTitle("Login with Facebook", for: .normal)
+       signInWithFBButton.setTitle("Login with Facebook", for: .normal)
        signInWithFBButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: Service.buttonTitleFontSize)
         signInWithFBButton.setTitleColor(Service.buttonTitleColor, for: .normal)
        /* signInWithFBButton.backgroundColor = Service.buttonBackgroundColorSignInWithFacebook
@@ -170,7 +172,7 @@ class LoginViewController: UIViewController {
                                             "lastname": lastname,
                                             "profileImageUrl": profileImageUrl]
                     
-                    self.values = [uid : dictionaryValues]                    
+                    self.values = [uid : dictionaryValues]
                     completion(true)
                 })
             }
@@ -199,12 +201,19 @@ class LoginViewController: UIViewController {
     
     fileprivate func setupViews()
     {
+        signInWithFBButton.setTitle(NSLocalizedString("FBConnectionButton", comment: ""), for: .normal)
+        print(NSLocalizedString("FBConnectionButton", comment: ""))
+        TermsPrivatePolicyButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().TermsPrivatePolicyButton), for: .normal)
+        EmailConnectionButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().EmailConnectionButton), for: .normal)
+        
         initSignInFBButton()
         self.view.setNeedsLayout()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         setupViews()
     }
 

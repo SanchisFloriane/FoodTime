@@ -86,6 +86,11 @@
                         <viewLayoutGuide key="safeArea" id="gEw-Uu-Wan"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="imW-qj-Pfn"/>
+                    <connections>
+                        <outlet property="GetStartedButton" destination="RsA-od-PY2" id="lBS-LN-Igi"/>
+                        <outlet property="LogginButton" destination="kXW-Ql-idg" id="GAg-BG-gM6"/>
+                        <outlet property="TaglineText" destination="aso-n2-29y" id="iHG-mH-JZP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUS-fN-a5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -147,6 +152,8 @@
                     </view>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="EmailConnectionButton" destination="IkQ-SE-Icw" id="ehw-nK-9DM"/>
+                        <outlet property="TermsPrivatePolicyButton" destination="4Xd-FY-dzv" id="4sN-Vx-Wkg"/>
                         <outlet property="signInWithFBButton" destination="qc5-9R-0bY" id="MKw-Fo-opK"/>
                     </connections>
                 </viewController>
