@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodTime/Controller/LoginViewController.swift"
+            timestampString = "553560284.497592"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "saveUserIntoFirebaseDatabase()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in FoodTime.LoginViewController.(saveUserIntoFirebaseDatabase in _F262CF1842E52AB2FD0C221C73412D91)() -&gt; ()"
+                  moduleName = "FoodTime"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bob/Desktop/FoodTime/FoodTime/Controller/LoginViewController.swift"
+                  timestampString = "553560284.902267"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "185"
+                  endingLineNumber = "185"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;, __ObjC.DatabaseReference) -&gt; () in closure #1 (Swift.Bool) -&gt; () in FoodTime.LoginViewController.(saveUserIntoFirebaseDatabase in _F262CF1842E52AB2FD0C221C73412D91)() -&gt; ()"
+                  moduleName = "FoodTime"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bob/Desktop/FoodTime/FoodTime/Controller/LoginViewController.swift"
+                  timestampString = "553560284.9097871"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "186"
+                  endingLineNumber = "186"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
