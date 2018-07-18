@@ -14,12 +14,12 @@ import FacebookLogin
 import SwiftyJSON
 import FirebaseStorage
 import FirebaseDatabase
+import GoogleSignIn
+import FBSDKLoginKit
 
-class LoginViewController: UIViewController {
-        
-    @IBOutlet weak var signInWithFBButton: UIButton!
+class LoginViewController: UIViewController, GIDSignInUIDelegate {
+    
     @IBOutlet weak var TermsPrivatePolicyButton: UIButton!
-    @IBOutlet weak var EmailConnectionButton: UIButton!
     
     var lastname: String? = ""
     var firstname: String? = ""
@@ -27,25 +27,45 @@ class LoginViewController: UIViewController {
     var email: String? = ""
     var profileImage: UIImage?
     var values : [String : [String: String?]]?
+    
     let hud: JGProgressHUD = {
         let hud = JGProgressHUD(style: .light)
         hud.interactionType = .blockAllTouches
         return hud
     }()
     
-    func initSignInFBButton() {
+    let GoogleButton : GIDSignInButton = GIDSignInButton()
+    let FBButton : FBSDKLoginButton = FBSDKLoginButton()
+    
+    fileprivate func setupFBButton() {
         
-        signInWithFBButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().FBConnectionButton), for: .normal)
-        signInWithFBButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: Service.buttonTitleFontSize)
-        signInWithFBButton.setTitleColor(Service.buttonTitleColor, for: .normal)
-        signInWithFBButton.backgroundColor = Service.buttonBackgroundColorSignInWithFacebook
-        signInWithFBButton.layer.masksToBounds = true
-        signInWithFBButton.setImage(#imageLiteral(resourceName: "FacebookButton").withRenderingMode(.alwaysTemplate), for: .normal)
-        signInWithFBButton.tintColor = .white
-        signInWithFBButton.contentMode = .scaleAspectFit
+        view.addSubview(FBButton)
+
+        //enables auttolayout for the FBButton
+        FBButton.translatesAutoresizingMaskIntoConstraints = false
+        FBButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        FBButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        FBButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
+        FBButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
+        
+        FBButton.readPermissions = ["email", "public_profile"]
     }
     
-    @IBAction func handleSignInWithFBButtonTapped() {
+    fileprivate func setupGoogleButton()
+    {
+        view.addSubview(GoogleButton)
+        
+        //enables auttolayout for the FBButton
+        GoogleButton.translatesAutoresizingMaskIntoConstraints = false
+        GoogleButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        GoogleButton.centerYAnchor.constraint(equalTo: FBButton.centerYAnchor, constant: 75).isActive = true
+        GoogleButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
+        GoogleButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+    }
+    
+  /*  @IBAction func handleSignInWithFBButtonTapped() {
         hud.textLabel.text = "Logging in with Facebook..."
         hud.show(in: view, animated: true)
         let loginManager = LoginManager()
@@ -180,22 +200,21 @@ class LoginViewController: UIViewController {
             }
         }
         
-    }
+    }*/
     
     fileprivate func setupViews()
     {
         TermsPrivatePolicyButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().TermsPrivatePolicyButton), for: .normal)
-        EmailConnectionButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().EmailConnectionButton), for: .normal)
         
-        initSignInFBButton()
+        setupFBButton()
+        setupGoogleButton()
+        
         self.view.setNeedsLayout()
-        self.view.setNeedsDisplay()
     }
     
     override func viewDidLoad() {
+       
         super.viewDidLoad()
-        
-        
         setupViews()
     }
 

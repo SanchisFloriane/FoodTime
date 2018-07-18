@@ -104,17 +104,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qc5-9R-0bY">
-                                <rect key="frame" x="50" y="628" width="275" height="27"/>
-                                <color key="backgroundColor" red="0.44085565154992401" green="0.32183452612338503" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Sign in with Facebook" image="FacebookButton">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleSignInWithFBButtonTapped" destination="kSb-fA-lWN" eventType="touchUpInside" id="KcX-ph-9NZ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0D5-co-1bm">
                                 <rect key="frame" x="16" y="50" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -128,33 +117,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="By sign up, you agree to our Terms &amp; Private policy"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkQ-SE-Icw">
-                                <rect key="frame" x="50" y="680" width="275" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Use your email"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="SZN-wy-SjU" firstAttribute="trailing" secondItem="IkQ-SE-Icw" secondAttribute="trailing" constant="50" id="1wj-LS-TiU"/>
-                            <constraint firstItem="IkQ-SE-Icw" firstAttribute="leading" secondItem="gHc-6K-XUr" secondAttribute="leading" constant="50" id="4fc-RO-w5j"/>
-                            <constraint firstItem="qc5-9R-0bY" firstAttribute="leading" secondItem="SZN-wy-SjU" secondAttribute="leading" constant="50" id="Wfv-Ro-sKd"/>
-                            <constraint firstItem="IkQ-SE-Icw" firstAttribute="top" secondItem="qc5-9R-0bY" secondAttribute="bottom" constant="25" id="dmh-wt-RFO"/>
-                            <constraint firstItem="4Xd-FY-dzv" firstAttribute="top" secondItem="IkQ-SE-Icw" secondAttribute="bottom" constant="25" id="eJP-dG-X54"/>
                             <constraint firstItem="SZN-wy-SjU" firstAttribute="trailing" secondItem="4Xd-FY-dzv" secondAttribute="trailing" constant="50" id="nC1-bT-kOs"/>
                             <constraint firstItem="4Xd-FY-dzv" firstAttribute="leading" secondItem="SZN-wy-SjU" secondAttribute="leading" constant="50" id="sqW-g7-Xsw"/>
-                            <constraint firstItem="SZN-wy-SjU" firstAttribute="trailing" secondItem="qc5-9R-0bY" secondAttribute="trailing" constant="50" id="ysg-ub-Toz"/>
                             <constraint firstItem="SZN-wy-SjU" firstAttribute="bottom" secondItem="4Xd-FY-dzv" secondAttribute="bottom" constant="15" id="zUr-3V-ONb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SZN-wy-SjU"/>
                     </view>
                     <toolbarItems/>
                     <connections>
-                        <outlet property="EmailConnectionButton" destination="IkQ-SE-Icw" id="ehw-nK-9DM"/>
                         <outlet property="TermsPrivatePolicyButton" destination="4Xd-FY-dzv" id="4sN-Vx-Wkg"/>
-                        <outlet property="signInWithFBButton" destination="qc5-9R-0bY" id="MKw-Fo-opK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SJ4-Ce-1bE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -163,7 +137,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FacebookButton" width="27" height="27"/>
         <image name="cross" width="37" height="38"/>
         <image name="logo banderole" width="576" height="89"/>
     </resources>

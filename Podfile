@@ -18,5 +18,5 @@ target 'FoodTime' do
   pod 'FBSDKLoginKit'
   pod 'JGProgressHUD'
   pod 'SwiftyJSON'
-
+  pod 'GoogleSignIn'
 end

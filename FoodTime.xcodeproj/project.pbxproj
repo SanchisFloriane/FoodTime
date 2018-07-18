@@ -12,6 +12,7 @@
 		C45C9BFE20F69A32004A4369 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C9BFD20F69A32004A4369 /* LoginViewController.swift */; };
 		C45C9C0220FEAD58004A4369 /* UILabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C9C0120FEAD58004A4369 /* UILabels.swift */; };
 		C45C9C0920FFA9F3004A4369 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C45C9C0B20FFA9F3004A4369 /* Localizable.strings */; };
+		C45C9C0F20FFB6A9004A4369 /* Roboto in Resources */ = {isa = PBXBuildFile; fileRef = C45C9C0E20FFB6A9004A4369 /* Roboto */; };
 		C4923A2520F556F500641EA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4923A2420F556F500641EA9 /* AppDelegate.swift */; };
 		C4923A2A20F556F500641EA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4923A2820F556F500641EA9 /* Main.storyboard */; };
 		C4923A2C20F556FD00641EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4923A2B20F556FD00641EA9 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		C45C9C0620FFA930004A4369 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C45C9C0A20FFA9F3004A4369 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C45C9C0C20FFA9F5004A4369 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C45C9C0E20FFB6A9004A4369 /* Roboto */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Roboto; sourceTree = "<group>"; };
 		C4923A2120F556F500641EA9 /* FoodTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4923A2420F556F500641EA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4923A2920F556F500641EA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		C414FECB20F686BF008D5AE5 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				C45C9C0D20FFB684004A4369 /* Fonts */,
 				C4923A2420F556F500641EA9 /* AppDelegate.swift */,
 				C4923A2B20F556FD00641EA9 /* Assets.xcassets */,
 				C4923A3020F556FD00641EA9 /* Info.plist */,
@@ -111,6 +114,14 @@
 				C45C9C0B20FFA9F3004A4369 /* Localizable.strings */,
 			);
 			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		C45C9C0D20FFB684004A4369 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C45C9C0E20FFB6A9004A4369 /* Roboto */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		C4923A1820F556F400641EA9 = {
@@ -155,6 +166,7 @@
 				C4923A1E20F556F500641EA9 /* Frameworks */,
 				C4923A1F20F556F500641EA9 /* Resources */,
 				11926D72C417DEEB977DBDA2 /* [CP] Embed Pods Frameworks */,
+				0ADD513A9F496CE0686A3ECD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,12 +226,31 @@
 				C4923A3720F5573100641EA9 /* GoogleService-Info.plist in Resources */,
 				C4923A2C20F556FD00641EA9 /* Assets.xcassets in Resources */,
 				C4923A2A20F556F500641EA9 /* Main.storyboard in Resources */,
+				C45C9C0F20FFB6A9004A4369 /* Roboto in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0ADD513A9F496CE0686A3ECD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FoodTime/Pods-FoodTime-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoodTime/Pods-FoodTime-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		11926D72C417DEEB977DBDA2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -233,6 +264,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
@@ -249,6 +281,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
