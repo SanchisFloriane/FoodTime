@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  FoodTime
+
+  Created by bob on 7/18/18.
+  Copyright © 2018 sanchisfloriane. All rights reserved.
+*/
+"TermsPrivatePolicyButton" = "En vous inscrivant, vous acceptez nos CGU & Confidentialité";
+
+"EmailConnectionButton" = "Utiliser votre email";
+
+"GetStartedButton" = "Démarrer";
+
+"TaglineTextMainPage" = "Gérer vos endroits préférés";
+
+"LogginButton" = "Vous avez un compte ? Se connecter";
+
+"FBConnectionButton" = "Se connecter avec Facebook";

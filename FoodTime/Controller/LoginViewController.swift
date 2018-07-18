@@ -35,18 +35,14 @@ class LoginViewController: UIViewController {
     
     func initSignInFBButton() {
         
-       signInWithFBButton.setTitle("Login with Facebook", for: .normal)
-       signInWithFBButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: Service.buttonTitleFontSize)
+        signInWithFBButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().FBConnectionButton), for: .normal)
+        signInWithFBButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: Service.buttonTitleFontSize)
         signInWithFBButton.setTitleColor(Service.buttonTitleColor, for: .normal)
-       /* signInWithFBButton.backgroundColor = Service.buttonBackgroundColorSignInWithFacebook
+        signInWithFBButton.backgroundColor = Service.buttonBackgroundColorSignInWithFacebook
         signInWithFBButton.layer.masksToBounds = true
-        signInWithFBButton.layer.cornerRadius = Service.buttonCornerRadius
-         signInWithFBButton.setImage(#imageLiteral(resourceName: "FacebookButton").withRenderingMode(.alwaysTemplate), for: .normal)
+        signInWithFBButton.setImage(#imageLiteral(resourceName: "FacebookButton").withRenderingMode(.alwaysTemplate), for: .normal)
         signInWithFBButton.tintColor = .white
         signInWithFBButton.contentMode = .scaleAspectFit
-        
-       
-       signInWithFBButton.addTarget(self, action: #selector(handleSignInWithFBButtonTapped), for: .touchUpInside)*/
     }
     
     @IBAction func handleSignInWithFBButtonTapped() {
@@ -61,7 +57,7 @@ class LoginViewController: UIViewController {
             case .failed(let err):
                 Service.dismissHud(self.hud, text: "Error", detailText: "Failed to get Facebook user with error: \(err)", delay: 3)
             case .cancelled:
-                Service.dismissHud(self.hud, text: "Error", detailText: "Canceled getting Facebook user.", delay: 3)
+                Service.dismissHud(self.hud, text: "Cancel", detailText: "Canceled getting Facebook user.", delay: 3)
             }
         }
     }
@@ -107,20 +103,7 @@ class LoginViewController: UIViewController {
                                         self.profileImage = userProfileImage
                                     }
                                     
-                                    /*URLSession.shared.dataTask(with: pictureUrl) { (data, response, error) in
-                                        if error != nil {
-                                            guard let error = error else {
-                                                Service.dismissHud(self.hud, text: "Error", detailText: "Failed to fetch user", delay: 3)
-                                                return
-                                            }
-                                            Service.dismissHud(self.hud, text: "Fetch error", detailText: error.localizedDescription, delay: 3)
-                                            return
-                                        }
-                                        guard let data = data else { Service.dismissHud(self.hud, text: "Error", detailText: "Failed to fetch user", delay: 3)
-                                            return
-                                        }*/
-                                        self.saveUserIntoFirebaseDatabase()
-                                    //}.resume()
+                                    self.saveUserIntoFirebaseDatabase()
                                 }
                             }
                         }
@@ -201,13 +184,12 @@ class LoginViewController: UIViewController {
     
     fileprivate func setupViews()
     {
-        signInWithFBButton.setTitle(NSLocalizedString("FBConnectionButton", comment: ""), for: .normal)
-        print(NSLocalizedString("FBConnectionButton", comment: ""))
         TermsPrivatePolicyButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().TermsPrivatePolicyButton), for: .normal)
         EmailConnectionButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().EmailConnectionButton), for: .normal)
         
         initSignInFBButton()
         self.view.setNeedsLayout()
+        self.view.setNeedsDisplay()
     }
     
     override func viewDidLoad() {

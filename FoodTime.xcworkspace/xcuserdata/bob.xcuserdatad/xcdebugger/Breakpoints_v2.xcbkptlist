@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodTime/Controller/LoginViewController.swift"
-            timestampString = "553563987.921981"
+            timestampString = "553627424.902137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "saveUserIntoFirebaseDatabase()"
             landmarkType = "7">
             <Locations>

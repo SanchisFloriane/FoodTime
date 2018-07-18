@@ -11,6 +11,7 @@
 		C414FECD20F68EB1008D5AE5 /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C414FECC20F68EB1008D5AE5 /* GetStartedViewController.swift */; };
 		C45C9BFE20F69A32004A4369 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C9BFD20F69A32004A4369 /* LoginViewController.swift */; };
 		C45C9C0220FEAD58004A4369 /* UILabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C9C0120FEAD58004A4369 /* UILabels.swift */; };
+		C45C9C0920FFA9F3004A4369 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C45C9C0B20FFA9F3004A4369 /* Localizable.strings */; };
 		C4923A2520F556F500641EA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4923A2420F556F500641EA9 /* AppDelegate.swift */; };
 		C4923A2A20F556F500641EA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4923A2820F556F500641EA9 /* Main.storyboard */; };
 		C4923A2C20F556FD00641EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4923A2B20F556FD00641EA9 /* Assets.xcassets */; };
@@ -28,6 +29,9 @@
 		C45C9C0120FEAD58004A4369 /* UILabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabels.swift; sourceTree = "<group>"; };
 		C45C9C0320FEB1B1004A4369 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		C45C9C0420FEB1B1004A4369 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C45C9C0620FFA930004A4369 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C45C9C0A20FFA9F3004A4369 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C45C9C0C20FFA9F5004A4369 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C4923A2120F556F500641EA9 /* FoodTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4923A2420F556F500641EA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4923A2920F556F500641EA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 				C4923A3620F5573100641EA9 /* GoogleService-Info.plist */,
 				F42998B320FD50820035A717 /* Service.swift */,
 				C45C9C0120FEAD58004A4369 /* UILabels.swift */,
+				C45C9C0B20FFA9F3004A4369 /* Localizable.strings */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = C4923A1820F556F400641EA9;
 			productRefGroup = C4923A2220F556F500641EA9 /* Products */;
@@ -203,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C45C9C0920FFA9F3004A4369 /* Localizable.strings in Resources */,
 				C4923A2F20F556FD00641EA9 /* LaunchScreen.storyboard in Resources */,
 				C4923A3720F5573100641EA9 /* GoogleService-Info.plist in Resources */,
 				C4923A2C20F556FD00641EA9 /* Assets.xcassets in Resources */,
@@ -291,6 +298,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		C45C9C0B20FFA9F3004A4369 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C45C9C0A20FFA9F3004A4369 /* en */,
+				C45C9C0C20FFA9F5004A4369 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		C4923A2820F556F500641EA9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -306,6 +322,7 @@
 			children = (
 				C4923A2E20F556FD00641EA9 /* Base */,
 				C45C9C0420FEB1B1004A4369 /* fr */,
+				C45C9C0620FFA930004A4369 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
