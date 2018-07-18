@@ -18,6 +18,7 @@ class GetStartedViewController: UIViewController {
         super.viewDidLoad()
 
         LogginButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().LogginButton), for: .normal)
+        LogginButton.titleLabel?.adjustsFontSizeToFitWidth = true
         GetStartedButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().GetStartedButton), for: .normal)            
         TaglineText.text = UILabels().localizeWithoutComment(key: UILabels().TaglineTextMainPage)
     }

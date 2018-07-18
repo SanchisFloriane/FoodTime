@@ -205,6 +205,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     fileprivate func setupViews()
     {
         TermsPrivatePolicyButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().TermsPrivatePolicyButton), for: .normal)
+        TermsPrivatePolicyButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
         setupFBButton()
         setupGoogleButton()
