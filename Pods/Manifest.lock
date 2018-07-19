@@ -68,6 +68,14 @@ PODS:
   - FirebaseStorage (3.0.0):
     - FirebaseCore (~> 5.0)
     - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseUI/Auth (5.0.1):
+    - Firebase/Auth (~> 5.0)
+  - FirebaseUI/Facebook (5.0.1):
+    - FBSDKLoginKit (~> 4.0)
+    - FirebaseUI/Auth
+  - FirebaseUI/Google (5.0.1):
+    - FirebaseUI/Auth
+    - GoogleSignIn (~> 4.0)
   - GoogleSignIn (4.1.2):
     - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
     - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
@@ -114,6 +122,9 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Messaging
   - Firebase/Storage
+  - FirebaseUI/Auth
+  - FirebaseUI/Facebook
+  - FirebaseUI/Google
   - GoogleSignIn
   - JGProgressHUD
   - SwiftyJSON
@@ -135,6 +146,7 @@ SPEC REPOS:
     - FirebaseInstanceID
     - FirebaseMessaging
     - FirebaseStorage
+    - FirebaseUI
     - GoogleSignIn
     - GoogleToolboxForMac
     - GTMOAuth2
@@ -161,6 +173,7 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: f3f0657372592ecdfdfe2cac604a5a75758376a6
   FirebaseMessaging: f43eb0c0e1da096e659de6f713038e74862a62cd
   FirebaseStorage: 7ca4bb7b58a25fa647b04f524033fc7cb7eb272b
+  FirebaseUI: 5d97d3d5d6a019fc960eb573ea6ce9fb8c310669
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
@@ -171,6 +184,6 @@ SPEC CHECKSUMS:
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 9be531ca56075e27e2b529b5786697b668ade1d7
+PODFILE CHECKSUM: 42d03584ac3de0caf5e7a785990991eb84ffd091
 
 COCOAPODS: 1.5.3

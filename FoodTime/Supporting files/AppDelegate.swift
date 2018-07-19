@@ -13,7 +13,7 @@ import GoogleSignIn
 import JGProgressHUD
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, FBSDKLoginButtonDelegate ,GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     var window: UIWindow?
     let hud: JGProgressHUD = {
@@ -21,52 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FBSDKLoginButtonDelegate 
         hud.interactionType = .blockAllTouches
         return hud
     }()
-    
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        
-        if error != nil
-        {
-            Service.dismissHud(self.hud, text: "Error connection FB", detailText: "Failed to log in in to FB.", delay: 3)
-            return
-        }
-        
-        print("Succesfully authenticated with FB.")
-        let credentials = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-        
-        Auth.auth().signInAndRetrieveData(with: credentials, completion: { (authResult, error) in
-            
-            if let error = error {
-                
-                Service.dismissHud(self.hud, text: "Sign up error FB with Firebase", detailText: error.localizedDescription, delay: 3)
-                return
-            }
-            print("Succesfully authenticated with FB Firebase. \(String(describing: authResult))")
-            FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, email, first_name, last_name, picture.type(large)"]).start{ (connection, result, error) in
-                if error != nil {
-                    Service.dismissHud(self.hud, text: "Error", detailText: "Failed to fetch user. \(String(describing: error))", delay: 3)
-                    return
-                }
-                
-                let fullName = authResult?.user.displayName
-                print("\(String(describing: fullName))")
-                print("\(String(describing: result))")
-            }
-        })
-    }
-    
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-       
-        let firebaseAuth = Auth.auth()
-        do
-        {
-            try firebaseAuth.signOut()
-            print("Log out of FB")
-        }
-        catch let signOutError as NSError
-        {
-            print("Error signing out: %@", signOutError)
-        }
-    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         

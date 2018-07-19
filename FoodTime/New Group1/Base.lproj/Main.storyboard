@@ -29,7 +29,7 @@
         <!--Get Started View Controller-->
         <scene sceneID="gNU-IL-l4X">
             <objects>
-                <viewController id="6mi-oc-YQg" customClass="GetStartedViewController" customModule="FoodTime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GetStartedViewController" id="6mi-oc-YQg" customClass="GetStartedViewController" customModule="FoodTime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kki-Jx-5oE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +99,7 @@
         <!--Login View Controller-->
         <scene sceneID="Mtg-N7-qJ9">
             <objects>
-                <viewController id="kSb-fA-lWN" customClass="LoginViewController" customModule="FoodTime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="kSb-fA-lWN" customClass="LoginViewController" customModule="FoodTime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gHc-6K-XUr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,6 +134,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SJ4-Ce-1bE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="877.60000000000002" y="51.724137931034484"/>
+        </scene>
+        <!--Choice Place View Controller-->
+        <scene sceneID="Ilr-TA-2Sf">
+            <objects>
+                <viewController storyboardIdentifier="ChoicePlaceViewController" id="lfY-JA-HvS" customClass="ChoicePlaceViewController" customModule="FoodTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="57K-9p-5Xs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHOICE PREFERENCES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTU-VU-cKn">
+                                <rect key="frame" x="97.333333333333329" y="396.33333333333331" width="181.66666666666669" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uTU-VU-cKn" firstAttribute="centerY" secondItem="57K-9p-5Xs" secondAttribute="centerY" id="279-JP-pa5"/>
+                            <constraint firstItem="uTU-VU-cKn" firstAttribute="centerX" secondItem="57K-9p-5Xs" secondAttribute="centerX" id="AKL-os-OhL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mad-Fp-S17"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jCD-aL-BX8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1673" y="-75"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="08E-cQ-0dg">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="dXA-hG-Kpz" customClass="HomeViewController" customModule="FoodTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vTa-Vr-J2J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOME PAGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPc-bM-QeP">
+                                <rect key="frame" x="139.66666666666666" y="396" width="96" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kPc-bM-QeP" firstAttribute="centerX" secondItem="vTa-Vr-J2J" secondAttribute="centerX" id="dUa-Ad-zSF"/>
+                            <constraint firstItem="kPc-bM-QeP" firstAttribute="centerY" secondItem="vTa-Vr-J2J" secondAttribute="centerY" id="rss-w0-a7w"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Faw-Wz-GBZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fzm-2G-Flj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2407.1999999999998" y="-177.33990147783251"/>
         </scene>
     </scenes>
     <resources>

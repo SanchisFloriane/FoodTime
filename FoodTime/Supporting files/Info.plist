@@ -23,15 +23,15 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.737115141500-vcldkd5m6407666r1n2qrp97ffqs6ke7</string>
-                <string>fb336356833569000</string>
+				<string>com.googleusercontent.apps.737115141500-m9080vsbl5ut0cmb30mc9gu7p9ekhslp</string>
+				<string>fb282559192515608</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>FacebookAppID</key>
-	<string>336356833569000</string>
+	<string>282559192515608</string>
 	<key>FacebookDisplayName</key>
 	<string>FoodTime</string>
 	<key>LSApplicationQueriesSchemes</key>

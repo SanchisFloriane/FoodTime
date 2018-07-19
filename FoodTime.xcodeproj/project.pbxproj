@@ -19,6 +19,9 @@
 		C4923A2F20F556FD00641EA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4923A2D20F556FD00641EA9 /* LaunchScreen.storyboard */; };
 		C4923A3720F5573100641EA9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4923A3620F5573100641EA9 /* GoogleService-Info.plist */; };
 		F42998B420FD50820035A717 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42998B320FD50820035A717 /* Service.swift */; };
+		F4A8ED6B21010DC6007FAB61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8ED6A21010DC6007FAB61 /* User.swift */; };
+		F4A8ED6D21014507007FAB61 /* ChoicePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8ED6C21014507007FAB61 /* ChoicePlaceViewController.swift */; };
+		F4A8ED6F21014517007FAB61 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8ED6E21014517007FAB61 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		DD15A0B6A377C607834AE140 /* Pods-FoodTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodTime/Pods-FoodTime.release.xcconfig"; sourceTree = "<group>"; };
 		F42998B220FD46BA0035A717 /* FoodTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodTime.entitlements; sourceTree = "<group>"; };
 		F42998B320FD50820035A717 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		F4A8ED6A21010DC6007FAB61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = "FoodTime/Supporting files/User.swift"; sourceTree = SOURCE_ROOT; };
+		F4A8ED6C21014507007FAB61 /* ChoicePlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoicePlaceViewController.swift; sourceTree = "<group>"; };
+		F4A8ED6E21014517007FAB61 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 		C414FEC820F68614008D5AE5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F4A8ED6A21010DC6007FAB61 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -97,6 +104,8 @@
 			children = (
 				C414FECC20F68EB1008D5AE5 /* GetStartedViewController.swift */,
 				C45C9BFD20F69A32004A4369 /* LoginViewController.swift */,
+				F4A8ED6C21014507007FAB61 /* ChoicePlaceViewController.swift */,
+				F4A8ED6E21014517007FAB61 /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -240,10 +249,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FoodTime/Pods-FoodTime-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,8 +337,11 @@
 			files = (
 				C45C9BFE20F69A32004A4369 /* LoginViewController.swift in Sources */,
 				F42998B420FD50820035A717 /* Service.swift in Sources */,
+				F4A8ED6B21010DC6007FAB61 /* User.swift in Sources */,
+				F4A8ED6F21014517007FAB61 /* HomeViewController.swift in Sources */,
 				C45C9C0220FEAD58004A4369 /* UILabels.swift in Sources */,
 				C4923A2520F556F500641EA9 /* AppDelegate.swift in Sources */,
+				F4A8ED6D21014507007FAB61 /* ChoicePlaceViewController.swift in Sources */,
 				C414FECD20F68EB1008D5AE5 /* GetStartedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
