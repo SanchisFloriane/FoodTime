@@ -3,6 +3,25 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "closure #1 in LoginViewController.userExists(uid:):LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "snapchot.children">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LoginViewController.userExists():LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.newUser">
+            </PersistentString>
+            <PersistentString
+               value = "Auth.auth().currentUser!.uid">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in closure #1 in LoginViewController.saveUserIntoFirebaseDatabase():LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -30,10 +49,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in LoginViewController.userExists(uid:):LoginViewController.swift">
+         contextName = "LoginViewController.uploadData():LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "snapchot.children">
+               value = "self.currentUser!.profilePicture">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

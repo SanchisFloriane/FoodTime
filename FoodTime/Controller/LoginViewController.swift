@@ -23,7 +23,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     
     var currentUser: User?
     var newUser: Bool = true
-    var values : [String : [String: String?]]?
+    var values : [String : [String: String]]?
     
     let hud: JGProgressHUD = {
         let hud = JGProgressHUD(style: .light)
@@ -37,7 +37,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     fileprivate func setupFBButton() {
         
         view.addSubview(FBButton)
-
+        
         //enables auttolayout for the FBButton
         FBButton.translatesAutoresizingMaskIntoConstraints = false
         FBButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -61,105 +61,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         GoogleButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
         
         GIDSignIn.sharedInstance().uiDelegate = self
-    }
-    
-    private func uploadImage(completion: @escaping (_ success:Bool) -> Void)
-    {
-        guard let uid = Auth.auth().currentUser?.uid,
-        let id = self.currentUser!.idUser,
-        let email = self.currentUser!.email,
-        let firstname = self.currentUser!.firstname,
-        let lastname = self.currentUser!.lastname,
-        let profileImage = self.currentUser!.profilePicture,
-        let profileImageUploadData = UIImageJPEGRepresentation(profileImage, 0.3) else { Service.dismissHud(self.hud, text: "Error", detailText: "Failed to save user.", delay: 3); return}
         
-        let fileName = uid
-        
-        let storageItem = StorageReference().child("profileImages").child(fileName)
-        var profileImageUrl: String?
-        storageItem.putData(profileImageUploadData, metadata: nil) { (metadata, error) in
-            
-            if let err = error {
-                Service.dismissHud(self.hud, text: "Error", detailText: "Failed to save user with error: \(err)", delay: 3)
-                return
-            }
-            else
-            {
-                storageItem.downloadURL(completion: { (url, error) in
-                    if error != nil {
-                        Service.dismissHud(self.hud, text: "Error", detailText: "Failed to save user.", delay: 3)
-                        return
-                    }
-                    
-                    if url != nil {
-                        profileImageUrl = url!.absoluteString
-                        print("Successfully uploaded profile image into Firebase storage")
-                    }
-                    
-                    let dictionaryValues = ["idUser": id,
-                                            "lastname": lastname,
-                                            "firstname": firstname,
-                                            "email": email,
-                                            "profilePictureFIRUrl": profileImageUrl]
-                    
-                    self.values = [uid : dictionaryValues]
-                    completion(true)
-                })
-            }
-        }
-    }
-
-    fileprivate func userExists(uid: String!)
-    {
-        Database.database().reference().child("users").observeSingleEvent(of: .value, with: { snapchot in
-        
-            if snapchot.hasChild(uid)
-            {
-                self.newUser = false
-                print("User exists")
-            }
-            else
-            {
-                self.newUser = true
-            }
-        })
-    }
-    
-    fileprivate func saveUserIntoFirebaseDatabase() {
-        
-        uploadImage{ (success) in
-            if success {
-                print("Upload finished")
-                
-                Database.database().reference().child("users").updateChildValues(self.values!, withCompletionBlock: { (err, ref) in
-                    if let err = err {
-                        Service.dismissHud(self.hud, text: "Error", detailText: "Failed to save user info with error: \(err)", delay: 3)
-                        return
-                    }
-                    print("Successfully saved user info into Firebase database")
-                    
-                    // after successfull save dismiss the welcome view controller
-                    self.hud.dismiss(animated: true)
-                    self.dismiss(animated: true, completion: nil)
-                    
-                    let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
-                    let desController : UIViewController!
-                    
-                    if self.newUser {
-                        //Go to choice preferences
-                        desController = mainStoryboard.instantiateViewController(withIdentifier: Service.ChoicePlaceViewController) as! ChoicePlaceViewController
-                    }
-                    else
-                    {
-                        //Go to Home page
-                        desController = mainStoryboard.instantiateViewController(withIdentifier: Service.HomeViewController) as! HomeViewController
-                    }
-                    
-                    self.navigationController?.pushViewController(desController, animated: true)
-                })
-            }
-        }
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(sendGoogleDataDelegateToViewController(not:)), name: Service.sendGoogleDataToLoginViewController, object: nil)
     }
     
     fileprivate func setupViews()
@@ -174,11 +77,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     }
     
     override func viewDidLoad() {
-       
+        
         super.viewDidLoad()
         setupViews()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -205,14 +108,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
@@ -225,7 +128,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         
         print("Succesfully authenticated with FB.")
         let credentials = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-   
+        
         Auth.auth().signInAndRetrieveData(with: credentials, completion: { (authResult, error) in
             
             if let error = error {
@@ -235,9 +138,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
             }
             print("Succesfully authenticated with FB Firebase.")
             
-            //Find user by email :
-            self.userExists(uid: Auth.auth().currentUser!.uid)
-            
+            self.userExists()
             FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, email, first_name, last_name, picture.type(large)"]).start{ (connection, result, error) in
                 if error != nil {
                     Service.dismissHud(self.hud, text: "Error", detailText: "Failed to fetch user. \(String(describing: error))", delay: 3)
@@ -260,13 +161,15 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
                                 {
                                     let userProfileImage = UIImage(data: imgData)
                                     self.currentUser!.profilePicture = userProfileImage
+                                    self.uploadData()
                                 }
-                                
-                                self.saveUserIntoFirebaseDatabase()
                             }
                         }
+                    } else {
+                        self.uploadData()
                     }
                 }
+                
             }
         })
     }
@@ -284,5 +187,141 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
             print("Error signing out: %@", signOutError)
         }
     }
-
+    
+    @objc func sendGoogleDataDelegateToViewController(not: Notification)
+    {
+        if let userInfo = not.userInfo
+        {
+            if let user = userInfo["user"] as? User
+            {
+                self.currentUser = user
+                if let pictureUrl = self.currentUser!.profilePictureFIRUrl {
+                    let imageData = NSData(contentsOf: URL(string: pictureUrl)!) as Data?
+                        if let imgData = imageData
+                        {
+                            let userProfileImage = UIImage(data: imgData)
+                            self.currentUser!.profilePicture = userProfileImage
+                        }
+                }
+            }
+        }
+        
+        self.userExists()
+        self.uploadData()
+    }
+    
+    fileprivate func uploadData()
+    {
+        guard let uid = Auth.auth().currentUser?.uid,
+            let id = self.currentUser!.idUser,
+            let email = self.currentUser!.email else { Service.dismissHud(self.hud, text: "Error", detailText: "Failed to upload data user.", delay: 3); return}
+        let firstname = self.currentUser!.firstname
+        let lastname = self.currentUser!.lastname
+        let pseudo = self.currentUser!.pseudo
+        let password = self.currentUser!.password
+        let fbAccount = self.currentUser!.fbAccount
+        let googleAccount = self.currentUser!.googleAccount
+        
+        var profileImageUploadData : Data?
+        var profileImageUrl: String?
+        var dictionaryValues: [String: String] = [:]
+        if let profileImage = self.currentUser!.profilePicture
+        {
+            profileImageUploadData = UIImageJPEGRepresentation(profileImage, 0.3)
+            
+            let fileName = uid
+            
+            let storageItem = StorageReference().child("profileImages").child(fileName)
+            storageItem.putData(profileImageUploadData!, metadata: nil) { (metadata, error) in
+                
+                if let err = error {
+                    Service.dismissHud(self.hud, text: "Error", detailText: "Failed to save profile picture user with error: \(err)", delay: 3)
+                    return
+                }
+                else
+                {
+                    storageItem.downloadURL(completion: { (url, error) in
+                        if error != nil {
+                            Service.dismissHud(self.hud, text: "Error", detailText: "Failed to save profile picture user.", delay: 3)
+                            return
+                        }
+                        
+                        if url != nil {
+                            profileImageUrl = url!.absoluteString
+                            print("Successfully uploaded profile picture user into Firebase storage")
+                            
+                            dictionaryValues = ["idUser": id,
+                                                    "lastname": lastname ?? "",
+                                                    "firstname": firstname ?? "",
+                                                    "email": email,
+                                                    "password": password ?? "",
+                                                    "pseudo": pseudo ?? "",
+                                                    "profilePictureFIRUrl": profileImageUrl ?? "",
+                                                    "fbAccount": fbAccount.description,
+                                                    "googleAccount": googleAccount.description ]
+                            
+                            self.values = [uid : dictionaryValues]
+                            self.saveUser()
+                        }
+                    })
+                }
+            }
+        }
+        else
+        {
+            dictionaryValues = ["idUser": id,
+                                    "lastname": lastname ?? "",
+                                    "firstname": firstname ?? "",
+                                    "email": email,
+                                    "password": password ?? "",
+                                    "pseudo": pseudo ?? "",
+                                    "profilePictureFIRUrl": profileImageUrl ?? "",
+                                    "fbAccount": fbAccount.description,
+                                    "googleAccount": googleAccount.description ]
+            
+            self.values = [uid : dictionaryValues]
+            self.saveUser()
+        }
+    }
+    
+    fileprivate func userExists()
+    {
+        self.newUser = true
+        
+        Database.database().reference().child("users/\(Auth.auth().currentUser!.uid)").observeSingleEvent(of: .value, with: { (snapchot) in
+            
+            self.newUser = false
+            print("user exists")
+        })
+    }
+    
+    fileprivate func saveUser() {
+        
+        Database.database().reference().child("users").updateChildValues(self.values!, withCompletionBlock: { (err, ref) in
+            if let err = err {
+                Service.dismissHud(self.hud, text: "Error", detailText: "Failed to save user info with error: \(err)", delay: 3)
+                return
+            }
+            print("Successfully saved user info into Firebase database")
+            
+            // after successfull save dismiss the welcome view controller
+            self.hud.dismiss(animated: true)
+            self.dismiss(animated: true, completion: nil)
+            
+            let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
+            let desController : UIViewController!
+            
+            if self.newUser {
+                //Go to choice preferences
+                desController = mainStoryboard.instantiateViewController(withIdentifier: Service.ChoicePlaceViewController) as! ChoicePlaceViewController
+            }
+            else
+            {
+                //Go to Home page
+                desController = mainStoryboard.instantiateViewController(withIdentifier: Service.HomeViewController) as! HomeViewController
+            }
+            
+            self.navigationController?.pushViewController(desController, animated: true)
+        })
+    }
 }

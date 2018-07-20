@@ -26,6 +26,9 @@ class Service {
     static let ChoicePlaceViewController : String = "ChoicePlaceViewController"
     static let HomeViewController : String = "HomeViewController"
     
+    //Notification by ViewController
+    static let sendGoogleDataToLoginViewController : NSNotification.Name = Notification.Name("sendGoogleDataToLoginViewController")
+    
     static func showAlert(on: UIViewController, style: UIAlertControllerStyle, title: String?, message: String?, actions: [UIAlertAction] = [UIAlertAction(title: "Ok", style: .default, handler: nil)], completion: (() -> Swift.Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: style)
         for action in actions {
