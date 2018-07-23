@@ -56,5 +56,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "closure #1 in LoginViewController.userExists():LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "snapchot.childrenCount">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

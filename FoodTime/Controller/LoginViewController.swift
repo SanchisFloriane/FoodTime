@@ -290,8 +290,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         
         Database.database().reference().child("users/\(Auth.auth().currentUser!.uid)").observeSingleEvent(of: .value, with: { (snapchot) in
             
-            self.newUser = false
-            print("user exists")
+            if snapchot.childrenCount > 0
+            {
+                self.newUser = false
+                print("user exists")
+            }
         })
     }
     
