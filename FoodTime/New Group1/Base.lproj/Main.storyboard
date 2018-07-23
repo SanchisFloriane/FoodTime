@@ -117,17 +117,33 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="By sign up, you agree to our Terms &amp; Private policy"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffc-YF-S2Z" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="50" y="391" width="275" height="30"/>
+                                <state key="normal" title="Log in with FB"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mso-Cg-OT1" customClass="GIDSignInButton">
+                                <rect key="frame" x="50" y="451" width="275" height="30"/>
+                                <state key="normal" title="Login with Google"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="SZN-wy-SjU" firstAttribute="trailing" secondItem="mso-Cg-OT1" secondAttribute="trailing" constant="50" id="5OS-TF-fpI"/>
+                            <constraint firstItem="SZN-wy-SjU" firstAttribute="trailing" secondItem="ffc-YF-S2Z" secondAttribute="trailing" constant="50" id="haX-Hk-46R"/>
+                            <constraint firstItem="ffc-YF-S2Z" firstAttribute="leading" secondItem="SZN-wy-SjU" secondAttribute="leading" constant="50" id="mJx-6d-btY"/>
+                            <constraint firstItem="mso-Cg-OT1" firstAttribute="leading" secondItem="SZN-wy-SjU" secondAttribute="leading" constant="50" id="n3N-RE-im0"/>
                             <constraint firstItem="SZN-wy-SjU" firstAttribute="trailing" secondItem="4Xd-FY-dzv" secondAttribute="trailing" constant="50" id="nC1-bT-kOs"/>
                             <constraint firstItem="4Xd-FY-dzv" firstAttribute="leading" secondItem="SZN-wy-SjU" secondAttribute="leading" constant="50" id="sqW-g7-Xsw"/>
+                            <constraint firstItem="ffc-YF-S2Z" firstAttribute="centerY" secondItem="gHc-6K-XUr" secondAttribute="centerY" id="tb1-4T-DC4"/>
                             <constraint firstItem="SZN-wy-SjU" firstAttribute="bottom" secondItem="4Xd-FY-dzv" secondAttribute="bottom" constant="15" id="zUr-3V-ONb"/>
+                            <constraint firstItem="mso-Cg-OT1" firstAttribute="top" secondItem="ffc-YF-S2Z" secondAttribute="bottom" constant="30" id="zv2-L7-hsM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SZN-wy-SjU"/>
                     </view>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="FBButton" destination="ffc-YF-S2Z" id="JT9-Ea-oiE"/>
+                        <outlet property="GoogleButton" destination="mso-Cg-OT1" id="fIs-GD-X3C"/>
                         <outlet property="TermsPrivatePolicyButton" destination="4Xd-FY-dzv" id="4sN-Vx-Wkg"/>
                     </connections>
                 </viewController>

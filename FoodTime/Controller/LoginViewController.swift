@@ -31,35 +31,18 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         return hud
     }()
     
-    let GoogleButton : GIDSignInButton = GIDSignInButton()
-    let FBButton : FBSDKLoginButton = FBSDKLoginButton()
+    
+    @IBOutlet weak var FBButton: FBSDKLoginButton!
+    @IBOutlet weak var GoogleButton: GIDSignInButton!
     
     fileprivate func setupFBButton() {
-        
-        view.addSubview(FBButton)
-        
-        //enables auttolayout for the FBButton
-        FBButton.translatesAutoresizingMaskIntoConstraints = false
-        FBButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        FBButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        FBButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
-        FBButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
-        
+       
         FBButton.readPermissions = ["email", "public_profile"]
         FBButton.delegate = self
     }
     
     fileprivate func setupGoogleButton()
     {
-        view.addSubview(GoogleButton)
-        
-        //enables auttolayout for the FBButton
-        GoogleButton.translatesAutoresizingMaskIntoConstraints = false
-        GoogleButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        GoogleButton.centerYAnchor.constraint(equalTo: FBButton.centerYAnchor, constant: 75).isActive = true
-        GoogleButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25).isActive = true
-        GoogleButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25).isActive = true
-        
         GIDSignIn.sharedInstance().uiDelegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(sendGoogleDataDelegateToViewController(not:)), name: Service.sendGoogleDataToLoginViewController, object: nil)

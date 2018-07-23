@@ -72,8 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             }
             
             print("Succesfully authenticated with Google Firebase.")
-            
-            print("\(user.profile.imageURL(withDimension: 200).absoluteString)")
+
             let user = User(idUser: user.userID, lastname: user.profile.familyName, firstname: user.profile.name, pseudo: user.profile.givenName, email: user.profile.email, password: nil, profilePictureFIRUrl: user.profile.imageURL(withDimension: 200).absoluteString, fbAccount: false, googleAccount: true)
             
             NotificationCenter.default.post(name: Service.sendGoogleDataToLoginViewController, object: self, userInfo: ["user": user])
