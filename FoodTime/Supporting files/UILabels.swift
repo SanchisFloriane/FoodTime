@@ -24,16 +24,23 @@ class UILabels {
         return NSLocalizedString(key, comment: "")
     }
     
-    let TermsPrivatePolicyButton : String = "TermsPrivatePolicyButton"
+    let Email: String = "Email"
     
     let EmailConnectionButton : String = "EmailConnectionButton"
     
-    let GetStartedButton : String = "GetStartedButton"
+    let EmailTitle : String = "EmailTitle"
     
-    let TaglineTextMainPage : String = "TaglineTextMainPage"
+    let FBConnectionButton : String = "FBConnectionButton"
+    
+    let GetStartedButton : String = "GetStartedButton"
     
     let LogginButton : String = "LogginButton"
     
-    let FBConnectionButton : String = "FBConnectionButton"
+    let Password : String = "Password"
+    
+    let TaglineTextMainPage : String = "TaglineTextMainPage"
+    
+    let TermsPrivatePolicyButton : String = "TermsPrivatePolicyButton"
+    
     
 }

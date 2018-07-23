@@ -12,6 +12,7 @@ import JGProgressHUD
 
 class Service {
     
+    //Button properties
     static let buttonTitleFontSize: CGFloat = 16
     static let buttonTitleColor: UIColor = UIColor.white
     static let buttonCornerRadius: CGFloat = 7
@@ -28,6 +29,7 @@ class Service {
     
     //Notification by ViewController
     static let sendGoogleDataToLoginViewController : NSNotification.Name = Notification.Name("sendGoogleDataToLoginViewController")
+    
     
     static func showAlert(on: UIViewController, style: UIAlertControllerStyle, title: String?, message: String?, actions: [UIAlertAction] = [UIAlertAction(title: "Ok", style: .default, handler: nil)], completion: (() -> Swift.Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: style)

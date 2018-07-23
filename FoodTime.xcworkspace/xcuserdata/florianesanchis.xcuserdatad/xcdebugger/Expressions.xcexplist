@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "EmailLoginViewController.clearTextView():EmailLoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UILabels().localizeWithoutComment(key: UILabels().EmailTitle)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in LoginViewController.userExists(uid:):LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -11,13 +19,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "UILabels.localizeWithoutComment(key:):UILabels.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "NSLocalizedString(key, comment: &quot;&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "LoginViewController.userExists():LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.newUser">
+               value = "Auth.auth().currentUser!.uid">
             </PersistentString>
             <PersistentString
-               value = "Auth.auth().currentUser!.uid">
+               value = "self.newUser">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -26,6 +42,14 @@
          <PersistentStrings>
             <PersistentString
                value = "Service.HomeViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "EmailLoginViewController.setupView():EmailLoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UILabels().localizeWithoutComment(key: UILabels().EmailTitle)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

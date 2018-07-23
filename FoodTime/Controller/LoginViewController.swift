@@ -20,6 +20,9 @@ import FBSDKLoginKit
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate {
     
     @IBOutlet weak var TermsPrivatePolicyButton: UIButton!
+    @IBOutlet weak var FBButton: FBSDKLoginButton!
+    @IBOutlet weak var GoogleButton: GIDSignInButton!
+    @IBOutlet weak var EmailButton: UIButton!
     
     var currentUser: User?
     var newUser: Bool = true
@@ -31,9 +34,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         return hud
     }()
     
-    
-    @IBOutlet weak var FBButton: FBSDKLoginButton!
-    @IBOutlet weak var GoogleButton: GIDSignInButton!
     
     fileprivate func setupFBButton() {
        
@@ -192,6 +192,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         self.userExists()
         self.uploadData()
     }
+       
     
     fileprivate func uploadData()
     {

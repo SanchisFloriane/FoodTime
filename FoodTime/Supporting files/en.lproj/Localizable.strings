@@ -5,13 +5,20 @@
   Created by bob on 7/18/18.
   Copyright © 2018 sanchisfloriane. All rights reserved.
 */
-"TermsPrivatePolicyButton" = "By sign up, you agree to our Terms & Private policy";
+"Email" = "Your email";
 
 "EmailConnectionButton" = "Use your email";
 
-"GetStartedButton" = "Get started";
-
-"TaglineTextMainPage" = "Track your favourite food and drink place";
-"LogginButton" = "Have an account ? Log in";
+"EmailTitle" = "Use your email";
 
 "FBConnectionButton" = "Sign in with Facebook";
+
+"GetStartedButton" = "Get started";
+
+"LogginButton" = "Have an account ? Log in";
+
+"Password" = "Your password";
+
+"TaglineTextMainPage" = "Track your favourite food and drink place";
+
+"TermsPrivatePolicyButton" = "By sign up, you agree to our Terms & Private policy";
