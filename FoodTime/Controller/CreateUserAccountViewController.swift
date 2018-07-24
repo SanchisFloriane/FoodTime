@@ -19,6 +19,7 @@ class CreateUserAccountViewController: UIViewController {
     
     var currentUser: User?
     var values : [String : [String: String]]?
+    var isExists : Bool = false
     
     
     fileprivate func clearTextView()
@@ -138,7 +139,11 @@ class CreateUserAccountViewController: UIViewController {
         {
             if checkPassword()
             {
-                if !userExists()
+                if isUserExists()
+                {
+                    Service.showAlert(on: self, style: .alert, title: UIMessages().localizeWithoutComment(key: UIMessages().ErrorTitle), message:  UIMessages().localizeWithoutComment(key: UIMessages().ErrorEmailExists))
+                }
+                else
                 {
                     check = true
                 }
@@ -155,7 +160,14 @@ class CreateUserAccountViewController: UIViewController {
             Auth.auth().createUser(withEmail: EmailTxtView.text!, password: PwdTxtView.text!) { (authResult, error) in
                 
                 if error != nil {
-                    print("Error creation user with error : \(String(describing: error?.localizedDescription))")
+                    if self.isExists
+                    {
+                        Service.showAlert(on: self, style: .alert, title: UIMessages().localizeWithoutComment(key: UIMessages().ErrorTitle), message:  UIMessages().localizeWithoutComment(key: UIMessages().ErrorEmailExists))
+                    }
+                    else
+                    {
+                        print("Error creation user with error : \(String(describing: error?.localizedDescription))")
+                    }
                     return
                 }
                 
@@ -204,22 +216,23 @@ class CreateUserAccountViewController: UIViewController {
         self.saveUser()
     }
     
-    fileprivate func userExists() -> Bool
+    fileprivate func isUserExists() -> Bool
     {
-        var isExists : Bool = false
+        self.isExists = false
         
-      Auth.auth().fetchProviders(forEmail: EmailTxtView.text!, completion: { (auth, error) in
+        Auth.auth().fetchProviders(forEmail: EmailTxtView.text!, completion: { (auth, error) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+            }
+               
+            if auth != nil
+            {
+                self.isExists = true
+            }
+        })
         
-        if let error = error {
-            print(error.localizedDescription)
-            return
-        }
-        
-        print(auth)
-        
-      })
-        
-        return isExists
+        return self.isExists
     }
     
     fileprivate func saveUser() {
@@ -235,10 +248,7 @@ class CreateUserAccountViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
             
             let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
-            let desController : UIViewController!
-            
-            //Go to Home page
-            desController = mainStoryboard.instantiateViewController(withIdentifier: Service.HomeViewController) as! HomeViewController
+            let desController : UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.ChoicePlaceViewController) as! ChoicePlaceViewController
             
             self.navigationController?.pushViewController(desController, animated: true)
         })

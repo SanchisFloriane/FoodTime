@@ -3,45 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "EmailLoginViewController.clearTextView():EmailLoginViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "UILabels().localizeWithoutComment(key: UILabels().EmailTitle)">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in LoginViewController.userExists(uid:):LoginViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "snapchot.children">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "UILabels.localizeWithoutComment(key:):UILabels.swift">
          <PersistentStrings>
             <PersistentString
                value = "NSLocalizedString(key, comment: &quot;&quot;)">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "LoginViewController.userExists():LoginViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "Auth.auth().currentUser!.uid">
-            </PersistentString>
-            <PersistentString
-               value = "self.newUser">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in closure #1 in LoginViewController.saveUserIntoFirebaseDatabase():LoginViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "Service.HomeViewController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -52,9 +17,6 @@
                value = "UILabels().localizeWithoutComment(key: UILabels().EmailTitle)">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "LoginViewController.loginButton(_:didCompleteWith:error:):LoginViewController.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in LoginViewController.userExist(email:):LoginViewController.swift">
@@ -73,6 +35,41 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in LoginViewController.userExists():LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "snapchot.childrenCount">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in LoginViewController.saveUserIntoFirebaseDatabase():LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Service.HomeViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in LoginViewController.userExists(uid:):LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "snapchot.children">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CreateUserAccountViewController.userExists():CreateUserAccountViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "EmailLoginViewController.clearTextView():EmailLoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UILabels().localizeWithoutComment(key: UILabels().EmailTitle)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "LoginViewController.uploadData():LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -81,12 +78,26 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in LoginViewController.userExists():LoginViewController.swift">
+         contextName = "LoginViewController.userExists():LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "snapchot.childrenCount">
+               value = "self.newUser">
+            </PersistentString>
+            <PersistentString
+               value = "Auth.auth().currentUser!.uid">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in CreateUserAccountViewController.createUserAccount():CreateUserAccountViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.isExists">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LoginViewController.loginButton(_:didCompleteWith:error:):LoginViewController.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
