@@ -24,19 +24,31 @@ class UILabels {
         return NSLocalizedString(key, comment: "")
     }
     
+    let CreateUserAccount : String = "CreateUserAccount"
+    
     let Email: String = "Email"
     
-    let EmailConnectionButton : String = "EmailConnectionButton"
+    let EmailSignInButton : String = "EmailSignInButton"
+    
+    let EmailSignUpButton : String = "EmailSignUpButton"
     
     let EmailTitle : String = "EmailTitle"
     
-    let FBConnectionButton : String = "FBConnectionButton"
+    let FBSignInButton : String = "FBSignInButton"
+    
+    let FBSignUpButton : String = "FBSignUpButton"
+    
+    let GoogleSignInButton : String = "GoogleSignInButton"
+    
+    let GoogleSignUpButton : String = "GoogleSignUpButton"
     
     let GetStartedButton : String = "GetStartedButton"
     
     let LogginButton : String = "LogginButton"
     
     let Password : String = "Password"
+    
+    let PasswordConfirmation : String = "PasswordConfirmation"
     
     let TaglineTextMainPage : String = "TaglineTextMainPage"
     

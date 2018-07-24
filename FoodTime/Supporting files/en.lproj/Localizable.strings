@@ -5,20 +5,46 @@
   Created by bob on 7/18/18.
   Copyright © 2018 sanchisfloriane. All rights reserved.
 */
+
+"CreateUserAccount" = "Create user account";
+
 "Email" = "Your email";
 
-"EmailConnectionButton" = "Use your email";
+"EmailSignInButton" = "Use your email";
+
+"EmailSignUpButton" = "Use your email";
 
 "EmailTitle" = "Use your email";
 
-"FBConnectionButton" = "Sign in with Facebook";
+"ErrorPassword" = "Passwords are not the same.";
+
+"ErrorEmail" = "Please specify a valid email addres.";
+
+"ErrorEmailExists" = "The email address is already in use by another account.";
+
+"ErrorFormatPassword" = "The password must be 6 characters long or more with at least 1 letter, 1 number and 1 special character.";
+
+"ErrorTitle" = "Error";
+
+"FBSignInButton" = "Sign in with Facebook";
+
+"FBSignUpButton" = "Sign up with Facebook";
 
 "GetStartedButton" = "Get started";
+
+"GoogleSignInButton" = "Sign in with Google";
+
+"GoogleSignUpButton" = "Sign up with Google";
 
 "LogginButton" = "Have an account ? Log in";
 
 "Password" = "Your password";
 
+"PasswordConfirmation" = "Confirmation password";
+
 "TaglineTextMainPage" = "Track your favourite food and drink place";
 
 "TermsPrivatePolicyButton" = "By sign up, you agree to our Terms & Private policy";
+
+"UserNotFound" = "User account does not exist.";
+

@@ -12,7 +12,6 @@ import UIKit
 class User {
     
     //Attributes in DB
-    var idUser: String?
     var lastname: String?
     var firstname: String?
     var pseudo: String?
@@ -29,9 +28,8 @@ class User {
         
     }
 
-    init(idUser: String!, lastname: String?,firstname: String?,pseudo: String?,email: String?,password: String?,profilePictureFIRUrl: String?,fbAccount: Bool, googleAccount: Bool) {
+    init(lastname: String?,firstname: String?,pseudo: String?,email: String?,password: String?,profilePictureFIRUrl: String?,fbAccount: Bool, googleAccount: Bool) {
         
-        self.idUser = idUser
         self.lastname = lastname
         self.firstname = firstname
         self.pseudo = pseudo

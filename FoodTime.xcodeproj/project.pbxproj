@@ -20,6 +20,9 @@
 		C4923A3720F5573100641EA9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4923A3620F5573100641EA9 /* GoogleService-Info.plist */; };
 		F4121DF02106585300252594 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4121DEF2106585300252594 /* EmailLoginViewController.swift */; };
 		F4121DF3210660AF00252594 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4121DF2210660AF00252594 /* UIViewController.swift */; };
+		F4121DF521068DA500252594 /* GetStartedChoiceCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4121DF421068DA500252594 /* GetStartedChoiceCreationViewController.swift */; };
+		F4121DF72106951C00252594 /* CreateUserAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4121DF62106951C00252594 /* CreateUserAccountViewController.swift */; };
+		F4121DF92106986D00252594 /* UIMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4121DF82106986D00252594 /* UIMessages.swift */; };
 		F42998B420FD50820035A717 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42998B320FD50820035A717 /* Service.swift */; };
 		F4A8ED6B21010DC6007FAB61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8ED6A21010DC6007FAB61 /* User.swift */; };
 		F4A8ED6D21014507007FAB61 /* ChoicePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8ED6C21014507007FAB61 /* ChoicePlaceViewController.swift */; };
@@ -49,6 +52,9 @@
 		DD15A0B6A377C607834AE140 /* Pods-FoodTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodTime/Pods-FoodTime.release.xcconfig"; sourceTree = "<group>"; };
 		F4121DEF2106585300252594 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		F4121DF2210660AF00252594 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		F4121DF421068DA500252594 /* GetStartedChoiceCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedChoiceCreationViewController.swift; sourceTree = "<group>"; };
+		F4121DF62106951C00252594 /* CreateUserAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserAccountViewController.swift; sourceTree = "<group>"; };
+		F4121DF82106986D00252594 /* UIMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMessages.swift; sourceTree = "<group>"; };
 		F42998B220FD46BA0035A717 /* FoodTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodTime.entitlements; sourceTree = "<group>"; };
 		F42998B320FD50820035A717 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		F4A8ED6A21010DC6007FAB61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = "FoodTime/Supporting files/User.swift"; sourceTree = SOURCE_ROOT; };
@@ -108,10 +114,12 @@
 			children = (
 				F4121DF12106609200252594 /* Extension */,
 				C414FECC20F68EB1008D5AE5 /* GetStartedViewController.swift */,
+				F4121DF421068DA500252594 /* GetStartedChoiceCreationViewController.swift */,
 				C45C9BFD20F69A32004A4369 /* LoginViewController.swift */,
+				F4121DEF2106585300252594 /* EmailLoginViewController.swift */,
 				F4A8ED6C21014507007FAB61 /* ChoicePlaceViewController.swift */,
 				F4A8ED6E21014517007FAB61 /* HomeViewController.swift */,
-				F4121DEF2106585300252594 /* EmailLoginViewController.swift */,
+				F4121DF62106951C00252594 /* CreateUserAccountViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -127,6 +135,7 @@
 				F42998B320FD50820035A717 /* Service.swift */,
 				C45C9C0120FEAD58004A4369 /* UILabels.swift */,
 				C45C9C0B20FFA9F3004A4369 /* Localizable.strings */,
+				F4121DF82106986D00252594 /* UIMessages.swift */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -352,8 +361,11 @@
 				C45C9BFE20F69A32004A4369 /* LoginViewController.swift in Sources */,
 				F42998B420FD50820035A717 /* Service.swift in Sources */,
 				F4A8ED6B21010DC6007FAB61 /* User.swift in Sources */,
+				F4121DF72106951C00252594 /* CreateUserAccountViewController.swift in Sources */,
+				F4121DF92106986D00252594 /* UIMessages.swift in Sources */,
 				F4A8ED6F21014517007FAB61 /* HomeViewController.swift in Sources */,
 				F4121DF3210660AF00252594 /* UIViewController.swift in Sources */,
+				F4121DF521068DA500252594 /* GetStartedChoiceCreationViewController.swift in Sources */,
 				C45C9C0220FEAD58004A4369 /* UILabels.swift in Sources */,
 				C4923A2520F556F500641EA9 /* AppDelegate.swift in Sources */,
 				F4A8ED6D21014507007FAB61 /* ChoicePlaceViewController.swift in Sources */,

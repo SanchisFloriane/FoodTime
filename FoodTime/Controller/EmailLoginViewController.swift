@@ -39,7 +39,7 @@ class EmailLoginViewController: UIViewController, UITextViewDelegate {
             }
             else if user == nil
             {
-                Service.showAlert(on: self, style: .alert, title: "Error", message: "The email/password is invalid.")
+                Service.showAlert(on: self, style: .alert, title: UIMessages().localizeWithoutComment(key: UIMessages().ErrorTitle), message: UIMessages().localizeWithoutComment(key: UIMessages().UserNotFound))
             }
             else
             {

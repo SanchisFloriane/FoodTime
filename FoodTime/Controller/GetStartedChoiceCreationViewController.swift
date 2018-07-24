@@ -1,8 +1,8 @@
 //
-//  LoginViewController.swift
+//  GetStartedChoiceCreationViewController.swift
 //  FoodTime
 //
-//  Created by bob on 7/11/18.
+//  Created by floriane sanchis on 23/07/2018.
 //  Copyright © 2018 sanchisfloriane. All rights reserved.
 //
 
@@ -16,12 +16,12 @@ import FirebaseDatabase
 import GoogleSignIn
 import FBSDKLoginKit
 
-class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate {
-    
-    @IBOutlet weak var TermsPrivatePolicyButton: UIButton!
+class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate  {
+
+    @IBOutlet weak var EmailButton: UIButton!
     @IBOutlet weak var FBButton: FBSDKLoginButton!
     @IBOutlet weak var GoogleButton: GIDSignInButton!
-    @IBOutlet weak var EmailButton: UIButton!
+    @IBOutlet weak var TermsPrivatePolicyButton: UIButton!
     
     var currentUser: User?
     var newUser: Bool = true
@@ -35,9 +35,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     
     
     fileprivate func setupFBButton() {
-       
-        FBButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().FBSignInButton), for: .normal)
         
+        FBButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().FBSignUpButton), for: .normal)
         FBButton.readPermissions = ["email", "public_profile"]
         FBButton.delegate = self
     }
@@ -51,7 +50,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     
     fileprivate func setupViews()
     {
-        EmailButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().EmailSignUpButton), for: .normal)
+         EmailButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().EmailSignInButton), for: .normal)
         TermsPrivatePolicyButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().TermsPrivatePolicyButton), for: .normal)
         TermsPrivatePolicyButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
@@ -62,46 +61,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         setupViews()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // Hide the navigation bar on the this view controller
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        // Show the navigation bar on other view controllers
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-    
-    @IBAction func dismiss() {
-        navigationController?.popViewController(animated: true)
-    }
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         
@@ -182,11 +149,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
                 self.currentUser = user
                 if let pictureUrl = self.currentUser!.profilePictureFIRUrl {
                     let imageData = NSData(contentsOf: URL(string: pictureUrl)!) as Data?
-                        if let imgData = imageData
-                        {
-                            let userProfileImage = UIImage(data: imgData)
-                            self.currentUser!.profilePicture = userProfileImage
-                        }
+                    if let imgData = imageData
+                    {
+                        let userProfileImage = UIImage(data: imgData)
+                        self.currentUser!.profilePicture = userProfileImage
+                    }
                 }
             }
         }
@@ -194,7 +161,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         self.userExists()
         self.uploadData()
     }
-       
+    
     
     fileprivate func uploadData()
     {
@@ -235,14 +202,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
                             profileImageUrl = url!.absoluteString
                             print("Successfully uploaded profile picture user into Firebase storage")
                             
-                            dictionaryValues = [    "lastname": lastname ?? "",
-                                                    "firstname": firstname ?? "",
-                                                    "email": email,
-                                                    "password": password ?? "",
-                                                    "pseudo": pseudo ?? "",
-                                                    "profilePictureFIRUrl": profileImageUrl ?? "",
-                                                    "fbAccount": fbAccount.description,
-                                                    "googleAccount": googleAccount.description ]
+                            dictionaryValues = ["lastname": lastname ?? "",
+                                                "firstname": firstname ?? "",
+                                                "email": email,
+                                                "password": password ?? "",
+                                                "pseudo": pseudo ?? "",
+                                                "profilePictureFIRUrl": profileImageUrl ?? "",
+                                                "fbAccount": fbAccount.description,
+                                                "googleAccount": googleAccount.description ]
                             
                             self.values = [uid : dictionaryValues]
                             self.saveUser()
@@ -253,14 +220,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         }
         else
         {
-            dictionaryValues = [    "lastname": lastname ?? "",
-                                    "firstname": firstname ?? "",
-                                    "email": email,
-                                    "password": password ?? "",
-                                    "pseudo": pseudo ?? "",
-                                    "profilePictureFIRUrl": profileImageUrl ?? "",
-                                    "fbAccount": fbAccount.description,
-                                    "googleAccount": googleAccount.description ]
+            dictionaryValues = ["lastname": lastname ?? "",
+                                "firstname": firstname ?? "",
+                                "email": email,
+                                "password": password ?? "",
+                                "pseudo": pseudo ?? "",
+                                "profilePictureFIRUrl": profileImageUrl ?? "",
+                                "fbAccount": fbAccount.description,
+                                "googleAccount": googleAccount.description ]
             
             self.values = [uid : dictionaryValues]
             self.saveUser()

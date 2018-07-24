@@ -5,21 +5,43 @@
   Created by bob on 7/18/18.
   Copyright © 2018 sanchisfloriane. All rights reserved.
 */
+
+"CreateUserAccount" = "Création compte utilisateur";
+
 "Email" = "Votre email";
 
-"EmailConnectionButton" = "Utiliser votre email";
+"EmailSignInButton" = "Utilisez votre email";
+
+"EmailSignUpButton" = "Utilisez votre email";
 
 "EmailTitle" = "Connectez-vous avec votre email";
 
+"ErrorFormatPassword" = "La longueur du mot de passe doit être au minimum de 6 caractères dont 1 lettre, 1 chiffre et 1 charactère spécial.";
+
+"ErrorPassword" = "Veuillez saisir le même mot de passe";
+
+"ErrorEmail" = "Merci d'indiquer une adresse e-mail valide.";
+
+"ErrorEmailExists" = "Cet e-mail est déjà utilisé par un autre compte.";
+
+"ErrorTitle" = "Erreur";
+
 "FBConnectionButton" = "Se connecter avec Facebook";
 
+"FBSignUpButton" = "S'enregistrer avec Facebook";
+
 "GetStartedButton" = "Démarrer";
+
+"GoogleSignUpButton" = "S'enregistrer avec Google";
 
 "LogginButton" = "Vous avez un compte ? Se connecter";
 
 "Password" = "Votre mot de passe";
 
+"PasswordConfirmation" = "Confirmation mot de passe";
+
 "TaglineTextMainPage" = "Gérer vos endroits préférés";
 
 "TermsPrivatePolicyButton" = "En vous inscrivant, vous acceptez nos CGU & Confidentialité";
 
+"UserNotFound" = "Le compte utilisateur n'existe pas";
