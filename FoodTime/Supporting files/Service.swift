@@ -27,6 +27,7 @@ class Service {
     static let ChoicePlaceViewController : String = "ChoicePlaceViewController"
     static let HomeViewController : String = "HomeViewController"
     static let ChoiceTypeFood : String = "ChoiceTypeFoodViewController"
+    static let ChoiceUserPageViewController : String = "ChoiceUserPageViewController"
     
     //Notification by ViewController
     //LoginViewController

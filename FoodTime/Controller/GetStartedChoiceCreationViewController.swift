@@ -263,7 +263,7 @@ class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButton
             
             if self.newUser {
                 //Go to choice preferences
-                desController = mainStoryboard.instantiateViewController(withIdentifier: Service.ChoicePlaceViewController) as! ChoicePlaceViewController
+                desController = mainStoryboard.instantiateViewController(withIdentifier: Service.ChoiceUserPageViewController) as! ChoiceUserPageViewController
             }
             else
             {

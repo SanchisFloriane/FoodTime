@@ -247,7 +247,7 @@ class CreateUserAccountViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
             
             let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
-            let desController : UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.ChoicePlaceViewController) as! ChoicePlaceViewController
+            let desController : UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.ChoiceUserPageViewController) as! ChoiceUserPageViewController
             
             self.navigationController?.pushViewController(desController, animated: true)
         })

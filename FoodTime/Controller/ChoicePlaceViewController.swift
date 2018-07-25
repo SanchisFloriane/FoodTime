@@ -37,11 +37,14 @@ class ChoicePlaceViewController: UIViewController, PageObservation {
     {
         nextButton.isHidden = true
         
-        for view in parentPageViewController.view.subviews
+        if parentPageViewController != nil
         {
-            if let subview = view as? UIScrollView
+            for view in parentPageViewController.view.subviews
             {
-                subview.isScrollEnabled = false
+                if let subview = view as? UIScrollView
+                {
+                    subview.isScrollEnabled = false
+                }
             }
         }
     }
