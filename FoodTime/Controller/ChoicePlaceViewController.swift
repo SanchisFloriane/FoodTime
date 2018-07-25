@@ -8,28 +8,88 @@
 
 import UIKit
 
-class ChoicePlaceViewController: UIViewController {
-
+class ChoicePlaceViewController: UIViewController, PageObservation {
+    
+    var parentPageViewController : UIPageViewController!
+    
+    func getParentUIPageViewController(parentRef: UIPageViewController) {
+        parentPageViewController = parentRef
+    }
+    
+    
+    @IBOutlet weak var barButton: UIButton!
+    @IBOutlet weak var coffeeButton: UIButton!
+    @IBOutlet weak var fastFoodButton: UIButton!
+    @IBOutlet weak var foodTruckButton: UIButton!
+    @IBOutlet weak var restaurantButton: UIButton!
+    
+    @IBOutlet weak var nextButton: UIButton!
+    
+    var placeSelected : [UIButton] = [UIButton]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        setupView()
     }
-
+    
+    fileprivate func setupView()
+    {
+        nextButton.isHidden = true
+        
+        for view in parentPageViewController.view.subviews
+        {
+            if let subview = view as? UIScrollView
+            {
+                subview.isScrollEnabled = false
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func selectPlace(_ sender: UIButton) {
+        
+        if sender != nextButton
+        {
+            if sender.layer.borderColor != UIColor.green.cgColor
+            {
+                sender.layer.borderWidth = 5
+                sender.layer.borderColor = UIColor.green.cgColor
+                placeSelected.append(sender)
+            }
+            else
+            {
+                sender.layer.borderWidth = 0
+                sender.layer.borderColor = nil
+                let indexButton = placeSelected.index(of: sender)
+                placeSelected.remove(at: indexButton!)
+            }
+            
+            checkEnabledContinuebutton()
+        }
     }
-    */
+    
+    func checkEnabledContinuebutton() {
+        
+        if placeSelected.count == 0
+        {
+            nextButton.isHidden = true
+        }
+        else
+        {
+            nextButton.isHidden = false
+        }
+    }
 
+    @IBAction func nextPage() {
+        
+        let parent = parentPageViewController as! ChoiceUserPageViewController
+        parentPageViewController.goToNextPage()
+        parent.pageControl.currentPage = 1
+    }
+    
 }

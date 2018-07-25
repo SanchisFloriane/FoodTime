@@ -134,9 +134,6 @@
                                 <state key="normal" title="Use your email">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <segue destination="0pJ-V8-iVj" kind="show" id="btJ-KC-g84"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -177,7 +174,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mRd-Op-O9K">
-                                <rect key="frame" x="50" y="359" width="275" height="30"/>
+                                <rect key="frame" x="50" y="315" width="275" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="KkW-BV-2Dg"/>
                                 </constraints>
@@ -189,7 +186,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ma7-KD-IqA">
-                                <rect key="frame" x="50" y="419" width="275" height="30"/>
+                                <rect key="frame" x="50" y="375" width="275" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="JRr-xZ-Mgi"/>
                                 </constraints>
@@ -201,7 +198,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use your email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ne6-8A-Xms">
-                                <rect key="frame" x="50" y="118" width="275" height="30"/>
+                                <rect key="frame" x="50" y="74" width="275" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="f20-OP-IXn"/>
                                 </constraints>
@@ -252,24 +249,204 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHOICE PREFERENCES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTU-VU-cKn">
-                                <rect key="frame" x="97.333333333333329" y="396.33333333333331" width="181.66666666666669" height="20.333333333333314"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your favourite type of place ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTU-VU-cKn">
+                                <rect key="frame" x="50" y="64" width="275" height="48"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the places you like to be or you plan to go (1 or +)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGl-MC-iyG">
+                                <rect key="frame" x="50" y="132" width="275" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RnD-jU-KIw">
+                                <rect key="frame" x="50" y="237" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="9R4-DG-3T3"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="110" id="VqZ-Kh-anZ"/>
+                                </constraints>
+                                <state key="normal" image="cocktail"/>
+                                <connections>
+                                    <action selector="selectPlace:" destination="lfY-JA-HvS" eventType="touchUpInside" id="t3I-2N-i6Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5j9-uE-W79">
+                                <rect key="frame" x="215" y="237" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="5yC-ZM-CP1"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="110" id="eIl-00-nZG"/>
+                                </constraints>
+                                <state key="normal" image="coffee"/>
+                                <connections>
+                                    <action selector="selectPlace:" destination="lfY-JA-HvS" eventType="touchUpInside" id="Aic-Zj-iL4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGe-8V-1WR">
+                                <rect key="frame" x="50" y="407" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="UJM-0T-mCh"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="110" id="sDd-sv-f1p"/>
+                                </constraints>
+                                <state key="normal" image="restaurant"/>
+                                <connections>
+                                    <action selector="selectPlace:" destination="lfY-JA-HvS" eventType="touchUpInside" id="deB-RP-V3T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jpg-qx-EFh">
+                                <rect key="frame" x="215" y="407" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="110" id="Alg-ep-lTZ"/>
+                                    <constraint firstAttribute="height" constant="110" id="cXQ-yR-SUW"/>
+                                </constraints>
+                                <state key="normal" image="fastfood"/>
+                                <connections>
+                                    <action selector="selectPlace:" destination="lfY-JA-HvS" eventType="touchUpInside" id="Fok-eM-1iL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jul-Oi-iWg">
+                                <rect key="frame" x="132" y="577" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="Cfb-Y2-bLT"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="110" id="zQR-qn-BpS"/>
+                                </constraints>
+                                <state key="normal" image="foodtruck"/>
+                                <connections>
+                                    <action selector="selectPlace:" destination="lfY-JA-HvS" eventType="touchUpInside" id="WFx-NM-edM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xD0-cX-XRw">
+                                <rect key="frame" x="50" y="737" width="275" height="50"/>
+                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="6BE-Cd-laG"/>
+                                    <constraint firstAttribute="height" constant="50" id="EMh-0d-3WJ"/>
+                                </constraints>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextPage" destination="lfY-JA-HvS" eventType="touchUpInside" id="OPl-mi-hLD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="uTU-VU-cKn" firstAttribute="centerY" secondItem="57K-9p-5Xs" secondAttribute="centerY" id="279-JP-pa5"/>
-                            <constraint firstItem="uTU-VU-cKn" firstAttribute="centerX" secondItem="57K-9p-5Xs" secondAttribute="centerX" id="AKL-os-OhL"/>
+                            <constraint firstItem="Mad-Fp-S17" firstAttribute="trailing" secondItem="uTU-VU-cKn" secondAttribute="trailing" constant="50" id="3FR-eA-sWd"/>
+                            <constraint firstItem="Mad-Fp-S17" firstAttribute="trailing" secondItem="kGl-MC-iyG" secondAttribute="trailing" constant="50" id="5mQ-zN-Fvl"/>
+                            <constraint firstItem="Jpg-qx-EFh" firstAttribute="top" secondItem="5j9-uE-W79" secondAttribute="bottom" constant="60" id="5og-OP-WTu"/>
+                            <constraint firstItem="kGl-MC-iyG" firstAttribute="top" secondItem="uTU-VU-cKn" secondAttribute="bottom" constant="20" id="5yG-Of-PSQ"/>
+                            <constraint firstItem="Mad-Fp-S17" firstAttribute="trailing" secondItem="5j9-uE-W79" secondAttribute="trailing" constant="50" id="70u-wQ-Eqb"/>
+                            <constraint firstItem="WGe-8V-1WR" firstAttribute="leading" secondItem="Mad-Fp-S17" secondAttribute="leading" constant="50" id="9FP-8V-orY"/>
+                            <constraint firstItem="Jpg-qx-EFh" firstAttribute="leading" secondItem="WGe-8V-1WR" secondAttribute="trailing" constant="55" id="Aul-mk-1qV"/>
+                            <constraint firstItem="WGe-8V-1WR" firstAttribute="top" secondItem="RnD-jU-KIw" secondAttribute="bottom" constant="60" id="Gu1-uM-e5T"/>
+                            <constraint firstItem="Jul-Oi-iWg" firstAttribute="centerX" secondItem="57K-9p-5Xs" secondAttribute="centerX" id="Tdo-oK-tpm"/>
+                            <constraint firstItem="kGl-MC-iyG" firstAttribute="leading" secondItem="Mad-Fp-S17" secondAttribute="leading" constant="50" id="eNd-MH-2Sv"/>
+                            <constraint firstAttribute="bottom" secondItem="xD0-cX-XRw" secondAttribute="bottom" constant="25" id="j5V-x8-PXN"/>
+                            <constraint firstItem="RnD-jU-KIw" firstAttribute="leading" secondItem="Mad-Fp-S17" secondAttribute="leading" constant="50" id="l8q-Mo-A1k"/>
+                            <constraint firstItem="5j9-uE-W79" firstAttribute="leading" secondItem="RnD-jU-KIw" secondAttribute="trailing" constant="55" id="mEw-R4-U9X"/>
+                            <constraint firstItem="Jul-Oi-iWg" firstAttribute="top" secondItem="WGe-8V-1WR" secondAttribute="bottom" constant="60" id="mN6-4f-gcc"/>
+                            <constraint firstItem="uTU-VU-cKn" firstAttribute="leading" secondItem="Mad-Fp-S17" secondAttribute="leading" constant="50" id="uo9-Kd-Gys"/>
+                            <constraint firstItem="Jul-Oi-iWg" firstAttribute="top" secondItem="Jpg-qx-EFh" secondAttribute="bottom" constant="60" id="v6s-Xc-woe"/>
+                            <constraint firstItem="xD0-cX-XRw" firstAttribute="centerX" secondItem="57K-9p-5Xs" secondAttribute="centerX" id="wnZ-CZ-ur0"/>
+                            <constraint firstItem="uTU-VU-cKn" firstAttribute="top" secondItem="Mad-Fp-S17" secondAttribute="top" constant="20" id="xLT-b6-pma"/>
+                            <constraint firstItem="xD0-cX-XRw" firstAttribute="top" secondItem="Jul-Oi-iWg" secondAttribute="bottom" constant="50" id="xP7-G3-JEg"/>
+                            <constraint firstItem="Mad-Fp-S17" firstAttribute="trailing" secondItem="Jpg-qx-EFh" secondAttribute="trailing" constant="50" id="xxK-qq-Vjk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mad-Fp-S17"/>
                     </view>
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="barButton" destination="RnD-jU-KIw" id="vke-mu-TAy"/>
+                        <outlet property="coffeeButton" destination="5j9-uE-W79" id="BV1-5z-0BI"/>
+                        <outlet property="fastFoodButton" destination="Jpg-qx-EFh" id="faC-kO-O8U"/>
+                        <outlet property="foodTruckButton" destination="Jul-Oi-iWg" id="lXC-5D-opT"/>
+                        <outlet property="nextButton" destination="xD0-cX-XRw" id="6Qw-ou-guP"/>
+                        <outlet property="restaurantButton" destination="WGe-8V-1WR" id="tri-Py-Csa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCD-aL-BX8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1673" y="-75"/>
+            <point key="canvasLocation" x="1629.5999999999999" y="51.724137931034484"/>
+        </scene>
+        <!--Choice User Page View Controller-->
+        <scene sceneID="0Zp-Un-xsM">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3EN-P7-DIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageViewController storyboardIdentifier="ChoiceUserPageViewController" autoresizesArchivedViewToFullSize="NO" hidesBottomBarWhenPushed="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="26u-vI-n7w" customClass="ChoiceUserPageViewController" customModule="FoodTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="812"/>
+                </pageViewController>
+            </objects>
+            <point key="canvasLocation" x="2428" y="14"/>
+        </scene>
+        <!--Choice Type Food View Controller-->
+        <scene sceneID="e4n-Qq-m6J">
+            <objects>
+                <viewController storyboardIdentifier="ChoiceTypeFoodViewController" id="xCD-Fi-O5f" customClass="ChoiceTypeFoodViewController" customModule="FoodTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="ChoiceTypeFoodViewController" id="caU-Nk-oeY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your favorite type of food ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNE-AS-Ps7">
+                                <rect key="frame" x="50" y="64" width="275" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the type of food you like to eat or you plan to eat (1 or +)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6V-ul-5GN">
+                                <rect key="frame" x="50" y="125.00000000000001" width="275" height="40.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nic-1P-znp">
+                                <rect key="frame" x="50" y="215.66666666666669" width="275" height="566.33333333333326"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERh-f6-Ja0">
+                                <rect key="frame" x="16" y="64" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="aQZ-vX-Hr6"/>
+                                    <constraint firstAttribute="height" constant="32" id="oit-Ks-dKf"/>
+                                </constraints>
+                                <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backPage" destination="xCD-Fi-O5f" eventType="touchUpInside" id="RGB-mT-9TG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Jeu-41-U4A" firstAttribute="trailing" secondItem="Nic-1P-znp" secondAttribute="trailing" constant="50" id="2Tw-Su-gyS"/>
+                            <constraint firstItem="Nic-1P-znp" firstAttribute="top" secondItem="e6V-ul-5GN" secondAttribute="bottom" constant="50" id="2z9-Ws-JPO"/>
+                            <constraint firstItem="e6V-ul-5GN" firstAttribute="top" secondItem="fNE-AS-Ps7" secondAttribute="bottom" constant="20" id="54T-7s-moo"/>
+                            <constraint firstItem="Jeu-41-U4A" firstAttribute="trailing" secondItem="e6V-ul-5GN" secondAttribute="trailing" constant="50" id="9qH-IW-9w7"/>
+                            <constraint firstAttribute="bottom" secondItem="Nic-1P-znp" secondAttribute="bottom" constant="30" id="EPE-ce-aiB"/>
+                            <constraint firstItem="fNE-AS-Ps7" firstAttribute="top" secondItem="Jeu-41-U4A" secondAttribute="top" constant="20" id="MQq-0r-NHX"/>
+                            <constraint firstItem="Nic-1P-znp" firstAttribute="leading" secondItem="Jeu-41-U4A" secondAttribute="leading" constant="50" id="QEV-M9-HJB"/>
+                            <constraint firstItem="ERh-f6-Ja0" firstAttribute="top" secondItem="Jeu-41-U4A" secondAttribute="top" constant="20" id="RZT-5S-iG5"/>
+                            <constraint firstItem="e6V-ul-5GN" firstAttribute="leading" secondItem="Jeu-41-U4A" secondAttribute="leading" constant="50" id="UUn-M6-Cox"/>
+                            <constraint firstItem="ERh-f6-Ja0" firstAttribute="leading" secondItem="Jeu-41-U4A" secondAttribute="leading" constant="16" id="aXe-Fr-mff"/>
+                            <constraint firstItem="fNE-AS-Ps7" firstAttribute="leading" secondItem="Jeu-41-U4A" secondAttribute="leading" constant="50" id="pJ8-LT-tEI"/>
+                            <constraint firstItem="Jeu-41-U4A" firstAttribute="trailing" secondItem="fNE-AS-Ps7" secondAttribute="trailing" constant="50" id="uTn-G6-ms5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jeu-41-U4A"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="listTypeFood" destination="Nic-1P-znp" id="JiR-lr-Rem"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1kb-Tr-Lon" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2600.8000000000002" y="716.74876847290648"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="08E-cQ-0dg">
@@ -296,7 +473,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fzm-2G-Flj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2407.1999999999998" y="-177.33990147783251"/>
+            <point key="canvasLocation" x="3349.5999999999999" y="-177.33990147783251"/>
         </scene>
         <!--Get Started Choice Creation View Controller-->
         <scene sceneID="yph-gE-5Av">
@@ -332,6 +509,14 @@
                                 </state>
                                 <connections>
                                     <segue destination="f5B-Ds-zYw" kind="show" id="u3P-dM-slZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhp-VI-Gu9">
+                                <rect key="frame" x="172" y="129" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Test"/>
+                                <connections>
+                                    <segue destination="26u-vI-n7w" kind="show" id="jqC-lU-wJ9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -459,7 +644,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="32" height="32"/>
+        <image name="cocktail" width="84" height="80"/>
+        <image name="coffee" width="84" height="67"/>
         <image name="cross" width="37" height="38"/>
+        <image name="fastfood" width="84" height="89"/>
+        <image name="foodtruck" width="130" height="89"/>
         <image name="logo banderole" width="576" height="89"/>
+        <image name="restaurant" width="84" height="89"/>
     </resources>
 </document>

@@ -35,6 +35,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "ChoicePlaceViewController.checkEnabledContinuebutton():ChoicePlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "placeSelected">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in LoginViewController.userExists():LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -70,6 +78,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "main:AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "parentPageViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "LoginViewController.uploadData():LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -85,6 +101,22 @@
             </PersistentString>
             <PersistentString
                value = "Auth.auth().currentUser!.uid">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChoicePlaceViewController.selectPlace(_:):ChoicePlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sender.layer.borderColor">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChoicePlaceViewController.nextPage():ChoicePlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "parentPageViewController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
