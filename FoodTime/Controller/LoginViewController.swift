@@ -132,7 +132,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
                 
                 if let result = result as? [String: Any?] {
                     
-                    self.currentUser = User(lastname: result["last_name"] as? String, firstname: result["first_name"] as? String, pseudo: nil, email: result["email"] as? String, password: nil, profilePictureFIRUrl: nil, fbAccount: true, googleAccount: false)
+                    self.currentUser = User(lastname: result["last_name"] as? String, firstname: result["first_name"] as? String, pseudo: nil, email: result["email"] as? String, profilePictureFIRUrl: nil, fbAccount: true, googleAccount: false)
                     
                     if let picture = result["picture"] as? NSDictionary {
                         if let data = picture["data"] as? NSDictionary {
@@ -203,7 +203,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         let firstname = self.currentUser!.firstname
         let lastname = self.currentUser!.lastname
         let pseudo = self.currentUser!.pseudo
-        let password = self.currentUser!.password
         let fbAccount = self.currentUser!.fbAccount
         let googleAccount = self.currentUser!.googleAccount
         
@@ -238,7 +237,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
                             dictionaryValues = [    "lastname": lastname ?? "",
                                                     "firstname": firstname ?? "",
                                                     "email": email,
-                                                    "password": password ?? "",
                                                     "pseudo": pseudo ?? "",
                                                     "profilePictureFIRUrl": profileImageUrl ?? "",
                                                     "fbAccount": fbAccount.description,
@@ -256,7 +254,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
             dictionaryValues = [    "lastname": lastname ?? "",
                                     "firstname": firstname ?? "",
                                     "email": email,
-                                    "password": password ?? "",
                                     "pseudo": pseudo ?? "",
                                     "profilePictureFIRUrl": profileImageUrl ?? "",
                                     "fbAccount": fbAccount.description,

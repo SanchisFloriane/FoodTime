@@ -199,14 +199,13 @@ class CreateUserAccountViewController: UIViewController {
     
     fileprivate func uploadData()
     {
-        self.currentUser = User(lastname: nil, firstname: nil, pseudo: nil, email: EmailTxtView.text!, password: PwdTxtView.text!, profilePictureFIRUrl: nil, fbAccount: false, googleAccount: false)
+        self.currentUser = User(lastname: nil, firstname: nil, pseudo: nil, email: EmailTxtView.text!, profilePictureFIRUrl: nil, fbAccount: false, googleAccount: false)
         
         let uid : String! = Auth.auth().currentUser!.uid
         
         let dictionaryValues = [                    "lastname": "",
                                                     "firstname": "",
                                                     "email": self.currentUser!.email!,
-                                                    "password": self.currentUser!.password!,
                                                     "pseudo": "",
                                                     "profilePictureFIRUrl": "",
                                                     "fbAccount": self.currentUser!.fbAccount.description,

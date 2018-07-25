@@ -16,7 +16,6 @@ class User {
     var firstname: String?
     var pseudo: String?
     var email: String?
-    var password: String?
     var profilePictureFIRUrl: String?
     var fbAccount: Bool = false
     var googleAccount: Bool = false
@@ -28,13 +27,12 @@ class User {
         
     }
 
-    init(lastname: String?,firstname: String?,pseudo: String?,email: String?,password: String?,profilePictureFIRUrl: String?,fbAccount: Bool, googleAccount: Bool) {
+    init(lastname: String?,firstname: String?,pseudo: String?,email: String?,profilePictureFIRUrl: String?,fbAccount: Bool, googleAccount: Bool) {
         
         self.lastname = lastname
         self.firstname = firstname
         self.pseudo = pseudo
         self.email = email
-        self.password = password
         self.profilePictureFIRUrl = profilePictureFIRUrl
         self.fbAccount = fbAccount
         self.googleAccount = googleAccount
