@@ -24,6 +24,9 @@
 		C4F848E221094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848E121094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift */; };
 		C4F848E4210A397C009EDBBD /* ChoiceNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848E3210A397C009EDBBD /* ChoiceNotificationViewController.swift */; };
 		C4F848E6210A4E25009EDBBD /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848E5210A4E25009EDBBD /* Settings.swift */; };
+		C4F848EB210A65BD009EDBBD /* TypePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848EA210A65BD009EDBBD /* TypePlace.swift */; };
+		C4F848EF210A6B16009EDBBD /* TypeFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848EE210A6B16009EDBBD /* TypeFood.swift */; };
+		C4F848F1210A6CD0009EDBBD /* TypeDrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848F0210A6CD0009EDBBD /* TypeDrink.swift */; };
 		F4121DF02106585300252594 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4121DEF2106585300252594 /* EmailLoginViewController.swift */; };
 		F4121DF3210660AF00252594 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4121DF2210660AF00252594 /* UIViewController.swift */; };
 		F4121DF521068DA500252594 /* GetStartedChoiceCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4121DF421068DA500252594 /* GetStartedChoiceCreationViewController.swift */; };
@@ -65,6 +68,9 @@
 		C4F848E121094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceTypeDrinkTableViewCell.swift; sourceTree = "<group>"; };
 		C4F848E3210A397C009EDBBD /* ChoiceNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceNotificationViewController.swift; sourceTree = "<group>"; };
 		C4F848E5210A4E25009EDBBD /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		C4F848EA210A65BD009EDBBD /* TypePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypePlace.swift; sourceTree = "<group>"; };
+		C4F848EE210A6B16009EDBBD /* TypeFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeFood.swift; sourceTree = "<group>"; };
+		C4F848F0210A6CD0009EDBBD /* TypeDrink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDrink.swift; sourceTree = "<group>"; };
 		DD15A0B6A377C607834AE140 /* Pods-FoodTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodTime/Pods-FoodTime.release.xcconfig"; sourceTree = "<group>"; };
 		F4121DEF2106585300252594 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		F4121DF2210660AF00252594 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 		C414FEC820F68614008D5AE5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C4F848E9210A6584009EDBBD /* Enum */,
 				F4A8ED6A21010DC6007FAB61 /* User.swift */,
 				C4182B5B2108F7B1004AE88E /* ModelDB.swift */,
 				C4F848E5210A4E25009EDBBD /* Settings.swift */,
@@ -213,6 +220,16 @@
 				C4F848E121094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		C4F848E9210A6584009EDBBD /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				C4F848EA210A65BD009EDBBD /* TypePlace.swift */,
+				C4F848EE210A6B16009EDBBD /* TypeFood.swift */,
+				C4F848F0210A6CD0009EDBBD /* TypeDrink.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		F4121DF12106609200252594 /* Extension */ = {
@@ -407,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C45C9BFE20F69A32004A4369 /* LoginViewController.swift in Sources */,
+				C4F848EF210A6B16009EDBBD /* TypeFood.swift in Sources */,
 				C4F848DE21092E17009EDBBD /* ChoiceTypeFoodTableViewCell.swift in Sources */,
 				F42998B420FD50820035A717 /* Service.swift in Sources */,
 				F4A8ED6B21010DC6007FAB61 /* User.swift in Sources */,
@@ -415,6 +433,7 @@
 				F4121DF92106986D00252594 /* UIMessages.swift in Sources */,
 				F44C64AC2107C5F7003B8039 /* ChoiceUserPageViewController.swift in Sources */,
 				C4F848E6210A4E25009EDBBD /* Settings.swift in Sources */,
+				C4F848EB210A65BD009EDBBD /* TypePlace.swift in Sources */,
 				F4A8ED6F21014517007FAB61 /* HomeViewController.swift in Sources */,
 				F4121DF3210660AF00252594 /* UIViewController.swift in Sources */,
 				C4F848E021094078009EDBBD /* ChoiceTypeDrinkViewController.swift in Sources */,
@@ -422,6 +441,7 @@
 				F4121DF521068DA500252594 /* GetStartedChoiceCreationViewController.swift in Sources */,
 				C45C9C0220FEAD58004A4369 /* UILabels.swift in Sources */,
 				C4923A2520F556F500641EA9 /* AppDelegate.swift in Sources */,
+				C4F848F1210A6CD0009EDBBD /* TypeDrink.swift in Sources */,
 				F4A8ED6D21014507007FAB61 /* ChoicePlaceViewController.swift in Sources */,
 				F4121DF02106585300252594 /* EmailLoginViewController.swift in Sources */,
 				F44C64B121080137003B8039 /* PageObservation.swift in Sources */,

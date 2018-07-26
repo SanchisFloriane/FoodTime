@@ -10,7 +10,6 @@ import Foundation
 
 class ModelDB {
     
-    
     static let folderProfilePictureUserDB : String = "profileImages"
     
     static let typeFood : String = "typeFood"

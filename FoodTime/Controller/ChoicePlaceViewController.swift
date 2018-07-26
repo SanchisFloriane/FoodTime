@@ -44,6 +44,12 @@ class ChoicePlaceViewController: UIViewController, PageObservation {
         descriptionPage.text = UILabels().localizeWithoutComment(key: UILabels().DescriptionPageChoiceTypePlaceViewController)
         nextButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().ValidateButton), for: .normal)
         
+        barButton.tag = 0
+        coffeeButton.tag = 1
+        fastFoodButton.tag = 2
+        foodTruckButton.tag = 3
+        restaurantButton.tag = 4
+        
         if parentPageViewController != nil
         {
             for view in parentPageViewController.view.subviews
@@ -102,7 +108,19 @@ class ChoicePlaceViewController: UIViewController, PageObservation {
 
     @IBAction func nextPage() {
         
+        var typePlaceTab : [Int] = [Int]()
+        for buttonPlace in placeSelected
+        {
+            let typePlace : TypePlace? = TypePlace.toEnum(idEnum: buttonPlace.tag)
+            if typePlace != nil
+            {
+                typePlaceTab.append(typePlace!.rawValue)
+            }
+        }
+        
         let parent = parentPageViewController as! ChoiceUserPageViewController
+        parent.typePlace = typePlaceTab
+        print(parent.typePlace)
         parentPageViewController.goToNextPage()
         parent.pageControl.currentPage = 1
     }

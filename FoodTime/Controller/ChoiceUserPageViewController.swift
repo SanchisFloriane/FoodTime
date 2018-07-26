@@ -11,6 +11,9 @@ import UIKit
 class ChoiceUserPageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     var pageControl = UIPageControl()
+    var typePlace : [Int] = [Int]()
+    var typeDrink : [Int] = [Int]()
+    var typeFood : [Int] = [Int]()
     
     lazy var orderedViewControllers: [UIViewController] = {
         return [self.newVc(viewController: Service.ChoicePlaceViewController), self.newVc(viewController: Service.ChoiceTypeFoodViewController), self.newVc(viewController: Service.ChoiceTypeDrinkViewController), self.newVc(viewController: Service.ChoiceNotificationViewController)]
@@ -99,15 +102,4 @@ class ChoiceUserPageViewController: UIPageViewController, UIPageViewControllerDe
         
         return orderedViewControllers[nextIndex]
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
