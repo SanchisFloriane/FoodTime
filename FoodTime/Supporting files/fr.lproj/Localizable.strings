@@ -12,6 +12,8 @@
 
 "DescriptionPageChoiceTypeDrinkViewController" = "Sélectionnez le type de boissons que vous aimez ou que vous comptez boire (1 ou +)";
 
+"DescriptionPageChoiceTypePlaceViewController" = "Sélectionnez le type d'endroit que vous aimez ou prévoyez d'aller (1 ou +)";
+
 "Email" = "Votre email";
 
 "EmailSignInButton" = "Utilisez votre email";
@@ -48,8 +50,10 @@
 
 "TermsPrivatePolicyButton" = "En vous inscrivant, vous acceptez nos CGU & Confidentialité";
 
-"TitlePageChoiceTypeFoodViewController" = "Quel est votre type de nourriture favorite ?";
+"TitlePageChoiceTypeFoodViewController" = "Quel est votre type de nourriture favori ?";
 
-"TitlePageChoiceTypeDrinkViewController" = "Quel est votre type de boisson favorite ?";
+"TitlePageChoiceTypeDrinkViewController" = "Quel est votre type de boisson favori ?";
+
+"TitlePageChoiceTypePlaceViewController" = "Quel est votre type d'endroit favori ?";
 
 "UserNotFound" = "Le compte utilisateur n'existe pas";

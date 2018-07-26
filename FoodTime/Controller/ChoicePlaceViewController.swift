@@ -17,6 +17,8 @@ class ChoicePlaceViewController: UIViewController, PageObservation {
         parentPageViewController = parentRef
     }
     
+    @IBOutlet weak var titlePage: UILabel!
+    @IBOutlet weak var descriptionPage: UILabel!
     
     @IBOutlet weak var barButton: UIButton!
     @IBOutlet weak var coffeeButton: UIButton!
@@ -37,6 +39,9 @@ class ChoicePlaceViewController: UIViewController, PageObservation {
     fileprivate func setupView()
     {
         nextButton.isHidden = true
+        
+        titlePage.text = UILabels().localizeWithoutComment(key: UILabels().TitlePageChoiceTypePlaceViewController)
+        descriptionPage.text = UILabels().localizeWithoutComment(key: UILabels().DescriptionPageChoiceTypePlaceViewController)
         
         if parentPageViewController != nil
         {

@@ -366,10 +366,12 @@
                     <connections>
                         <outlet property="barButton" destination="RnD-jU-KIw" id="vke-mu-TAy"/>
                         <outlet property="coffeeButton" destination="5j9-uE-W79" id="BV1-5z-0BI"/>
+                        <outlet property="descriptionPage" destination="kGl-MC-iyG" id="JtY-CA-tvI"/>
                         <outlet property="fastFoodButton" destination="Jpg-qx-EFh" id="faC-kO-O8U"/>
                         <outlet property="foodTruckButton" destination="Jul-Oi-iWg" id="lXC-5D-opT"/>
                         <outlet property="nextButton" destination="xD0-cX-XRw" id="6Qw-ou-guP"/>
                         <outlet property="restaurantButton" destination="WGe-8V-1WR" id="tri-Py-Csa"/>
+                        <outlet property="titlePage" destination="uTU-VU-cKn" id="Bz2-jc-ud7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCD-aL-BX8" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -12,6 +12,8 @@
 
 "DescriptionPageChoiceTypeDrinkViewController" = "Select the type of drink you like to eat or you plan to drink (1 or +)";
 
+"DescriptionPageChoiceTypePlaceViewController" = "Select the type of places you like to be or you plan to go (1 or +)";
+
 "Email" = "Your email";
 
 "EmailSignInButton" = "Use your email";
@@ -53,6 +55,8 @@
 "TitlePageChoiceTypeFoodViewController" = "What is your favorite type of food ?";
 
 "TitlePageChoiceTypeDrinkViewController" = "What is your favorite type of drink ?";
+
+"TitlePageChoiceTypePlaceViewController" = "What is your favorite type of place ?";
 
 "UserNotFound" = "User account does not exist.";
 
