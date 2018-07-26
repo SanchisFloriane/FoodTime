@@ -13,14 +13,12 @@ class ChoiceUserPageViewController: UIPageViewController, UIPageViewControllerDe
     var pageControl = UIPageControl()
     
     lazy var orderedViewControllers: [UIViewController] = {
-        return [self.newVc(viewController: Service.ChoicePlaceViewController), self.newVc(viewController: Service.ChoiceTypeFood)]
+        return [self.newVc(viewController: Service.ChoicePlaceViewController), self.newVc(viewController: Service.ChoiceTypeFoodViewController), self.newVc(viewController: Service.ChoiceTypeDrinkViewController)]
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-     
         self.dataSource = self
         self.delegate = self
         
@@ -31,6 +29,11 @@ class ChoiceUserPageViewController: UIPageViewController, UIPageViewControllerDe
         configurePageControl()
         
          NotificationCenter.default.addObserver(self, selector: #selector(pageViewController(_:viewControllerAfter:)), name: Service.Scroll, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     func configurePageControl()

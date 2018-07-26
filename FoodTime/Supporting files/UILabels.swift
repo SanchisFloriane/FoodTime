@@ -26,6 +26,10 @@ class UILabels {
     
     let CreateUserAccount : String = "CreateUserAccount"
     
+    let DescriptionPageChoiceTypeFoodViewController : String = "DescriptionPageChoiceTypeFoodViewController"
+    
+    let DescriptionPageChoiceTypeDrinkViewController : String = "DescriptionPageChoiceTypeDrinkViewController"
+    
     let Email: String = "Email"
     
     let EmailSignInButton : String = "EmailSignInButton"
@@ -54,5 +58,7 @@ class UILabels {
     
     let TermsPrivatePolicyButton : String = "TermsPrivatePolicyButton"
     
+    let TitlePageChoiceTypeFoodViewController : String = "TitlePageChoiceTypeFoodViewController"
     
+    let TitlePageChoiceTypeDrinkViewController : String = "TitlePageChoiceTypeDrinkViewController"
 }

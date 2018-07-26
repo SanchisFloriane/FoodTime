@@ -33,7 +33,7 @@ class UIMessages {
     let ErrorFormatPassword : String = "ErrorFormatPassword"
     
     let ErrorPassword : String = "ErrorPassword"
-    
+        
     let UserNotFound : String = "UserNotFound"
 
 }

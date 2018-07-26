@@ -10,5 +10,32 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "ChoiceTypeFoodViewController.tableView(_:cellForRowAt:):ChoiceTypeFoodViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.title">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChoiceTypeFoodViewController.selectTypeFood(_:):ChoiceTypeFoodViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "listTypeFood[sender.tag]">
+            </PersistentString>
+            <PersistentString
+               value = "sender.isSelected">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChoiceTypeFoodViewController.tableView(_:numberOfRowsInSection:):ChoiceTypeFoodViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "listTypeFood.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BC71EBB530A6055E3310F1CE /* Pods_FoodTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6AB2096487B6331FEF3FFA1 /* Pods_FoodTime.framework */; };
 		C414FECD20F68EB1008D5AE5 /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C414FECC20F68EB1008D5AE5 /* GetStartedViewController.swift */; };
+		C4182B5C2108F7B1004AE88E /* ModelDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4182B5B2108F7B1004AE88E /* ModelDB.swift */; };
 		C45C9BFE20F69A32004A4369 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C9BFD20F69A32004A4369 /* LoginViewController.swift */; };
 		C45C9C0220FEAD58004A4369 /* UILabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C9C0120FEAD58004A4369 /* UILabels.swift */; };
 		C45C9C0920FFA9F3004A4369 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C45C9C0B20FFA9F3004A4369 /* Localizable.strings */; };
@@ -18,6 +19,9 @@
 		C4923A2C20F556FD00641EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4923A2B20F556FD00641EA9 /* Assets.xcassets */; };
 		C4923A2F20F556FD00641EA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4923A2D20F556FD00641EA9 /* LaunchScreen.storyboard */; };
 		C4923A3720F5573100641EA9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4923A3620F5573100641EA9 /* GoogleService-Info.plist */; };
+		C4F848DE21092E17009EDBBD /* ChoiceTypeFoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848DD21092E17009EDBBD /* ChoiceTypeFoodTableViewCell.swift */; };
+		C4F848E021094078009EDBBD /* ChoiceTypeDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848DF21094077009EDBBD /* ChoiceTypeDrinkViewController.swift */; };
+		C4F848E221094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848E121094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift */; };
 		F4121DF02106585300252594 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4121DEF2106585300252594 /* EmailLoginViewController.swift */; };
 		F4121DF3210660AF00252594 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4121DF2210660AF00252594 /* UIViewController.swift */; };
 		F4121DF521068DA500252594 /* GetStartedChoiceCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4121DF421068DA500252594 /* GetStartedChoiceCreationViewController.swift */; };
@@ -37,6 +41,7 @@
 		5F2167EDE4B7B1C0E2D9FDDC /* Pods-FoodTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodTime/Pods-FoodTime.debug.xcconfig"; sourceTree = "<group>"; };
 		B6AB2096487B6331FEF3FFA1 /* Pods_FoodTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C414FECC20F68EB1008D5AE5 /* GetStartedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
+		C4182B5B2108F7B1004AE88E /* ModelDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDB.swift; sourceTree = "<group>"; };
 		C45C9BFD20F69A32004A4369 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C45C9C0020FEAAEC004A4369 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		C45C9C0120FEAD58004A4369 /* UILabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabels.swift; sourceTree = "<group>"; };
@@ -53,6 +58,9 @@
 		C4923A2E20F556FD00641EA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4923A3020F556FD00641EA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4923A3620F5573100641EA9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C4F848DD21092E17009EDBBD /* ChoiceTypeFoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceTypeFoodTableViewCell.swift; sourceTree = "<group>"; };
+		C4F848DF21094077009EDBBD /* ChoiceTypeDrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceTypeDrinkViewController.swift; sourceTree = "<group>"; };
+		C4F848E121094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceTypeDrinkTableViewCell.swift; sourceTree = "<group>"; };
 		DD15A0B6A377C607834AE140 /* Pods-FoodTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodTime/Pods-FoodTime.release.xcconfig"; sourceTree = "<group>"; };
 		F4121DEF2106585300252594 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		F4121DF2210660AF00252594 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				F4A8ED6A21010DC6007FAB61 /* User.swift */,
+				C4182B5B2108F7B1004AE88E /* ModelDB.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -120,6 +129,7 @@
 		C414FECA20F686B1008D5AE5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C4F848DC21092DFD009EDBBD /* TableViewCell */,
 				F4121DF12106609200252594 /* Extension */,
 				C414FECC20F68EB1008D5AE5 /* GetStartedViewController.swift */,
 				F4121DF421068DA500252594 /* GetStartedChoiceCreationViewController.swift */,
@@ -130,6 +140,7 @@
 				F4121DF62106951C00252594 /* CreateUserAccountViewController.swift */,
 				F44C64A92107C514003B8039 /* ChoiceTypeFoodViewController.swift */,
 				F44C64AB2107C5F7003B8039 /* ChoiceUserPageViewController.swift */,
+				C4F848DF21094077009EDBBD /* ChoiceTypeDrinkViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,6 +198,15 @@
 				C414FECB20F686BF008D5AE5 /* Supporting files */,
 			);
 			path = FoodTime;
+			sourceTree = "<group>";
+		};
+		C4F848DC21092DFD009EDBBD /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C4F848DD21092E17009EDBBD /* ChoiceTypeFoodTableViewCell.swift */,
+				C4F848E121094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		F4121DF12106609200252594 /* Extension */ = {
@@ -287,7 +307,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		0ADD513A9F496CE0686A3ECD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -311,7 +331,7 @@
 		};
 		11926D72C417DEEB977DBDA2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -328,6 +348,7 @@
 				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/UICheckbox.Swift/UICheckbox_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -345,6 +366,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICheckbox_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -355,7 +377,7 @@
 		};
 		3F05900F344DD4685EB04E08 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -379,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C45C9BFE20F69A32004A4369 /* LoginViewController.swift in Sources */,
+				C4F848DE21092E17009EDBBD /* ChoiceTypeFoodTableViewCell.swift in Sources */,
 				F42998B420FD50820035A717 /* Service.swift in Sources */,
 				F4A8ED6B21010DC6007FAB61 /* User.swift in Sources */,
 				F44C64AA2107C514003B8039 /* ChoiceTypeFoodViewController.swift in Sources */,
@@ -387,6 +410,8 @@
 				F44C64AC2107C5F7003B8039 /* ChoiceUserPageViewController.swift in Sources */,
 				F4A8ED6F21014517007FAB61 /* HomeViewController.swift in Sources */,
 				F4121DF3210660AF00252594 /* UIViewController.swift in Sources */,
+				C4F848E021094078009EDBBD /* ChoiceTypeDrinkViewController.swift in Sources */,
+				C4182B5C2108F7B1004AE88E /* ModelDB.swift in Sources */,
 				F4121DF521068DA500252594 /* GetStartedChoiceCreationViewController.swift in Sources */,
 				C45C9C0220FEAD58004A4369 /* UILabels.swift in Sources */,
 				C4923A2520F556F500641EA9 /* AppDelegate.swift in Sources */,
@@ -394,6 +419,7 @@
 				F4121DF02106585300252594 /* EmailLoginViewController.swift in Sources */,
 				F44C64B121080137003B8039 /* PageObservation.swift in Sources */,
 				C414FECD20F68EB1008D5AE5 /* GetStartedViewController.swift in Sources */,
+				C4F848E221094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift in Sources */,
 				F44C64AE2107FE43003B8039 /* UIPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

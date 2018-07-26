@@ -22,4 +22,5 @@ target 'FoodTime' do
   pod 'JGProgressHUD'
   pod 'SwiftyJSON'
   pod 'GoogleSignIn'
+  pod 'UICheckbox.Swift'
 end

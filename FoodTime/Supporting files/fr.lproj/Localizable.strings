@@ -8,6 +8,10 @@
 
 "CreateUserAccount" = "Création compte utilisateur";
 
+"DescriptionPageChoiceTypeFoodViewController" = "Sélectionnez le type de nourriture que vous aimez ou que vous comptez manger (1 ou +)";
+
+"DescriptionPageChoiceTypeDrinkViewController" = "Sélectionnez le type de boissons que vous aimez ou que vous comptez boire (1 ou +)";
+
 "Email" = "Votre email";
 
 "EmailSignInButton" = "Utilisez votre email";
@@ -43,5 +47,9 @@
 "TaglineTextMainPage" = "Gérer vos endroits préférés";
 
 "TermsPrivatePolicyButton" = "En vous inscrivant, vous acceptez nos CGU & Confidentialité";
+
+"TitlePageChoiceTypeFoodViewController" = "Quel est votre type de nourriture favorite ?";
+
+"TitlePageChoiceTypeDrinkViewController" = "Quel est votre type de boisson favorite ?";
 
 "UserNotFound" = "Le compte utilisateur n'existe pas";

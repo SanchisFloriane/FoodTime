@@ -236,7 +236,7 @@ class CreateUserAccountViewController: UIViewController {
     
     fileprivate func saveUser() {
         
-        Database.database().reference().child("users").updateChildValues(self.values!, withCompletionBlock: { (err, ref) in
+        Database.database().reference().child("\(ModelDB.users)").updateChildValues(self.values!, withCompletionBlock: { (err, ref) in
             if let err = err {
                 print("Failed to save user info with error: \(err)")
                 return

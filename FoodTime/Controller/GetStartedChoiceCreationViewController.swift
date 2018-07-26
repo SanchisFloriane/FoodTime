@@ -182,7 +182,7 @@ class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButton
             
             let fileName = uid
             
-            let storageItem = StorageReference().child("profileImages").child(fileName)
+            let storageItem = StorageReference().child("\(ModelDB.fieldProfilePictureUserDB)").child(fileName)
             storageItem.putData(profileImageUploadData!, metadata: nil) { (metadata, error) in
                 
                 if let err = error {
@@ -235,7 +235,7 @@ class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButton
     {
         self.newUser = true
         
-        Database.database().reference().child("users/\(Auth.auth().currentUser!.uid)").observeSingleEvent(of: .value, with: { (snapchot) in
+        Database.database().reference().child("\(ModelDB.users)/\(Auth.auth().currentUser!.uid)").observeSingleEvent(of: .value, with: { (snapchot) in
             
             if snapchot.childrenCount > 0
             {
@@ -247,7 +247,7 @@ class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButton
     
     fileprivate func saveUser() {
         
-        Database.database().reference().child("users").updateChildValues(self.values!, withCompletionBlock: { (err, ref) in
+        Database.database().reference().child("\(ModelDB.users)").updateChildValues(self.values!, withCompletionBlock: { (err, ref) in
             if let err = err {
                 Service.dismissHud(self.hud, text: "Error", detailText: "Failed to save user info with error: \(err)", delay: 3)
                 return

@@ -20,20 +20,34 @@ class Service {
     
     //Name of the Storyboards
     static let MainStoryboard : String = "Main"
+        
+    //Language app
+    static let LanguageApp : String = Locale.current.languageCode!
     
     //Name of the ViewControllers
     static let GetStartedViewController : String = "GetStartedViewController"
     static let LoginViewController : String = "LoginViewController"
     static let ChoicePlaceViewController : String = "ChoicePlaceViewController"
     static let HomeViewController : String = "HomeViewController"
-    static let ChoiceTypeFood : String = "ChoiceTypeFoodViewController"
+    static let ChoiceTypeFoodViewController : String = "ChoiceTypeFoodViewController"
+    static let ChoiceTypeDrinkViewController : String = "ChoiceTypeDrinkViewController"
     static let ChoiceUserPageViewController : String = "ChoiceUserPageViewController"
+    
+    //TableViewCell
+    static let ChoiceTypeFoodViewCell : String = "ChoiceTypeFoodViewCell"
+    static let ChoiceTypeDrinkViewCell : String = "ChoiceTypeDrinkViewCell"
     
     //Notification by ViewController
     //LoginViewController
     static let sendGoogleDataToLoginViewController : NSNotification.Name = Notification.Name("sendGoogleDataToLoginViewController")
     //ChoiceUser
     static let Scroll : NSNotification.Name = Notification.Name("scroll")
+    
+    //Identifier
+    //table view cell for ChoiceTypeFoodViewController
+    static let ChoiceTypeFoodIdCell : String = "typeFoodCell"
+    //table view cell for ChoiceTypeDrinkViewController
+    static let ChoiceTypeDrinkIdCell : String = "typeDrinkCell"
     
     
     static func showAlert(on: UIViewController, style: UIAlertControllerStyle, title: String?, message: String?, actions: [UIAlertAction] = [UIAlertAction(title: "Ok", style: .default, handler: nil)], completion: (() -> Swift.Void)? = nil) {

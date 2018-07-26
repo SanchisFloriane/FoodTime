@@ -12,7 +12,8 @@ class ChoicePlaceViewController: UIViewController, PageObservation {
     
     var parentPageViewController : UIPageViewController!
     
-    func getParentUIPageViewController(parentRef: UIPageViewController) {
+    func getParentUIPageViewController(parentRef: UIPageViewController)
+    {
         parentPageViewController = parentRef
     }
     
@@ -47,6 +48,11 @@ class ChoicePlaceViewController: UIViewController, PageObservation {
                 }
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func didReceiveMemoryWarning() {

@@ -109,6 +109,7 @@ PODS:
   - nanopb/encode (0.3.8)
   - Protobuf (3.6.0)
   - SwiftyJSON (4.1.0)
+  - UICheckbox.Swift (1.0.0)
 
 DEPENDENCIES:
   - FacebookCore
@@ -128,6 +129,7 @@ DEPENDENCIES:
   - GoogleSignIn
   - JGProgressHUD
   - SwiftyJSON
+  - UICheckbox.Swift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -156,6 +158,7 @@ SPEC REPOS:
     - nanopb
     - Protobuf
     - SwiftyJSON
+    - UICheckbox.Swift
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
@@ -183,7 +186,8 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  UICheckbox.Swift: 85715689206fac5bae38b308f19c2a3e00442c3b
 
-PODFILE CHECKSUM: 42d03584ac3de0caf5e7a785990991eb84ffd091
+PODFILE CHECKSUM: 74c5bc9ea383894f93ec653fbcffcd44bc3f8852
 
 COCOAPODS: 1.5.3
