@@ -199,7 +199,7 @@ class CreateUserAccountViewController: UIViewController {
     
     fileprivate func uploadData()
     {
-        self.currentUser = User(lastname: nil, firstname: nil, pseudo: nil, email: EmailTxtView.text!, profilePictureFIRUrl: nil, fbAccount: false, googleAccount: false)
+        self.currentUser = User(lastname: nil, firstname: nil, pseudo: nil, email: EmailTxtView.text!, profilePictureFIRUrl: nil, fbAccount: false.description, googleAccount: false.description)
         
         let uid : String! = Auth.auth().currentUser!.uid
         

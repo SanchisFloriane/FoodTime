@@ -17,17 +17,15 @@ class User {
     var pseudo: String?
     var email: String?
     var profilePictureFIRUrl: String?
-    var fbAccount: Bool = false
-    var googleAccount: Bool = false
+    var fbAccount: String! = "false"
+    var googleAccount: String! = "false"
     
     //Attributes no in DB
     var profilePicture: UIImage?
     
-    init() {
-        
-    }
+    init() {}
 
-    init(lastname: String?,firstname: String?,pseudo: String?,email: String?,profilePictureFIRUrl: String?,fbAccount: Bool, googleAccount: Bool) {
+    init(lastname: String?, firstname: String?, pseudo: String?, email: String?, profilePictureFIRUrl: String?, fbAccount: String!, googleAccount: String!) {
         
         self.lastname = lastname
         self.firstname = firstname

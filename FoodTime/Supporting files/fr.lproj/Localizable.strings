@@ -6,7 +6,11 @@
   Copyright © 2018 sanchisfloriane. All rights reserved.
 */
 
+"ActivateNotificationsButton" = "Activer les notifications";
+
 "CreateUserAccount" = "Création compte utilisateur";
+
+"DescriptionPageChoiceNotificationViewController" = "Nous vous enverrons des rappels quand vos endroits seront modifiés ou que de nouveaux seront disponibles.";
 
 "DescriptionPageChoiceTypeFoodViewController" = "Sélectionnez le type de nourriture que vous aimez ou que vous comptez manger (1 ou +)";
 
@@ -46,9 +50,13 @@
 
 "PasswordConfirmation" = "Confirmation mot de passe";
 
+"SkipButton" = "Ignorer";
+
 "TaglineTextMainPage" = "Gérer vos endroits préférés";
 
 "TermsPrivatePolicyButton" = "En vous inscrivant, vous acceptez nos CGU & Confidentialité";
+
+"TitlePageChoiceNotificationViewController" = "Être notifié des nouveaux endroits et changements ?";
 
 "TitlePageChoiceTypeFoodViewController" = "Quel est votre type de nourriture favori ?";
 
@@ -57,3 +65,5 @@
 "TitlePageChoiceTypePlaceViewController" = "Quel est votre type d'endroit favori ?";
 
 "UserNotFound" = "Le compte utilisateur n'existe pas";
+
+"ValidateButton" = "Valider";

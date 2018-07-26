@@ -42,6 +42,7 @@ class ChoicePlaceViewController: UIViewController, PageObservation {
         
         titlePage.text = UILabels().localizeWithoutComment(key: UILabels().TitlePageChoiceTypePlaceViewController)
         descriptionPage.text = UILabels().localizeWithoutComment(key: UILabels().DescriptionPageChoiceTypePlaceViewController)
+        nextButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().ValidateButton), for: .normal)
         
         if parentPageViewController != nil
         {

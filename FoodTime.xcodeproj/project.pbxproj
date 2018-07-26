@@ -22,6 +22,8 @@
 		C4F848DE21092E17009EDBBD /* ChoiceTypeFoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848DD21092E17009EDBBD /* ChoiceTypeFoodTableViewCell.swift */; };
 		C4F848E021094078009EDBBD /* ChoiceTypeDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848DF21094077009EDBBD /* ChoiceTypeDrinkViewController.swift */; };
 		C4F848E221094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848E121094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift */; };
+		C4F848E4210A397C009EDBBD /* ChoiceNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848E3210A397C009EDBBD /* ChoiceNotificationViewController.swift */; };
+		C4F848E6210A4E25009EDBBD /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848E5210A4E25009EDBBD /* Settings.swift */; };
 		F4121DF02106585300252594 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4121DEF2106585300252594 /* EmailLoginViewController.swift */; };
 		F4121DF3210660AF00252594 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4121DF2210660AF00252594 /* UIViewController.swift */; };
 		F4121DF521068DA500252594 /* GetStartedChoiceCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4121DF421068DA500252594 /* GetStartedChoiceCreationViewController.swift */; };
@@ -61,6 +63,8 @@
 		C4F848DD21092E17009EDBBD /* ChoiceTypeFoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceTypeFoodTableViewCell.swift; sourceTree = "<group>"; };
 		C4F848DF21094077009EDBBD /* ChoiceTypeDrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceTypeDrinkViewController.swift; sourceTree = "<group>"; };
 		C4F848E121094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceTypeDrinkTableViewCell.swift; sourceTree = "<group>"; };
+		C4F848E3210A397C009EDBBD /* ChoiceNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceNotificationViewController.swift; sourceTree = "<group>"; };
+		C4F848E5210A4E25009EDBBD /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		DD15A0B6A377C607834AE140 /* Pods-FoodTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodTime/Pods-FoodTime.release.xcconfig"; sourceTree = "<group>"; };
 		F4121DEF2106585300252594 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		F4121DF2210660AF00252594 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 			children = (
 				F4A8ED6A21010DC6007FAB61 /* User.swift */,
 				C4182B5B2108F7B1004AE88E /* ModelDB.swift */,
+				C4F848E5210A4E25009EDBBD /* Settings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 				F44C64A92107C514003B8039 /* ChoiceTypeFoodViewController.swift */,
 				F44C64AB2107C5F7003B8039 /* ChoiceUserPageViewController.swift */,
 				C4F848DF21094077009EDBBD /* ChoiceTypeDrinkViewController.swift */,
+				C4F848E3210A397C009EDBBD /* ChoiceNotificationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -408,6 +414,7 @@
 				F4121DF72106951C00252594 /* CreateUserAccountViewController.swift in Sources */,
 				F4121DF92106986D00252594 /* UIMessages.swift in Sources */,
 				F44C64AC2107C5F7003B8039 /* ChoiceUserPageViewController.swift in Sources */,
+				C4F848E6210A4E25009EDBBD /* Settings.swift in Sources */,
 				F4A8ED6F21014517007FAB61 /* HomeViewController.swift in Sources */,
 				F4121DF3210660AF00252594 /* UIViewController.swift in Sources */,
 				C4F848E021094078009EDBBD /* ChoiceTypeDrinkViewController.swift in Sources */,
@@ -420,6 +427,7 @@
 				F44C64B121080137003B8039 /* PageObservation.swift in Sources */,
 				C414FECD20F68EB1008D5AE5 /* GetStartedViewController.swift in Sources */,
 				C4F848E221094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift in Sources */,
+				C4F848E4210A397C009EDBBD /* ChoiceNotificationViewController.swift in Sources */,
 				F44C64AE2107FE43003B8039 /* UIPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

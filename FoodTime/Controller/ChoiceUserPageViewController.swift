@@ -13,7 +13,7 @@ class ChoiceUserPageViewController: UIPageViewController, UIPageViewControllerDe
     var pageControl = UIPageControl()
     
     lazy var orderedViewControllers: [UIViewController] = {
-        return [self.newVc(viewController: Service.ChoicePlaceViewController), self.newVc(viewController: Service.ChoiceTypeFoodViewController), self.newVc(viewController: Service.ChoiceTypeDrinkViewController)]
+        return [self.newVc(viewController: Service.ChoicePlaceViewController), self.newVc(viewController: Service.ChoiceTypeFoodViewController), self.newVc(viewController: Service.ChoiceTypeDrinkViewController), self.newVc(viewController: Service.ChoiceNotificationViewController)]
     }()
     
     override func viewDidLoad() {

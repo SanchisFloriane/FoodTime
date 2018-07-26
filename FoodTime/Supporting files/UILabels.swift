@@ -24,7 +24,11 @@ class UILabels {
         return NSLocalizedString(key, comment: "")
     }
     
+    let ActivateNotificationsButton : String = "ActivateNotificationsButton"
+    
     let CreateUserAccount : String = "CreateUserAccount"
+    
+    let DescriptionPageChoiceNotificationViewController : String = "DescriptionPageChoiceNotificationViewController"
     
     let DescriptionPageChoiceTypeFoodViewController : String = "DescriptionPageChoiceTypeFoodViewController"
     
@@ -56,13 +60,19 @@ class UILabels {
     
     let PasswordConfirmation : String = "PasswordConfirmation"
     
+    let SkipButton : String = "SkipButton"
+    
     let TaglineTextMainPage : String = "TaglineTextMainPage"
     
     let TermsPrivatePolicyButton : String = "TermsPrivatePolicyButton"
+    
+    let TitlePageChoiceNotificationViewController : String = "TitlePageChoiceNotificationViewController"
     
     let TitlePageChoiceTypeFoodViewController : String = "TitlePageChoiceTypeFoodViewController"
     
     let TitlePageChoiceTypeDrinkViewController : String = "TitlePageChoiceTypeDrinkViewController"
     
     let TitlePageChoiceTypePlaceViewController : String = "TitlePageChoiceTypePlaceViewController"
+    
+    let ValidateButton : String = "ValidateButton"
 }

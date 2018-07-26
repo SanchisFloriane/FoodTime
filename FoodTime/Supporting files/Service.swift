@@ -31,6 +31,7 @@ class Service {
     static let HomeViewController : String = "HomeViewController"
     static let ChoiceTypeFoodViewController : String = "ChoiceTypeFoodViewController"
     static let ChoiceTypeDrinkViewController : String = "ChoiceTypeDrinkViewController"
+    static let ChoiceNotificationViewController : String = "ChoiceNotificationViewController"
     static let ChoiceUserPageViewController : String = "ChoiceUserPageViewController"
     
     //TableViewCell

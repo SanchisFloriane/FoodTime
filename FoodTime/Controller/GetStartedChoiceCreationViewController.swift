@@ -99,7 +99,7 @@ class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButton
                 
                 if let result = result as? [String: Any?] {
                     
-                    self.currentUser = User(lastname: result["last_name"] as? String, firstname: result["first_name"] as? String, pseudo: nil, email: result["email"] as? String, profilePictureFIRUrl: nil, fbAccount: true, googleAccount: false)
+                    self.currentUser = User(lastname: result["last_name"] as? String, firstname: result["first_name"] as? String, pseudo: nil, email: result["email"] as? String, profilePictureFIRUrl: nil, fbAccount: true.description, googleAccount: false.description)
                     
                     if let picture = result["picture"] as? NSDictionary {
                         if let data = picture["data"] as? NSDictionary {
@@ -170,8 +170,8 @@ class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButton
         let firstname = self.currentUser!.firstname
         let lastname = self.currentUser!.lastname
         let pseudo = self.currentUser!.pseudo
-        let fbAccount = self.currentUser!.fbAccount
-        let googleAccount = self.currentUser!.googleAccount
+        let fbAccount = self.currentUser!.fbAccount!
+        let googleAccount = self.currentUser!.googleAccount!
         
         var profileImageUploadData : Data?
         var profileImageUrl: String?
@@ -182,7 +182,7 @@ class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButton
             
             let fileName = uid
             
-            let storageItem = StorageReference().child("\(ModelDB.fieldProfilePictureUserDB)").child(fileName)
+            let storageItem = StorageReference().child("\(ModelDB.folderProfilePictureUserDB)").child(fileName)
             storageItem.putData(profileImageUploadData!, metadata: nil) { (metadata, error) in
                 
                 if let err = error {
