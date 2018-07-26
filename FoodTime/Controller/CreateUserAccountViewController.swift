@@ -203,15 +203,7 @@ class CreateUserAccountViewController: UIViewController {
         
         let uid : String! = Auth.auth().currentUser!.uid
         
-        let dictionaryValues = [                    "lastname": "",
-                                                    "firstname": "",
-                                                    "email": self.currentUser!.email!,
-                                                    "pseudo": "",
-                                                    "profilePictureFIRUrl": "",
-                                                    "fbAccount": self.currentUser!.fbAccount.description,
-                                                    "googleAccount": self.currentUser!.googleAccount.description ]
-        
-        self.values = [uid : dictionaryValues]
+        self.values = [uid : self.currentUser!.getData()]
         self.saveUser()
     }
     

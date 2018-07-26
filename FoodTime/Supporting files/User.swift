@@ -35,4 +35,15 @@ class User {
         self.fbAccount = fbAccount
         self.googleAccount = googleAccount
     }
+    
+    func getData() -> [String: String]
+    {
+        return [ModelDB.User_lastname: self.lastname ?? "",
+                ModelDB.User_firstname: self.firstname ?? "",
+                ModelDB.User_pseudo : self.pseudo ?? "",
+                ModelDB.User_email: self.email ?? "",
+                ModelDB.User_profilePictureFIRUrl : self.profilePictureFIRUrl ?? "",
+                ModelDB.User_fbAccount : self.fbAccount,
+                ModelDB.User_googleAccount : self.googleAccount]
+    }
 }

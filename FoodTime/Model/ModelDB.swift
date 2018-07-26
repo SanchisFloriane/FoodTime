@@ -1,5 +1,5 @@
 //
-//  ModelDB.swift
+//   static let swift
 //  FoodTime
 //
 //  Created by bob on 7/25/18.
@@ -29,6 +29,15 @@ class ModelDB {
     static let Settings_workSate : String = "workSate"
     static let Settings_workCity : String = "workCity"
     static let Settings_workZipCode : String = "workZipCode"
+    
+    //USER
+     static let User_lastname : String = "lastname"
+     static let User_firstname : String =  "firstname"
+     static let User_pseudo : String =  "pseudo"
+     static let User_email : String =  "email"
+     static let User_profilePictureFIRUrl : String = "profilePictureFIRUrl"
+     static let User_fbAccount : String = "fbAccount"
+     static let User_googleAccount : String = "googleAccount"
     
     
 }

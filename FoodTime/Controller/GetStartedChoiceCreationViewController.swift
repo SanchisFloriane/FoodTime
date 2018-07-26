@@ -50,7 +50,7 @@ class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButton
     
     fileprivate func setupViews()
     {
-         EmailButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().EmailSignInButton), for: .normal)
+        EmailButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().EmailSignInButton), for: .normal)
         TermsPrivatePolicyButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().TermsPrivatePolicyButton), for: .normal)
         TermsPrivatePolicyButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
@@ -166,16 +166,12 @@ class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButton
     fileprivate func uploadData()
     {
         guard let uid = Auth.auth().currentUser?.uid,
-            let email = self.currentUser!.email else { Service.dismissHud(self.hud, text: "Error", detailText: "Failed to upload data user.", delay: 3); return}
-        let firstname = self.currentUser!.firstname
-        let lastname = self.currentUser!.lastname
-        let pseudo = self.currentUser!.pseudo
-        let fbAccount = self.currentUser!.fbAccount!
-        let googleAccount = self.currentUser!.googleAccount!
+            let _ = self.currentUser!.email else {
+                Service.dismissHud(self.hud, text: "Error", detailText: "Failed to upload data user.", delay: 3)
+                return
+        }
         
         var profileImageUploadData : Data?
-        var profileImageUrl: String?
-        var dictionaryValues: [String: String] = [:]
         if let profileImage = self.currentUser!.profilePicture
         {
             profileImageUploadData = UIImageJPEGRepresentation(profileImage, 0.3)
@@ -198,18 +194,10 @@ class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButton
                         }
                         
                         if url != nil {
-                            profileImageUrl = url!.absoluteString
+                            self.currentUser?.profilePictureFIRUrl = url!.absoluteString
                             print("Successfully uploaded profile picture user into Firebase storage")
                             
-                            dictionaryValues = ["lastname": lastname ?? "",
-                                                "firstname": firstname ?? "",
-                                                "email": email,
-                                                "pseudo": pseudo ?? "",
-                                                "profilePictureFIRUrl": profileImageUrl ?? "",
-                                                "fbAccount": fbAccount.description,
-                                                "googleAccount": googleAccount.description ]
-                            
-                            self.values = [uid : dictionaryValues]
+                            self.values = [uid : self.currentUser!.getData()]
                             self.saveUser()
                         }
                     })
@@ -218,15 +206,7 @@ class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButton
         }
         else
         {
-            dictionaryValues = ["lastname": lastname ?? "",
-                                "firstname": firstname ?? "",
-                                "email": email,
-                                "pseudo": pseudo ?? "",
-                                "profilePictureFIRUrl": profileImageUrl ?? "",
-                                "fbAccount": fbAccount.description,
-                                "googleAccount": googleAccount.description ]
-            
-            self.values = [uid : dictionaryValues]
+            self.values = [uid : self.currentUser!.getData()]
             self.saveUser()
         }
     }
