@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ChoicePlaceViewController: UIViewController, PageObservation {
     
@@ -29,6 +30,7 @@ class ChoicePlaceViewController: UIViewController, PageObservation {
     @IBOutlet weak var nextButton: UIButton!
     
     var placeSelected : [UIButton] = [UIButton]()
+    var listTypePlace : [Int: String] = [Int: String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,11 +46,13 @@ class ChoicePlaceViewController: UIViewController, PageObservation {
         descriptionPage.text = UILabels().localizeWithoutComment(key: UILabels().DescriptionPageChoiceTypePlaceViewController)
         nextButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().ValidateButton), for: .normal)
         
-        barButton.tag = 0
-        coffeeButton.tag = 1
-        fastFoodButton.tag = 2
-        foodTruckButton.tag = 3
-        restaurantButton.tag = 4
+        getTypePlace()
+        
+        barButton.tag = TypePlace.TypePlaceDrink.Bar.rawValue
+        coffeeButton.tag = TypePlace.TypePlaceDrink.Coffee.rawValue
+        fastFoodButton.tag = TypePlace.TypePlaceFood.FastFood.rawValue
+        foodTruckButton.tag = TypePlace.TypePlaceFood.FoodTruck.rawValue
+        restaurantButton.tag = TypePlace.TypePlaceFood.Restaurant.rawValue
         
         if parentPageViewController != nil
         {
@@ -60,6 +64,22 @@ class ChoicePlaceViewController: UIViewController, PageObservation {
                 }
             }
         }
+    }
+    
+    fileprivate func getTypePlace()
+    {
+        self.listTypePlace = [Int: String]()
+        Database.database().reference().child("\(ModelDB.typePlace)/\(Service.LanguageApp)").queryOrderedByValue().observeSingleEvent(of: .value, with: { (snapchot) in
+            
+            if snapchot.childrenCount > 0
+            {
+                let listChildren = snapchot.children
+                while let child = listChildren.nextObject() as? DataSnapshot
+                {
+                    self.listTypePlace[Int(child.key)!] = child.value as? String
+                }
+            }
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -105,22 +125,33 @@ class ChoicePlaceViewController: UIViewController, PageObservation {
             nextButton.isHidden = false
         }
     }
-
+    
     @IBAction func nextPage() {
         
-        var typePlaceTab : [Int] = [Int]()
+        var typeFoodPlace : [String] = [String]()
+        var typeDrinkPlace : [String] = [String]()
+        
         for buttonPlace in placeSelected
         {
-            let typePlace : TypePlace? = TypePlace.toEnum(idEnum: buttonPlace.tag)
-            if typePlace != nil
+            for typePlace in listTypePlace
             {
-                typePlaceTab.append(typePlace!.rawValue)
+                
+                if typePlace.key ==  buttonPlace.tag
+                {
+                    if TypePlace.getTypePlace(typePlace: typePlace.key) == TypePlace.typeDrinkPlace
+                    {
+                        typeDrinkPlace.append(typePlace.value)
+                    }
+                    else
+                    {
+                        typeFoodPlace.append(typePlace.value)
+                    }
+                }
             }
         }
-        
         let parent = parentPageViewController as! ChoiceUserPageViewController
-        parent.typePlace = typePlaceTab
-        print(parent.typePlace)
+        parent.typeFoodPlace = typeFoodPlace
+        parent.typeDrinkPlace = typeDrinkPlace
         parentPageViewController.goToNextPage()
         parent.pageControl.currentPage = 1
     }

@@ -19,6 +19,8 @@
 		C4923A2C20F556FD00641EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4923A2B20F556FD00641EA9 /* Assets.xcassets */; };
 		C4923A2F20F556FD00641EA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4923A2D20F556FD00641EA9 /* LaunchScreen.storyboard */; };
 		C4923A3720F5573100641EA9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4923A3620F5573100641EA9 /* GoogleService-Info.plist */; };
+		C4A1A123210F8BD000DFC005 /* CaseIterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A1A122210F8BD000DFC005 /* CaseIterable.swift */; };
+		C4A1A125210F97F600DFC005 /* Tastes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A1A124210F97F600DFC005 /* Tastes.swift */; };
 		C4F848DE21092E17009EDBBD /* ChoiceTypeFoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848DD21092E17009EDBBD /* ChoiceTypeFoodTableViewCell.swift */; };
 		C4F848E021094078009EDBBD /* ChoiceTypeDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848DF21094077009EDBBD /* ChoiceTypeDrinkViewController.swift */; };
 		C4F848E221094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848E121094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift */; };
@@ -63,6 +65,8 @@
 		C4923A2E20F556FD00641EA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4923A3020F556FD00641EA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4923A3620F5573100641EA9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C4A1A122210F8BD000DFC005 /* CaseIterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseIterable.swift; sourceTree = "<group>"; };
+		C4A1A124210F97F600DFC005 /* Tastes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tastes.swift; sourceTree = "<group>"; };
 		C4F848DD21092E17009EDBBD /* ChoiceTypeFoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceTypeFoodTableViewCell.swift; sourceTree = "<group>"; };
 		C4F848DF21094077009EDBBD /* ChoiceTypeDrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceTypeDrinkViewController.swift; sourceTree = "<group>"; };
 		C4F848E121094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceTypeDrinkTableViewCell.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 				F4A8ED6A21010DC6007FAB61 /* User.swift */,
 				C4182B5B2108F7B1004AE88E /* ModelDB.swift */,
 				C4F848E5210A4E25009EDBBD /* Settings.swift */,
+				C4A1A124210F97F600DFC005 /* Tastes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				F44C64B021080137003B8039 /* PageObservation.swift */,
+				C4A1A122210F8BD000DFC005 /* CaseIterable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -435,6 +441,7 @@
 				C4F848E6210A4E25009EDBBD /* Settings.swift in Sources */,
 				C4F848EB210A65BD009EDBBD /* TypePlace.swift in Sources */,
 				F4A8ED6F21014517007FAB61 /* HomeViewController.swift in Sources */,
+				C4A1A123210F8BD000DFC005 /* CaseIterable.swift in Sources */,
 				F4121DF3210660AF00252594 /* UIViewController.swift in Sources */,
 				C4F848E021094078009EDBBD /* ChoiceTypeDrinkViewController.swift in Sources */,
 				C4182B5C2108F7B1004AE88E /* ModelDB.swift in Sources */,
@@ -449,6 +456,7 @@
 				C4F848E221094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift in Sources */,
 				C4F848E4210A397C009EDBBD /* ChoiceNotificationViewController.swift in Sources */,
 				F44C64AE2107FE43003B8039 /* UIPageViewController.swift in Sources */,
+				C4A1A125210F97F600DFC005 /* Tastes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

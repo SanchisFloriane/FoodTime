@@ -12,11 +12,18 @@ class ModelDB {
     
     static let folderProfilePictureUserDB : String = "profileImages"
     
+    static let tastes : String = "tastes"
     static let typeFood : String = "typeFood"
     static let typeDrink : String = "typeDrink"
+    static let typePlace : String = "typePlace"
     static let settings : String = "settings"
     static let users : String = "users"
     
+    //TASTES
+    static let Tastes_typeDrinkPlace : String = "typeDrinkPlace"
+    static let Tastes_typeFoodPlace : String = "typeFoodPlace"
+    static let Tastes_typeDrink : String = "typeDrink"
+    static let Tastes_typeFood : String = "typeFood"
     
     //SETTINGS
     static let Settings_isNotified : String = "isNotified"

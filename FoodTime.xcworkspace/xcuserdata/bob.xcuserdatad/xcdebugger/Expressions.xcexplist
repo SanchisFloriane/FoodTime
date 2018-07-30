@@ -3,18 +3,18 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "closure #1 in LoginViewController.saveUserIntoFirebaseDatabase():LoginViewController.swift">
+         contextName = "static TypePlace.typePlace(typePlace:):TypePlace.swift">
          <PersistentStrings>
             <PersistentString
-               value = "url">
+               value = "typeDrinkPlace.rawValue">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ChoiceTypeFoodViewController.tableView(_:cellForRowAt:):ChoiceTypeFoodViewController.swift">
+         contextName = "ChoiceTypeFoodViewController.tableView(_:numberOfRowsInSection:):ChoiceTypeFoodViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "cell.title">
+               value = "listTypeFood.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -30,10 +30,37 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ChoiceTypeFoodViewController.tableView(_:numberOfRowsInSection:):ChoiceTypeFoodViewController.swift">
+         contextName = "ChoicePlaceViewController.nextPage():ChoicePlaceViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "listTypeFood.count">
+               value = "buttonPlace.tag">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChoiceTypeFoodViewController.tableView(_:cellForRowAt:):ChoiceTypeFoodViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.title">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in LoginViewController.saveUserIntoFirebaseDatabase():LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in static TypePlace.toString(typePlace:completion:):TypePlace.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "&quot;\(ModelDB.typePlace)/\(Service.LanguageApp)/\(typePlace.rawValue.description)&quot;">
+            </PersistentString>
+            <PersistentString
+               value = "typePlace">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

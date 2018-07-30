@@ -118,7 +118,9 @@ class ChoiceTypeDrinkViewController: UIViewController, UITableViewDataSource, UI
     }
     
     @IBAction func nextPage() {
+        
         let parent = parentPageViewController as! ChoiceUserPageViewController
+        parent.typeDrink = listTypeDrinkSelected
         parentPageViewController.goToNextPage()
         parent.pageControl.currentPage = 3
     }

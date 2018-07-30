@@ -7,13 +7,24 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
+        
+        self.userTastesExist(completion: { (tastesExist) in
+            
+            if !tastesExist
+            {
+                //Go to choice preferences
+                let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
+                let desController : UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.ChoiceUserPageViewController) as! ChoiceUserPageViewController
+                desController.navigationController?.setNavigationBarHidden(true, animated: false)
+                self.navigationController?.pushViewController(desController, animated: true)
+            }
+        })
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,8 +33,22 @@ class HomeViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
-
+    
+    fileprivate func userTastesExist(completion: @escaping (Bool) -> ())
+    {
+        var tastesExits = false
+        Database.database().reference().child("\(ModelDB.tastes)/\(Auth.auth().currentUser!.uid)").observeSingleEvent(of: .value, with: { (snapchot) in
+            
+            if snapchot.childrenCount > 0
+            {
+                print("user tastes exists")
+                tastesExits = true
+            }
+            completion(tastesExits)
+        })
+    }
 }

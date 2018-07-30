@@ -11,9 +11,10 @@ import UIKit
 class ChoiceUserPageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     var pageControl = UIPageControl()
-    var typePlace : [Int] = [Int]()
-    var typeDrink : [Int] = [Int]()
-    var typeFood : [Int] = [Int]()
+    var typeDrinkPlace : [String] = [String]()
+    var typeFoodPlace : [String] = [String]()
+    var typeDrink : [String] = [String]()
+    var typeFood : [String] = [String]()
     
     lazy var orderedViewControllers: [UIViewController] = {
         return [self.newVc(viewController: Service.ChoicePlaceViewController), self.newVc(viewController: Service.ChoiceTypeFoodViewController), self.newVc(viewController: Service.ChoiceTypeDrinkViewController), self.newVc(viewController: Service.ChoiceNotificationViewController)]

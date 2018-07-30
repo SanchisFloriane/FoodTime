@@ -24,7 +24,6 @@ class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButton
     @IBOutlet weak var TermsPrivatePolicyButton: UIButton!
     
     var currentUser: User?
-    var newUser: Bool = true
     var values : [String : [String: String]]?
     
     let hud: JGProgressHUD = {
@@ -90,7 +89,6 @@ class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButton
             }
             print("Succesfully authenticated with FB Firebase.")
             
-            self.userExists()
             FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "email, first_name, last_name, picture.type(large)"]).start{ (connection, result, error) in
                 if error != nil {
                     Service.dismissHud(self.hud, text: "Error", detailText: "Failed to fetch user. \(String(describing: error))", delay: 3)
@@ -158,7 +156,6 @@ class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButton
             }
         }
         
-        self.userExists()
         self.uploadData()
     }
     
@@ -211,20 +208,6 @@ class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButton
         }
     }
     
-    fileprivate func userExists()
-    {
-        self.newUser = true
-        
-        Database.database().reference().child("\(ModelDB.users)/\(Auth.auth().currentUser!.uid)").observeSingleEvent(of: .value, with: { (snapchot) in
-            
-            if snapchot.childrenCount > 0
-            {
-                self.newUser = false
-                print("user exists")
-            }
-        })
-    }
-    
     fileprivate func saveUser() {
         
         Database.database().reference().child("\(ModelDB.users)").updateChildValues(self.values!, withCompletionBlock: { (err, ref) in
@@ -239,19 +222,9 @@ class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButton
             self.dismiss(animated: true, completion: nil)
             
             let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
-            let desController : UIViewController!
+            let desController : UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.HomeViewController) as! HomeViewController
             
-            if self.newUser {
-                //Go to choice preferences
-                desController = mainStoryboard.instantiateViewController(withIdentifier: Service.ChoiceUserPageViewController) as! ChoiceUserPageViewController
-            }
-            else
-            {
-                //Go to Home page
-                desController = mainStoryboard.instantiateViewController(withIdentifier: Service.HomeViewController) as! HomeViewController
-            }
-            
-            self.navigationController?.pushViewController(desController, animated: true)
+            self.navigationController?.pushViewController(desController, animated: false)
         })
     }
 }

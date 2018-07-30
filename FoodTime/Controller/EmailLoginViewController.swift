@@ -10,20 +10,18 @@ import UIKit
 import Firebase
 
 class EmailLoginViewController: UIViewController, UITextViewDelegate {
-
-   
+    
+    
     @IBOutlet weak var titleLbl: UILabel!
     
     @IBOutlet weak var emailTxtView: UITextField!
     @IBOutlet weak var pwdTxtView: UITextField!
     @IBOutlet weak var loginBarButton: UIBarButtonItem!
     
-    
     @IBAction func login(_ sender: UIBarButtonItem) {
         
         let email : String! = emailTxtView.text!
         let password : String! = pwdTxtView.text!
-        
         Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
             
             if error == nil && user != nil
@@ -32,10 +30,8 @@ class EmailLoginViewController: UIViewController, UITextViewDelegate {
                 self.dismiss(animated: true, completion: nil)
                 
                 let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
-                
                 let desController : UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.HomeViewController) as! HomeViewController
-                
-                self.navigationController?.pushViewController(desController, animated: true)
+                self.navigationController?.pushViewController(desController, animated: false)
             }
             else if user == nil
             {
@@ -45,7 +41,7 @@ class EmailLoginViewController: UIViewController, UITextViewDelegate {
             {
                 print("Failed to log in with error: \(String(describing: error))")
             }
-        
+            
         })
     }
     
@@ -60,17 +56,17 @@ class EmailLoginViewController: UIViewController, UITextViewDelegate {
     }
     
     fileprivate func setupView(){
-    
+        
         clearTextView()
         
         if emailTxtView.text?.count == 0 || pwdTxtView.text?.count == 0
         {
-           loginBarButton.isEnabled = false
+            loginBarButton.isEnabled = false
         }
     }
     
     @IBAction func checkEnabledLoginbutton(_ sender: UITextField) {
-    
+        
         if emailTxtView.text?.count == 0 || pwdTxtView.text?.count == 0
         {
             loginBarButton.isEnabled = false
@@ -82,7 +78,7 @@ class EmailLoginViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupView()
         self.hideKeyboardWhenTappedAround()
         
@@ -92,11 +88,10 @@ class EmailLoginViewController: UIViewController, UITextViewDelegate {
         
         setupView()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
 }

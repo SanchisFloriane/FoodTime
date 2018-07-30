@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class ChoiceNotificationViewController: UIViewController, PageObservation {
-
+    
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var descriptionPage: UILabel!
     @IBOutlet weak var nextButton: UIButton!
@@ -22,7 +22,7 @@ class ChoiceNotificationViewController: UIViewController, PageObservation {
     
     func getParentUIPageViewController(parentRef: UIPageViewController)
     {
-        parentPageViewController = parentRef
+        self.parentPageViewController = parentRef
     }
     
     
@@ -30,7 +30,7 @@ class ChoiceNotificationViewController: UIViewController, PageObservation {
         super.viewDidLoad()
         setupView()
     }
-
+    
     fileprivate func setupView()
     {
         titlePage.text = UILabels().localizeWithoutComment(key: UILabels().TitlePageChoiceNotificationViewController)
@@ -60,15 +60,17 @@ class ChoiceNotificationViewController: UIViewController, PageObservation {
         {
             isNotified = true
         }
-        saveUser()
+        
+        saveUserSettings()
+        saveUserTastes()
+        
         self.dismiss(animated: true, completion: nil)
         let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
         let desController : UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.HomeViewController) as! HomeViewController
-        
         self.navigationController?.pushViewController(desController, animated: true)
     }
     
-    fileprivate func saveUser() {
+    fileprivate func saveUserSettings() {
         
         let settings = Settings(isNotified: self.isNotified.description, homeCountry: nil, homeState: nil, homeAddress: nil, homeCity: nil, homeZipCode: nil, workCountry: nil, workState: nil, workAddress: nil, workCity: nil, workZipCode: nil)
         
@@ -77,10 +79,27 @@ class ChoiceNotificationViewController: UIViewController, PageObservation {
         
         Database.database().reference().child("\(ModelDB.settings)").updateChildValues(values, withCompletionBlock: { (err, ref) in
             if let err = err {
-                print("Failed to save user info with error: \(err)")
+                print("Failed to save user settings with error: \(err)")
                 return
             }
             print("Successfully saved isnotified info into Firebase database")
+        })
+    }
+    
+    fileprivate func saveUserTastes() {
+        
+        let parent = parentPageViewController as! ChoiceUserPageViewController
+        let tastes = Tastes(typeDrinkPlace: parent.typeDrinkPlace, typeFoodPlace: parent.typeFoodPlace, typeDrink: parent.typeDrink, typeFood: parent.typeFood)
+        
+        let uid = Auth.auth().currentUser?.uid
+        let values = [uid! : tastes.getData()]
+        
+        Database.database().reference().child("\(ModelDB.tastes)").updateChildValues(values, withCompletionBlock: { (err, ref) in
+            if let err = err {
+                print("Failed to save user tastes with error: \(err)")
+                return
+            }
+            print("Successfully saved tastes info into Firebase database")
         })
     }
     

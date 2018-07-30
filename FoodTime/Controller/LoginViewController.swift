@@ -24,7 +24,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     @IBOutlet weak var EmailButton: UIButton!
     
     var currentUser: User?
-    var newUser: Bool = true
     var values : [String : [String: String]]?
     
     let hud: JGProgressHUD = {
@@ -35,7 +34,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     
     
     fileprivate func setupFBButton() {
-       
+        
         FBButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().FBSignInButton), for: .normal)
         
         FBButton.readPermissions = ["email", "public_profile"]
@@ -123,7 +122,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
             }
             print("Succesfully authenticated with FB Firebase.")
             
-            self.userExists()
             FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "email, first_name, last_name, picture.type(large)"]).start{ (connection, result, error) in
                 if error != nil {
                     Service.dismissHud(self.hud, text: "Error", detailText: "Failed to fetch user. \(String(describing: error))", delay: 3)
@@ -182,19 +180,18 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
                 self.currentUser = user
                 if let pictureUrl = self.currentUser!.profilePictureFIRUrl {
                     let imageData = NSData(contentsOf: URL(string: pictureUrl)!) as Data?
-                        if let imgData = imageData
-                        {
-                            let userProfileImage = UIImage(data: imgData)
-                            self.currentUser!.profilePicture = userProfileImage
-                        }
+                    if let imgData = imageData
+                    {
+                        let userProfileImage = UIImage(data: imgData)
+                        self.currentUser!.profilePicture = userProfileImage
+                    }
                 }
             }
         }
         
-        self.userExists()
         self.uploadData()
     }
-       
+    
     
     fileprivate func uploadData()
     {
@@ -244,20 +241,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         }
     }
     
-    fileprivate func userExists()
-    {
-        self.newUser = true
-        
-        Database.database().reference().child("\(ModelDB.users)/\(Auth.auth().currentUser!.uid)").observeSingleEvent(of: .value, with: { (snapchot) in
-            
-            if snapchot.childrenCount > 0
-            {
-                self.newUser = false
-                print("user exists")
-            }
-        })
-    }
-    
     fileprivate func saveUser() {
         
         Database.database().reference().child("\(ModelDB.users)").updateChildValues(self.values!, withCompletionBlock: { (err, ref) in
@@ -272,19 +255,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
             self.dismiss(animated: true, completion: nil)
             
             let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
-            let desController : UIViewController!
-            
-            if self.newUser {
-                //Go to choice preferences
-                desController = mainStoryboard.instantiateViewController(withIdentifier: Service.ChoiceUserPageViewController) as! ChoiceUserPageViewController
-                desController.navigationController?.setNavigationBarHidden(true, animated: false)
-            }
-            else
-            {
-                //Go to Home page
-                desController = mainStoryboard.instantiateViewController(withIdentifier: Service.HomeViewController) as! HomeViewController
-            }
-            self.navigationController?.pushViewController(desController, animated: true)
+            let desController : UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.HomeViewController) as! HomeViewController
+            self.navigationController?.pushViewController(desController, animated: false)
         })
     }
 }
