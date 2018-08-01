@@ -12,6 +12,9 @@ import JGProgressHUD
 
 class Service {
     
+    //API KEY
+    static let GooglePlaceAPIKey : String = "AIzaSyA8vcbGXF3gDkIe1zzw7k0fSCDEKZ6CbuU"
+    
     //Button properties
     static let buttonTitleFontSize: CGFloat = 16
     static let buttonTitleColor: UIColor = UIColor.white

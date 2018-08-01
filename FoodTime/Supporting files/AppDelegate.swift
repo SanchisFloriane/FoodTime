@@ -11,6 +11,9 @@ import Firebase
 import FBSDKLoginKit
 import GoogleSignIn
 import JGProgressHUD
+import GooglePlaces
+import GoogleMaps
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -33,6 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         //Auth FB
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        //Google Place API configuration
+        GMSPlacesClient.provideAPIKey(Service.GooglePlaceAPIKey)
+        GMSServices.provideAPIKey(Service.GooglePlaceAPIKey)
         
         return true
     }

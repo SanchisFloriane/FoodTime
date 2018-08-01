@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import GooglePlaces
+
+
 
 class SearchPlaceViewController: UIViewController {
 
@@ -15,8 +18,11 @@ class SearchPlaceViewController: UIViewController {
     @IBOutlet weak var searchLocationBar: UISearchBar!
     @IBOutlet weak var tableViewPlace: UITableView!
     
+    var placesClient: GMSPlacesClient!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        placesClient = GMSPlacesClient.shared()
 
         // Do any additional setup after loading the view.
     }
