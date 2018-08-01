@@ -14,65 +14,75 @@ class UILabels {
         
     }
     
-    func localize(key: String, comment: String) -> String
+    static func localize(key: String, comment: String) -> String
     {
         return NSLocalizedString(key, comment: comment)
     }
     
-    func localizeWithoutComment(key: String) -> String
+    static func localizeWithoutComment(key: String) -> String
     {
         return NSLocalizedString(key, comment: "")
     }
     
-    let ActivateNotificationsButton : String = "ActivateNotificationsButton"
+    static let ActivateNotificationsButton : String = "ActivateNotificationsButton"
     
-    let CreateUserAccount : String = "CreateUserAccount"
+    static let CreateUserAccount : String = "CreateUserAccount"
     
-    let DescriptionPageChoiceNotificationViewController : String = "DescriptionPageChoiceNotificationViewController"
+    static let DescriptionPageChoiceNotificationViewController : String = "DescriptionPageChoiceNotificationViewController"
     
-    let DescriptionPageChoiceTypeFoodViewController : String = "DescriptionPageChoiceTypeFoodViewController"
+    static let DescriptionPageChoiceTypeFoodViewController : String = "DescriptionPageChoiceTypeFoodViewController"
     
-    let DescriptionPageChoiceTypeDrinkViewController : String = "DescriptionPageChoiceTypeDrinkViewController"
+    static let DescriptionPageChoiceTypeDrinkViewController : String = "DescriptionPageChoiceTypeDrinkViewController"
     
-    let DescriptionPageChoiceTypePlaceViewController : String = "DescriptionPageChoiceTypePlaceViewController"
+    static let DescriptionPageChoiceTypePlaceViewController : String = "DescriptionPageChoiceTypePlaceViewController"
     
-    let Email: String = "Email"
+    static let Email: String = "Email"
     
-    let EmailSignInButton : String = "EmailSignInButton"
+    static let EmailSignInButton : String = "EmailSignInButton"
     
-    let EmailSignUpButton : String = "EmailSignUpButton"
+    static let EmailSignUpButton : String = "EmailSignUpButton"
     
-    let EmailTitle : String = "EmailTitle"
+    static let EmailTitle : String = "EmailTitle"
     
-    let FBSignInButton : String = "FBSignInButton"
+    static let FBSignInButton : String = "FBSignInButton"
     
-    let FBSignUpButton : String = "FBSignUpButton"
+    static let FBSignUpButton : String = "FBSignUpButton"
     
-    let GoogleSignInButton : String = "GoogleSignInButton"
+    static let GoogleSignInButton : String = "GoogleSignInButton"
     
-    let GoogleSignUpButton : String = "GoogleSignUpButton"
+    static let GoogleSignUpButton : String = "GoogleSignUpButton"
     
-    let GetStartedButton : String = "GetStartedButton"
+    static let GetStartedButton : String = "GetStartedButton"
     
-    let LogginButton : String = "LogginButton"
+    static let LogginButton : String = "LogginButton"
     
-    let Password : String = "Password"
+    static let NewsTitle : String = "NewsTitle"
     
-    let PasswordConfirmation : String = "PasswordConfirmation"
+    static let MyNewsButton : String = "MyNewsButton"
     
-    let SkipButton : String = "SkipButton"
+    static let MyPlacesButton : String = "MyPlacesButton"
     
-    let TaglineTextMainPage : String = "TaglineTextMainPage"
+    static let MyProfileButton : String = "MyProfileButton"
     
-    let TermsPrivatePolicyButton : String = "TermsPrivatePolicyButton"
+    static let Password : String = "Password"
     
-    let TitlePageChoiceNotificationViewController : String = "TitlePageChoiceNotificationViewController"
+    static let PasswordConfirmation : String = "PasswordConfirmation"
     
-    let TitlePageChoiceTypeFoodViewController : String = "TitlePageChoiceTypeFoodViewController"
+    static let RecommandationsButton : String = "RecommandationsButton"
     
-    let TitlePageChoiceTypeDrinkViewController : String = "TitlePageChoiceTypeDrinkViewController"
+    static let SkipButton : String = "SkipButton"
     
-    let TitlePageChoiceTypePlaceViewController : String = "TitlePageChoiceTypePlaceViewController"
+    static let TaglineTextMainPage : String = "TaglineTextMainPage"
     
-    let ValidateButton : String = "ValidateButton"
+    static let TermsPrivatePolicyButton : String = "TermsPrivatePolicyButton"
+    
+    static let TitlePageChoiceNotificationViewController : String = "TitlePageChoiceNotificationViewController"
+    
+    static let TitlePageChoiceTypeFoodViewController : String = "TitlePageChoiceTypeFoodViewController"
+    
+    static let TitlePageChoiceTypeDrinkViewController : String = "TitlePageChoiceTypeDrinkViewController"
+    
+    static let TitlePageChoiceTypePlaceViewController : String = "TitlePageChoiceTypePlaceViewController"
+    
+    static let ValidateButton : String = "ValidateButton"
 }

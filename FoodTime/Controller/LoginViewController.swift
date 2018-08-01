@@ -18,6 +18,7 @@ import FBSDKLoginKit
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate {
     
+    @IBOutlet weak var backButtonNavigationController: UIButton!
     @IBOutlet weak var TermsPrivatePolicyButton: UIButton!
     @IBOutlet weak var FBButton: FBSDKLoginButton!
     @IBOutlet weak var GoogleButton: GIDSignInButton!
@@ -35,7 +36,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     
     fileprivate func setupFBButton() {
         
-        FBButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().FBSignInButton), for: .normal)
+        FBButton.setTitle(UILabels.localizeWithoutComment(key: UILabels.FBSignInButton), for: .normal)
         
         FBButton.readPermissions = ["email", "public_profile"]
         FBButton.delegate = self
@@ -50,8 +51,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     
     fileprivate func setupViews()
     {
-        EmailButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().EmailSignUpButton), for: .normal)
-        TermsPrivatePolicyButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().TermsPrivatePolicyButton), for: .normal)
+        EmailButton.setTitle(UILabels.localizeWithoutComment(key: UILabels.EmailSignUpButton), for: .normal)
+        TermsPrivatePolicyButton.setTitle(UILabels.localizeWithoutComment(key: UILabels.TermsPrivatePolicyButton), for: .normal)
         TermsPrivatePolicyButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
         setupFBButton()
@@ -80,9 +81,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        // Show the navigation bar on other view controllers
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     @IBAction func dismiss() {

@@ -35,9 +35,9 @@ class ChoiceTypeDrinkViewController: UIViewController, UITableViewDataSource, UI
     {
         nextButton.isHidden = true
         
-        titlePage.text = UILabels().localizeWithoutComment(key: UILabels().TitlePageChoiceTypeDrinkViewController)
-        descriptionPage.text = UILabels().localizeWithoutComment(key: UILabels().DescriptionPageChoiceTypeDrinkViewController)
-        nextButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().ValidateButton), for: .normal)
+        titlePage.text = UILabels.localizeWithoutComment(key: UILabels.TitlePageChoiceTypeDrinkViewController)
+        descriptionPage.text = UILabels.localizeWithoutComment(key: UILabels.DescriptionPageChoiceTypeDrinkViewController)
+        nextButton.setTitle(UILabels.localizeWithoutComment(key: UILabels.ValidateButton), for: .normal)
         
         self.typeDrinkTableView.dataSource = self
         self.typeDrinkTableView.delegate = self

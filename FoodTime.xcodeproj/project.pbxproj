@@ -39,9 +39,11 @@
 		F44C64AC2107C5F7003B8039 /* ChoiceUserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C64AB2107C5F7003B8039 /* ChoiceUserPageViewController.swift */; };
 		F44C64AE2107FE43003B8039 /* UIPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C64AD2107FE43003B8039 /* UIPageViewController.swift */; };
 		F44C64B121080137003B8039 /* PageObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C64B021080137003B8039 /* PageObservation.swift */; };
+		F471F5BD21112DC7001AA9E2 /* SearchPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471F5BC21112DC6001AA9E2 /* SearchPlaceViewController.swift */; };
 		F4A8ED6B21010DC6007FAB61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8ED6A21010DC6007FAB61 /* User.swift */; };
 		F4A8ED6D21014507007FAB61 /* ChoicePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8ED6C21014507007FAB61 /* ChoicePlaceViewController.swift */; };
 		F4A8ED6F21014517007FAB61 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8ED6E21014517007FAB61 /* HomeViewController.swift */; };
+		F4F28CA6211139230095E29F /* SearchPlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F28CA5211139230095E29F /* SearchPlaceTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,9 +89,11 @@
 		F44C64AB2107C5F7003B8039 /* ChoiceUserPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceUserPageViewController.swift; sourceTree = "<group>"; };
 		F44C64AD2107FE43003B8039 /* UIPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewController.swift; sourceTree = "<group>"; };
 		F44C64B021080137003B8039 /* PageObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageObservation.swift; sourceTree = "<group>"; };
+		F471F5BC21112DC6001AA9E2 /* SearchPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewController.swift; sourceTree = "<group>"; };
 		F4A8ED6A21010DC6007FAB61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = "FoodTime/Supporting files/User.swift"; sourceTree = SOURCE_ROOT; };
 		F4A8ED6C21014507007FAB61 /* ChoicePlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoicePlaceViewController.swift; sourceTree = "<group>"; };
 		F4A8ED6E21014517007FAB61 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F4F28CA5211139230095E29F /* SearchPlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 				F44C64AB2107C5F7003B8039 /* ChoiceUserPageViewController.swift */,
 				C4F848DF21094077009EDBBD /* ChoiceTypeDrinkViewController.swift */,
 				C4F848E3210A397C009EDBBD /* ChoiceNotificationViewController.swift */,
+				F471F5BC21112DC6001AA9E2 /* SearchPlaceViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 			children = (
 				C4F848DD21092E17009EDBBD /* ChoiceTypeFoodTableViewCell.swift */,
 				C4F848E121094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift */,
+				F4F28CA5211139230095E29F /* SearchPlaceTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -344,6 +350,9 @@
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -351,6 +360,9 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +447,7 @@
 				F42998B420FD50820035A717 /* Service.swift in Sources */,
 				F4A8ED6B21010DC6007FAB61 /* User.swift in Sources */,
 				F44C64AA2107C514003B8039 /* ChoiceTypeFoodViewController.swift in Sources */,
+				F471F5BD21112DC7001AA9E2 /* SearchPlaceViewController.swift in Sources */,
 				F4121DF72106951C00252594 /* CreateUserAccountViewController.swift in Sources */,
 				F4121DF92106986D00252594 /* UIMessages.swift in Sources */,
 				F44C64AC2107C5F7003B8039 /* ChoiceUserPageViewController.swift in Sources */,
@@ -445,6 +458,7 @@
 				F4121DF3210660AF00252594 /* UIViewController.swift in Sources */,
 				C4F848E021094078009EDBBD /* ChoiceTypeDrinkViewController.swift in Sources */,
 				C4182B5C2108F7B1004AE88E /* ModelDB.swift in Sources */,
+				F4F28CA6211139230095E29F /* SearchPlaceTableViewCell.swift in Sources */,
 				F4121DF521068DA500252594 /* GetStartedChoiceCreationViewController.swift in Sources */,
 				C45C9C0220FEAD58004A4369 /* UILabels.swift in Sources */,
 				C4923A2520F556F500641EA9 /* AppDelegate.swift in Sources */,

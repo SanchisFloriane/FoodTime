@@ -11,6 +11,15 @@ import Firebase
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var newsButton: UITabBarItem!
+    @IBOutlet weak var placesButton: UITabBarItem!
+    @IBOutlet weak var profileButton: UITabBarItem!
+    @IBOutlet weak var recommandationsButton: UITabBarItem!
+    @IBOutlet weak var searchButton: UIBarButtonItem!
+    @IBOutlet weak var tabBar: UITabBar!
+    @IBOutlet weak var titlePage: UINavigationItem!
+    
+    
     override func viewDidLoad() {
         
         self.userTastesExist(completion: { (tastesExist) in
@@ -25,17 +34,27 @@ class HomeViewController: UIViewController {
             }
         })
         super.viewDidLoad()
+        setupView()
     }
 
+    fileprivate func setupView()
+    {
+        titlePage.title = UILabels.localizeWithoutComment(key: UILabels.NewsTitle)
+        newsButton.title = UILabels.localizeWithoutComment(key: UILabels.MyNewsButton)
+        placesButton.title = UILabels.localizeWithoutComment(key: UILabels.MyPlacesButton)
+        recommandationsButton.title = UILabels.localizeWithoutComment(key: UILabels.RecommandationsButton)
+        profileButton.title = UILabels.localizeWithoutComment(key: UILabels.MyProfileButton)        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.navigationItem.hidesBackButton = true
     }
     
     fileprivate func userTastesExist(completion: @escaping (Bool) -> ())

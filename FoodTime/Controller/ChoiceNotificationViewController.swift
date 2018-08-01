@@ -33,10 +33,10 @@ class ChoiceNotificationViewController: UIViewController, PageObservation {
     
     fileprivate func setupView()
     {
-        titlePage.text = UILabels().localizeWithoutComment(key: UILabels().TitlePageChoiceNotificationViewController)
-        descriptionPage.text = UILabels().localizeWithoutComment(key: UILabels().DescriptionPageChoiceNotificationViewController)
-        nextButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().ActivateNotificationsButton), for: .normal)
-        skipButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().SkipButton), for: .normal)
+        titlePage.text = UILabels.localizeWithoutComment(key: UILabels.TitlePageChoiceNotificationViewController)
+        descriptionPage.text = UILabels.localizeWithoutComment(key: UILabels.DescriptionPageChoiceNotificationViewController)
+        nextButton.setTitle(UILabels.localizeWithoutComment(key: UILabels.ActivateNotificationsButton), for: .normal)
+        skipButton.setTitle(UILabels.localizeWithoutComment(key: UILabels.SkipButton), for: .normal)
     }
     
     override func didReceiveMemoryWarning() {

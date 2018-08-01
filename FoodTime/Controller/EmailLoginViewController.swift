@@ -12,6 +12,7 @@ import Firebase
 class EmailLoginViewController: UIViewController, UITextViewDelegate {
     
     
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var titleLbl: UILabel!
     
     @IBOutlet weak var emailTxtView: UITextField!
@@ -50,9 +51,9 @@ class EmailLoginViewController: UIViewController, UITextViewDelegate {
         emailTxtView.text = ""
         pwdTxtView.text = ""
         
-        emailTxtView.placeholder = UILabels().localizeWithoutComment(key: UILabels().Email)
-        pwdTxtView.placeholder = UILabels().localizeWithoutComment(key: UILabels().Password)
-        titleLbl.text = UILabels().localizeWithoutComment(key: UILabels().EmailTitle)
+        emailTxtView.placeholder = UILabels.localizeWithoutComment(key: UILabels.Email)
+        pwdTxtView.placeholder = UILabels.localizeWithoutComment(key: UILabels.Password)
+        titleLbl.text = UILabels.localizeWithoutComment(key: UILabels.EmailTitle)
     }
     
     fileprivate func setupView(){
@@ -94,4 +95,7 @@ class EmailLoginViewController: UIViewController, UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func dismiss() {
+        navigationController?.popViewController(animated: true)
+    }
 }

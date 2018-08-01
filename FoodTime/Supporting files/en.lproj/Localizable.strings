@@ -48,9 +48,19 @@
 
 "LogginButton" = "Have an account ? Log in";
 
+"MyNewsButton" = "My news";
+
+"NewsTitle" = "News";
+
+"MyPlacesButton" = "My places";
+
+"MyProfileButton" = "My profile";
+
 "Password" = "Your password";
 
 "PasswordConfirmation" = "Confirmation password";
+
+"RecommandationsButton" = "For you";
 
 "SkipButton" = "Skip";
 

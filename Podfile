@@ -23,4 +23,7 @@ target 'FoodTime' do
   pod 'SwiftyJSON'
   pod 'GoogleSignIn'
   pod 'UICheckbox.Swift'
+  pod 'GooglePlaces'
+  pod 'GooglePlacePicker'
+  pod 'GoogleMaps' 
 end

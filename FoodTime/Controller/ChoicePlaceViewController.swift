@@ -42,9 +42,9 @@ class ChoicePlaceViewController: UIViewController, PageObservation {
     {
         nextButton.isHidden = true
         
-        titlePage.text = UILabels().localizeWithoutComment(key: UILabels().TitlePageChoiceTypePlaceViewController)
-        descriptionPage.text = UILabels().localizeWithoutComment(key: UILabels().DescriptionPageChoiceTypePlaceViewController)
-        nextButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().ValidateButton), for: .normal)
+        titlePage.text = UILabels.localizeWithoutComment(key: UILabels.TitlePageChoiceTypePlaceViewController)
+        descriptionPage.text = UILabels.localizeWithoutComment(key: UILabels.DescriptionPageChoiceTypePlaceViewController)
+        nextButton.setTitle(UILabels.localizeWithoutComment(key: UILabels.ValidateButton), for: .normal)
         
         getTypePlace()
         

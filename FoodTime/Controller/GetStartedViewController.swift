@@ -17,10 +17,10 @@ class GetStartedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        LogginButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().LogginButton), for: .normal)
+        LogginButton.setTitle(UILabels.localizeWithoutComment(key: UILabels.LogginButton), for: .normal)
         LogginButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        GetStartedButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().GetStartedButton), for: .normal)            
-        TaglineText.text = UILabels().localizeWithoutComment(key: UILabels().TaglineTextMainPage)
+        GetStartedButton.setTitle(UILabels.localizeWithoutComment(key: UILabels.GetStartedButton), for: .normal)
+        TaglineText.text = UILabels.localizeWithoutComment(key: UILabels.TaglineTextMainPage)
     }
     
     override func didReceiveMemoryWarning() {

@@ -16,6 +16,7 @@ class CreateUserAccountViewController: UIViewController {
     @IBOutlet weak var PwdConfirmTxtView: UITextField!
     @IBOutlet weak var PwdTxtView: UITextField!
     @IBOutlet weak var TitleView: UILabel!
+    @IBOutlet weak var backButton: UIButton!
     
     var currentUser: User?
     var values : [String : [String: String]]?
@@ -28,10 +29,10 @@ class CreateUserAccountViewController: UIViewController {
         PwdTxtView.text = ""
         PwdConfirmTxtView.text = ""
         
-        EmailTxtView.placeholder = UILabels().localizeWithoutComment(key: UILabels().Email)
-        PwdTxtView.placeholder = UILabels().localizeWithoutComment(key: UILabels().Password)
-        PwdConfirmTxtView.placeholder = UILabels().localizeWithoutComment(key: UILabels().PasswordConfirmation)
-        TitleView.text = UILabels().localizeWithoutComment(key: UILabels().CreateUserAccount)
+        EmailTxtView.placeholder = UILabels.localizeWithoutComment(key: UILabels.Email)
+        PwdTxtView.placeholder = UILabels.localizeWithoutComment(key: UILabels.Password)
+        PwdConfirmTxtView.placeholder = UILabels.localizeWithoutComment(key: UILabels.PasswordConfirmation)
+        TitleView.text = UILabels.localizeWithoutComment(key: UILabels.CreateUserAccount)
     }
     
     fileprivate func setupView(){
@@ -189,6 +190,8 @@ class CreateUserAccountViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         
         setupView()
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func didReceiveMemoryWarning() {
@@ -243,5 +246,9 @@ class CreateUserAccountViewController: UIViewController {
             
             self.navigationController?.pushViewController(desController, animated: true)
         })
+    }
+    
+    @IBAction func dismiss() {
+        navigationController?.popViewController(animated: true)
     }
 }

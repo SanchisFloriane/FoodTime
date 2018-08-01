@@ -35,9 +35,9 @@ class ChoiceTypeFoodViewController: UIViewController, UITableViewDataSource, UIT
     {
         nextButton.isHidden = true
         
-        titlePage.text = UILabels().localizeWithoutComment(key: UILabels().TitlePageChoiceTypeFoodViewController)
-        descriptionPage.text = UILabels().localizeWithoutComment(key: UILabels().DescriptionPageChoiceTypeFoodViewController)
-        nextButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().ValidateButton), for: .normal)
+        titlePage.text = UILabels.localizeWithoutComment(key: UILabels.TitlePageChoiceTypeFoodViewController)
+        descriptionPage.text = UILabels.localizeWithoutComment(key: UILabels.DescriptionPageChoiceTypeFoodViewController)
+        nextButton.setTitle(UILabels.localizeWithoutComment(key: UILabels.ValidateButton), for: .normal)
         
         self.typeFoodTableView.dataSource = self
         self.typeFoodTableView.delegate = self

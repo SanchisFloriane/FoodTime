@@ -18,6 +18,7 @@ import FBSDKLoginKit
 
 class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate  {
 
+    @IBOutlet weak var BackButton: UIButton!
     @IBOutlet weak var EmailButton: UIButton!
     @IBOutlet weak var FBButton: FBSDKLoginButton!
     @IBOutlet weak var GoogleButton: GIDSignInButton!
@@ -35,7 +36,7 @@ class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButton
     
     fileprivate func setupFBButton() {
         
-        FBButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().FBSignUpButton), for: .normal)
+        FBButton.setTitle(UILabels.localizeWithoutComment(key: UILabels.FBSignUpButton), for: .normal)
         FBButton.readPermissions = ["email", "public_profile"]
         FBButton.delegate = self
     }
@@ -49,8 +50,8 @@ class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButton
     
     fileprivate func setupViews()
     {
-        EmailButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().EmailSignInButton), for: .normal)
-        TermsPrivatePolicyButton.setTitle(UILabels().localizeWithoutComment(key: UILabels().TermsPrivatePolicyButton), for: .normal)
+        EmailButton.setTitle(UILabels.localizeWithoutComment(key: UILabels.EmailSignInButton), for: .normal)
+        TermsPrivatePolicyButton.setTitle(UILabels.localizeWithoutComment(key: UILabels.TermsPrivatePolicyButton), for: .normal)
         TermsPrivatePolicyButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
         setupFBButton()
@@ -64,6 +65,13 @@ class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButton
         setupViews()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -226,5 +234,9 @@ class GetStartedChoiceCreationViewController: UIViewController, FBSDKLoginButton
             
             self.navigationController?.pushViewController(desController, animated: false)
         })
+    }
+    
+    @IBAction func dismiss() {
+        navigationController?.popViewController(animated: true)
     }
 }

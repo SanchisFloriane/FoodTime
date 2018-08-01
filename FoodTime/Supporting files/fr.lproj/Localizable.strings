@@ -46,9 +46,19 @@
 
 "LogginButton" = "Vous avez un compte ? Se connecter";
 
+"MyNewsButton" = "Mes nouveautées";
+
+"NewsTitle" = "Nouveautées";
+
+"MyPlacesButton" = "Mes endroits";
+
+"MyProfileButton" = "Mon profile";
+
 "Password" = "Votre mot de passe";
 
 "PasswordConfirmation" = "Confirmation mot de passe";
+
+"RecommandationsButton" = "Pour moi";
 
 "SkipButton" = "Ignorer";
 
