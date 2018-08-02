@@ -18,4 +18,11 @@ extension CLLocationDistance {
     func inKilometers() -> CLLocationDistance {
         return self/1000
     }
+    
+    func conversionInUserMetric() -> String
+    {
+        let formatter = MeasurementFormatter()
+        formatter.locale = Locale.current
+        return formatter.string(from: Measurement(value: self, unit: UnitLength.meters))
+    }
 }

@@ -11,7 +11,7 @@ import GooglePlaces
 import GoogleMaps
 
 class SearchPlaceViewController: UIViewController, CLLocationManagerDelegate {
-
+    
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var searchPlaceBar: UISearchBar!
     @IBOutlet weak var searchLocationBar: UISearchBar!
@@ -19,6 +19,7 @@ class SearchPlaceViewController: UIViewController, CLLocationManagerDelegate {
     
     //Localisation user
     let locationManager = CLLocationManager()
+    var isUserLocalized : Bool = false
     
     var placesClient : GMSPlacesClient!
     var arrayAddress : [GMSAutocompletePrediction] = [GMSAutocompletePrediction]()
@@ -39,7 +40,8 @@ class SearchPlaceViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.distanceFilter = 200
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-
+        
+        self.localizeUser()
         setupView()
     }
     
@@ -47,7 +49,7 @@ class SearchPlaceViewController: UIViewController, CLLocationManagerDelegate {
     {
         tableViewPlace.tableFooterView = UIView()
     }
-
+    
     fileprivate func setupView()
     {
         searchPlaceBar.delegate = self
@@ -72,6 +74,25 @@ class SearchPlaceViewController: UIViewController, CLLocationManagerDelegate {
 
 extension SearchPlaceViewController: UITableViewDelegate, UITableViewDataSource
 {
+    
+    func localizeUser()
+    {
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+            case .notDetermined, .restricted, .denied:
+                print("No access")
+                isUserLocalized = false
+            case .authorizedAlways, .authorizedWhenInUse:
+                print("Access")
+                isUserLocalized = true
+            }
+        }
+        else
+        {
+            isUserLocalized = false
+        }
+        
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayAddress.count
     }
@@ -83,29 +104,32 @@ extension SearchPlaceViewController: UITableViewDelegate, UITableViewDataSource
         cell.placeId = arrayAddress[indexPath.row].placeID!
         cell.imageView?.image = UIImage(named: Service.FoodPlaceIcon)
         
-        if CLLocationManager.locationServicesEnabled() {
-            switch CLLocationManager.authorizationStatus() {
-            case .notDetermined, .restricted, .denied:
-                print("No access")
-            case .authorizedAlways, .authorizedWhenInUse:
-                print("Access")
+        if isUserLocalized {
+            
+            placesClient.lookUpPlaceID(cell.placeId, callback: { (place, error) -> Void in
+                if let error = error {
+                    print("lookup place id query error: \(error.localizedDescription)")
+                    return
+                }
                 
-                let coordinate₀ = CLLocation(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude)
-                let coordinate₁ = CLLocation(latitude: 5.0, longitude: 3.0)
+                guard let place = place else {
+                    print("No place details for \(cell.placeId)")
+                    return
+                }
                 
-                let distanceInMeters = coordinate₀.distance(from: coordinate₁)
+                let coordinate₀ = CLLocation(latitude: self.locationManager.location!.coordinate.latitude, longitude: self.locationManager.location!.coordinate.longitude)
+                let coordinate₁ = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
                 
-                cell.distancePlaceLbl.attributedText = NSAttributedString(string: distanceInMeters.inMiles().description + " " + UILabels.Miles)
-            }
+                let distanceInMeters = coordinate₀.distance(from: coordinate₁).rounded(FloatingPointRoundingRule.toNearestOrAwayFromZero)
+                
+                cell.distancePlaceLbl.attributedText = NSAttributedString(string: distanceInMeters.conversionInUserMetric())
+            })
         } else {
-            print("Location services are not enabled")
             cell.distancePlaceLbl.attributedText = NSAttributedString(string: "")
         }
         
         return cell
     }
-    
-    
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         
