@@ -48,6 +48,7 @@
 		F4F28CAA2112AC890095E29F /* SearchPlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F28CA92112AC890095E29F /* SearchPlaceDetailViewController.swift */; };
 		F4F28CAC211374DF0095E29F /* SearchPlaceMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F28CAB211374DF0095E29F /* SearchPlaceMapViewController.swift */; };
 		F4F28CB0211396720095E29F /* CCLocationDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F28CAF211396720095E29F /* CCLocationDistance.swift */; };
+		F4F28CB22113A94C0095E29F /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F28CB12113A94C0095E29F /* Place.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		F4F28CA92112AC890095E29F /* SearchPlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceDetailViewController.swift; sourceTree = "<group>"; };
 		F4F28CAB211374DF0095E29F /* SearchPlaceMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceMapViewController.swift; sourceTree = "<group>"; };
 		F4F28CAF211396720095E29F /* CCLocationDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCLocationDistance.swift; sourceTree = "<group>"; };
+		F4F28CB12113A94C0095E29F /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				C4182B5B2108F7B1004AE88E /* ModelDB.swift */,
 				C4F848E5210A4E25009EDBBD /* Settings.swift */,
 				C4A1A124210F97F600DFC005 /* Tastes.swift */,
+				F4F28CB12113A94C0095E29F /* Place.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				F4121DF02106585300252594 /* EmailLoginViewController.swift in Sources */,
 				F44C64B121080137003B8039 /* PageObservation.swift in Sources */,
 				C414FECD20F68EB1008D5AE5 /* GetStartedViewController.swift in Sources */,
+				F4F28CB22113A94C0095E29F /* Place.swift in Sources */,
 				C4F848E221094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift in Sources */,
 				C4F848E4210A397C009EDBBD /* ChoiceNotificationViewController.swift in Sources */,
 				F44C64AE2107FE43003B8039 /* UIPageViewController.swift in Sources */,
