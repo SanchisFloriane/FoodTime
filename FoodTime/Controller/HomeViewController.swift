@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import MapKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITabBarDelegate {
 
     @IBOutlet weak var newsButton: UITabBarItem!
     @IBOutlet weak var placesButton: UITabBarItem!
@@ -35,16 +35,20 @@ class HomeViewController: UIViewController {
         })
         super.viewDidLoad()
         
+        self.tabBar.delegate = self
+        
         setupView()
     }
     
     fileprivate func setupView()
     {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         titlePage.title = UILabels.localizeWithoutComment(key: UILabels.NewsTitle)
         newsButton.title = UILabels.localizeWithoutComment(key: UILabels.MyNewsButton)
         placesButton.title = UILabels.localizeWithoutComment(key: UILabels.MyPlacesButton)
         recommandationsButton.title = UILabels.localizeWithoutComment(key: UILabels.RecommandationsButton)
-        profileButton.title = UILabels.localizeWithoutComment(key: UILabels.MyProfileButton)        
+        profileButton.title = UILabels.localizeWithoutComment(key: UILabels.MyProfileButton)
+        tabBar.selectedItem = newsButton
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,6 +60,31 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         self.navigationItem.hidesBackButton = true
+    }
+    
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
+        var desController : UIViewController!
+        
+        let item = tabBar.selectedItem
+        if item == newsButton
+        {
+            desController = mainStoryboard.instantiateViewController(withIdentifier: Service.HomeViewController) as! HomeViewController
+            
+            self.navigationController?.pushViewController(desController, animated: true)
+        }
+        else if item == placesButton
+        {
+            
+        }
+        else if item == recommandationsButton
+        {
+            
+        }
+        else if item == profileButton
+        {
+            
+        }
     }
     
     fileprivate func userTastesExist(completion: @escaping (Bool) -> ())

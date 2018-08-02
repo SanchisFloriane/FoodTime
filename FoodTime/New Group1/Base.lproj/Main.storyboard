@@ -702,7 +702,7 @@
                                 </constraints>
                                 <state key="normal" image="cross"/>
                                 <connections>
-                                    <action selector="dismiss" destination="Shq-1d-cWE" eventType="touchUpInside" id="ehj-Bu-PZR"/>
+                                    <segue destination="dXA-hG-Kpz" kind="show" id="Ibs-RD-DdX"/>
                                 </connections>
                             </button>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Near by ..." translatesAutoresizingMaskIntoConstraints="NO" id="rNR-yP-xcu">
@@ -906,6 +906,7 @@
                         <outlet property="placesButton" destination="ASI-5y-GZB" id="PvO-VW-v9J"/>
                         <outlet property="profileButton" destination="JTN-hA-nlC" id="BRL-5e-e40"/>
                         <outlet property="recommandationsButton" destination="GRO-fw-kBI" id="14t-mt-lXg"/>
+                        <outlet property="tabBar" destination="OGx-25-aPm" id="iwR-xC-SAe"/>
                         <outlet property="tablePlaceView" destination="in1-cs-hfj" id="TYP-qU-zjH"/>
                         <outlet property="titlePage" destination="fA5-6u-tCA" id="wwE-HI-2fN"/>
                     </connections>
@@ -1404,5 +1405,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="vyK-Hn-Ssz"/>
         <segue reference="KP6-ZZ-tOt"/>
+        <segue reference="Ibs-RD-DdX"/>
     </inferredMetricsTieBreakers>
 </document>

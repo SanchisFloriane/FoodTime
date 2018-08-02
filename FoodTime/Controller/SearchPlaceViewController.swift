@@ -65,9 +65,4 @@ class SearchPlaceViewController: UIViewController, UISearchBarDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func dismiss() {
-        self.navigationController?.popViewController(animated: true)
-    }
-
 }
