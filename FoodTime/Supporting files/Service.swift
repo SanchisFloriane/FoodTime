@@ -36,10 +36,14 @@ class Service {
     static let ChoiceTypeDrinkViewController : String = "ChoiceTypeDrinkViewController"
     static let ChoiceNotificationViewController : String = "ChoiceNotificationViewController"
     static let ChoiceUserPageViewController : String = "ChoiceUserPageViewController"
+    static let SearchPlaceViewController : String = "SearchPlaceViewController"
+    static let SearchPlaceDetailViewController : String = "SearchPlaceDetailViewController"
     
     //TableViewCell
-    static let ChoiceTypeFoodViewCell : String = "ChoiceTypeFoodViewCell"
-    static let ChoiceTypeDrinkViewCell : String = "ChoiceTypeDrinkViewCell"
+    static let ChoiceTypeFoodTableViewCell : String = "ChoiceTypeFoodTableViewCell"
+    static let ChoiceTypeDrinkTableViewCell : String = "ChoiceTypeDrinkTableViewCell"
+    static let SearchPlaceTableViewCell : String = "SearchPlaceTableViewCell"
+    static let SearchPlaceDetailTableViewCell : String = "SearchPlaceDetailTableViewCell"
     
     //Notification by ViewController
     //LoginViewController
@@ -52,6 +56,10 @@ class Service {
     static let ChoiceTypeFoodIdCell : String = "typeFoodCell"
     //table view cell for ChoiceTypeDrinkViewController
     static let ChoiceTypeDrinkIdCell : String = "typeDrinkCell"
+    //table view cell for SearchPlaceViewController
+    static let SearchPlaceIdCell : String = "searchPlaceCell"
+    //table view cell for SearchPlaceViewController
+    static let SearchPlaceDetailIdCell : String = "searchPlaceDetailCell"
     
     
     static func showAlert(on: UIViewController, style: UIAlertControllerStyle, title: String?, message: String?, actions: [UIAlertAction] = [UIAlertAction(title: "Ok", style: .default, handler: nil)], completion: (() -> Swift.Void)? = nil) {

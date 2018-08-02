@@ -44,6 +44,9 @@
 		F4A8ED6D21014507007FAB61 /* ChoicePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8ED6C21014507007FAB61 /* ChoicePlaceViewController.swift */; };
 		F4A8ED6F21014517007FAB61 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8ED6E21014517007FAB61 /* HomeViewController.swift */; };
 		F4F28CA6211139230095E29F /* SearchPlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F28CA5211139230095E29F /* SearchPlaceTableViewCell.swift */; };
+		F4F28CA82112AC670095E29F /* SearchPlaceDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F28CA72112AC660095E29F /* SearchPlaceDetailTableViewCell.swift */; };
+		F4F28CAA2112AC890095E29F /* SearchPlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F28CA92112AC890095E29F /* SearchPlaceDetailViewController.swift */; };
+		F4F28CAC211374DF0095E29F /* SearchPlaceMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F28CAB211374DF0095E29F /* SearchPlaceMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +97,9 @@
 		F4A8ED6C21014507007FAB61 /* ChoicePlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoicePlaceViewController.swift; sourceTree = "<group>"; };
 		F4A8ED6E21014517007FAB61 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F4F28CA5211139230095E29F /* SearchPlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceTableViewCell.swift; sourceTree = "<group>"; };
+		F4F28CA72112AC660095E29F /* SearchPlaceDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceDetailTableViewCell.swift; sourceTree = "<group>"; };
+		F4F28CA92112AC890095E29F /* SearchPlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceDetailViewController.swift; sourceTree = "<group>"; };
+		F4F28CAB211374DF0095E29F /* SearchPlaceMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +170,8 @@
 				C4F848DF21094077009EDBBD /* ChoiceTypeDrinkViewController.swift */,
 				C4F848E3210A397C009EDBBD /* ChoiceNotificationViewController.swift */,
 				F471F5BC21112DC6001AA9E2 /* SearchPlaceViewController.swift */,
+				F4F28CA92112AC890095E29F /* SearchPlaceDetailViewController.swift */,
+				F4F28CAB211374DF0095E29F /* SearchPlaceMapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -229,6 +237,7 @@
 				C4F848DD21092E17009EDBBD /* ChoiceTypeFoodTableViewCell.swift */,
 				C4F848E121094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift */,
 				F4F28CA5211139230095E29F /* SearchPlaceTableViewCell.swift */,
+				F4F28CA72112AC660095E29F /* SearchPlaceDetailTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -445,6 +454,7 @@
 				C4F848EF210A6B16009EDBBD /* TypeFood.swift in Sources */,
 				C4F848DE21092E17009EDBBD /* ChoiceTypeFoodTableViewCell.swift in Sources */,
 				F42998B420FD50820035A717 /* Service.swift in Sources */,
+				F4F28CAC211374DF0095E29F /* SearchPlaceMapViewController.swift in Sources */,
 				F4A8ED6B21010DC6007FAB61 /* User.swift in Sources */,
 				F44C64AA2107C514003B8039 /* ChoiceTypeFoodViewController.swift in Sources */,
 				F471F5BD21112DC7001AA9E2 /* SearchPlaceViewController.swift in Sources */,
@@ -454,6 +464,7 @@
 				C4F848E6210A4E25009EDBBD /* Settings.swift in Sources */,
 				C4F848EB210A65BD009EDBBD /* TypePlace.swift in Sources */,
 				F4A8ED6F21014517007FAB61 /* HomeViewController.swift in Sources */,
+				F4F28CAA2112AC890095E29F /* SearchPlaceDetailViewController.swift in Sources */,
 				C4A1A123210F8BD000DFC005 /* CaseIterable.swift in Sources */,
 				F4121DF3210660AF00252594 /* UIViewController.swift in Sources */,
 				C4F848E021094078009EDBBD /* ChoiceTypeDrinkViewController.swift in Sources */,
@@ -461,6 +472,7 @@
 				F4F28CA6211139230095E29F /* SearchPlaceTableViewCell.swift in Sources */,
 				F4121DF521068DA500252594 /* GetStartedChoiceCreationViewController.swift in Sources */,
 				C45C9C0220FEAD58004A4369 /* UILabels.swift in Sources */,
+				F4F28CA82112AC670095E29F /* SearchPlaceDetailTableViewCell.swift in Sources */,
 				C4923A2520F556F500641EA9 /* AppDelegate.swift in Sources */,
 				C4F848F1210A6CD0009EDBBD /* TypeDrink.swift in Sources */,
 				F4A8ED6D21014507007FAB61 /* ChoicePlaceViewController.swift in Sources */,

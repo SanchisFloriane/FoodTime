@@ -59,6 +59,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "SearchPlaceViewController.searchBarSearchButtonClicked(_:):SearchPlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "searchLocationBar.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in LoginViewController.userExists(uid:):LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -97,10 +105,10 @@
          contextName = "HomeViewController.viewWillAppear(_:):HomeViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "navigationItem.hidesBackButton">
+               value = "self.navigationController?.toolbarItems">
             </PersistentString>
             <PersistentString
-               value = "self.navigationController?.toolbarItems">
+               value = "navigationItem.hidesBackButton">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -108,10 +116,10 @@
          contextName = "LoginViewController.userExists():LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "Auth.auth().currentUser!.uid">
+               value = "self.newUser">
             </PersistentString>
             <PersistentString
-               value = "self.newUser">
+               value = "Auth.auth().currentUser!.uid">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

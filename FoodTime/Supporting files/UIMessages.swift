@@ -14,26 +14,32 @@ class UIMessages {
         
     }
     
-    func localize(key: String, comment: String) -> String
+    static func localize(key: String, comment: String) -> String
     {
         return NSLocalizedString(key, comment: comment)
     }
     
-    func localizeWithoutComment(key: String) -> String
+    static func localizeWithoutComment(key: String) -> String
     {
         return NSLocalizedString(key, comment: "")
     }
     
-    let ErrorTitle : String = "ErrorTitle"
+    static let ErrorTitle : String = "ErrorTitle"
     
-    let ErrorEmail : String = "ErrorEmail"
+    static let ErrorEmail : String = "ErrorEmail"
     
-    let ErrorEmailExists : String = "ErrorEmailExists"
+    static let ErrorEmailExists : String = "ErrorEmailExists"
     
-    let ErrorFormatPassword : String = "ErrorFormatPassword"
+    static let ErrorEnterLocation : String = "ErrorEnterLocation"
     
-    let ErrorPassword : String = "ErrorPassword"
+    static let ErrorEnterPlace : String = "ErrorEnterPlace"
+    
+    static let ErrorFormatPassword : String = "ErrorFormatPassword"
+    
+    static let ErrorPassword : String = "ErrorPassword"
         
-    let UserNotFound : String = "UserNotFound"
+    static let UserNotFound : String = "UserNotFound"
+    
+    
 
 }

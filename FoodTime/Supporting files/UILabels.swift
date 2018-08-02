@@ -70,6 +70,10 @@ class UILabels {
     
     static let RecommandationsButton : String = "RecommandationsButton"
     
+    static let SearchLocationBarPlaceHolder : String = "SearchLocationBarPlaceHolder"
+    
+    static let SearchPlaceBarPlaceHolder : String = "SearchPlaceBarPlaceHolder"
+    
     static let SkipButton : String = "SkipButton"
     
     static let TaglineTextMainPage : String = "TaglineTextMainPage"
@@ -83,6 +87,8 @@ class UILabels {
     static let TitlePageChoiceTypeDrinkViewController : String = "TitlePageChoiceTypeDrinkViewController"
     
     static let TitlePageChoiceTypePlaceViewController : String = "TitlePageChoiceTypePlaceViewController"
+    
+    static let TitleSearchPlaceDetailViewController : String = "TitleSearchPlaceDetailViewController"
     
     static let ValidateButton : String = "ValidateButton"
 }

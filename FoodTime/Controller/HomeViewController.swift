@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import MapKit
 
 class HomeViewController: UIViewController {
 
@@ -18,7 +19,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var searchButton: UIBarButtonItem!
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var titlePage: UINavigationItem!
-    
     
     override func viewDidLoad() {
         
@@ -34,9 +34,10 @@ class HomeViewController: UIViewController {
             }
         })
         super.viewDidLoad()
+        
         setupView()
     }
-
+    
     fileprivate func setupView()
     {
         titlePage.title = UILabels.localizeWithoutComment(key: UILabels.NewsTitle)

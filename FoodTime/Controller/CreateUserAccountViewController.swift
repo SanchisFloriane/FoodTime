@@ -93,12 +93,12 @@ class CreateUserAccountViewController: UIViewController {
             }
             else
             {
-                Service.showAlert(on: self, style: .alert, title: UIMessages().localizeWithoutComment(key: UIMessages().ErrorTitle), message:  UIMessages().localizeWithoutComment(key: UIMessages().ErrorPassword))
+                Service.showAlert(on: self, style: .alert, title: UIMessages.localizeWithoutComment(key: UIMessages.ErrorTitle), message:  UIMessages.localizeWithoutComment(key: UIMessages.ErrorPassword))
             }
         }
         else
         {
-            Service.showAlert(on: self, style: .alert, title: UIMessages().localizeWithoutComment(key: UIMessages().ErrorTitle), message:  UIMessages().localizeWithoutComment(key: UIMessages().ErrorFormatPassword))
+            Service.showAlert(on: self, style: .alert, title: UIMessages.localizeWithoutComment(key: UIMessages.ErrorTitle), message:  UIMessages.localizeWithoutComment(key: UIMessages.ErrorFormatPassword))
         }
         
         return check
@@ -127,7 +127,7 @@ class CreateUserAccountViewController: UIViewController {
         
         if !returnValue
         {
-            Service.showAlert(on: self, style: .alert, title: UIMessages().localizeWithoutComment(key: UIMessages().ErrorTitle), message:  UIMessages().localizeWithoutComment(key: UIMessages().ErrorEmail))
+            Service.showAlert(on: self, style: .alert, title: UIMessages.localizeWithoutComment(key: UIMessages.ErrorTitle), message:  UIMessages.localizeWithoutComment(key: UIMessages.ErrorEmail))
         }
         return returnValue
     }
@@ -142,7 +142,7 @@ class CreateUserAccountViewController: UIViewController {
             {
                 if isUserExists()
                 {
-                    Service.showAlert(on: self, style: .alert, title: UIMessages().localizeWithoutComment(key: UIMessages().ErrorTitle), message:  UIMessages().localizeWithoutComment(key: UIMessages().ErrorEmailExists))
+                    Service.showAlert(on: self, style: .alert, title: UIMessages.localizeWithoutComment(key: UIMessages.ErrorTitle), message:  UIMessages.localizeWithoutComment(key: UIMessages.ErrorEmailExists))
                 }
                 else
                 {
@@ -163,7 +163,7 @@ class CreateUserAccountViewController: UIViewController {
                 if error != nil {
                     if self.isExists
                     {
-                        Service.showAlert(on: self, style: .alert, title: UIMessages().localizeWithoutComment(key: UIMessages().ErrorTitle), message:  UIMessages().localizeWithoutComment(key: UIMessages().ErrorEmailExists))
+                        Service.showAlert(on: self, style: .alert, title: UIMessages.localizeWithoutComment(key: UIMessages.ErrorTitle), message:  UIMessages.localizeWithoutComment(key: UIMessages.ErrorEmailExists))
                     }
                     else
                     {

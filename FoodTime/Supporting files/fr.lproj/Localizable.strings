@@ -34,6 +34,10 @@
 
 "ErrorEmailExists" = "Cet e-mail est déjà utilisé par un autre compte.";
 
+"ErrorEnterLocation" = "Merci de saisire un endroit.";
+
+"ErrorEnterPlace" = "Merci de saisir une localisation.";
+
 "ErrorTitle" = "Erreur";
 
 "FBConnectionButton" = "Se connecter avec Facebook";
@@ -60,6 +64,10 @@
 
 "RecommandationsButton" = "Pour moi";
 
+"SearchLocationBarPlaceHolder" = "Près de ...";
+
+"SearchPlaceBarPlaceHolder" = "Rechercher un endroit ...";
+
 "SkipButton" = "Ignorer";
 
 "TaglineTextMainPage" = "Gérer vos endroits préférés";
@@ -73,6 +81,8 @@
 "TitlePageChoiceTypeDrinkViewController" = "Quel est votre type de boisson favori ?";
 
 "TitlePageChoiceTypePlaceViewController" = "Quel est votre type d'endroit favori ?";
+
+"TitleSearchPlaceDetailViewController" = "Résultats";
 
 "UserNotFound" = "Le compte utilisateur n'existe pas";
 
