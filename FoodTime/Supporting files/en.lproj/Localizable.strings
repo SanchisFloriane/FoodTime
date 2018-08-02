@@ -48,15 +48,19 @@
 
 "GoogleSignUpButton" = "Sign up with Google";
 
+"Km" = "Km";
+
 "LogginButton" = "Have an account ? Log in";
 
-"MyNewsButton" = "My news";
+"Miles" = "Miles";
 
-"NewsTitle" = "News";
+"MyNewsButton" = "My news";
 
 "MyPlacesButton" = "My places";
 
 "MyProfileButton" = "My profile";
+
+"NewsTitle" = "News";
 
 "Password" = "Your password";
 

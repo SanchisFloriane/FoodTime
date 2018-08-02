@@ -685,6 +685,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Shq-1d-cWE" id="e2o-Rd-j2j"/>
+                                    <outlet property="delegate" destination="Shq-1d-cWE" id="c79-ba-KTE"/>
+                                </connections>
                             </tableView>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search a place ..." translatesAutoresizingMaskIntoConstraints="NO" id="Vha-nU-qK0">
                                 <rect key="frame" x="16" y="74" width="343" height="56"/>
@@ -864,6 +868,10 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="zfJ-VT-bOe" id="iLO-6l-HRv"/>
+                                    <outlet property="delegate" destination="zfJ-VT-bOe" id="2fm-96-y4c"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

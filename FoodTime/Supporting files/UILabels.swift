@@ -54,9 +54,13 @@ class UILabels {
     
     static let GetStartedButton : String = "GetStartedButton"
     
+    static let Km : String = "Km"
+    
     static let LogginButton : String = "LogginButton"
     
     static let NewsTitle : String = "NewsTitle"
+    
+    static let Miles : String = "Miles"
     
     static let MyNewsButton : String = "MyNewsButton"
     

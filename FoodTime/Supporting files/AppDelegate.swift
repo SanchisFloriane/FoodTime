@@ -14,7 +14,6 @@ import JGProgressHUD
 import GooglePlaces
 import GoogleMaps
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     

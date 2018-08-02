@@ -15,6 +15,8 @@ class SearchPlaceTableViewCell: UITableViewCell {
     @IBOutlet weak var distancePlaceLbl: UILabel!
     @IBOutlet weak var namePlaceLbl: UILabel!
     
+    var placeId : String = ""
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

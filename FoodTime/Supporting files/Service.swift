@@ -21,6 +21,9 @@ class Service {
     static let buttonCornerRadius: CGFloat = 7
     static let buttonBackgroundColorSignInWithFacebook = UIColor(red: 88/255, green: 86/255, blue: 214/255, alpha: 1)
     
+    //Image
+    static let FoodPlaceIcon : String = "foodPlace-icon"
+    
     //Name of the Storyboards
     static let MainStoryboard : String = "Main"
         

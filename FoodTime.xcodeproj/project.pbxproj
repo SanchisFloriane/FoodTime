@@ -47,6 +47,7 @@
 		F4F28CA82112AC670095E29F /* SearchPlaceDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F28CA72112AC660095E29F /* SearchPlaceDetailTableViewCell.swift */; };
 		F4F28CAA2112AC890095E29F /* SearchPlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F28CA92112AC890095E29F /* SearchPlaceDetailViewController.swift */; };
 		F4F28CAC211374DF0095E29F /* SearchPlaceMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F28CAB211374DF0095E29F /* SearchPlaceMapViewController.swift */; };
+		F4F28CB0211396720095E29F /* CCLocationDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F28CAF211396720095E29F /* CCLocationDistance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,7 @@
 		F4F28CA72112AC660095E29F /* SearchPlaceDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceDetailTableViewCell.swift; sourceTree = "<group>"; };
 		F4F28CA92112AC890095E29F /* SearchPlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceDetailViewController.swift; sourceTree = "<group>"; };
 		F4F28CAB211374DF0095E29F /* SearchPlaceMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceMapViewController.swift; sourceTree = "<group>"; };
+		F4F28CAF211396720095E29F /* CCLocationDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCLocationDistance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +259,7 @@
 			children = (
 				F4121DF2210660AF00252594 /* UIViewController.swift */,
 				F44C64AD2107FE43003B8039 /* UIPageViewController.swift */,
+				F4F28CAF211396720095E29F /* CCLocationDistance.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				F44C64AA2107C514003B8039 /* ChoiceTypeFoodViewController.swift in Sources */,
 				F471F5BD21112DC7001AA9E2 /* SearchPlaceViewController.swift in Sources */,
 				F4121DF72106951C00252594 /* CreateUserAccountViewController.swift in Sources */,
+				F4F28CB0211396720095E29F /* CCLocationDistance.swift in Sources */,
 				F4121DF92106986D00252594 /* UIMessages.swift in Sources */,
 				F44C64AC2107C5F7003B8039 /* ChoiceUserPageViewController.swift in Sources */,
 				C4F848E6210A4E25009EDBBD /* Settings.swift in Sources */,
