@@ -14,6 +14,7 @@ class Service {
     
     //API KEY
     static let GooglePlaceAPIKey : String = "AIzaSyA8vcbGXF3gDkIe1zzw7k0fSCDEKZ6CbuU"
+    static let GooglePlaceAPIWSKey : String = "AIzaSyAsdGZ-BbG1W6KmU9LhbloVh1bzjpMwdsQ"
     
     //Button properties
     static let buttonTitleFontSize: CGFloat = 16
@@ -23,6 +24,7 @@ class Service {
     
     //Image
     static let FoodPlaceIcon : String = "foodPlace-icon"
+    static let CityPlaceIcon : String = "cityPlace-icon"
     
     //Name of the Storyboards
     static let MainStoryboard : String = "Main"

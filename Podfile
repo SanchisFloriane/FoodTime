@@ -25,5 +25,6 @@ target 'FoodTime' do
   pod 'UICheckbox.Swift'
   pod 'GooglePlaces'
   pod 'GooglePlacePicker'
-  pod 'GoogleMaps' 
+  pod 'GoogleMaps'
+  pod 'iCarousel', '~> 1.8'
 end

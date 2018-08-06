@@ -39,6 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         //Google Place API configuration
         GMSPlacesClient.provideAPIKey(Service.GooglePlaceAPIKey)
         GMSServices.provideAPIKey(Service.GooglePlaceAPIKey)
+        GMSPlacesClient.provideAPIKey(Service.GooglePlaceAPIWSKey)
+        GMSServices.provideAPIKey(Service.GooglePlaceAPIWSKey)
         
         return true
     }

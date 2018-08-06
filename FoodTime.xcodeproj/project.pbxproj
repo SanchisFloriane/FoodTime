@@ -21,6 +21,7 @@
 		C4923A3720F5573100641EA9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4923A3620F5573100641EA9 /* GoogleService-Info.plist */; };
 		C4A1A123210F8BD000DFC005 /* CaseIterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A1A122210F8BD000DFC005 /* CaseIterable.swift */; };
 		C4A1A125210F97F600DFC005 /* Tastes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A1A124210F97F600DFC005 /* Tastes.swift */; };
+		C4C7A6AF2118D5CB00087B80 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C7A6AE2118D5CB00087B80 /* String.swift */; };
 		C4F848DE21092E17009EDBBD /* ChoiceTypeFoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848DD21092E17009EDBBD /* ChoiceTypeFoodTableViewCell.swift */; };
 		C4F848E021094078009EDBBD /* ChoiceTypeDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848DF21094077009EDBBD /* ChoiceTypeDrinkViewController.swift */; };
 		C4F848E221094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848E121094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift */; };
@@ -75,6 +76,7 @@
 		C4923A3620F5573100641EA9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C4A1A122210F8BD000DFC005 /* CaseIterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseIterable.swift; sourceTree = "<group>"; };
 		C4A1A124210F97F600DFC005 /* Tastes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tastes.swift; sourceTree = "<group>"; };
+		C4C7A6AE2118D5CB00087B80 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		C4F848DD21092E17009EDBBD /* ChoiceTypeFoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceTypeFoodTableViewCell.swift; sourceTree = "<group>"; };
 		C4F848DF21094077009EDBBD /* ChoiceTypeDrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceTypeDrinkViewController.swift; sourceTree = "<group>"; };
 		C4F848E121094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceTypeDrinkTableViewCell.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				F44C64AD2107FE43003B8039 /* UIPageViewController.swift */,
 				F4F28CAF211396720095E29F /* CCLocationDistance.swift */,
 				F4C244392117BED500EFC64E /* Float.swift */,
+				C4C7A6AE2118D5CB00087B80 /* String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/UICheckbox.Swift/UICheckbox_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -426,6 +430,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICheckbox_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iCarousel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -486,6 +491,7 @@
 				C4923A2520F556F500641EA9 /* AppDelegate.swift in Sources */,
 				C4F848F1210A6CD0009EDBBD /* TypeDrink.swift in Sources */,
 				F4A8ED6D21014507007FAB61 /* ChoicePlaceViewController.swift in Sources */,
+				C4C7A6AF2118D5CB00087B80 /* String.swift in Sources */,
 				F4121DF02106585300252594 /* EmailLoginViewController.swift in Sources */,
 				F44C64B121080137003B8039 /* PageObservation.swift in Sources */,
 				C414FECD20F68EB1008D5AE5 /* GetStartedViewController.swift in Sources */,

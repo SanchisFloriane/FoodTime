@@ -11,10 +11,54 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ChoiceTypeFoodViewController.tableView(_:numberOfRowsInSection:):ChoiceTypeFoodViewController.swift">
+         contextName = "closure #1 in LoginViewController.saveUserIntoFirebaseDatabase():LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "listTypeFood.count">
+               value = "url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SearchPlaceViewController.tableView(_:numberOfRowsInSection:):SearchPlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "arrayAddress">
+            </PersistentString>
+            <PersistentString
+               value = "Service.GooglePlaceAPIKey">
+            </PersistentString>
+            <PersistentString
+               value = "arrayLocation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SearchPlaceViewController.tableView(_:cellForRowAt:):SearchPlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "arrayLocation">
+            </PersistentString>
+            <PersistentString
+               value = "findPlaceLocation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SearchPlaceViewController.tableView(_:didSelectRowAt:):SearchPlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.namePlaceLbl.text">
+            </PersistentString>
+            <PersistentString
+               value = "tableViewPlace.cellForRow(at: indexPath)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChoicePlaceViewController.nextPage():ChoicePlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "buttonPlace.tag">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -30,10 +74,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ChoicePlaceViewController.nextPage():ChoicePlaceViewController.swift">
+         contextName = "closure #1 in static TypePlace.toString(typePlace:completion:):TypePlace.swift">
          <PersistentStrings>
             <PersistentString
-               value = "buttonPlace.tag">
+               value = "typePlace">
+            </PersistentString>
+            <PersistentString
+               value = "&quot;\(ModelDB.typePlace)/\(Service.LanguageApp)/\(typePlace.rawValue.description)&quot;">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -46,21 +93,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in LoginViewController.saveUserIntoFirebaseDatabase():LoginViewController.swift">
+         contextName = "ChoiceTypeFoodViewController.tableView(_:numberOfRowsInSection:):ChoiceTypeFoodViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "url">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in static TypePlace.toString(typePlace:completion:):TypePlace.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "&quot;\(ModelDB.typePlace)/\(Service.LanguageApp)/\(typePlace.rawValue.description)&quot;">
-            </PersistentString>
-            <PersistentString
-               value = "typePlace">
+               value = "listTypeFood.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

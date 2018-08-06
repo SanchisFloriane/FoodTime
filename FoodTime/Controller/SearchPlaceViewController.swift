@@ -23,11 +23,19 @@ class SearchPlaceViewController: UIViewController, CLLocationManagerDelegate {
     
     var placesClient : GMSPlacesClient!
     var arrayAddress : [GMSAutocompletePrediction] = [GMSAutocompletePrediction]()
+    var arrayLocation : [GMSAutocompletePrediction] = [GMSAutocompletePrediction]()
+    var findPlaceLocation : Bool = false
     
     lazy var filter : GMSAutocompleteFilter = {
         let filter = GMSAutocompleteFilter()
-        filter.type = GMSPlacesAutocompleteTypeFilter.establishment
+        filter.type = .establishment
         return filter
+    }()
+    
+    lazy var filterLocation : GMSAutocompleteFilter = {
+        let filterLocation = GMSAutocompleteFilter()
+        filterLocation.type = .city
+        return filterLocation
     }()
     
     override func viewDidLoad() {
@@ -44,12 +52,6 @@ class SearchPlaceViewController: UIViewController, CLLocationManagerDelegate {
         self.localizeUser()
         setupView()
     }
-    
-    func loadUI()
-    {
-        tableViewPlace.tableFooterView = UIView()
-    }
-    
     fileprivate func setupView()
     {
         searchPlaceBar.delegate = self
@@ -57,8 +59,6 @@ class SearchPlaceViewController: UIViewController, CLLocationManagerDelegate {
         
         searchPlaceBar.placeholder = UILabels.localizeWithoutComment(key: UILabels.SearchPlaceBarPlaceHolder)
         searchLocationBar.placeholder = UILabels.localizeWithoutComment(key: UILabels.SearchLocationBarPlaceHolder)
-        
-        loadUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,16 +93,115 @@ extension SearchPlaceViewController: UITableViewDelegate, UITableViewDataSource
         }
         
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayAddress.count
+        
+        if !(searchLocationBar.text?.isEmpty)! && !(searchPlaceBar.text?.isEmpty)!
+        {
+            findPlaceLocation = true
+        }
+        
+        if !findPlaceLocation
+        {
+            if !(searchLocationBar.text?.isEmpty)!
+            {
+                return arrayLocation.count
+            }
+            else
+            {
+                return arrayAddress.count
+            }
+        }
+        else
+        {
+            let city : String = arrayAddress[0].attributedPrimaryText.string
+            let txtAppend = ("query=restaurant+in+\(city)&key=\(Service.GooglePlaceAPIWSKey)").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            let url = "https://maps.googleapis.com/maps/api/place/textsearch/json?\(txtAppend!)"
+            if let openUrl  = URL(string: url) {
+                UIApplication.shared.open(openUrl, options: [:], completionHandler: nil)
+                performGoogleQuery(url: openUrl)
+            }
+            return arrayAddress.count
+        }
+    }
+    
+    func performGoogleQuery(url: URL)
+    {
+        let task = URLSession.shared.dataTask(with: url, completionHandler: {(data, response, error) in
+            
+            if error != nil
+            {
+                print("An error occured: \(String(describing: error))")
+                return
+            }
+            
+            do
+            {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:Any]
+                
+                // Parse the json results into an array of MKMapItem objects
+                if let places = json?["results"] as? [[String : Any]]
+                {
+                    print("Places Count = \(places.count)")     // Returns 20 on first pass and 0 on second.
+                    
+                    for place in places
+                    {
+                        let name = place["name"] as! String
+                        let address = place["formatted_address"] as! String
+                        let id = place["place_id"] as! String
+                        let opening_hours = place["opening_hours"] as! String
+                        print("\(name)")
+                        print("\(address)")
+                        print("\(id)")
+                        print("\(opening_hours)")
+                     
+                        /*if let geometry = place["geometry"] as? [String : Any]
+                        {
+                            if let location = geometry["location"] as? [String : Any]
+                            {
+                                let lat = location["lat"] as! CLLocationDegrees
+                                let long = location["lng"] as! CLLocationDegrees
+                                let coordinate = CLLocationCoordinate2DMake(lat, long)
+                            }
+                        }*/
+                    }
+                }
+                // If there is another page of results,
+                // configure the new url and run the query again.
+                if let pageToken = json?["next_page_token"]
+                {
+                    let newURL : URL = URL(string: "https://maps.googleapis.com/maps/api/place/textsearch/json?pagetoken=\(pageToken)&key=\(Service.GooglePlaceAPIKey)")!
+                    self.performGoogleQuery(url: newURL)
+                }
+            }
+            catch
+            {
+                print("error serializing JSON: \(error)")
+            }
+        })
+        task.resume()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      
         let cell = tableViewPlace.dequeueReusableCell(withIdentifier: Service.SearchPlaceIdCell) as! SearchPlaceTableViewCell
-        cell.namePlaceLbl.attributedText = arrayAddress[indexPath.row].attributedPrimaryText
-        cell.addressPlaceLbl.attributedText = arrayAddress[indexPath.row].attributedSecondaryText
-        cell.placeId = arrayAddress[indexPath.row].placeID!
-        cell.imageView?.image = UIImage(named: Service.FoodPlaceIcon)
+        
+        if (searchLocationBar.text?.isEmpty)! || findPlaceLocation
+        {
+            cell.namePlaceLbl.attributedText = arrayAddress[indexPath.row].attributedPrimaryText
+            cell.addressPlaceLbl.attributedText = arrayAddress[indexPath.row].attributedSecondaryText
+            cell.placeId = arrayAddress[indexPath.row].placeID!
+            cell.imageView?.image = UIImage(named: Service.FoodPlaceIcon)
+            cell.isLocationCell = false
+        }
+        else
+        {
+            cell.namePlaceLbl.attributedText = arrayLocation[indexPath.row].attributedPrimaryText
+            cell.addressPlaceLbl.attributedText = arrayLocation[indexPath.row].attributedSecondaryText
+            cell.placeId = arrayLocation[indexPath.row].placeID!
+            cell.imageView?.image = UIImage(named: Service.CityPlaceIcon)
+            cell.isLocationCell = true
+        }
         
         if isUserLocalized {
             
@@ -124,8 +223,10 @@ extension SearchPlaceViewController: UITableViewDelegate, UITableViewDataSource
                 let distanceInMetric = distanceInMeters.conversionInUserMetric()
                 
                 cell.distancePlaceLbl.attributedText = NSAttributedString(string: distanceInMetric)
-            })
-        } else {
+            })            
+        }
+        else
+        {
             cell.distancePlaceLbl.attributedText = NSAttributedString(string: "")
         }
         
@@ -135,14 +236,51 @@ extension SearchPlaceViewController: UITableViewDelegate, UITableViewDataSource
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         
         print("location error is = \(error.localizedDescription)")
-        
     }
     
-    func locationManager(_ manager: CLLocationManager,
-                         didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let locValue:CLLocationCoordinate2D = (manager.location?.coordinate)!
         print("Current Locations = \(locValue.latitude) \(locValue.longitude)")
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableViewPlace.cellForRow(at: indexPath) as! SearchPlaceTableViewCell
+        
+        if cell.isLocationCell
+        {
+            searchLocationBar.text = cell.namePlaceLbl.text
+            var place : GMSAutocompletePrediction?
+            for location in arrayLocation
+            {
+                if location.placeID == cell.placeId
+                {
+                    place = location
+                    break
+                }
+            }
+            
+            arrayLocation.removeAll()
+            
+            if (searchPlaceBar.text?.isEmpty)!
+            {
+                findPlaceLocation = false
+                tableViewPlace.reloadData()
+                arrayLocation.append(place!)
+                searchPlaceBar.becomeFirstResponder()
+            }
+            else
+            {
+                findPlaceLocation = true
+                arrayLocation.append(place!)
+                tableViewPlace.reloadData()
+            }
+        }
+        else
+        {
+            //redirect view place
+        }
     }
 }
 
@@ -170,7 +308,14 @@ extension SearchPlaceViewController: UISearchBarDelegate
         
         if (searchBar.text?.isEmpty)!
         {
-            self.arrayAddress = [GMSAutocompletePrediction]()
+            if searchBar == searchPlaceBar
+            {
+                self.arrayAddress = [GMSAutocompletePrediction]()
+            }
+            else if searchBar == searchLocationBar
+            {
+                self.arrayLocation = [GMSAutocompletePrediction]()
+            }
         }
         else
         {
@@ -178,21 +323,43 @@ extension SearchPlaceViewController: UISearchBarDelegate
             
             if searchStr == ""
             {
-                self.arrayAddress = [GMSAutocompletePrediction]()
+                if searchBar == searchPlaceBar
+                {
+                    self.arrayAddress = [GMSAutocompletePrediction]()
+                }
+                else if searchBar == searchLocationBar
+                {
+                    self.arrayLocation = [GMSAutocompletePrediction]()
+                }
             }
             else
             {
-                GMSPlacesClient.shared().autocompleteQuery(searchStr, bounds: nil, filter: filter, callback: { (result, error) in
-                    
-                    if error == nil && result != nil
-                    {
-                        self.arrayAddress = result!
-                        print(result!)
-                    }
-                })
+                if searchBar == searchPlaceBar
+                {
+                    GMSPlacesClient.shared().autocompleteQuery(searchStr, bounds: nil, filter: filter, callback: { (result, error) in
+                        
+                        if error == nil && result != nil
+                        {
+                            self.arrayAddress = result!
+                            print(result!)
+                            self.tableViewPlace.reloadData()
+                        }
+                    })
+                }
+                else if searchBar == searchLocationBar
+                {
+                    GMSPlacesClient.shared().autocompleteQuery(searchStr, bounds: nil, filter: filterLocation, callback: { (result, error) in
+                        
+                        if error == nil && result != nil
+                        {
+                            self.arrayLocation = result!
+                            print(result!)
+                            self.tableViewPlace.reloadData()
+                        }
+                    })
+                }
             }
         }
-        self.tableViewPlace.reloadData()
         return true
     }
 }
