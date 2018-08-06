@@ -11,6 +11,77 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in CreateUserAccountViewController.createUserAccount():CreateUserAccountViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.isExists">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChoicePlaceViewController.nextPage():ChoicePlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "parentPageViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LoginViewController.userExists():LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Auth.auth().currentUser!.uid">
+            </PersistentString>
+            <PersistentString
+               value = "self.newUser">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChoicePlaceViewController.checkEnabledContinuebutton():ChoicePlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "placeSelected">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in SearchPlaceViewController.tableView(_:cellForRowAt:):SearchPlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "distanceInMeters.conversionInUserMetric()">
+            </PersistentString>
+            <PersistentString
+               value = "coordinate&#x2081;">
+            </PersistentString>
+            <PersistentString
+               value = "coordinate&#x2080;">
+            </PersistentString>
+            <PersistentString
+               value = "self.locationManager.location!.coordinate.latitude">
+            </PersistentString>
+            <PersistentString
+               value = "self.locationManager.location!.coordinate.longitude">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in LoginViewController.saveUserIntoFirebaseDatabase():LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Service.HomeViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SearchPlaceViewController.searchBar(_:shouldChangeTextIn:replacementText:):SearchPlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "result">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "EmailLoginViewController.setupView():EmailLoginViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -27,42 +98,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ChoicePlaceViewController.checkEnabledContinuebutton():ChoicePlaceViewController.swift">
+         contextName = "main:AppDelegate.swift">
          <PersistentStrings>
             <PersistentString
-               value = "placeSelected">
+               value = "parentPageViewController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in LoginViewController.loginButton(_:didCompleteWith:error:):LoginViewController.swift">
+         contextName = "HomeViewController.viewWillAppear(_:):HomeViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "Auth.auth().currentUser?.email">
+               value = "navigationItem.hidesBackButton">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in closure #1 in LoginViewController.saveUserIntoFirebaseDatabase():LoginViewController.swift">
-         <PersistentStrings>
             <PersistentString
-               value = "Service.HomeViewController">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in LoginViewController.userExists():LoginViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "snapchot.childrenCount">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "SearchPlaceViewController.searchBarSearchButtonClicked(_:):SearchPlaceViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "searchLocationBar.text">
+               value = "self.navigationController?.toolbarItems">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -78,6 +128,20 @@
          contextName = "CreateUserAccountViewController.userExists():CreateUserAccountViewController.swift">
       </ContextState>
       <ContextState
+         contextName = "LoginViewController.loginButton(_:didCompleteWith:error:):LoginViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SearchPlaceViewController.tableView(_:numberOfRowsInSection:):SearchPlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "arrayPlaces.count">
+            </PersistentString>
+            <PersistentString
+               value = "(searchLocationBar.text?.isEmpty)!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "EmailLoginViewController.clearTextView():EmailLoginViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -86,40 +150,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "main:AppDelegate.swift">
+         contextName = "closure #1 in LoginViewController.loginButton(_:didCompleteWith:error:):LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "parentPageViewController">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "LoginViewController.uploadData():LoginViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.currentUser!.profilePicture">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "HomeViewController.viewWillAppear(_:):HomeViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.navigationController?.toolbarItems">
-            </PersistentString>
-            <PersistentString
-               value = "navigationItem.hidesBackButton">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "LoginViewController.userExists():LoginViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.newUser">
-            </PersistentString>
-            <PersistentString
-               value = "Auth.auth().currentUser!.uid">
+               value = "Auth.auth().currentUser?.email">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -132,23 +166,28 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ChoicePlaceViewController.nextPage():ChoicePlaceViewController.swift">
+         contextName = "SearchPlaceViewController.searchBarSearchButtonClicked(_:):SearchPlaceViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "parentPageViewController">
+               value = "searchLocationBar.text">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in CreateUserAccountViewController.createUserAccount():CreateUserAccountViewController.swift">
+         contextName = "closure #1 in LoginViewController.userExists():LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.isExists">
+               value = "snapchot.childrenCount">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LoginViewController.loginButton(_:didCompleteWith:error:):LoginViewController.swift">
+         contextName = "LoginViewController.uploadData():LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.currentUser!.profilePicture">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

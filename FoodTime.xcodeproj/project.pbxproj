@@ -43,6 +43,7 @@
 		F4A8ED6B21010DC6007FAB61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8ED6A21010DC6007FAB61 /* User.swift */; };
 		F4A8ED6D21014507007FAB61 /* ChoicePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8ED6C21014507007FAB61 /* ChoicePlaceViewController.swift */; };
 		F4A8ED6F21014517007FAB61 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8ED6E21014517007FAB61 /* HomeViewController.swift */; };
+		F4C2443A2117BED500EFC64E /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C244392117BED500EFC64E /* Float.swift */; };
 		F4F28CA6211139230095E29F /* SearchPlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F28CA5211139230095E29F /* SearchPlaceTableViewCell.swift */; };
 		F4F28CA82112AC670095E29F /* SearchPlaceDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F28CA72112AC660095E29F /* SearchPlaceDetailTableViewCell.swift */; };
 		F4F28CAA2112AC890095E29F /* SearchPlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F28CA92112AC890095E29F /* SearchPlaceDetailViewController.swift */; };
@@ -98,6 +99,7 @@
 		F4A8ED6A21010DC6007FAB61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = "FoodTime/Supporting files/User.swift"; sourceTree = SOURCE_ROOT; };
 		F4A8ED6C21014507007FAB61 /* ChoicePlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoicePlaceViewController.swift; sourceTree = "<group>"; };
 		F4A8ED6E21014517007FAB61 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F4C244392117BED500EFC64E /* Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
 		F4F28CA5211139230095E29F /* SearchPlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceTableViewCell.swift; sourceTree = "<group>"; };
 		F4F28CA72112AC660095E29F /* SearchPlaceDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceDetailTableViewCell.swift; sourceTree = "<group>"; };
 		F4F28CA92112AC890095E29F /* SearchPlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceDetailViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				F4121DF2210660AF00252594 /* UIViewController.swift */,
 				F44C64AD2107FE43003B8039 /* UIPageViewController.swift */,
 				F4F28CAF211396720095E29F /* CCLocationDistance.swift */,
+				F4C244392117BED500EFC64E /* Float.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				C4F848E221094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift in Sources */,
 				C4F848E4210A397C009EDBBD /* ChoiceNotificationViewController.swift in Sources */,
 				F44C64AE2107FE43003B8039 /* UIPageViewController.swift in Sources */,
+				F4C2443A2117BED500EFC64E /* Float.swift in Sources */,
 				C4A1A125210F97F600DFC005 /* Tastes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

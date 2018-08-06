@@ -120,9 +120,10 @@ extension SearchPlaceViewController: UITableViewDelegate, UITableViewDataSource
                 let coordinate₀ = CLLocation(latitude: self.locationManager.location!.coordinate.latitude, longitude: self.locationManager.location!.coordinate.longitude)
                 let coordinate₁ = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
                 
-                let distanceInMeters = coordinate₀.distance(from: coordinate₁).rounded(FloatingPointRoundingRule.toNearestOrAwayFromZero)
+                let distanceInMeters = coordinate₀.distance(from: coordinate₁)
+                let distanceInMetric = distanceInMeters.conversionInUserMetric()
                 
-                cell.distancePlaceLbl.attributedText = NSAttributedString(string: distanceInMeters.conversionInUserMetric())
+                cell.distancePlaceLbl.attributedText = NSAttributedString(string: distanceInMetric)
             })
         } else {
             cell.distancePlaceLbl.attributedText = NSAttributedString(string: "")
@@ -150,7 +151,7 @@ extension SearchPlaceViewController: UISearchBarDelegate
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        if !searchLocationBar.text!.isEmpty && !searchPlaceBar.text!.isEmpty
+        if !(searchLocationBar.text?.isEmpty)! && !(searchPlaceBar.text?.isEmpty)!
         {
             let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
             let desController : UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.SearchPlaceDetailViewController) as! SearchPlaceDetailViewController
@@ -159,28 +160,37 @@ extension SearchPlaceViewController: UISearchBarDelegate
             self.navigationController?.pushViewController(desController, animated: true)
             
         }
-        else if searchPlaceBar.text!.isEmpty
+        else if (searchPlaceBar.text?.isEmpty)!
         {
             Service.showAlert(on: self, style: .alert, title: UIMessages.localizeWithoutComment(key: UIMessages.ErrorTitle), message: UIMessages.localizeWithoutComment(key: UIMessages.ErrorEnterPlace))
         }
     }
     
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        let searchStr = (searchPlaceBar.text! as NSString).replacingCharacters(in: range, with: text)
-        if searchStr == ""
+        
+        if (searchBar.text?.isEmpty)!
         {
             self.arrayAddress = [GMSAutocompletePrediction]()
         }
         else
         {
-            GMSPlacesClient.shared().autocompleteQuery(searchStr, bounds: nil, filter: filter, callback: { (result, error) in
-                
-                if error == nil && result != nil
-                {
-                    self.arrayAddress = result!
-                    print(result!)
-                }
-            })
+            let searchStr = (searchBar.text! as NSString).replacingCharacters(in: range, with: text)
+            
+            if searchStr == ""
+            {
+                self.arrayAddress = [GMSAutocompletePrediction]()
+            }
+            else
+            {
+                GMSPlacesClient.shared().autocompleteQuery(searchStr, bounds: nil, filter: filter, callback: { (result, error) in
+                    
+                    if error == nil && result != nil
+                    {
+                        self.arrayAddress = result!
+                        print(result!)
+                    }
+                })
+            }
         }
         self.tableViewPlace.reloadData()
         return true
