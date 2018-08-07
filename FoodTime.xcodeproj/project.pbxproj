@@ -10,6 +10,7 @@
 		BC71EBB530A6055E3310F1CE /* Pods_FoodTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6AB2096487B6331FEF3FFA1 /* Pods_FoodTime.framework */; };
 		C414FECD20F68EB1008D5AE5 /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C414FECC20F68EB1008D5AE5 /* GetStartedViewController.swift */; };
 		C4182B5C2108F7B1004AE88E /* ModelDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4182B5B2108F7B1004AE88E /* ModelDB.swift */; };
+		C42E618F211A10B600CE7885 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E618E211A10B600CE7885 /* PlaceViewController.swift */; };
 		C45C9BFE20F69A32004A4369 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C9BFD20F69A32004A4369 /* LoginViewController.swift */; };
 		C45C9C0220FEAD58004A4369 /* UILabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C9C0120FEAD58004A4369 /* UILabels.swift */; };
 		C45C9C0920FFA9F3004A4369 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C45C9C0B20FFA9F3004A4369 /* Localizable.strings */; };
@@ -58,6 +59,7 @@
 		B6AB2096487B6331FEF3FFA1 /* Pods_FoodTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C414FECC20F68EB1008D5AE5 /* GetStartedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
 		C4182B5B2108F7B1004AE88E /* ModelDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDB.swift; sourceTree = "<group>"; };
+		C42E618E211A10B600CE7885 /* PlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		C45C9BFD20F69A32004A4369 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C45C9C0020FEAAEC004A4369 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		C45C9C0120FEAD58004A4369 /* UILabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabels.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				F471F5BC21112DC6001AA9E2 /* SearchPlaceViewController.swift */,
 				F4F28CA92112AC890095E29F /* SearchPlaceDetailViewController.swift */,
 				F4F28CAB211374DF0095E29F /* SearchPlaceMapViewController.swift */,
+				C42E618E211A10B600CE7885 /* PlaceViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				F4121DF521068DA500252594 /* GetStartedChoiceCreationViewController.swift in Sources */,
 				C45C9C0220FEAD58004A4369 /* UILabels.swift in Sources */,
 				F4F28CA82112AC670095E29F /* SearchPlaceDetailTableViewCell.swift in Sources */,
+				C42E618F211A10B600CE7885 /* PlaceViewController.swift in Sources */,
 				C4923A2520F556F500641EA9 /* AppDelegate.swift in Sources */,
 				C4F848F1210A6CD0009EDBBD /* TypeDrink.swift in Sources */,
 				F4A8ED6D21014507007FAB61 /* ChoicePlaceViewController.swift in Sources */,

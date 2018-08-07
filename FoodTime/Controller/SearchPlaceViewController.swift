@@ -21,15 +21,16 @@ class SearchPlaceViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var isUserLocalized : Bool = false
     
+    //Configuration Google Place API
     var placesClient : GMSPlacesClient!
-    var arrayAddress : [GMSAutocompletePrediction] = [GMSAutocompletePrediction]()
+    var arrayPlace : [GMSAutocompletePrediction] = [GMSAutocompletePrediction]()
     var arrayLocation : [GMSAutocompletePrediction] = [GMSAutocompletePrediction]()
     var findPlaceLocation : Bool = false
     
-    lazy var filter : GMSAutocompleteFilter = {
-        let filter = GMSAutocompleteFilter()
-        filter.type = .establishment
-        return filter
+    lazy var filterPlace : GMSAutocompleteFilter = {
+        let filterPlace = GMSAutocompleteFilter()
+        filterPlace.type = .establishment
+        return filterPlace
     }()
     
     lazy var filterLocation : GMSAutocompleteFilter = {
@@ -109,19 +110,18 @@ extension SearchPlaceViewController: UITableViewDelegate, UITableViewDataSource
             }
             else
             {
-                return arrayAddress.count
+                return arrayPlace.count
             }
         }
         else
         {
-            let city : String = arrayAddress[0].attributedPrimaryText.string
-            let txtAppend = ("query=restaurant+in+\(city)&key=\(Service.GooglePlaceAPIWSKey)").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            let city : String = arrayPlace[0].attributedPrimaryText.string
+            let txtAppend = ("query=restaurant+in+\(city)&key=\(Service.AraGooglePlaceAPIKey)").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             let url = "https://maps.googleapis.com/maps/api/place/textsearch/json?\(txtAppend!)"
             if let openUrl  = URL(string: url) {
-                UIApplication.shared.open(openUrl, options: [:], completionHandler: nil)
                 performGoogleQuery(url: openUrl)
             }
-            return arrayAddress.count
+            return arrayPlace.count
         }
     }
     
@@ -149,11 +149,11 @@ extension SearchPlaceViewController: UITableViewDelegate, UITableViewDataSource
                         let name = place["name"] as! String
                         let address = place["formatted_address"] as! String
                         let id = place["place_id"] as! String
-                        let opening_hours = place["opening_hours"] as! String
+                        //let opening_hours = place["opening_hours"] as! String
                         print("\(name)")
                         print("\(address)")
                         print("\(id)")
-                        print("\(opening_hours)")
+                     //   print("\(opening_hours)")
                      
                         /*if let geometry = place["geometry"] as? [String : Any]
                         {
@@ -170,7 +170,7 @@ extension SearchPlaceViewController: UITableViewDelegate, UITableViewDataSource
                 // configure the new url and run the query again.
                 if let pageToken = json?["next_page_token"]
                 {
-                    let newURL : URL = URL(string: "https://maps.googleapis.com/maps/api/place/textsearch/json?pagetoken=\(pageToken)&key=\(Service.GooglePlaceAPIKey)")!
+                    let newURL : URL = URL(string: "https://maps.googleapis.com/maps/api/place/textsearch/json?pagetoken=\(pageToken)&key=\(Service.AraGooglePlaceAPIKey)")!
                     self.performGoogleQuery(url: newURL)
                 }
             }
@@ -188,9 +188,9 @@ extension SearchPlaceViewController: UITableViewDelegate, UITableViewDataSource
         
         if (searchLocationBar.text?.isEmpty)! || findPlaceLocation
         {
-            cell.namePlaceLbl.attributedText = arrayAddress[indexPath.row].attributedPrimaryText
-            cell.addressPlaceLbl.attributedText = arrayAddress[indexPath.row].attributedSecondaryText
-            cell.placeId = arrayAddress[indexPath.row].placeID!
+            cell.namePlaceLbl.attributedText = arrayPlace[indexPath.row].attributedPrimaryText
+            cell.addressPlaceLbl.attributedText = arrayPlace[indexPath.row].attributedSecondaryText
+            cell.placeId = arrayPlace[indexPath.row].placeID!
             cell.imageView?.image = UIImage(named: Service.FoodPlaceIcon)
             cell.isLocationCell = false
         }
@@ -279,7 +279,11 @@ extension SearchPlaceViewController: UITableViewDelegate, UITableViewDataSource
         }
         else
         {
-            //redirect view place
+            let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
+            let desController : PlaceViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.PlaceViewController) as! PlaceViewController
+         
+            desController.place = Place(name: "", typePlace: "", typeFood: "", typeDrink: "", rating: "", priceLevel: "", menu: "", website: "", phoneNumber: "", openingHours: "", address: "", city: "", state: "", zipCode: "", country: "", photosLink: [String?]())
+            self.navigationController?.pushViewController(desController, animated: true)
         }
     }
 }
@@ -310,7 +314,7 @@ extension SearchPlaceViewController: UISearchBarDelegate
         {
             if searchBar == searchPlaceBar
             {
-                self.arrayAddress = [GMSAutocompletePrediction]()
+                self.arrayPlace = [GMSAutocompletePrediction]()
             }
             else if searchBar == searchLocationBar
             {
@@ -325,7 +329,7 @@ extension SearchPlaceViewController: UISearchBarDelegate
             {
                 if searchBar == searchPlaceBar
                 {
-                    self.arrayAddress = [GMSAutocompletePrediction]()
+                    self.arrayPlace = [GMSAutocompletePrediction]()
                 }
                 else if searchBar == searchLocationBar
                 {
@@ -336,11 +340,11 @@ extension SearchPlaceViewController: UISearchBarDelegate
             {
                 if searchBar == searchPlaceBar
                 {
-                    GMSPlacesClient.shared().autocompleteQuery(searchStr, bounds: nil, filter: filter, callback: { (result, error) in
+                    GMSPlacesClient.shared().autocompleteQuery(searchStr, bounds: nil, filter: filterPlace, callback: { (result, error) in
                         
                         if error == nil && result != nil
                         {
-                            self.arrayAddress = result!
+                            self.arrayPlace = result!
                             print(result!)
                             self.tableViewPlace.reloadData()
                         }

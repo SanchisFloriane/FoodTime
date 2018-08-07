@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodTime/Controller/SearchPlaceViewController.swift"
-            timestampString = "555284533.199665"
+            timestampString = "555358912.455863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "152"
@@ -58,11 +58,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodTime/Controller/SearchPlaceViewController.swift"
-            timestampString = "555284591.756008"
+            timestampString = "555358912.4559571"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "performGoogleQuery(url:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodTime/Controller/SearchPlaceViewController.swift"
+            timestampString = "555358912.456023"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "performGoogleQuery(url:)"
             landmarkType = "7">
          </BreakpointContent>

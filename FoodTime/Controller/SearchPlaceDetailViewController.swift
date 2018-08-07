@@ -20,12 +20,14 @@ class SearchPlaceDetailViewController: UIViewController, UITabBarDelegate {
     @IBOutlet weak var tablePlaceView: UITableView!
     @IBOutlet weak var titlePage: UINavigationItem!
     
+    var arrayPlace : [Place?] = [Place?]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tabBar.delegate = self
 
-       setupView()
+        setupView()
     }
 
     fileprivate func setupView()

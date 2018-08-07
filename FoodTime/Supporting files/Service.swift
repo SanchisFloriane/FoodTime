@@ -13,9 +13,12 @@ import JGProgressHUD
 class Service {
     
     //API KEY
-    static let GooglePlaceAPIKey : String = "AIzaSyA8vcbGXF3gDkIe1zzw7k0fSCDEKZ6CbuU"
-    static let GooglePlaceAPIWSKey : String = "AIzaSyAsdGZ-BbG1W6KmU9LhbloVh1bzjpMwdsQ"
+    static let GooglePlaceAPIKeyIOS : String = "AIzaSyA8vcbGXF3gDkIe1zzw7k0fSCDEKZ6CbuU"
+    static let GooglePlaceAPIKeyWS : String = "AIzaSyAsdGZ-BbG1W6KmU9LhbloVh1bzjpMwdsQ"
     
+    static let AraGooglePlaceAPIKeyWS : String = "AIzaSyChd5nTkODfGoB8L05JS-lpuvyXBhiwNCQ"
+    static let AraGooglePlaceAPIKeyIOS : String = "AIzaSyBieS_Wm8SSu8kVVcSRjKnoK2S4dkHcJ3A "
+    static let AraGooglePlaceAPIKey : String = "AIzaSyD62iGuyY7dIWTpgPVVdwhNX759awmB9Xo"
     //Button properties
     static let buttonTitleFontSize: CGFloat = 16
     static let buttonTitleColor: UIColor = UIColor.white
@@ -43,6 +46,7 @@ class Service {
     static let ChoiceUserPageViewController : String = "ChoiceUserPageViewController"
     static let SearchPlaceViewController : String = "SearchPlaceViewController"
     static let SearchPlaceDetailViewController : String = "SearchPlaceDetailViewController"
+    static let PlaceViewController : String = "PlaceViewController"
     
     //TableViewCell
     static let ChoiceTypeFoodTableViewCell : String = "ChoiceTypeFoodTableViewCell"
