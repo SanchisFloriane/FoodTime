@@ -20,7 +20,7 @@ class Place
     var menu : String?
     var website : String?
     var phoneNumber : String?
-    var openingHours : String?
+    var openingHours : [String?] = [String?]()
     var address : String?
     var city : String?
     var state : String?
@@ -36,7 +36,7 @@ class Place
     
     init() {}
     
-    init(idPlace: String?, name: String?, typePlace: [String?], typeFood: String?, typeDrink: String?, rating: String?, priceLevel: String?, menu: String?, website: String?, phoneNumber: String?, openingHours: String?, address: String?, city: String?, state: String?, zipCode: String?, country: String?, photosLink: [String?], icon: String?, openNow: Bool, formattedAddress: String?) {
+    init(idPlace: String?, name: String?, typePlace: [String?], typeFood: String?, typeDrink: String?, rating: String?, priceLevel: String?, menu: String?, website: String?, phoneNumber: String?, openingHours: [String?], address: String?, city: String?, state: String?, zipCode: String?, country: String?, photosLink: [String?], icon: String?, openNow: Bool, formattedAddress: String?) {
         
         self.idPlace = idPlace
         self.name = name
@@ -70,7 +70,7 @@ class Place
                 ModelDB.Place_menu : self.menu ?? "",
                 ModelDB.Place_website : self.website ?? "",
                 ModelDB.Place_phoneNumber: self.phoneNumber ?? "",
-                ModelDB.Place_openingHours : self.openingHours ?? "",
+                ModelDB.Place_openingHours : self.openingHours,
                 ModelDB.Place_address : self.address ?? "",
                 ModelDB.Place_city : self.city ?? "",
                 ModelDB.Place_state : self.state ?? "",
@@ -81,39 +81,85 @@ class Place
         ]
     }
     
-    static func jsonToPlace(tab: [String : Any]?, requestPhoto: Bool) -> [Place]
+    static func jsonToPlace(tab: [String : Any]?, requestPhoto: Bool, onePlace: Bool, completion:@escaping ([Place])->() )
     {
         var arrayPlace : [Place] = [Place]()
         
         // Parse the json results into an array of Place objects
-        if let places = tab?["results"] as? [[String : Any]]
+        var keyResult = "results"
+        if onePlace
+        {
+            keyResult = "result"
+        }
+        
+        var idPlace : String?
+        var name : String?
+        var formattedAddress : String?
+        var rating : Double?
+        var priceLevel : Int?
+        var website : String?
+        var phoneNumber : String?
+        var openNow : Bool?
+        var icon : String?
+        var openingHours : [String?] = [String?]()
+        
+        if let places = tab?[keyResult] as? [String : Any]
         {
             for place in places
             {
-                let idPlace = place["place_id"] as? String
-                let name = place["name"] as? String
-                let formattedAddress = place["formatted_address"] as? String
-                let rating = place["rating"] as? Double
-                let priceLevel = place["price_level"] as? Int
-                let website = place["website"] as? String
-                let phoneNumber = place["international_phone_number"] as? String
-                let openNow = place["openNow"] as? Bool
-                let icon = place["icon"] as? String
-                if let openingHours = place["opening_hours"] as? [String : Any]
+                if place.key == "place_id"
                 {
-                    if let periods = openingHours["opening_hours"] as? [String : Any]
+                    idPlace = place.value as? String
+                }
+                
+                if place.key == "name"
+                {
+                    name = place.value as? String
+                }
+                
+                if place.key == "formatted_address"
+                {
+                    formattedAddress = place.value as? String
+                }
+                
+                if place.key == "rating"
+                {
+                    rating = place.value as? Double
+                }
+                
+                if place.key == "price_level"
+                {
+                    priceLevel = place.value as? Int
+                }
+                
+                if place.key == "website"
+                {
+                    website = place.value as? String
+                }
+                
+                if place.key == "international_phone_number"
+                {
+                    phoneNumber = place.value as? String
+                }
+                
+                if place.key == "icon"
+                {
+                    icon = place.value as? String
+                }
+                
+                if place.key == "opening_hours"
+                {
+                    let openingHoursJSON = place.value as? [String : Any]
+                    if let opennow = openingHoursJSON!["open_now"] as? Bool
                     {
-                        if let open = periods["open"] as? [String : Any]
+                        openNow = opennow
+                    }
+                        
+                    if let weekdayText = openingHoursJSON!["weekday_text"] as? [String]
+                    {
+                        for day in weekdayText
                         {
-                            if let day = open["day"] as? [String : Any]
-                            {
-                                print("\(day)")
-                            }
-                            
-                            if let time = open["time"] as? [String : Any]
-                            {
-                                print("\(time)")
-                            }
+                            openingHours.append(day)
                         }
                     }
                 }
@@ -126,84 +172,81 @@ class Place
                 var route : String?
                 var streetNumber : String?
                 
-                if let addressComponent = place["address_component"] as? [String: Any]
+                if place.key == "address_components"
                 {
-                    for field in addressComponent
+                    let addressComponent = place.value as? [[String: Any]]
+                
+                    for field in addressComponent!
                     {
-                        print(field)
-                        print(field.key)
-                        print(field.value)
-                        if field.key == "types"
+                        if field["types"] as? [String] == ["street_number"]
                         {
-                            let typeField = field.key
-                            if typeField == "street_number"
-                            {
-                                streetNumber = field.value as? String
-                            }
-                            else if typeField == "route"
-                            {
-                                route = field.value as? String
-                            }
-                            else if typeField == "locality"
-                            {
-                                city = field.value as? String
-                            }
-                            else if typeField == "administrative_area_level_1"
-                            {
-                                state = field.value as? String
-                            }
-                            else if typeField == "country"
-                            {
-                                country = field.value as? String
-                            }
-                            else if typeField == "postal_code"
-                            {
-                                zipCode = field.value as? String
-                            }
+                            streetNumber = field["long_name"] as? String
+                        }
+                        else if field["types"] as? [String] == ["route"]
+                        {
+                            route = field["long_name"] as? String
+                        }
+                        else if field["types"] as? [String] == ["locality"]
+                        {
+                            city = field["long_name"] as? String
+                        }
+                        else if field["types"] as? [String] == ["administrative_area_level_1"]
+                        {
+                            state = field["long_name"] as? String
+                        }
+                        else if field["types"] as? [String] == ["country"]
+                        {
+                            country = field["long_name"] as? String
+                        }
+                        else if field["types"] as? [String] == ["postal_code"]
+                        {
+                            zipCode = field["long_name"] as? String
                         }
                     }
-                    
-                    address = "\(String(describing: streetNumber)) \(String(describing: route))"
+                    address = "\(streetNumber ?? "") \(route ?? ""))"
                 }
                 
-                let typePlaceJSON = place["types"] as? [String]
                 var typePlace : [String?] = [String?]()
-                
-                if typePlaceJSON != nil && !(typePlaceJSON?.isEmpty)!
+                if place.key == "types"
                 {
-                    for placeJSON in typePlaceJSON!
+                    let typePlaceJSON = place.value as? [String]
+                    
+                    if typePlaceJSON != nil && !(typePlaceJSON?.isEmpty)!
                     {
-                        if TypePlace.TypePlaceJSON.findPlaceJSON(typePlaceJSON: placeJSON) != nil
+                        for placeJSON in typePlaceJSON!
                         {
-                            typePlace.append(placeJSON)
+                            if TypePlace.TypePlaceJSON.findPlaceJSON(typePlaceJSON: placeJSON) != nil
+                            {
+                                typePlace.append(placeJSON)
+                            }
                         }
                     }
                 }
                 
+                var photosLink : [String] = [String]()
                 if requestPhoto
                 {
-                    let photos = place["photos"] as? [[String : Any]]
-                    
-                    if photos != nil && !(photos?.isEmpty)!
+                    if place.key == "photos"
                     {
-                        for photo in photos!
+                        let photos = place.value as? [[String : Any]]
+                    
+                        if photos != nil && !(photos?.isEmpty)!
                         {
-                            //request photo
-                            //https://maps.googleapis.com/maps/api/place/photo?parameters
-                            //photo?.photo_reference
+                            for photo in photos!
+                            {
+                                photosLink.append(photo["photo_reference"] as! String)
+                            }
                         }
                     }
                 }
                 
-                arrayPlace.append(Place(idPlace: idPlace, name: name, typePlace: typePlace, typeFood: nil, typeDrink: nil, rating: rating?.description, priceLevel: priceLevel?.description, menu: nil, website: website, phoneNumber: phoneNumber, openingHours: nil, address: address, city: city, state: state, zipCode: zipCode, country: country, photosLink: [String?](), icon: icon, openNow: openNow ?? false, formattedAddress: formattedAddress))
+                arrayPlace.append(Place(idPlace: idPlace, name: name, typePlace: typePlace, typeFood: nil, typeDrink: nil, rating: rating?.description, priceLevel: priceLevel?.description, menu: nil, website: website, phoneNumber: phoneNumber, openingHours: openingHours, address: address, city: city, state: state, zipCode: zipCode, country: country, photosLink: photosLink, icon: icon, openNow: openNow ?? false, formattedAddress: formattedAddress))
  
                 // var typeFood: String?
                 // var typeDrink : String?
                 // var menu : String?
+                completion(arrayPlace)
             }
         }
-        
-        return arrayPlace
     }
-    
 }

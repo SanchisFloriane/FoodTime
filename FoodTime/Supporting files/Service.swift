@@ -28,6 +28,9 @@ class Service {
     //Image
     static let FoodPlaceIcon : String = "foodPlace-icon"
     static let CityPlaceIcon : String = "cityPlace-icon"
+    static let PriceLevelOne : String = "priceLevelOne-icon"
+    static let PriceLevelTwo : String = "priceLevelTwo-icon"
+    static let PriceLevelThree : String = "priceLevelThree-icon"
     
     //Name of the Storyboards
     static let MainStoryboard : String = "Main"

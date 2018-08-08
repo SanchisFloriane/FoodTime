@@ -68,11 +68,23 @@ class UILabels {
     
     static let MyProfileButton : String = "MyProfileButton"
     
+    static let NoPhoneNumber : String = "NoPhoneNumber"
+    
+    static let NoWebsite : String = "NoWebsite"
+    
     static let Password : String = "Password"
+    
+    static let PlaceInformationTitle : String = "PlaceInformationTitle"
+    
+    static let PlaceClosedNow : String = "PlaceClosedNow"
+    
+    static let PlaceOpenNow : String = "PlaceOpenNow"
     
     static let PasswordConfirmation : String = "PasswordConfirmation"
     
     static let RecommandationsButton : String = "RecommandationsButton"
+    
+    static let Reviews : String = "Reviews"
     
     static let SearchLocationBarPlaceHolder : String = "SearchLocationBarPlaceHolder"
     
@@ -95,4 +107,7 @@ class UILabels {
     static let TitleSearchPlaceDetailViewController : String = "TitleSearchPlaceDetailViewController"
     
     static let ValidateButton : String = "ValidateButton"
+    
+    static let VisitWebsiteLink : String = "VisitWebsiteLink"
+
 }

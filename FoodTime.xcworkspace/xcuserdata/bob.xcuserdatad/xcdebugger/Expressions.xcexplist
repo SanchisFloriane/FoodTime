@@ -3,6 +3,20 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "static Place.jsonToPlace(tab:requestPhoto:onePlace:):Place.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "field[&quot;types&quot;] as? [String]">
+            </PersistentString>
+            <PersistentString
+               value = "city">
+            </PersistentString>
+            <PersistentString
+               value = "field">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ChoiceTypeFoodViewController.tableView(_:numberOfRowsInSection:):ChoiceTypeFoodViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -95,6 +109,17 @@
          <PersistentStrings>
             <PersistentString
                value = "buttonPlace.tag">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in PlaceViewController.loadPlace():PlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Place.jsonToPlace(tab: json, requestPhoto: true, onePlace: true)[0]">
+            </PersistentString>
+            <PersistentString
+               value = "self.place">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

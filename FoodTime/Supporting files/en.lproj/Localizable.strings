@@ -48,6 +48,8 @@
 
 "GoogleSignUpButton" = "Sign up with Google";
 
+"HoursTitle" = "Opening hours";
+
 "Km" = "Km";
 
 "LogginButton" = "Have an account ? Log in";
@@ -62,11 +64,23 @@
 
 "NewsTitle" = "News";
 
+"NoPhoneNumber" = "No phone number";
+
+"NoWebsite" = "No website";
+
 "Password" = "Your password";
 
 "PasswordConfirmation" = "Confirmation password";
 
+"PlaceClosedNow" = "Closed";
+
+"PlaceInformationTitle" = "Place information";
+
+"PlaceOpenNow" = "Open now";
+
 "RecommandationsButton" = "For you";
+
+"Reviews" = "Reviews";
 
 "SearchLocationBarPlaceHolder" = "Near by ...";
 
@@ -91,4 +105,6 @@
 "UserNotFound" = "User account does not exist.";
 
 "ValidateButton" = "Validate";
+
+"VisitWebsiteLink" = "Visit website";
 

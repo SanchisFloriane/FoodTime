@@ -37,6 +37,8 @@ class UIMessages {
     static let ErrorFormatPassword : String = "ErrorFormatPassword"
     
     static let ErrorPassword : String = "ErrorPassword"
+    
+    static let HoursTitle : String = "HoursTitle"
         
     static let UserNotFound : String = "UserNotFound"
     

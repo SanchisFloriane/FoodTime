@@ -48,6 +48,8 @@
 
 "GoogleSignUpButton" = "S'enregistrer avec Google";
 
+"HoursTitle" = "Horaires d'ouvertures";
+
 "Km" = "Km";
 
 "LogginButton" = "Vous avez un compte ? Se connecter";
@@ -62,11 +64,23 @@
 
 "NewsTitle" = "Nouveautées";
 
+"NoPhoneNumber" = "Pas de numéro de téléphone";
+
+"NoWebsite" = "Pas de site web";
+
 "Password" = "Votre mot de passe";
 
 "PasswordConfirmation" = "Confirmation mot de passe";
 
+"PlaceClosedNow" = "Fermé";
+
+"PlaceInformationTitle" = "Informations sur l'endroit";
+
+"PlaceOpenNow" = "Ouvert";
+
 "RecommandationsButton" = "Pour moi";
+
+"Reviews" = "Avis";
 
 "SearchLocationBarPlaceHolder" = "Près de ...";
 
@@ -91,3 +105,5 @@
 "UserNotFound" = "Le compte utilisateur n'existe pas";
 
 "ValidateButton" = "Valider";
+
+"VisitWebsiteLink" = "Voir site";

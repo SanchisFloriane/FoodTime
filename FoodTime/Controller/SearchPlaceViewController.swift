@@ -200,8 +200,10 @@ extension SearchPlaceViewController: UITableViewDelegate, UITableViewDataSource
                 self.arrayPlace.removeAll()
                 GoogleServices.performGoogleQuery(url: URL(string: url)!, completion: { (json) in
                     
-                    self.arrayPlace = Place.jsonToPlace(tab: json, requestPhoto: false)
-                    self.tableViewPlace.reloadData()
+                    Place.jsonToPlace(tab: json, requestPhoto: false, onePlace: false, completion: { (placesConverted) in
+                        self.arrayPlace = placesConverted
+                        self.tableViewPlace.reloadData()
+                    })
                 })
             }
         }
@@ -210,7 +212,7 @@ extension SearchPlaceViewController: UITableViewDelegate, UITableViewDataSource
             let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
             let desController : PlaceViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.PlaceViewController) as! PlaceViewController
             
-            // desController.place = Place(name: "", typePlace: "", typeFood: "", typeDrink: "", rating: "", priceLevel: "", menu: "", website: "", phoneNumber: "", openingHours: "", address: "", city: "", state: "", zipCode: "", country: "", photosLink: [String?]())
+            desController.place.idPlace = cell.placeId
             self.navigationController?.pushViewController(desController, animated: true)
         }
     }
@@ -321,9 +323,10 @@ extension SearchPlaceViewController: UISearchBarDelegate
                         
                         GoogleServices.performGoogleQuery(url: URL(string: url)!, completion: { (json) in
                             
-                            self.arrayPlace = Place.jsonToPlace(tab: json, requestPhoto: false)
-                            self.tableViewPlace.reloadData()
-                        
+                           Place.jsonToPlace(tab: json, requestPhoto: false, onePlace: false, completion: { (placesConverted) in
+                                self.arrayPlace = placesConverted
+                                self.tableViewPlace.reloadData()
+                            })
                         })
                     }
                     else
