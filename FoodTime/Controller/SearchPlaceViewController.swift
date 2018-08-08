@@ -109,101 +109,6 @@ extension SearchPlaceViewController: UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    func performGoogleQuery(url: URL)
-    {
-        self.arrayPlace.removeAll()
-        let task = URLSession.shared.dataTask(with: url, completionHandler: {(data, response, error) in
-            
-            if error != nil
-            {
-                print("An error occured: \(String(describing: error))")
-                return
-            }
-            
-            do
-            {
-                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:Any]
-                
-                // Parse the json results into an array of Place objects
-                if let places = json?["results"] as? [[String : Any]]
-                {
-                    for place in places
-                    {
-                        let idPlace = place["place_id"] as? String
-                        let name = place["name"] as? String
-                        let formattedAddress = place["formatted_address"] as? String
-                        let rating = place["rating"] as? Double
-                        let priceLevel = place["price_level"] as? Int
-                        let website = place["website"] as? String
-                        let phoneNumber = place["international_phone_number"] as? String
-                        let openNow = place["openNow"] as? Bool
-                        let photos = place["photos"] as? [[String : Any]]
-                        let icon = place["icon"] as? String
-                        let typePlaceJSON = place["types"] as? [String]
-                        var typePlace : [String?] = [String?]()
-                        
-                        if typePlaceJSON != nil && !(typePlaceJSON?.isEmpty)!
-                        {
-                            for placeJSON in typePlaceJSON!
-                            {
-                                if TypePlace.TypePlaceJSON.findPlaceJSON(typePlaceJSON: placeJSON) != nil
-                                {
-                                    typePlace.append(placeJSON)
-                                }
-                            }
-                        }
-                        
-                        if photos != nil && !(photos?.isEmpty)!
-                        {
-                            for photo in photos!
-                            {
-                                //request photo
-                                //https://maps.googleapis.com/maps/api/place/photo?parameters
-                                //photo?.photo_reference
-                            }
-                        }
-                        
-                        self.arrayPlace.append(Place(idPlace: idPlace, name: name, typePlace: typePlace, typeFood: nil, typeDrink: nil, rating: rating?.description, priceLevel: priceLevel?.description, menu: nil, website: website, phoneNumber: phoneNumber, openingHours: nil, address: nil, city: nil, state: nil, zipCode: nil, country: nil, photosLink: [String?](), icon: icon, openNow: openNow ?? false, formattedAddress: formattedAddress))
-                        //--> full request
-                        // var typeFood: String?
-                        // var typeDrink : String?
-                        // var menu : String?
-                        // var openingHours : String?
-                        // var city : String?
-                        // var state : String?
-                        // var zipCode : String?
-                        // var country : String?
-                        
-                        //   print("\(opening_hours)")
-                        
-                        /*if let geometry = place["geometry"] as? [String : Any]
-                         {
-                         if let location = geometry["location"] as? [String : Any]
-                         {
-                         let lat = location["lat"] as! CLLocationDegrees
-                         let long = location["lng"] as! CLLocationDegrees
-                         let coordinate = CLLocationCoordinate2DMake(lat, long)
-                         }
-                         }*/
-                    }
-                }
-                
-                // If there is another page of results,
-                // configure the new url and run the query again.
-                /*if let pageToken = json?["next_page_token"]
-                 {
-                 let newURL : URL = URL(string: "https://maps.googleapis.com/maps/api/place/textsearch/json?pagetoken=\(pageToken)&key=\(Service.AraGooglePlaceAPIKey)")!
-                 self.performGoogleQuery(url: newURL)
-                 }*/
-            }
-            catch
-            {
-                print("error serializing JSON: \(error)")
-            }
-        })
-        task.resume()
-    }
-    
     //MAJ Table view
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -292,9 +197,13 @@ extension SearchPlaceViewController: UITableViewDelegate, UITableViewDataSource
                 var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?"
                 let query = ("query=\(namePlace)+\(city)\(type)\(APIKey)\(language)").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
                 url.append("\(query!)")
-                performGoogleQuery(url: URL(string: url)!)
+                self.arrayPlace.removeAll()
+                GoogleServices.performGoogleQuery(url: URL(string: url)!, completion: { (json) in
+                    
+                    self.arrayPlace = Place.jsonToPlace(tab: json, requestPhoto: false)
+                    self.tableViewPlace.reloadData()
+                })
             }
-            tableViewPlace.reloadData()
         }
         else
         {
@@ -407,8 +316,15 @@ extension SearchPlaceViewController: UISearchBarDelegate
                         let language : String = "&language=\(Locale.current.languageCode!)"
                         var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?"
                         let query = ("query=\(namePlace)+\(city)\(type)\(APIKey)\(language)").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-                        url.append("\(query!)")
-                        performGoogleQuery(url: URL(string: url)!)
+                        url.append("\(query!)")                        
+                        self.arrayPlace.removeAll()
+                        
+                        GoogleServices.performGoogleQuery(url: URL(string: url)!, completion: { (json) in
+                            
+                            self.arrayPlace = Place.jsonToPlace(tab: json, requestPhoto: false)
+                            self.tableViewPlace.reloadData()
+                        
+                        })
                     }
                     else
                     {
