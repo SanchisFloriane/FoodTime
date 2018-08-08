@@ -37,6 +37,7 @@ class ModelDB {
     static let Place_zipCode: String = "zipCode"
     static let Place_country : String = "country"
     static let Place_photosLink : String = "photosLink"
+    static let Place_icon : String = "icon"
     
     //TASTES
     static let Tastes_typeDrinkPlace : String = "typeDrinkPlace"

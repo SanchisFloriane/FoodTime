@@ -3,32 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "static TypePlace.typePlace(typePlace:):TypePlace.swift">
+         contextName = "ChoiceTypeFoodViewController.tableView(_:numberOfRowsInSection:):ChoiceTypeFoodViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "typeDrinkPlace.rawValue">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in LoginViewController.saveUserIntoFirebaseDatabase():LoginViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "url">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "SearchPlaceViewController.tableView(_:numberOfRowsInSection:):SearchPlaceViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "arrayAddress">
-            </PersistentString>
-            <PersistentString
-               value = "Service.GooglePlaceAPIKey">
-            </PersistentString>
-            <PersistentString
-               value = "arrayLocation">
+               value = "listTypeFood.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -44,6 +22,39 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "static TypePlace.typePlace(typePlace:):TypePlace.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "typeDrinkPlace.rawValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in SearchPlaceViewController.performGoogleQuery(url:):SearchPlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "url">
+            </PersistentString>
+            <PersistentString
+               value = "place[&quot;price_level&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in static TypePlace.toString(typePlace:completion:):TypePlace.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "&quot;\(ModelDB.typePlace)/\(Service.LanguageApp)/\(typePlace.rawValue.description)&quot;">
+            </PersistentString>
+            <PersistentString
+               value = "typePlace">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in SearchPlaceViewController.searchBar(_:shouldChangeTextIn:replacementText:):SearchPlaceViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "SearchPlaceViewController.tableView(_:didSelectRowAt:):SearchPlaceViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -51,6 +62,31 @@
             </PersistentString>
             <PersistentString
                value = "tableViewPlace.cellForRow(at: indexPath)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SearchPlaceViewController.tableView(_:numberOfRowsInSection:):SearchPlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "isSearchPlaceBar">
+            </PersistentString>
+            <PersistentString
+               value = "Service.GooglePlaceAPIKey">
+            </PersistentString>
+            <PersistentString
+               value = "arrayLocation">
+            </PersistentString>
+            <PersistentString
+               value = "placeArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChoiceTypeFoodViewController.tableView(_:cellForRowAt:):ChoiceTypeFoodViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.title">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -74,29 +110,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in static TypePlace.toString(typePlace:completion:):TypePlace.swift">
+         contextName = "closure #1 in LoginViewController.saveUserIntoFirebaseDatabase():LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "typePlace">
-            </PersistentString>
-            <PersistentString
-               value = "&quot;\(ModelDB.typePlace)/\(Service.LanguageApp)/\(typePlace.rawValue.description)&quot;">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ChoiceTypeFoodViewController.tableView(_:cellForRowAt:):ChoiceTypeFoodViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "cell.title">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ChoiceTypeFoodViewController.tableView(_:numberOfRowsInSection:):ChoiceTypeFoodViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "listTypeFood.count">
+               value = "url">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

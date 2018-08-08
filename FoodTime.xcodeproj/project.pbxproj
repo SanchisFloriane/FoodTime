@@ -11,6 +11,7 @@
 		C414FECD20F68EB1008D5AE5 /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C414FECC20F68EB1008D5AE5 /* GetStartedViewController.swift */; };
 		C4182B5C2108F7B1004AE88E /* ModelDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4182B5B2108F7B1004AE88E /* ModelDB.swift */; };
 		C42E618F211A10B600CE7885 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E618E211A10B600CE7885 /* PlaceViewController.swift */; };
+		C42E6191211A21F000CE7885 /* PlacePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E6190211A21F000CE7885 /* PlacePhoto.swift */; };
 		C45C9BFE20F69A32004A4369 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C9BFD20F69A32004A4369 /* LoginViewController.swift */; };
 		C45C9C0220FEAD58004A4369 /* UILabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C9C0120FEAD58004A4369 /* UILabels.swift */; };
 		C45C9C0920FFA9F3004A4369 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C45C9C0B20FFA9F3004A4369 /* Localizable.strings */; };
@@ -60,6 +61,7 @@
 		C414FECC20F68EB1008D5AE5 /* GetStartedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
 		C4182B5B2108F7B1004AE88E /* ModelDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDB.swift; sourceTree = "<group>"; };
 		C42E618E211A10B600CE7885 /* PlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
+		C42E6190211A21F000CE7885 /* PlacePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePhoto.swift; sourceTree = "<group>"; };
 		C45C9BFD20F69A32004A4369 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C45C9C0020FEAAEC004A4369 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		C45C9C0120FEAD58004A4369 /* UILabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabels.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				C4F848E5210A4E25009EDBBD /* Settings.swift */,
 				C4A1A124210F97F600DFC005 /* Tastes.swift */,
 				F4F28CB12113A94C0095E29F /* Place.swift */,
+				C42E6190211A21F000CE7885 /* PlacePhoto.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C45C9BFE20F69A32004A4369 /* LoginViewController.swift in Sources */,
+				C42E6191211A21F000CE7885 /* PlacePhoto.swift in Sources */,
 				C4F848EF210A6B16009EDBBD /* TypeFood.swift in Sources */,
 				C4F848DE21092E17009EDBBD /* ChoiceTypeFoodTableViewCell.swift in Sources */,
 				F42998B420FD50820035A717 /* Service.swift in Sources */,

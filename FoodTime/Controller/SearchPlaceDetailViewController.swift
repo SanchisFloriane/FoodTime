@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import GooglePlaces
+import GoogleMaps
 
-class SearchPlaceDetailViewController: UIViewController, UITabBarDelegate {
+class SearchPlaceDetailViewController: UIViewController, UITabBarDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var filterListButton: UIBarButtonItem!
     @IBOutlet weak var newsButton: UITabBarItem!
@@ -20,18 +22,51 @@ class SearchPlaceDetailViewController: UIViewController, UITabBarDelegate {
     @IBOutlet weak var tablePlaceView: UITableView!
     @IBOutlet weak var titlePage: UINavigationItem!
     
+    //Localisation user
+    let locationManager = CLLocationManager()
+    var isUserLocalized : Bool = false
+    
+    //Configuration Google Place API
+    var placesClient : GMSPlacesClient!
+    var arrayLocation : [GMSAutocompletePrediction] = [GMSAutocompletePrediction]()
     var arrayPlace : [Place?] = [Place?]()
+    
+    var findPlaceLocation : Bool = false
+    var isSearchPlaceBar : Bool = false
+    var isSearchLocationBar : Bool = false
+    
+    lazy var filterPlace : GMSAutocompleteFilter = {
+        let filterPlace = GMSAutocompleteFilter()
+        filterPlace.type = .establishment
+        return filterPlace
+    }()
+    
+    lazy var filterLocation : GMSAutocompleteFilter = {
+        let filterLocation = GMSAutocompleteFilter()
+        filterLocation.type = .city
+        return filterLocation
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        placesClient = GMSPlacesClient.shared()
+        
         self.tabBar.delegate = self
-
+        
+        //Ask user localization
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = 200
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
         setupView()
     }
-
+    
     fileprivate func setupView()
     {
+        self.localizeUser()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         
         titlePage.title = UILabels.localizeWithoutComment(key: UILabels.TitleSearchPlaceDetailViewController)
@@ -40,6 +75,43 @@ class SearchPlaceDetailViewController: UIViewController, UITabBarDelegate {
         placesButton.title = UILabels.localizeWithoutComment(key: UILabels.MyPlacesButton)
         recommandationsButton.title = UILabels.localizeWithoutComment(key: UILabels.RecommandationsButton)
         profileButton.title = UILabels.localizeWithoutComment(key: UILabels.MyProfileButton)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func localizeUser()
+    {
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+            case .notDetermined, .restricted, .denied:
+                print("No access")
+                isUserLocalized = false
+            case .authorizedAlways, .authorizedWhenInUse:
+                print("Access")
+                isUserLocalized = true
+            }
+        }
+        else
+        {
+            isUserLocalized = false
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        
+        print("location error is = \(error.localizedDescription)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let locValue:CLLocationCoordinate2D = (manager.location?.coordinate)!
+        print("Current Locations = \(locValue.latitude) \(locValue.longitude)")
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -67,20 +139,64 @@ class SearchPlaceDetailViewController: UIViewController, UITabBarDelegate {
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+}
+
+extension SearchPlaceDetailViewController: UITableViewDelegate, UITableViewDataSource
+{
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
+        let cell = tablePlaceView.dequeueReusableCell(withIdentifier: Service.SearchPlaceDetailIdCell) as! SearchPlaceDetailTableViewCell
+        
+       /* if isSearchPlaceBar
+        {
+            cell.namePlaceLbl.attributedText = NSAttributedString(string: (arrayPlace[indexPath.row]?.name)!)
+            cell.addressPlaceLbl.attributedText = NSAttributedString(string: (arrayPlace[indexPath.row]?.formattedAddress)!)
+            cell.placeId = (arrayPlace[indexPath.row]?.idPlace!)!
+            cell.imageView?.image = UIImage(named: Service.FoodPlaceIcon)
+            cell.isLocationCell = false
+        }
+        else
+        {
+            cell.namePlaceLbl.attributedText = arrayLocation[indexPath.row].attributedPrimaryText
+            cell.addressPlaceLbl.attributedText = arrayLocation[indexPath.row].attributedSecondaryText
+            cell.placeId = arrayLocation[indexPath.row].placeID!
+            cell.imageView?.image = UIImage(named: Service.CityPlaceIcon)
+            cell.isLocationCell = true
+        }*/
+        
+      /*  if isUserLocalized {
+            
+            placesClient.lookUpPlaceID(cell.placeId, callback: { (place, error) -> Void in
+                if let error = error {
+                    print("lookup place id query error: \(error.localizedDescription)")
+                    return
+                }
+                
+                guard let place = place else {
+                    print("No place details for \(cell.placeId)")
+                    return
+                }
+                
+                let coordinate₀ = CLLocation(latitude: (self.locationManager.location?.coordinate.latitude)!, longitude: (self.locationManager.location?.coordinate.longitude)!)
+                let coordinate₁ = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+                
+                let distanceInMeters = coordinate₀.distance(from: coordinate₁)
+                let distanceInMetric = distanceInMeters.conversionInUserMetric()
+                
+                cell.distancePlaceLbl.attributedText = NSAttributedString(string: distanceInMetric)
+            })
+        }
+        else
+        {
+            cell.distancePlaceLbl.attributedText = NSAttributedString(string: "")
+        }*/
+        
+        return cell
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return arrayPlace.count
     }
-    */
 
 }

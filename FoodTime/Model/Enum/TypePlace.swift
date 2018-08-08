@@ -37,6 +37,29 @@ enum TypePlace: Int, CaseIterable
         case Coffee = 1
     }
     
+    enum TypePlaceJSON: String, CaseIterable
+    {
+        case Bar = "bar"
+        case Cafe = "cafe"
+        case FastFood = "fastfood"
+        case FoodTruck = "foodtruck"
+        case Restaurant = "restaurant"
+        case Bakery = "bakery"
+        case Food = "food"
+        
+        static func findPlaceJSON(typePlaceJSON: String) -> TypePlaceJSON?
+        {
+            for typePlace in TypePlace.TypePlaceJSON.allCases
+            {
+                if typePlace.rawValue == typePlaceJSON
+                {
+                    return TypePlace.TypePlaceJSON(rawValue: typePlaceJSON)
+                }
+            }
+            
+            return nil
+        }
+    }
     static func toEnum(idEnum: Int) -> TypePlace.AllPlace?
     {
         switch idEnum {

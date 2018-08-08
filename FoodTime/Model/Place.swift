@@ -12,7 +12,7 @@ class Place
 {
     //Attributes in DB
     var name : String?
-    var typePlace : String?
+    var typePlace : [String?] = [String?]()
     var typeFood: String?
     var typeDrink : String?
     var rating : String?
@@ -27,14 +27,18 @@ class Place
     var zipCode : String?
     var country : String?
     var photosLink : [String?] = [String?]()
+    var icon : String?
     
     //Attributes no in DB
     var idPlace: String?
+    var openNow: Bool = false
+    var formattedAddress: String?
     
     init() {}
     
-    init(name: String?, typePlace: String?, typeFood: String?, typeDrink: String?, rating: String?, priceLevel: String?, menu: String?, website: String?, phoneNumber: String?, openingHours: String?, address: String?, city: String?, state: String?, zipCode: String?, country: String?, photosLink: [String?]) {
+    init(idPlace: String?, name: String?, typePlace: [String?], typeFood: String?, typeDrink: String?, rating: String?, priceLevel: String?, menu: String?, website: String?, phoneNumber: String?, openingHours: String?, address: String?, city: String?, state: String?, zipCode: String?, country: String?, photosLink: [String?], icon: String?, openNow: Bool, formattedAddress: String?) {
         
+        self.idPlace = idPlace
         self.name = name
         self.typePlace = typePlace
         self.typeFood = typeFood
@@ -51,12 +55,14 @@ class Place
         self.zipCode = zipCode
         self.country = country
         self.photosLink = photosLink
+        self.icon = icon
+        self.formattedAddress = formattedAddress
     }
     
     func getData() -> [String: Any]
     {
         return [ModelDB.Place_name: self.name ?? "",
-                ModelDB.Place_typePlace: self.typePlace ?? "",
+                ModelDB.Place_typePlace: self.typePlace,
                 ModelDB.Place_typeFood : self.typeFood ?? "",
                 ModelDB.Place_typeDrink: self.typeDrink ?? "",
                 ModelDB.Place_rating : self.rating ?? "",
@@ -70,7 +76,9 @@ class Place
                 ModelDB.Place_state : self.state ?? "",
                 ModelDB.Place_zipCode: self.zipCode ?? "",
                 ModelDB.Place_country : self.country ?? "",
-                ModelDB.Place_photosLink : self.photosLink ]
+                ModelDB.Place_photosLink : self.photosLink,
+                ModelDB.Place_icon : self.icon ?? ""
+        ]
     }
     
 }
