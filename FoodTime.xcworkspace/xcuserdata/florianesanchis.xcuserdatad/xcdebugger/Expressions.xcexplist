@@ -3,26 +3,50 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "UILabels.localizeWithoutComment(key:):UILabels.swift">
+         contextName = "closure #1 in LoginViewController.userExists():LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "NSLocalizedString(key, comment: &quot;&quot;)">
+               value = "snapchot.childrenCount">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in CreateUserAccountViewController.createUserAccount():CreateUserAccountViewController.swift">
+         contextName = "closure #1 in PlaceViewController.loadData():PlaceViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.isExists">
+               value = "tabPhotos.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ChoicePlaceViewController.nextPage():ChoicePlaceViewController.swift">
+         contextName = "closure #1 in LoginViewController.userExists(uid:):LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "parentPageViewController">
+               value = "snapchot.children">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChoicePlaceViewController.selectPlace(_:):ChoicePlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sender.layer.borderColor">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "EmailLoginViewController.clearTextView():EmailLoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UILabels().localizeWithoutComment(key: UILabels().EmailTitle)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in PlaceViewController.loadFirstPhotoForPlace(placeID:):PlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tabPhotos.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -30,10 +54,10 @@
          contextName = "LoginViewController.userExists():LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "Auth.auth().currentUser!.uid">
+               value = "self.newUser">
             </PersistentString>
             <PersistentString
-               value = "self.newUser">
+               value = "Auth.auth().currentUser!.uid">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -42,6 +66,30 @@
          <PersistentStrings>
             <PersistentString
                value = "placeSelected">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LoginViewController.uploadData():LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.currentUser!.profilePicture">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in LoginViewController.saveUserIntoFirebaseDatabase():LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Service.HomeViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "main:AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "parentPageViewController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -66,39 +114,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in closure #1 in LoginViewController.saveUserIntoFirebaseDatabase():LoginViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "Service.HomeViewController">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "SearchPlaceViewController.searchBar(_:shouldChangeTextIn:replacementText:):SearchPlaceViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "result">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "EmailLoginViewController.setupView():EmailLoginViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "UILabels().localizeWithoutComment(key: UILabels().EmailTitle)">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in LoginViewController.userExist(email:):LoginViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "email">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "main:AppDelegate.swift">
+         contextName = "ChoicePlaceViewController.nextPage():ChoicePlaceViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "parentPageViewController">
@@ -109,18 +125,10 @@
          contextName = "HomeViewController.viewWillAppear(_:):HomeViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "navigationItem.hidesBackButton">
-            </PersistentString>
-            <PersistentString
                value = "self.navigationController?.toolbarItems">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in LoginViewController.userExists(uid:):LoginViewController.swift">
-         <PersistentStrings>
             <PersistentString
-               value = "snapchot.children">
+               value = "navigationItem.hidesBackButton">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -128,7 +136,20 @@
          contextName = "CreateUserAccountViewController.userExists():CreateUserAccountViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "LoginViewController.loginButton(_:didCompleteWith:error:):LoginViewController.swift">
+         contextName = "SearchPlaceViewController.searchBar(_:shouldChangeTextIn:replacementText:):SearchPlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "result">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UILabels.localizeWithoutComment(key:):UILabels.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "NSLocalizedString(key, comment: &quot;&quot;)">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "SearchPlaceViewController.tableView(_:numberOfRowsInSection:):SearchPlaceViewController.swift">
@@ -142,7 +163,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "EmailLoginViewController.clearTextView():EmailLoginViewController.swift">
+         contextName = "EmailLoginViewController.setupView():EmailLoginViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "UILabels().localizeWithoutComment(key: UILabels().EmailTitle)">
@@ -150,18 +171,76 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in LoginViewController.loginButton(_:didCompleteWith:error:):LoginViewController.swift">
+         contextName = "PlaceViewController.carousel(_:viewForItemAt:reusing:):PlaceViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "Auth.auth().currentUser?.email">
+               value = "tabPhotos">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ChoicePlaceViewController.selectPlace(_:):ChoicePlaceViewController.swift">
+         contextName = "static Place.jsonToPlace(tab:requestPhoto:onePlace:completion:):Place.swift">
          <PersistentStrings>
             <PersistentString
-               value = "sender.layer.borderColor">
+               value = "tab?[keyResult] as? [String : Any]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in LoginViewController.userExist(email:):LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "email">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PlaceViewController.loadData():PlaceViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in PlaceViewController.loadPlace():PlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.place">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in PlaceViewController.loadImageForMetadata(photoMetadata:):PlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tabPhotos">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PlaceViewController.loadImageForMetadata(tabPhotoMetadata:completion:):PlaceViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "LoginViewController.loginButton(_:didCompleteWith:error:):LoginViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in PlaceViewController.loadPlace():PlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tab">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static Place.jsonToPlace(tab:requestPhoto:completion:):Place.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "place.value as? [String: [String: Any]]">
+            </PersistentString>
+            <PersistentString
+               value = "geometryJSON">
+            </PersistentString>
+            <PersistentString
+               value = "fieldLocation.value as? Double">
+            </PersistentString>
+            <PersistentString
+               value = "field.value">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -174,18 +253,45 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in LoginViewController.userExists():LoginViewController.swift">
+         contextName = "closure #1 in CreateUserAccountViewController.createUserAccount():CreateUserAccountViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "snapchot.childrenCount">
+               value = "self.isExists">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LoginViewController.uploadData():LoginViewController.swift">
+         contextName = "PlaceViewController.numberOfItems(in:):PlaceViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.currentUser!.profilePicture">
+               value = "&#10; tabPhotos">
+            </PersistentString>
+            <PersistentString
+               value = "tabPhotos.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in LoginViewController.loginButton(_:didCompleteWith:error:):LoginViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Auth.auth().currentUser?.email">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in PlaceViewController.loadImageForMetadata(tabPhotoMetadata:completion:):PlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "index">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in SearchPlaceViewController.tableView(_:didSelectRowAt:):SearchPlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "isSearchPlaceBar">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

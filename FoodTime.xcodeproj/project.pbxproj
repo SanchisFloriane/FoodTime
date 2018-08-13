@@ -43,6 +43,7 @@
 		F44C64AC2107C5F7003B8039 /* ChoiceUserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C64AB2107C5F7003B8039 /* ChoiceUserPageViewController.swift */; };
 		F44C64AE2107FE43003B8039 /* UIPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C64AD2107FE43003B8039 /* UIPageViewController.swift */; };
 		F44C64B121080137003B8039 /* PageObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C64B021080137003B8039 /* PageObservation.swift */; };
+		F4A73786211C04C6002C4B75 /* SearchPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471F5BC21112DC6001AA9E2 /* SearchPlaceViewController.swift */; };
 		F4A8ED6B21010DC6007FAB61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8ED6A21010DC6007FAB61 /* User.swift */; };
 		F4A8ED6D21014507007FAB61 /* ChoicePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8ED6C21014507007FAB61 /* ChoicePlaceViewController.swift */; };
 		F4A8ED6F21014517007FAB61 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8ED6E21014517007FAB61 /* HomeViewController.swift */; };
@@ -476,6 +477,7 @@
 				C42E6191211A21F000CE7885 /* PlacePhoto.swift in Sources */,
 				C4F848EF210A6B16009EDBBD /* TypeFood.swift in Sources */,
 				C4F848DE21092E17009EDBBD /* ChoiceTypeFoodTableViewCell.swift in Sources */,
+				F4A73786211C04C6002C4B75 /* SearchPlaceViewController.swift in Sources */,
 				F42998B420FD50820035A717 /* Service.swift in Sources */,
 				F4F28CAC211374DF0095E29F /* SearchPlaceMapViewController.swift in Sources */,
 				F4A8ED6B21010DC6007FAB61 /* User.swift in Sources */,

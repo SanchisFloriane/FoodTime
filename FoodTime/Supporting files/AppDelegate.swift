@@ -37,15 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         //Google Place API configuration
-       /* GMSPlacesClient.provideAPIKey(Service.GooglePlaceAPIKey)
-        GMSServices.provideAPIKey(Service.GooglePlaceAPIKey)
-        GMSPlacesClient.provideAPIKey(Service.GooglePlaceAPIWSKey)
-        GMSServices.provideAPIKey(Service.GooglePlaceAPIWSKey)*/
-       /* GMSPlacesClient.provideAPIKey(Service.AraGooglePlaceAPIKeyWS)
-        GMSServices.provideAPIKey(Service.AraGooglePlaceAPIKeyWS)
-        GMSPlacesClient.provideAPIKey(Service.AraGooglePlaceAPIKeyIOS)
-        GMSServices.provideAPIKey(Service.AraGooglePlaceAPIKeyIOS)*/
-        
         GMSPlacesClient.provideAPIKey(Service.AraGooglePlaceAPIKey)
         GMSServices.provideAPIKey(Service.AraGooglePlaceAPIKey)
         
