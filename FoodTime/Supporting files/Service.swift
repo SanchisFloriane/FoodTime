@@ -31,6 +31,10 @@ class Service {
     static let PriceLevelOne : String = "priceLevelOne-icon"
     static let PriceLevelTwo : String = "priceLevelTwo-icon"
     static let PriceLevelThree : String = "priceLevelThree-icon"
+    static let LikeEmptyIcon : String = "like-icon"
+    static let LikeFullIcon : String = "likefull-icon"
+    static let BookmarkEmptyIcon : String = "bookmark-icon"
+    static let BookmarkFullEmptyIcon : String = "bookmarkfull-icon"
     
     //Name of the Storyboards
     static let MainStoryboard : String = "Main"

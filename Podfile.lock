@@ -5,6 +5,7 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
+  - Cosmos (16.0.0)
   - FacebookCore (0.3.1):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.33)
@@ -123,6 +124,7 @@ PODS:
   - UICheckbox.Swift (1.0.0)
 
 DEPENDENCIES:
+  - Cosmos (~> 16.0)
   - FacebookCore
   - FacebookLogin
   - FBSDKCoreKit
@@ -149,6 +151,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Bolts
+    - Cosmos
     - FacebookCore
     - FacebookLogin
     - FBSDKCoreKit
@@ -181,6 +184,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  Cosmos: 7bcee0fa858a9355a214f2a181be5dffcee42c81
   FacebookCore: 33078ef1d7d76b73f7e8c990dca7d3ea6db8d22f
   FacebookLogin: 6f15bf4fefd7a8865abbfa8fcd7f3dfd87aa275f
   FBSDKCoreKit: 0ff57f093b85c8c9d5aba697d3edf68a8960ce78
@@ -211,6 +215,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   UICheckbox.Swift: 85715689206fac5bae38b308f19c2a3e00442c3b
 
-PODFILE CHECKSUM: a82285c082366bf3be42d11de9cf5984d2b9d73c
+PODFILE CHECKSUM: 177881f61286aa655ed8afb4662ecbb9a4a629c0
 
 COCOAPODS: 1.5.3

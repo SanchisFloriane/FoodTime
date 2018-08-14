@@ -14,7 +14,7 @@
          contextName = "closure #1 in PlaceViewController.loadData():PlaceViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "tabPhotos.count">
+               value = "Double(self.place.rating!)!">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -54,10 +54,10 @@
          contextName = "LoginViewController.userExists():LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.newUser">
+               value = "Auth.auth().currentUser!.uid">
             </PersistentString>
             <PersistentString
-               value = "Auth.auth().currentUser!.uid">
+               value = "self.newUser">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -125,10 +125,10 @@
          contextName = "HomeViewController.viewWillAppear(_:):HomeViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.navigationController?.toolbarItems">
+               value = "navigationItem.hidesBackButton">
             </PersistentString>
             <PersistentString
-               value = "navigationItem.hidesBackButton">
+               value = "self.navigationController?.toolbarItems">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -234,10 +234,10 @@
                value = "place.value as? [String: [String: Any]]">
             </PersistentString>
             <PersistentString
-               value = "geometryJSON">
+               value = "fieldLocation.value as? Double">
             </PersistentString>
             <PersistentString
-               value = "fieldLocation.value as? Double">
+               value = "geometryJSON">
             </PersistentString>
             <PersistentString
                value = "field.value">
@@ -264,10 +264,10 @@
          contextName = "PlaceViewController.numberOfItems(in:):PlaceViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "&#10; tabPhotos">
+               value = "tabPhotos.count">
             </PersistentString>
             <PersistentString
-               value = "tabPhotos.count">
+               value = "&#10; tabPhotos">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

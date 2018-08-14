@@ -12,6 +12,7 @@ import GooglePlaces
 import GoogleMaps
 import GooglePlacePicker
 import iCarousel
+import Cosmos
 
 class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManagerDelegate, iCarouselDelegate, iCarouselDataSource {
     
@@ -28,13 +29,16 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
     @IBOutlet weak var placeInformationLbl: UILabel!
     @IBOutlet weak var phoneNumberLbl: UILabel!
     @IBOutlet weak var priceImageView: UIImageView!
-    @IBOutlet weak var ratingCountLbl: UILabel!
-    @IBOutlet weak var ratingView: UIImageView!
+    @IBOutlet weak var ratingView: CosmosView!    
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var websiteTxtView: UITextView!    
     
+    //Taste user
+    var isLikedPlace : Bool = false
+    var isBookedPlace : Bool = false
+    
     //Localisation user
-    var locationManager: CLLocationManager!
+    var locationManager: CLLocationManager = CLLocationManager()
     var isUserLocalized : Bool = false
     
     var place : Place = Place()
@@ -55,10 +59,11 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         
         placesClient = GMSPlacesClient.shared()
         
+        setupView()
+        
         //Ask user localization
         self.localizeUser()
         
-        setupView()        
         loadPlace()
     }
     
@@ -73,7 +78,6 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         
         placeInformationLbl.text = UILabels.localizeWithoutComment(key: UILabels.PlaceInformationTitle)
         
-        locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
@@ -81,6 +85,11 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         carouselView.type = .linear
         
         shareButton.isEnabled = false
+        
+        // Do not change rating when touched
+        // Use if you need just to show the stars without getting user's input
+        self.ratingView.settings.updateOnTouch = false
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -206,18 +215,45 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
                 
             }
             
+            if !(self.place.rating?.isEmpty)!
+            {
+                self.ratingView.rating = Double(self.place.rating!)!
+            }
+            
             self.loadFirstPhotoForPlace(placeID: self.place.idPlace!)
         })
     }
     
     @IBAction func sharePlace(_ sender: UIBarButtonItem) {
-        
+        //to do
     }
     
     @IBAction func bookPlace(_ sender: UIBarButtonItem) {
+        
+        if isBookedPlace
+        {
+            bookButton.image = UIImage(named: Service.BookmarkEmptyIcon)
+        }
+        else
+        {
+            bookButton.image = UIImage(named: Service.BookmarkFullEmptyIcon)
+        }
+        
+        isBookedPlace = !isBookedPlace
     }
     
     @IBAction func likePlace(_ sender: UIBarButtonItem) {
+        
+        if isLikedPlace
+        {
+            likeButton.image = UIImage(named: Service.LikeEmptyIcon)
+        }
+        else
+        {
+            likeButton.image = UIImage(named: Service.LikeFullIcon)
+        }
+        
+        isLikedPlace = !isLikedPlace
     }
     
     @IBAction func showOpeningHours() {
@@ -247,6 +283,12 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
             case .authorizedAlways, .authorizedWhenInUse:
                 print("Access")
                 isUserLocalized = true
+                
+                //Picker for user location
+                let coordinates = CLLocationCoordinate2DMake(locationManager.location!.coordinate.latitude, locationManager.location!.coordinate.longitude)
+                let marker = GMSMarker(position: coordinates)
+                marker.map = self.mapView
+                self.mapView.animate(toLocation: coordinates)
             }
         }
         else
@@ -262,16 +304,6 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        // 1
-        let location:CLLocation = locations.last!
-        self.latitude = location.coordinate.latitude
-        self.longitude = location.coordinate.longitude
-        
-        // 2
-        let coordinates = CLLocationCoordinate2DMake(self.latitude, self.longitude)
-        let marker = GMSMarker(position: coordinates)
-        marker.map = self.mapView
-        self.mapView.animate(toLocation: coordinates)
     }
     
     override func didReceiveMemoryWarning() {

@@ -27,4 +27,5 @@ target 'FoodTime' do
   pod 'GooglePlacePicker'
   pod 'GoogleMaps'
   pod 'iCarousel', '~> 1.8'
+  pod 'Cosmos', '~> 16.0'
 end
