@@ -19,11 +19,15 @@ class Service {
     static let AraGooglePlaceAPIKeyWS : String = "AIzaSyChd5nTkODfGoB8L05JS-lpuvyXBhiwNCQ"
     static let AraGooglePlaceAPIKeyIOS : String = "AIzaSyBieS_Wm8SSu8kVVcSRjKnoK2S4dkHcJ3A "
     static let AraGooglePlaceAPIKey : String = "AIzaSyD62iGuyY7dIWTpgPVVdwhNX759awmB9Xo"
+    
     //Button properties
     static let buttonTitleFontSize: CGFloat = 16
     static let buttonTitleColor: UIColor = UIColor.white
     static let buttonCornerRadius: CGFloat = 7
     static let buttonBackgroundColorSignInWithFacebook = UIColor(red: 88/255, green: 86/255, blue: 214/255, alpha: 1)
+    
+    //Formatter
+    static let formatterDate : String = "yyyy-MM-dd"
     
     //Image
     static let FoodPlaceIcon : String = "foodPlace-icon"

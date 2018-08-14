@@ -8,6 +8,8 @@
 
 "ActivateNotificationsButton" = "Activate notifications";
 
+"CreateANewTrip" = "Create a new trip";
+
 "CreateUserAccount" = "Create user account";
 
 "DescriptionPageChoiceNotificationViewController" = "We will send you reminders when your places are updated or new places are available";
@@ -64,6 +66,8 @@
 
 "NewsTitle" = "News";
 
+"No" = "No";
+
 "NoPhoneNumber" = "No phone number";
 
 "NoWebsite" = "No website";
@@ -81,6 +85,10 @@
 "RecommandationsButton" = "For you";
 
 "Reviews" = "Reviews";
+
+"SaveToATripAlertTitle" = "Save to a trip ?";
+
+"SaveToATripAlertText" = "If no, the place will be added to your favourite places list";
 
 "SearchLocationBarPlaceHolder" = "Near by ...";
 
@@ -107,4 +115,7 @@
 "ValidateButton" = "Validate";
 
 "VisitWebsiteLink" = "Visit website";
+
+"Yes" = "Yes";
+
 

@@ -24,6 +24,8 @@ class UIMessages {
         return NSLocalizedString(key, comment: "")
     }
     
+    static let CreateANewTrip : String = "CreateANewTrip"
+    
     static let ErrorTitle : String = "ErrorTitle"
     
     static let ErrorEmail : String = "ErrorEmail"
@@ -39,8 +41,16 @@ class UIMessages {
     static let ErrorPassword : String = "ErrorPassword"
     
     static let HoursTitle : String = "HoursTitle"
+    
+    static let No : String = "No"
+    
+    static let SaveToATripAlertTitle : String = "SaveToATripAlertTitle"
+    
+    static let SaveToATripAlertText : String = "SaveToATripAlertText"
         
     static let UserNotFound : String = "UserNotFound"
+    
+    static let Yes : String = "Yes"
     
     
 

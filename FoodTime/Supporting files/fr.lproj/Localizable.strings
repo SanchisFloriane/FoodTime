@@ -8,6 +8,8 @@
 
 "ActivateNotificationsButton" = "Activer les notifications";
 
+"CreateANewTrip" = "Créer un nouveau trip";
+
 "CreateUserAccount" = "Création compte utilisateur";
 
 "DescriptionPageChoiceNotificationViewController" = "Nous vous enverrons des rappels quand vos endroits seront modifiés ou que de nouveaux seront disponibles.";
@@ -64,6 +66,8 @@
 
 "NewsTitle" = "Nouveautées";
 
+"No" = "Non";
+
 "NoPhoneNumber" = "Pas de numéro de téléphone";
 
 "NoWebsite" = "Pas de site web";
@@ -81,6 +85,10 @@
 "RecommandationsButton" = "Pour moi";
 
 "Reviews" = "Avis";
+
+"SaveToATripAlertTitle" = "Ajouter à un trip ?";
+
+"SaveToATripAlertText" = "Si non, l'endroit sera ajouté à votre liste d'endroits favoris";
 
 "SearchLocationBarPlaceHolder" = "Près de ...";
 
@@ -107,3 +115,5 @@
 "ValidateButton" = "Valider";
 
 "VisitWebsiteLink" = "Voir site";
+
+"Yes" = "Oui";

@@ -90,7 +90,7 @@ class HomeViewController: UIViewController, UITabBarDelegate {
     fileprivate func userTastesExist(completion: @escaping (Bool) -> ())
     {
         var tastesExits = false
-        Database.database().reference().child("\(ModelDB.tastes)/\(Auth.auth().currentUser!.uid)").observeSingleEvent(of: .value, with: { (snapchot) in
+        Database.database().reference().child("\(ModelDB.tastes)/\(Auth.auth().currentUser?.uid)").observeSingleEvent(of: .value, with: { (snapchot) in
             
             if snapchot.childrenCount > 0
             {

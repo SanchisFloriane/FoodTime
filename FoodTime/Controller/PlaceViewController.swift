@@ -13,6 +13,7 @@ import GoogleMaps
 import GooglePlacePicker
 import iCarousel
 import Cosmos
+import Firebase
 
 class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManagerDelegate, iCarouselDelegate, iCarouselDataSource {
     
@@ -180,14 +181,14 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
                 self.distanceLbl.text = ""
             }
             
-            /*     if self.place.latLocation != nil && self.place.lngLocation != nil
+            if self.place.latLocation != nil && self.place.lngLocation != nil
              {
-             let coordinates = CLLocationCoordinate2DMake(self.place.latLocation!, self.place.lngLocation!)
-             let marker = GMSMarker(position: coordinates)
-             marker.title = self.place.name
-             marker.map = self.mapView
-             self.mapView.animate(toLocation: coordinates)
-             }*/
+                 let coordinates = CLLocationCoordinate2DMake(self.place.latLocation!, self.place.lngLocation!)
+                 let marker = GMSMarker(position: coordinates)
+                 marker.title = self.place.name
+                 marker.map = self.mapView
+                 self.mapView.animate(toLocation: coordinates)
+             }
             
             if self.place.openNow != nil && self.place.openNow!
             {
@@ -240,6 +241,12 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         }
         
         isBookedPlace = !isBookedPlace
+        
+        if isBookedPlace
+        {
+            //Save in DB
+            self.showAlertYesNo(on: self, style: .alert, title: UIMessages.localizeWithoutComment(key: UIMessages.SaveToATripAlertTitle), message: UIMessages.localizeWithoutComment(key: UIMessages.SaveToATripAlertText))
+        }
     }
     
     @IBAction func likePlace(_ sender: UIBarButtonItem) {
@@ -254,6 +261,131 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         }
         
         isLikedPlace = !isLikedPlace
+        
+        if isLikedPlace
+        {
+            //Save in DB
+            self.showAlertYesNo(on: self, style: .alert, title: UIMessages.localizeWithoutComment(key: UIMessages.SaveToATripAlertTitle), message: UIMessages.localizeWithoutComment(key: UIMessages.SaveToATripAlertText))
+        }
+    }
+    
+    func showAlertYesNo(on: UIViewController, style: UIAlertControllerStyle, title: String?, message: String?, completion: (() -> Swift.Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
+        
+        let yesAction = UIAlertAction(title: UIMessages.localizeWithoutComment(key: UIMessages.Yes), style: .default) { (action:UIAlertAction) in
+            //Save to a trip
+            print("You've press to save to a trip");
+            self.showAlertTripUserList(on: self, style: .actionSheet, title: UIMessages.localizeWithoutComment(key: UIMessages.SaveToATripAlertTitle), message: "")
+        }
+        
+        let noAction = UIAlertAction(title: UIMessages.localizeWithoutComment(key: UIMessages.No), style: .default) { (action:UIAlertAction) in
+            //Save to a trip
+            print("You've press to save to a favourite places list");
+            //Save in DB
+        }
+        
+        alert.addAction(yesAction)
+        alert.addAction(noAction)
+        
+        on.present(alert, animated: true, completion: completion)
+    }
+    
+    func showAlertTripUserList(on: UIViewController, style: UIAlertControllerStyle, title: String?, message: String?, completion: (() -> Swift.Void)? = nil) {
+        
+        //Get all trip of the user in DB
+        // TO DO
+        var tripList : [Trip] = [Trip]()
+        var userTripList : [UserTrip] = [UserTrip]()
+        let idUser = Auth.auth().currentUser!.uid
+        
+        //Get all trips of the current user
+        Database.database().reference().child("\(ModelDB.user_trip)/\(idUser)").observeSingleEvent(of: .value, with: { (snapchot) in
+            
+            if snapchot.childrenCount > 0
+            {
+                let idTrip : String?
+                for field in snapchot.children.allObjects
+                {
+                    print(field)
+                   /* if field == ModelDB.UserTrip_idTrip
+                    {
+                     idTrip = field.idTrip
+                    }*/
+                }
+                //userTripList.append(UserTrip(idUser: idUser, idTrip: idTrip!))
+            }
+        })
+        
+        //Get all name trips of the current user
+        if !(userTripList.isEmpty)
+        {
+            let formatter = DateFormatter()
+            formatter.locale = Locale.current
+            formatter.dateFormat = Service.formatterDate
+            
+            for userTrip in userTripList
+            {
+                Database.database().reference().child("\(ModelDB.trips)/\(userTrip.idTrip!)").queryOrdered(byChild: ModelDB.Trip_name).observeSingleEvent(of: .value, with: { (snapchot) in
+                    
+                    if snapchot.childrenCount > 0
+                    {
+                        let name : String?
+                        let startDate : Date?
+                        let endDate : Date?
+                        
+                        for field in snapchot.children.allObjects
+                        {
+                            print(field)
+                            /* if field == ModelDB.Trip_name
+                             {
+                                name = field.name
+                             }*/
+                            /* if field == ModelDB.Trip_startDate
+                             {
+                                startDate = formatter.date(from: field.startDate)
+                             }*/
+                            /* if field == ModelDB.Trip_endDate
+                             {
+                                endDate = formatter.date(from: field.endDate)
+                             }*/
+                        }
+                       // tripList.append(Trip(idTrip: userTrip.idTrip, name: name, startDate: startDate, endDate: endDate))
+                    }
+                })
+            }
+        }
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
+        
+        for trip in tripList
+        {
+            alert.addAction(UIAlertAction(title: trip.name, style: .default, handler: { (action) in
+               
+                //Save in DB
+                let idTrip = trip.idTrip
+                let idPlace = self.place.idPlace
+                let isLiked = self.isLikedPlace
+                let toTest = false
+                let userPlace = UserPlace(idUser: idUser, idPlace: idPlace, idTrip: idTrip, isLiked: isLiked, toTest: toTest)
+                let values : [String : [String: String]] = [idUser : userPlace.getData()]
+                
+                Database.database().reference().child("\(ModelDB.user_place)").updateChildValues(values, withCompletionBlock: { (err, ref) in
+                    if let err = err {
+                        print("Failed to save user info with error: \(err)")
+                        return
+                    }
+                    print("Successfully saved user place in trip into into Firebase database")
+                })
+            }))
+        }
+        let createTrip = UIAlertAction(title: UIMessages.localizeWithoutComment(key: UIMessages.CreateANewTrip), style: .default) { (action:UIAlertAction) in
+            //Change view controller to create trip view controller
+            print("You've press to create a trip");
+        }
+        
+        alert.addAction(createTrip)
+        
+        on.present(alert, animated: true, completion: completion)
     }
     
     @IBAction func showOpeningHours() {

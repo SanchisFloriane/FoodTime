@@ -225,11 +225,29 @@ extension SearchPlaceViewController: UISearchBarDelegate
         
         if !(searchLocationBar.text?.isEmpty)! && !(searchPlaceBar.text?.isEmpty)!
         {
+            let namePlace = searchPlaceBar.text!
+            let city : String = searchLocationBar.text ?? ""
+            let type : String = "&type=restaurant|bakery|bar|cafe"
+            let APIKey : String = "&key=\(Service.AraGooglePlaceAPIKey)"
+            let language : String = "&language=\(Locale.current.languageCode!)"
+            var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?"
+            let query = ("query=\(namePlace)+\(city)\(type)\(APIKey)\(language)").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            url.append("\(query!)")
+            self.arrayPlace.removeAll()
+            GoogleServices.performGoogleQuery(url: URL(string: url)!, completion: { (json) in
+                
+                Place.jsonToPlaces(tab: json, requestPhoto: false, completion: { (placesConverted) in
+                    self.arrayPlace = placesConverted
+                    self.tableViewPlace.reloadData()
+                })
+            })
+            
+            /* TODO
             let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
             let desController : UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.SearchPlaceDetailViewController) as! SearchPlaceDetailViewController
             
             desController.hidesBottomBarWhenPushed=false
-            self.navigationController?.pushViewController(desController, animated: true)
+            self.navigationController?.pushViewController(desController, animated: true)*/
             
         }
         else if (searchPlaceBar.text?.isEmpty)!

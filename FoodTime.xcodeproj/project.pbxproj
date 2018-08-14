@@ -10,6 +10,11 @@
 		BC71EBB530A6055E3310F1CE /* Pods_FoodTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6AB2096487B6331FEF3FFA1 /* Pods_FoodTime.framework */; };
 		C414FECD20F68EB1008D5AE5 /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C414FECC20F68EB1008D5AE5 /* GetStartedViewController.swift */; };
 		C4182B5C2108F7B1004AE88E /* ModelDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4182B5B2108F7B1004AE88E /* ModelDB.swift */; };
+		C418A6EC211BBFD500C43DA6 /* UserPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C418A6EB211BBFD500C43DA6 /* UserPlace.swift */; };
+		C418A6EE212352C200C43DA6 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C418A6ED212352C200C43DA6 /* Trip.swift */; };
+		C418A6F02123724100C43DA6 /* UserTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C418A6EF2123724000C43DA6 /* UserTrip.swift */; };
+		C418A6F22123852100C43DA6 /* MyPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C418A6F12123852100C43DA6 /* MyPlacesViewController.swift */; };
+		C418A6F42123856F00C43DA6 /* MyTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C418A6F32123856F00C43DA6 /* MyTripsViewController.swift */; };
 		C42E618F211A10B600CE7885 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E618E211A10B600CE7885 /* PlaceViewController.swift */; };
 		C42E6191211A21F000CE7885 /* PlacePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E6190211A21F000CE7885 /* PlacePhoto.swift */; };
 		C42E6196211B594F00CE7885 /* GoogleServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E6195211B594F00CE7885 /* GoogleServices.swift */; };
@@ -61,6 +66,11 @@
 		B6AB2096487B6331FEF3FFA1 /* Pods_FoodTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C414FECC20F68EB1008D5AE5 /* GetStartedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
 		C4182B5B2108F7B1004AE88E /* ModelDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDB.swift; sourceTree = "<group>"; };
+		C418A6EB211BBFD500C43DA6 /* UserPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlace.swift; sourceTree = "<group>"; };
+		C418A6ED212352C200C43DA6 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		C418A6EF2123724000C43DA6 /* UserTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTrip.swift; sourceTree = "<group>"; };
+		C418A6F12123852100C43DA6 /* MyPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlacesViewController.swift; sourceTree = "<group>"; };
+		C418A6F32123856F00C43DA6 /* MyTripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripsViewController.swift; sourceTree = "<group>"; };
 		C42E618E211A10B600CE7885 /* PlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		C42E6190211A21F000CE7885 /* PlacePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePhoto.swift; sourceTree = "<group>"; };
 		C42E6195211B594F00CE7885 /* GoogleServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleServices.swift; sourceTree = "<group>"; };
@@ -155,6 +165,9 @@
 				C4A1A124210F97F600DFC005 /* Tastes.swift */,
 				F4F28CB12113A94C0095E29F /* Place.swift */,
 				C42E6190211A21F000CE7885 /* PlacePhoto.swift */,
+				C418A6EB211BBFD500C43DA6 /* UserPlace.swift */,
+				C418A6ED212352C200C43DA6 /* Trip.swift */,
+				C418A6EF2123724000C43DA6 /* UserTrip.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -189,6 +202,8 @@
 				F4F28CA92112AC890095E29F /* SearchPlaceDetailViewController.swift */,
 				F4F28CAB211374DF0095E29F /* SearchPlaceMapViewController.swift */,
 				C42E618E211A10B600CE7885 /* PlaceViewController.swift */,
+				C418A6F12123852100C43DA6 /* MyPlacesViewController.swift */,
+				C418A6F32123856F00C43DA6 /* MyTripsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -476,9 +491,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C45C9BFE20F69A32004A4369 /* LoginViewController.swift in Sources */,
+				C418A6F42123856F00C43DA6 /* MyTripsViewController.swift in Sources */,
+				C418A6EC211BBFD500C43DA6 /* UserPlace.swift in Sources */,
 				C42E6191211A21F000CE7885 /* PlacePhoto.swift in Sources */,
 				C4F848EF210A6B16009EDBBD /* TypeFood.swift in Sources */,
 				C4F848DE21092E17009EDBBD /* ChoiceTypeFoodTableViewCell.swift in Sources */,
+				C418A6F02123724100C43DA6 /* UserTrip.swift in Sources */,
 				F4A73786211C04C6002C4B75 /* SearchPlaceViewController.swift in Sources */,
 				F42998B420FD50820035A717 /* Service.swift in Sources */,
 				F4F28CAC211374DF0095E29F /* SearchPlaceMapViewController.swift in Sources */,
@@ -486,6 +504,7 @@
 				F44C64AA2107C514003B8039 /* ChoiceTypeFoodViewController.swift in Sources */,
 				C42E6196211B594F00CE7885 /* GoogleServices.swift in Sources */,
 				F4121DF72106951C00252594 /* CreateUserAccountViewController.swift in Sources */,
+				C418A6EE212352C200C43DA6 /* Trip.swift in Sources */,
 				F4F28CB0211396720095E29F /* CCLocationDistance.swift in Sources */,
 				F4121DF92106986D00252594 /* UIMessages.swift in Sources */,
 				F44C64AC2107C5F7003B8039 /* ChoiceUserPageViewController.swift in Sources */,
@@ -508,6 +527,7 @@
 				C4C7A6AF2118D5CB00087B80 /* String.swift in Sources */,
 				F4121DF02106585300252594 /* EmailLoginViewController.swift in Sources */,
 				F44C64B121080137003B8039 /* PageObservation.swift in Sources */,
+				C418A6F22123852100C43DA6 /* MyPlacesViewController.swift in Sources */,
 				C414FECD20F68EB1008D5AE5 /* GetStartedViewController.swift in Sources */,
 				F4F28CB22113A94C0095E29F /* Place.swift in Sources */,
 				C4F848E221094215009EDBBD /* ChoiceTypeDrinkTableViewCell.swift in Sources */,

@@ -550,6 +550,161 @@
             </objects>
             <point key="canvasLocation" x="2600.8000000000002" y="716.74876847290648"/>
         </scene>
+        <!--My places-->
+        <scene sceneID="OhM-YW-RbG">
+            <objects>
+                <viewController id="5eX-gw-kLO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cKo-rn-9Dc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNx-y4-Oh9">
+                                <rect key="frame" x="0.0" y="88" width="125.33333333333333" height="30"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Places">
+                                    <color key="titleColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82c-4W-sk0">
+                                <rect key="frame" x="125" y="88" width="125" height="30"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Trips">
+                                    <color key="titleColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCu-kW-Dgq">
+                                <rect key="frame" x="250.33333333333334" y="88" width="125.33333333333334" height="30"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Recently viewed">
+                                    <color key="titleColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xf7-P6-WGo">
+                                <rect key="frame" x="0.0" y="115.66666666666667" width="375" height="0.0"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sorted by :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqb-I7-iDf">
+                                        <rect key="frame" x="0.0" y="0.0" width="98" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="highlightedColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rE-E5-R1y">
+                                        <rect key="frame" x="106" y="0.0" width="104" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Alphabetical">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R79-pj-n5S">
+                                <rect key="frame" x="0.0" y="116" width="375" height="613"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="likefull-icon" translatesAutoresizingMaskIntoConstraints="NO" id="yuL-LG-iiP">
+                                        <rect key="frame" x="103" y="156" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="Dzz-F2-o0V"/>
+                                            <constraint firstAttribute="height" constant="150" id="R0g-1X-CBz"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" text="Create a trip then tap to the heart icon on places to add a trip." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLg-pb-fgT">
+                                        <rect key="frame" x="70" y="343" width="235" height="70"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="D8r-En-SUk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Discover and save your places" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHT-5T-LiG">
+                                        <rect key="frame" x="70" y="314" width="235" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeA-3c-6IN">
+                                        <rect key="frame" x="70" y="395" width="235" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Create a trip">
+                                            <color key="titleColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <tabBar clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" itemPositioning="centered" translatesAutoresizingMaskIntoConstraints="NO" id="WAm-h9-2py">
+                                <rect key="frame" x="0.0" y="729" width="375" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="CBH-ry-8Qr"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem title="My news" image="news-icon" landscapeImage="news-icon" selectedImage="news-icon" id="dYe-uk-feF">
+                                        <color key="badgeColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="My places" image="world-icon" landscapeImage="world-icon" selectedImage="world-icon" id="mDX-bA-UzF">
+                                        <color key="badgeColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="For you" image="recommand-icon" landscapeImage="recommand-icon" selectedImage="recommand-icon" id="B6n-Wl-smy">
+                                        <color key="badgeColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="My profile" image="profile-icon" landscapeImage="profile-icon" selectedImage="profile-icon" id="Fhu-43-Jwn">
+                                        <color key="badgeColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tabBarItem>
+                                </items>
+                                <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedImageTintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tabBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JCu-kW-Dgq" firstAttribute="top" secondItem="zFt-7R-F7j" secondAttribute="top" id="3OT-bM-Ndx"/>
+                            <constraint firstItem="zFt-7R-F7j" firstAttribute="trailing" secondItem="JCu-kW-Dgq" secondAttribute="trailing" id="3mx-co-ifZ"/>
+                            <constraint firstItem="82c-4W-sk0" firstAttribute="top" secondItem="zFt-7R-F7j" secondAttribute="top" id="Brn-RX-XLU"/>
+                            <constraint firstItem="JCu-kW-Dgq" firstAttribute="leading" secondItem="82c-4W-sk0" secondAttribute="trailing" id="E3W-Vj-4TG"/>
+                            <constraint firstItem="R79-pj-n5S" firstAttribute="trailing" secondItem="zFt-7R-F7j" secondAttribute="trailing" id="GEX-Is-3qf"/>
+                            <constraint firstItem="82c-4W-sk0" firstAttribute="width" secondItem="fNx-y4-Oh9" secondAttribute="width" id="JJX-XE-ZLe"/>
+                            <constraint firstItem="R79-pj-n5S" firstAttribute="top" secondItem="xf7-P6-WGo" secondAttribute="bottom" id="K8C-nx-ZKW"/>
+                            <constraint firstItem="fNx-y4-Oh9" firstAttribute="top" secondItem="zFt-7R-F7j" secondAttribute="top" id="Mus-1o-OEg"/>
+                            <constraint firstAttribute="trailing" secondItem="WAm-h9-2py" secondAttribute="trailing" id="PSQ-5f-JH3"/>
+                            <constraint firstItem="R79-pj-n5S" firstAttribute="top" secondItem="xf7-P6-WGo" secondAttribute="bottom" id="TSf-Do-ceH"/>
+                            <constraint firstItem="fNx-y4-Oh9" firstAttribute="trailing" secondItem="82c-4W-sk0" secondAttribute="leading" id="U0m-Th-HPY"/>
+                            <constraint firstItem="xf7-P6-WGo" firstAttribute="top" secondItem="fNx-y4-Oh9" secondAttribute="bottom" id="ULS-Qm-3NJ"/>
+                            <constraint firstItem="xf7-P6-WGo" firstAttribute="trailing" secondItem="zFt-7R-F7j" secondAttribute="trailing" id="Vqr-j9-Yb4"/>
+                            <constraint firstItem="WAm-h9-2py" firstAttribute="leading" secondItem="cKo-rn-9Dc" secondAttribute="leading" id="WfW-VK-cL8"/>
+                            <constraint firstItem="R79-pj-n5S" firstAttribute="leading" secondItem="zFt-7R-F7j" secondAttribute="leading" id="fJb-2z-xiS"/>
+                            <constraint firstItem="R79-pj-n5S" firstAttribute="top" secondItem="xf7-P6-WGo" secondAttribute="bottom" id="gdc-tF-5hP"/>
+                            <constraint firstItem="xf7-P6-WGo" firstAttribute="leading" secondItem="zFt-7R-F7j" secondAttribute="leading" id="mIb-XF-HQl"/>
+                            <constraint firstItem="R79-pj-n5S" firstAttribute="top" secondItem="xf7-P6-WGo" secondAttribute="bottom" id="pw6-Qg-SdA"/>
+                            <constraint firstItem="R79-pj-n5S" firstAttribute="centerX" secondItem="cKo-rn-9Dc" secondAttribute="centerX" id="tYk-O5-TM0"/>
+                            <constraint firstItem="fNx-y4-Oh9" firstAttribute="leading" secondItem="zFt-7R-F7j" secondAttribute="leading" id="uae-wJ-rBG"/>
+                            <constraint firstItem="JCu-kW-Dgq" firstAttribute="width" secondItem="fNx-y4-Oh9" secondAttribute="width" id="vAO-Q9-c9f"/>
+                            <constraint firstItem="R79-pj-n5S" firstAttribute="centerY" secondItem="cKo-rn-9Dc" secondAttribute="centerY" id="wFL-cL-3Zq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zFt-7R-F7j"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="My places" id="8Gj-dB-h3m">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Cfy-Xi-sX5">
+                            <connections>
+                                <segue destination="Shq-1d-cWE" kind="show" id="R1K-RF-SYf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="09x-zS-xrF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3336.8000000000002" y="-862.3152709359606"/>
+        </scene>
         <!--My news-->
         <scene sceneID="08E-cQ-0dg">
             <objects>
@@ -1417,7 +1572,7 @@
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Le moulin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydi-p5-zvD">
-                                <rect key="frame" x="15" y="307" width="291" height="32"/>
+                                <rect key="frame" x="15" y="307" width="323" height="32"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1664,6 +1819,7 @@
         <image name="fastfood" width="84" height="89"/>
         <image name="foodtruck" width="130" height="89"/>
         <image name="like-icon" width="32" height="32"/>
+        <image name="likefull-icon" width="32" height="32"/>
         <image name="list-icon" width="32" height="32"/>
         <image name="logo banderole" width="576" height="89"/>
         <image name="map-icon" width="32" height="32"/>
@@ -1680,7 +1836,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vyK-Hn-Ssz"/>
-        <segue reference="KP6-ZZ-tOt"/>
+        <segue reference="R1K-RF-SYf"/>
         <segue reference="Ibs-RD-DdX"/>
     </inferredMetricsTieBreakers>
 </document>
