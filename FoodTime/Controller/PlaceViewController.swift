@@ -63,6 +63,7 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         setupView()
         
         //Ask user localization
+        self.mapView.clear()
         self.localizeUser()
         
         loadPlace()
@@ -118,8 +119,6 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
     
     func loadData()
     {
-        self.mapView.clear()
-        
         DispatchQueue.main.async(execute: {
             self.namePlaceLbl.text = self.place.name
             if !(self.place.website?.isEmpty)!
@@ -142,7 +141,7 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
                 self.websiteTxtView.text = UILabels.localizeWithoutComment(key: UILabels.NoWebsite)
             }
             
-            if !(self.place.phoneNumber?.isEmpty)!
+            if self.place.phoneNumber != nil
             {
                 self.phoneNumberLbl.text = self.place.phoneNumber
             }
@@ -199,7 +198,7 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
                 self.openingHoursLbl.text = UILabels.localizeWithoutComment(key: UILabels.PlaceClosedNow)
             }
             
-            if !(self.place.priceLevel?.isEmpty)!
+            if self.place.priceLevel != nil
             {
                 if self.place.priceLevel == "1"
                 {
@@ -216,7 +215,7 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
                 
             }
             
-            if !(self.place.rating?.isEmpty)!
+            if self.place.rating != nil
             {
                 self.ratingView.rating = Double(self.place.rating!)!
             }
