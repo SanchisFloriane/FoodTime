@@ -8,6 +8,8 @@
 
 "ActivateNotificationsButton" = "Activate notifications";
 
+"Cancel" = "Cancel";
+
 "CreateANewTrip" = "Create a new trip";
 
 "CreateUserAccount" = "Create user account";
@@ -83,6 +85,12 @@
 "PlaceOpenNow" = "Open now";
 
 "RecommandationsButton" = "For you";
+
+"RemoveAPlace" = "Remove this place";
+
+"RemoveToATrip" = "Remove to a trip";
+
+"RemoveToATripOrPlaceAlertTitle" = "Remove the place";
 
 "Reviews" = "Reviews";
 

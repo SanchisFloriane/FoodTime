@@ -47,17 +47,19 @@ class Service {
     static let LanguageApp : String = Locale.current.languageCode!
     
     //Name of the ViewControllers
-    static let GetStartedViewController : String = "GetStartedViewController"
-    static let LoginViewController : String = "LoginViewController"
     static let ChoicePlaceViewController : String = "ChoicePlaceViewController"
-    static let HomeViewController : String = "HomeViewController"
     static let ChoiceTypeFoodViewController : String = "ChoiceTypeFoodViewController"
     static let ChoiceTypeDrinkViewController : String = "ChoiceTypeDrinkViewController"
     static let ChoiceNotificationViewController : String = "ChoiceNotificationViewController"
     static let ChoiceUserPageViewController : String = "ChoiceUserPageViewController"
+    static let GetStartedViewController : String = "GetStartedViewController"
+    static let HomeViewController : String = "HomeViewController"
+    static let LoginViewController : String = "LoginViewController"
+    static let MyPlacesViewController : String = "MyPlacesViewController"
+    static let MyTripsViewController : String = "MyTripsViewController"
+    static let PlaceViewController : String = "PlaceViewController"
     static let SearchPlaceViewController : String = "SearchPlaceViewController"
     static let SearchPlaceDetailViewController : String = "SearchPlaceDetailViewController"
-    static let PlaceViewController : String = "PlaceViewController"
     
     //TableViewCell
     static let ChoiceTypeFoodTableViewCell : String = "ChoiceTypeFoodTableViewCell"

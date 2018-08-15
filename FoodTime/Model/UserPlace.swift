@@ -33,10 +33,7 @@ class UserPlace {
     
     func getData() -> [String: String]
     {
-        return [ModelDB.UserPlace_idUser: self.idUser ?? "",
-                ModelDB.UserPlace_idPlace: self.idPlace ?? "",
-                ModelDB.UserPlace_idTrip : self.idTrip ?? "",
-                ModelDB.UserPlace_isLiked: self.isLiked?.description ?? "false",
+        return [ModelDB.UserPlace_isLiked: self.isLiked?.description ?? "false",
                 ModelDB.UserPlace_toTest : self.toTest?.description ?? "false"]
     }
 }

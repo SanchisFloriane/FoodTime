@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "126"
             endingLineNumber = "126"
-            landmarkName = "getPlacesByType(typlePlace:tab:)"
+            landmarkName = "toString(typePlace:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "121"
             endingLineNumber = "121"
-            landmarkName = "getTypePlace(typePlace:)"
+            landmarkName = "toString(typePlace:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodTime/Controller/SearchPlaceViewController.swift"
-            timestampString = "555461663.628894"
+            timestampString = "556052803.800163"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "228"
@@ -58,92 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodTime/Controller/PlaceViewController.swift"
-            timestampString = "555466026.754127"
+            timestampString = "556063338.7917041"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
-            landmarkName = "loadData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoodTime/Controller/PlaceViewController.swift"
-            timestampString = "555466026.758956"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "setupView()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoodTime/Controller/SearchPlaceViewController.swift"
-            timestampString = "555461711.649955"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "326"
-            endingLineNumber = "326"
-            landmarkName = "searchBar(_:shouldChangeTextIn:replacementText:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; () in FoodTime.SearchPlaceViewController.searchBar(__ObjC.UISearchBar, shouldChangeTextIn: __C._NSRange, replacementText: Swift.String) -&gt; Swift.Bool"
-                  moduleName = "FoodTime"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bob/Desktop/FoodTime/FoodTime/Controller/SearchPlaceViewController.swift"
-                  timestampString = "555466234.777239"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "326"
-                  endingLineNumber = "326"
-                  offsetFromSymbolStart = "29">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;FoodTime.Place&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; () in FoodTime.SearchPlaceViewController.searchBar(__ObjC.UISearchBar, shouldChangeTextIn: __C._NSRange, replacementText: Swift.String) -&gt; Swift.Bool"
-                  moduleName = "FoodTime"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/bob/Desktop/FoodTime/FoodTime/Controller/SearchPlaceViewController.swift"
-                  timestampString = "555466234.784067"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "327"
-                  endingLineNumber = "327"
-                  offsetFromSymbolStart = "22">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FoodTime/Controller/PlaceViewController.swift"
-            timestampString = "555971717.452966"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301"
-            landmarkName = "showAlertTripUserList(on:style:title:message:completion:)"
+            startingLineNumber = "450"
+            endingLineNumber = "450"
+            landmarkName = "removePlaceUser()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

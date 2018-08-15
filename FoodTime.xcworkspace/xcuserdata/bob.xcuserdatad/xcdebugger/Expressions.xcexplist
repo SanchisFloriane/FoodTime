@@ -3,6 +3,17 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "closure #1 in PlaceViewController.loadTrip(userTripList:completion:):PlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "child.key">
+            </PersistentString>
+            <PersistentString
+               value = "endDate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "static Place.jsonToPlace(tab:requestPhoto:onePlace:):Place.swift">
          <PersistentStrings>
             <PersistentString
@@ -17,14 +28,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ChoiceTypeFoodViewController.tableView(_:numberOfRowsInSection:):ChoiceTypeFoodViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "listTypeFood.count">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "SearchPlaceViewController.tableView(_:cellForRowAt:):SearchPlaceViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -32,6 +35,14 @@
             </PersistentString>
             <PersistentString
                value = "findPlaceLocation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChoiceTypeFoodViewController.tableView(_:numberOfRowsInSection:):ChoiceTypeFoodViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "listTypeFood.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -66,7 +77,23 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in SearchPlaceViewController.searchBar(_:shouldChangeTextIn:replacementText:):SearchPlaceViewController.swift">
+         contextName = "closure #1 in PlaceViewController.loadUserTrip(completion:):PlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.idUser">
+            </PersistentString>
+            <PersistentString
+               value = "child.key">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in PlaceViewController.removePlaceUser():PlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.place.idPlace">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "SearchPlaceViewController.tableView(_:didSelectRowAt:):SearchPlaceViewController.swift">
@@ -78,6 +105,9 @@
                value = "tableViewPlace.cellForRow(at: indexPath)">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in SearchPlaceViewController.searchBar(_:shouldChangeTextIn:replacementText:):SearchPlaceViewController.swift">
       </ContextState>
       <ContextState
          contextName = "SearchPlaceViewController.tableView(_:numberOfRowsInSection:):SearchPlaceViewController.swift">
@@ -131,6 +161,14 @@
             </PersistentString>
             <PersistentString
                value = "sender.isSelected">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in PlaceViewController.showAlertTripUserList(on:style:title:message:completion:):PlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "field.key">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -67,15 +67,10 @@ class HomeViewController: UIViewController, UITabBarDelegate {
         var desController : UIViewController!
         
         let item = tabBar.selectedItem
-        if item == newsButton
+        if item == placesButton
         {
-            desController = mainStoryboard.instantiateViewController(withIdentifier: Service.HomeViewController) as! HomeViewController
-            
+            desController = mainStoryboard.instantiateViewController(withIdentifier: Service.MyPlacesViewController) as! MyPlacesViewController
             self.navigationController?.pushViewController(desController, animated: true)
-        }
-        else if item == placesButton
-        {
-            
         }
         else if item == recommandationsButton
         {

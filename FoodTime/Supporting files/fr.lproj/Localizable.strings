@@ -8,6 +8,8 @@
 
 "ActivateNotificationsButton" = "Activer les notifications";
 
+"Cancel" = "Annuler";
+
 "CreateANewTrip" = "Créer un nouveau trip";
 
 "CreateUserAccount" = "Création compte utilisateur";
@@ -82,7 +84,13 @@
 
 "PlaceOpenNow" = "Ouvert";
 
+"RemoveToATripOrPlaceAlertTitle" = "Supprimer l'endroit";
+
 "RecommandationsButton" = "Pour moi";
+
+"RemoveAPlace" = "Supprimer l'endroit";
+
+"RemoveToATrip" = "Supprimer d'un trip";
 
 "Reviews" = "Avis";
 
