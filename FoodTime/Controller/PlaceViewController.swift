@@ -61,7 +61,7 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         setupView()
         
         //Ask user localization
-        self.mapView.clear()
+        //self.mapView.clear()
         self.localizeUser()
         
         loadPlace()
@@ -78,9 +78,11 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         
         placeInformationLbl.text = UILabels.localizeWithoutComment(key: UILabels.PlaceInformationTitle)
         
+        //Ask user localization
         locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        locationManager.requestLocation()
         
         carouselView.type = .linear
         
@@ -90,13 +92,6 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         // Use if you need just to show the stars without getting user's input
         self.ratingView.settings.updateOnTouch = false
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.mapView = GMSMapView(frame: self.mapViewContainer.frame)
-        self.mapView.animate(toZoom: 18.0)
-        self.view.addSubview(self.mapView)
     }
     
     func loadPlace()
@@ -150,34 +145,6 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
             
             self.addressPlaceLbl.text = self.place.formattedAddress
             
-            if self.isUserLocalized
-            {
-                self.placesClient.lookUpPlaceID(self.place.idPlace!, callback: { (placeFound, error) -> Void in
-                    
-                    if let error = error {
-                        print("lookup place id query error: \(error.localizedDescription)")
-                        return
-                    }
-                    
-                    guard let placeFound = placeFound else {
-                        print("No place details for \(self.place.idPlace!)")
-                        return
-                    }
-                    
-                    let coordinate₀ = CLLocation(latitude: (self.locationManager.location?.coordinate.latitude)!, longitude: (self.locationManager.location?.coordinate.longitude)!)
-                    let coordinate₁ = CLLocation(latitude: placeFound.coordinate.latitude, longitude: placeFound.coordinate.longitude)
-                    
-                    let distanceInMeters = coordinate₀.distance(from: coordinate₁)
-                    let distanceInMetric = distanceInMeters.conversionInUserMetric()
-                    
-                    self.distanceLbl.text = distanceInMetric
-                })
-            }
-            else
-            {
-                self.distanceLbl.text = ""
-            }
-            
             if self.place.latLocation != nil && self.place.lngLocation != nil
             {
                 let coordinates = CLLocationCoordinate2DMake(self.place.latLocation!, self.place.lngLocation!)
@@ -185,6 +152,28 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
                 marker.title = self.place.name
                 marker.map = self.mapView
                 self.mapView.animate(toLocation: coordinates)
+                self.mapView.camera = GMSCameraPosition(target: coordinates, zoom: 18, bearing: 0, viewingAngle: 0)
+                
+                self.locationManager.stopUpdatingLocation()
+                
+                if self.isUserLocalized
+                {
+                    let coordinate₀ = CLLocation(latitude: (self.locationManager.location?.coordinate.latitude)!, longitude: (self.locationManager.location?.coordinate.longitude)!)
+                    let coordinate₁ = CLLocation(latitude: self.place.latLocation!, longitude: self.place.lngLocation!)
+                    
+                    let distanceInMeters = coordinate₀.distance(from: coordinate₁)
+                    let distanceInMetric = distanceInMeters.conversionInUserMetric()
+                    
+                    self.distanceLbl.text = distanceInMetric
+                }
+                else
+                {
+                    self.distanceLbl.text = ""
+                }
+            }
+            else
+            {
+                self.distanceLbl.text = ""
             }
             
             if self.place.openNow != nil && self.place.openNow!
@@ -546,12 +535,6 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
             case .authorizedAlways, .authorizedWhenInUse:
                 print("Access")
                 isUserLocalized = true
-                
-                //Picker for user location
-                let coordinates = CLLocationCoordinate2DMake(locationManager.location!.coordinate.latitude, locationManager.location!.coordinate.longitude)
-                let marker = GMSMarker(position: coordinates)
-                marker.map = self.mapView
-                self.mapView.animate(toLocation: coordinates)
             }
         }
         else
@@ -560,14 +543,32 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        
-        print("location error is = \(error.localizedDescription)")
-    }
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
+       /* if !isUserLocalized {
+            
+            locationManager.stopUpdatingLocation()
+            self.mapView.camera = GMSCameraPosition(target: selectedCoordinate!.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+        } else */if let location = locations.first {
+            
+            self.mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+
+            locationManager.stopUpdatingLocation()
+        }
     }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
+        if status == .authorizedWhenInUse {
+            locationManager.requestLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("error: \(error.localizedDescription)")
+    }
+    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
