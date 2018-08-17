@@ -94,6 +94,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "PlaceViewController.likePlace(_:):PlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "isLikedPlace">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in SearchPlaceViewController.tableView(_:cellForRowAt:):SearchPlaceViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -228,6 +236,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in PlaceViewController.loadUserTripFromPlace(completion:):PlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "child.key">
+            </PersistentString>
+            <PersistentString
+               value = "child.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "static Place.jsonToPlace(tab:requestPhoto:completion:):Place.swift">
          <PersistentStrings>
             <PersistentString
@@ -286,6 +305,9 @@
                value = "index">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PlaceViewController.loadTrip(userTripList:completion:):PlaceViewController.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in closure #1 in SearchPlaceViewController.tableView(_:didSelectRowAt:):SearchPlaceViewController.swift">

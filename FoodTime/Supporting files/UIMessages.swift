@@ -46,15 +46,13 @@ class UIMessages {
     
     static let No : String = "No"
     
-    static let RemoveAPlace: String = "RemoveAPlace"
-    
-    static let RemoveToATrip : String = "RemoveToATrip"
+    static let RemoveToATripAlertTitle : String = "RemoveToATripAlertTitle"
     
     static let RemoveToATripOrPlaceAlertTitle : String = "RemoveToATripOrPlaceAlertTitle"
     
     static let SaveToATripAlertTitle : String = "SaveToATripAlertTitle"
     
-    static let SaveToATripAlertText : String = "SaveToATripAlertText"
+    static let SaveToAnotherTrip : String = "SaveToAnotherTrip"
         
     static let UserNotFound : String = "UserNotFound"
     

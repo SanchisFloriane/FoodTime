@@ -88,15 +88,13 @@
 
 "RecommandationsButton" = "Pour moi";
 
-"RemoveAPlace" = "Supprimer l'endroit";
-
-"RemoveToATrip" = "Supprimer d'un trip";
+"RemoveToATripAlertTitle" = "Supprimer d'un trip";
 
 "Reviews" = "Avis";
 
 "SaveToATripAlertTitle" = "Ajouter à un trip ?";
 
-"SaveToATripAlertText" = "Si non, l'endroit sera ajouté à votre liste d'endroits favoris";
+"SaveToAnotherTrip" = "Ajouter à un autre trip";
 
 "SearchLocationBarPlaceHolder" = "Près de ...";
 

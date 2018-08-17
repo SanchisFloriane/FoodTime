@@ -86,9 +86,7 @@
 
 "RecommandationsButton" = "For you";
 
-"RemoveAPlace" = "Remove this place";
-
-"RemoveToATrip" = "Remove to a trip";
+"RemoveToATripAlertTitle" = "Remove to a trip";
 
 "RemoveToATripOrPlaceAlertTitle" = "Remove the place";
 
@@ -96,7 +94,7 @@
 
 "SaveToATripAlertTitle" = "Save to a trip ?";
 
-"SaveToATripAlertText" = "If no, the place will be added to your favourite places list";
+"SaveToAnotherTrip" = "Save to another trip";
 
 "SearchLocationBarPlaceHolder" = "Near by ...";
 
