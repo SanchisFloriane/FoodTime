@@ -19,7 +19,6 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
 {
     
     @IBOutlet weak var addressPlaceLbl: UILabel!
-    @IBOutlet weak var bookButton: UIBarButtonItem!
     @IBOutlet weak var carouselView: iCarousel!
     @IBOutlet weak var distanceLbl: UILabel!
     @IBOutlet weak var likeButton: UIBarButtonItem!
@@ -36,9 +35,6 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
     @IBOutlet weak var websiteTxtView: UITextView!    
     
     let idUser = Auth.auth().currentUser!.uid
-    
-    //Taste user
-    var isBookedPlace : Bool = false
     
     //Localisation user
     var locationManager: CLLocationManager = CLLocationManager()
@@ -234,26 +230,6 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         //to do
     }
     
-    @IBAction func bookPlace(_ sender: UIBarButtonItem) {
-        
-        if isBookedPlace
-        {
-            bookButton.image = UIImage(named: Service.BookmarkEmptyIcon)
-        }
-        else
-        {
-            bookButton.image = UIImage(named: Service.BookmarkFullEmptyIcon)
-        }
-        
-        isBookedPlace = !isBookedPlace
-        
-        if isBookedPlace
-        {
-            //Save in DB
-            // self.showAlertSaveYesNo(on: self, style: .alert, title: UIMessages.localizeWithoutComment(key: UIMessages.SaveToATripAlertTitle))
-        }
-    }
-    
     @IBAction func likePlace(_ sender: UIBarButtonItem) {
         
         self.loadUserTripFromPlace(completion: { (userPlaceList) in
@@ -436,23 +412,6 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         }
     }
     
-    func savePlaceUser() {
-        
-        //Save in user_place DB
-        let idPlace = self.place.idPlace
-        let isLiked = true
-        let toTest = false
-        let userPlace = UserPlace(idUser: self.idUser, idPlace: idPlace, idTrip: nil, isLiked: isLiked, toTest: toTest)
-        let values : [String: [String: String]] = [userPlace.idPlace! : userPlace.getData()]
-        Database.database().reference().child("\(ModelDB.user_place)/\(self.idUser)").updateChildValues(values, withCompletionBlock: { (err, ref) in
-            if let err = err {
-                print("Failed to save user info with error: \(err)")
-                return
-            }
-            print("Successfully saved user place into Firebase database")
-        })
-    }
-    
     func showAlertRemoveTripUserList(on: UIViewController, style: UIAlertControllerStyle, title: String?, completion: (() -> Swift.Void)? = nil)
     {
         
@@ -519,12 +478,10 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
                                 //Save in user_place DB
                                 let idTrip = trip.idTrip
                                 let idPlace = self.place.idPlace
-                                let isLiked = true
-                                let toTest = false
-                                let userPlace = UserPlace(idUser: self.idUser, idPlace: idPlace, idTrip: idTrip, isLiked: isLiked, toTest: toTest)
-                                let values : [String: [String: String]] = [idTrip! : userPlace.getData()]
+                                let userPlace = UserPlace(idUser: self.idUser, idPlace: idPlace, idTrip: idTrip)
+                                let values : [String: String] = [userPlace.idPlace! : idTrip!]
                                 
-                                Database.database().reference().child("\(ModelDB.user_place)/\(self.idUser)/\(userPlace.idPlace!)").updateChildValues(values, withCompletionBlock: { (err, ref) in
+                                Database.database().reference().child("\(ModelDB.user_place)/\(self.idUser)").updateChildValues(values, withCompletionBlock: { (err, ref) in
                                     if let err = err {
                                         print("Failed to save user info with error: \(err)")
                                         return

@@ -1768,12 +1768,6 @@
                                     <action selector="likePlace:" destination="jSh-75-BpZ" id="3Zr-oq-XHN"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="bookmark-icon" id="1iZ-Xe-Lmb">
-                                <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="bookPlace:" destination="jSh-75-BpZ" id="EMf-Lp-MNi"/>
-                                </connections>
-                            </barButtonItem>
                             <barButtonItem image="share" id="Fjp-uk-z5A">
                                 <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -1786,7 +1780,6 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addressPlaceLbl" destination="uLh-OA-ISJ" id="Mvc-Xv-xSG"/>
-                        <outlet property="bookButton" destination="1iZ-Xe-Lmb" id="da1-PF-0if"/>
                         <outlet property="carouselView" destination="pCf-1Z-8lh" id="CsQ-Qw-99o"/>
                         <outlet property="distanceLbl" destination="aNp-Zy-Lvw" id="kbd-sa-XdN"/>
                         <outlet property="likeButton" destination="GtL-DN-r73" id="q5B-Rs-0j0"/>
@@ -1809,7 +1802,6 @@
     </scenes>
     <resources>
         <image name="back" width="32" height="32"/>
-        <image name="bookmark-icon" width="32" height="32"/>
         <image name="cityPlace-icon" width="32" height="32"/>
         <image name="clock-icon" width="32" height="32"/>
         <image name="cocktail" width="84" height="80"/>
