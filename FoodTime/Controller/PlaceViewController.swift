@@ -640,7 +640,8 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         let tempView = UIView(frame: CGRect(x: 0, y: 0, width: carouselView.frame.width, height: carouselView.frame.height))
         tempView.backgroundColor = view?.backgroundColor
         let button = UIButton(frame: tempView.frame)
-        let img = tabPhotos[index]
+        var img = tabPhotos[index]
+        img = Service.imageWithImage(image: img!, scaledToSize: CGSize(width: carouselView.frame.width, height: carouselView.frame.height))
         button.setImage(img, for: .normal)
         tempView.addSubview(button)
         return tempView
