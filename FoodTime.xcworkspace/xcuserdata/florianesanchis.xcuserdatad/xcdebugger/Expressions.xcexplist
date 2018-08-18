@@ -54,10 +54,10 @@
          contextName = "LoginViewController.userExists():LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "Auth.auth().currentUser!.uid">
+               value = "self.newUser">
             </PersistentString>
             <PersistentString
-               value = "self.newUser">
+               value = "Auth.auth().currentUser!.uid">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -133,10 +133,10 @@
          contextName = "HomeViewController.viewWillAppear(_:):HomeViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "navigationItem.hidesBackButton">
+               value = "self.navigationController?.toolbarItems">
             </PersistentString>
             <PersistentString
-               value = "self.navigationController?.toolbarItems">
+               value = "navigationItem.hidesBackButton">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -156,6 +156,14 @@
          <PersistentStrings>
             <PersistentString
                value = "NSLocalizedString(key, comment: &quot;&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in closure #1 in closure #1 in closure #1 in PlaceViewController.showAlertRemoveTripUserList(on:style:title:completion:):PlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ref.key">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -272,6 +280,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in closure #1 in closure #1 in closure #1 in PlaceViewController.showAlertRemoveTripUserList(on:style:title:completion:):PlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "child.key">
+            </PersistentString>
+            <PersistentString
+               value = "child.value as? String">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in CreateUserAccountViewController.createUserAccount():CreateUserAccountViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -283,10 +302,10 @@
          contextName = "PlaceViewController.numberOfItems(in:):PlaceViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "tabPhotos.count">
+               value = "&#10; tabPhotos">
             </PersistentString>
             <PersistentString
-               value = "&#10; tabPhotos">
+               value = "tabPhotos.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

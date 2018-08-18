@@ -86,8 +86,6 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         
         carouselView.type = .linear
         
-        shareButton.isEnabled = false
-        
         // Do not change rating when touched
         // Use if you need just to show the stars without getting user's input
         self.ratingView.settings.updateOnTouch = false
@@ -216,9 +214,38 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
     }
     
     @IBAction func sharePlace(_ sender: UIBarButtonItem) {
-        //to do
+       
+        let text : String = self.place.name! + "\n" + self.place.formattedAddress!
+        let attributedString : NSMutableAttributedString?
+        
+        if self.place.website != nil
+        {
+            attributedString = NSMutableAttributedString(string: self.place.website!)
+            attributedString?.setAsLink(textToFind: self.place.name!, linkURL: self.place.website!)
+            
+        }
+        else
+        {
+            attributedString = NSMutableAttributedString(string: "https://www.google.com/search?q=\(self.place.name!)+\(self.place.formattedAddress!)")
+            attributedString?.setAsLink(textToFind: self.place.name!, linkURL: "https://www.google.com/search?q=\(self.place.name!)+\(self.place.formattedAddress!)")
+        }
+    
+        let vc = UIActivityViewController(activityItems: [text, attributedString ?? ""], applicationActivities: [])
+        
+        if let popOverController = vc.popoverPresentationController {
+            popOverController.sourceView = self.view
+            popOverController.sourceRect = self.view.bounds
+        }
+        
+        self.present(vc, animated: true, completion: nil)
     }
     
+    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            completion(data, response, error)
+            }.resume()
+    }
+
     @IBAction func likePlace(_ sender: UIBarButtonItem) {
         
         self.loadUserTripFromPlace(completion: { (userPlaceList) in
@@ -328,7 +355,7 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
                 let listChildren = snapchot.children
                 while let child = listChildren.nextObject() as? DataSnapshot
                 {
-                    let idTrip = child.key
+                    let idTrip = child.value as? String
                     userPlaceTripList.append(UserTrip(idUser: self.idUser, idTrip: idTrip))
                 }
                 
@@ -399,6 +426,7 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
                 }
             })
         }
+        completion(tripList)
     }
     
     func showAlertRemoveTripUserList(on: UIViewController, style: UIAlertControllerStyle, title: String?, completion: (() -> Swift.Void)? = nil)
@@ -406,12 +434,12 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         
         //Get all trip of the user in DB for the selected place
         self.loadUserTripFromPlace(completion:{ (userTripFromPlaceList) in
+            let alert = UIAlertController(title: title, message: "", preferredStyle: style)
             //Get all name trips of the current user
             if !(userTripFromPlaceList.isEmpty)
             {
                 self.loadTrip(userTripList: userTripFromPlaceList, completion: { (tripList) in
                     
-                    let alert = UIAlertController(title: title, message: "", preferredStyle: style)
                     
                     for trip in tripList
                     {
@@ -421,27 +449,40 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
                             let idTrip = trip.idTrip
                             let idPlace = self.place.idPlace
                             
-                            Database.database().reference().child("\(ModelDB.user_place)/\(self.idUser)/\(idPlace!)/\(idTrip!)").removeValue() { (err, ref) in
-                                if let err = err {
-                                    print("Failed to remove user place info with error: \(err)")
-                                    return
+                            Database.database().reference().child("\(ModelDB.user_place)/\(self.idUser)/\(idPlace!)").observeSingleEvent(of: .value, with: { (snapchot) in
+                                
+                                if snapchot.childrenCount > 0
+                                {
+                                    let listChildren = snapchot.children
+                                    while let child = listChildren.nextObject() as? DataSnapshot
+                                    {
+                                        if child.value as? String == idTrip!
+                                        {
+                                            Database.database().reference().child("\(ModelDB.user_place)/\(self.idUser)/\(idPlace!)").child("\(child.key)").removeValue(completionBlock: { (err, ref) in
+                                                if let err = err {
+                                                    print("Failed to remove user place info with error: \(err)")
+                                                    return
+                                                }
+                                                print("Successfully removed user place from trip into Firebase database")
+                                                self.changeLikeIcon()
+                                            })
+                                        }
+                                    }
                                 }
-                                print("Successfully removed user place from trip into Firebase database")
-                                self.changeLikeIcon()
-                            }
+                            })
                         }))
                     }
                     
-                    let cancel = UIAlertAction(title: UIMessages.localizeWithoutComment(key: UIMessages.Cancel), style: .cancel){ (action:UIAlertAction) in
-                        //cancel action
-                       self.changeLikeIcon()
-                    }
-                    
-                    alert.addAction(cancel)
-                    
-                    on.present(alert, animated: true, completion: completion)
                 })
             }
+            let cancel = UIAlertAction(title: UIMessages.localizeWithoutComment(key: UIMessages.Cancel), style: .cancel){ (action:UIAlertAction) in
+                //cancel action
+                self.changeLikeIcon()
+            }
+            
+            alert.addAction(cancel)
+            
+            on.present(alert, animated: true, completion: completion)
         })
     }
     
@@ -449,6 +490,8 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         
         //Get all trip of the user in DB for the selected place
         self.loadUserTripFromPlace(completion:{ (userTripFromPlaceList) in
+            
+            let alert = UIAlertController(title: title, message: "", preferredStyle: style)
             
                 //Get all trip of the user in DB
                 self.loadUserTrip(tripUserAlreadyAddedList: userTripFromPlaceList) { (userTripList) in
@@ -458,7 +501,6 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
                 {
                     self.loadTrip(userTripList: userTripList, completion: { (tripList) in
                         
-                        let alert = UIAlertController(title: title, message: "", preferredStyle: style)
                         
                         for trip in tripList
                         {
@@ -468,9 +510,9 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
                                 let idTrip = trip.idTrip
                                 let idPlace = self.place.idPlace
                                 let userPlace = UserPlace(idUser: self.idUser, idPlace: idPlace, idTrip: idTrip)
-                                let values : [String: String] = [userPlace.idPlace! : idTrip!]
+                                let values : [String: String] = [idTrip! : idTrip!]
                                 
-                                Database.database().reference().child("\(ModelDB.user_place)/\(self.idUser)").updateChildValues(values, withCompletionBlock: { (err, ref) in
+                                Database.database().reference().child("\(ModelDB.user_place)/\(self.idUser)").child(userPlace.idPlace!).updateChildValues(values,  withCompletionBlock: { (err, ref) in
                                     if let err = err {
                                         print("Failed to save user info with error: \(err)")
                                         return
@@ -480,31 +522,32 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
                                 })
                             }))
                         }
-                        let createTrip = UIAlertAction(title: UIMessages.localizeWithoutComment(key: UIMessages.CreateANewTrip), style: .default) { (action:UIAlertAction) in
-                            //Change view controller to create trip view controller
-                            print("You've press to create a trip");
-                            /* self.dismiss(animated: true, completion: nil)
-                             
-                             let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
-                             let desController : UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.CreateTripViewController) as! CreateTripViewController
-                             self.navigationController?.pushViewController(desController, animated: false)
-                             
-                             self.changeLikeIcon()
-                             */
-                        }
-                        
-                        let cancel = UIAlertAction(title: UIMessages.localizeWithoutComment(key: UIMessages.Cancel), style: .cancel){ (action:UIAlertAction) in
-                            //cancel action
-                           self.changeLikeIcon()
-                        }
-                        
-                        alert.addAction(createTrip)
-                        alert.addAction(cancel)
-                        
-                        on.present(alert, animated: true, completion: completion)
                     })
                 }
             }
+            
+            let createTrip = UIAlertAction(title: UIMessages.localizeWithoutComment(key: UIMessages.CreateANewTrip), style: .default) { (action:UIAlertAction) in
+                //Change view controller to create trip view controller
+                print("You've press to create a trip");
+                /* self.dismiss(animated: true, completion: nil)
+                 
+                 let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
+                 let desController : UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.CreateTripViewController) as! CreateTripViewController
+                 self.navigationController?.pushViewController(desController, animated: false)
+                 
+                 self.changeLikeIcon()
+                 */
+            }
+            
+            let cancel = UIAlertAction(title: UIMessages.localizeWithoutComment(key: UIMessages.Cancel), style: .cancel){ (action:UIAlertAction) in
+                //cancel action
+                self.changeLikeIcon()
+            }
+            
+            alert.addAction(createTrip)
+            alert.addAction(cancel)
+            
+            on.present(alert, animated: true, completion: completion)
         })
     }
     
@@ -567,8 +610,6 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("error: \(error.localizedDescription)")
     }
-    
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

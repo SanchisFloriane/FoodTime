@@ -43,6 +43,7 @@
 		F4121DF521068DA500252594 /* GetStartedChoiceCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4121DF421068DA500252594 /* GetStartedChoiceCreationViewController.swift */; };
 		F4121DF72106951C00252594 /* CreateUserAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4121DF62106951C00252594 /* CreateUserAccountViewController.swift */; };
 		F4121DF92106986D00252594 /* UIMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4121DF82106986D00252594 /* UIMessages.swift */; };
+		F41F9216212749C4005D7A1C /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41F9215212749C4005D7A1C /* NSMutableAttributedString.swift */; };
 		F42998B420FD50820035A717 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42998B320FD50820035A717 /* Service.swift */; };
 		F44C64AA2107C514003B8039 /* ChoiceTypeFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C64A92107C514003B8039 /* ChoiceTypeFoodViewController.swift */; };
 		F44C64AC2107C5F7003B8039 /* ChoiceUserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C64AB2107C5F7003B8039 /* ChoiceUserPageViewController.swift */; };
@@ -107,6 +108,7 @@
 		F4121DF421068DA500252594 /* GetStartedChoiceCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedChoiceCreationViewController.swift; sourceTree = "<group>"; };
 		F4121DF62106951C00252594 /* CreateUserAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserAccountViewController.swift; sourceTree = "<group>"; };
 		F4121DF82106986D00252594 /* UIMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMessages.swift; sourceTree = "<group>"; };
+		F41F9215212749C4005D7A1C /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
 		F42998B220FD46BA0035A717 /* FoodTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodTime.entitlements; sourceTree = "<group>"; };
 		F42998B320FD50820035A717 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		F44C64A92107C514003B8039 /* ChoiceTypeFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceTypeFoodViewController.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				F4F28CAF211396720095E29F /* CCLocationDistance.swift */,
 				F4C244392117BED500EFC64E /* Float.swift */,
 				C4C7A6AE2118D5CB00087B80 /* String.swift */,
+				F41F9215212749C4005D7A1C /* NSMutableAttributedString.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				F4A8ED6D21014507007FAB61 /* ChoicePlaceViewController.swift in Sources */,
 				C4C7A6AF2118D5CB00087B80 /* String.swift in Sources */,
 				F4121DF02106585300252594 /* EmailLoginViewController.swift in Sources */,
+				F41F9216212749C4005D7A1C /* NSMutableAttributedString.swift in Sources */,
 				F44C64B121080137003B8039 /* PageObservation.swift in Sources */,
 				C418A6F22123852100C43DA6 /* MyPlacesViewController.swift in Sources */,
 				C414FECD20F68EB1008D5AE5 /* GetStartedViewController.swift in Sources */,
