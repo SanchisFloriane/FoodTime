@@ -91,6 +91,8 @@ class HomeViewController: UIViewController, UITabBarDelegate {
         
         let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
         
+        self.dismiss(animated: false, completion: nil)
+        
         let item = tabBar.selectedItem
         if item == placesButton
         {

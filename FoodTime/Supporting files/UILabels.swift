@@ -26,7 +26,13 @@ class UILabels {
     
     static let ActivateNotificationsButton : String = "ActivateNotificationsButton"
     
+    static let Alphabetical : String = "Alphabetical"
+    
+    static let Cancel : String = "Cancel"
+    
     static let CreateUserAccount : String = "CreateUserAccount"
+    
+    static let CreateATrip : String = "CreateATrip"
     
     static let DescriptionPageChoiceNotificationViewController : String = "DescriptionPageChoiceNotificationViewController"
     
@@ -35,6 +41,10 @@ class UILabels {
     static let DescriptionPageChoiceTypeDrinkViewController : String = "DescriptionPageChoiceTypeDrinkViewController"
     
     static let DescriptionPageChoiceTypePlaceViewController : String = "DescriptionPageChoiceTypePlaceViewController"
+
+    static let DescriptionMyEmptyTripsViewController : String = "DescriptionMyEmptyTripsViewController"
+    
+    static let Details : String = "Details"
     
     static let Email: String = "Email"
     
@@ -43,6 +53,10 @@ class UILabels {
     static let EmailSignUpButton : String = "EmailSignUpButton"
     
     static let EmailTitle : String = "EmailTitle"
+    
+    static let EnterAName : String = "EnterAName"
+    
+    static let EndDate : String = "EndDate"
     
     static let FBSignInButton : String = "FBSignInButton"
     
@@ -68,6 +82,10 @@ class UILabels {
     
     static let MyProfileButton : String = "MyProfileButton"
     
+    static let MyTrips : String = "MyTrips"
+    
+    static let NameTrip : String = "NameTrip"
+    
     static let NoPhoneNumber : String = "NoPhoneNumber"
     
     static let NoWebsite : String = "NoWebsite"
@@ -82,15 +100,27 @@ class UILabels {
     
     static let PasswordConfirmation : String = "PasswordConfirmation"
     
+    static let Recent : String = "Recent"
+    
+    static let RecentlyViewedBtn : String = "RecentlyViewedBtn"
+    
     static let RecommandationsButton : String = "RecommandationsButton"
     
     static let Reviews : String = "Reviews"
+    
+    static let Save : String = "Save"
     
     static let SearchLocationBarPlaceHolder : String = "SearchLocationBarPlaceHolder"
     
     static let SearchPlaceBarPlaceHolder : String = "SearchPlaceBarPlaceHolder"
     
     static let SkipButton : String = "SkipButton"
+    
+    static let SortedBy : String = "SortedBy"
+    
+    static let SortByAlert : String = "SortByAlert"
+    
+    static let StartDate : String = "StartDate"
     
     static let TaglineTextMainPage : String = "TaglineTextMainPage"
     
@@ -105,6 +135,10 @@ class UILabels {
     static let TitlePageChoiceTypePlaceViewController : String = "TitlePageChoiceTypePlaceViewController"
     
     static let TitleSearchPlaceDetailViewController : String = "TitleSearchPlaceDetailViewController"
+    
+    static let TitleMyEmptyTripsViewController : String = "TitleMyEmptyTripsViewController"
+    
+    static let TripsBtn : String = "TripsBtn"
     
     static let ValidateButton : String = "ValidateButton"
     

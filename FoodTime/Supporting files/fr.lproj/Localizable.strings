@@ -8,9 +8,11 @@
 
 "ActivateNotificationsButton" = "Activer les notifications";
 
+"Alphabetical" = "Alphabet";
+
 "Cancel" = "Annuler";
 
-"CreateANewTrip" = "Créer un nouveau trip";
+"CreateATrip" = "Créer un trip";
 
 "CreateUserAccount" = "Création compte utilisateur";
 
@@ -22,6 +24,10 @@
 
 "DescriptionPageChoiceTypePlaceViewController" = "Sélectionnez le type d'endroit que vous aimez ou prévoyez d'aller (1 ou +)";
 
+"DescriptionMyEmptyTripsViewController" = "Créez un nouveau trip puis cliqué sur le coeur pour ajouter l'endroit à un trip.";
+
+"Details" = "Détails";
+
 "Email" = "Votre email";
 
 "EmailSignInButton" = "Utilisez votre email";
@@ -29,6 +35,10 @@
 "EmailSignUpButton" = "Utilisez votre email";
 
 "EmailTitle" = "Connectez-vous avec votre email";
+
+"EnterAName" = "Saisissez  un nom...";
+
+"EndDate" = "Date de fin";
 
 "ErrorFormatPassword" = "La longueur du mot de passe doit être au minimum de 6 caractères dont 1 lettre, 1 chiffre et 1 charactère spécial.";
 
@@ -66,6 +76,10 @@
 
 "MyProfileButton" = "Mon profile";
 
+"MyTrips" = "Mes trips";
+
+"NameTrip" = "Nom trip";
+
 "NewsTitle" = "Nouveautées";
 
 "No" = "Non";
@@ -84,6 +98,10 @@
 
 "PlaceOpenNow" = "Ouvert";
 
+"Recent" = "Récent";
+
+"RecentlyViewedBtn" = "Récemment vu";
+
 "RemoveToATripOrPlaceAlertTitle" = "Supprimer l'endroit";
 
 "RecommandationsButton" = "Pour moi";
@@ -91,6 +109,8 @@
 "RemoveToATripAlertTitle" = "Supprimer d'un trip";
 
 "Reviews" = "Avis";
+
+"Save" = "Sauvegarder";
 
 "SaveToATripAlertTitle" = "Ajouter à un trip ?";
 
@@ -102,9 +122,17 @@
 
 "SkipButton" = "Ignorer";
 
+"SortedBy" = "Trié par :";
+
+"SortByAlert" = "Trié par";
+
+"StartDate" = "Date de début";
+
 "TaglineTextMainPage" = "Gérer vos endroits préférés";
 
 "TermsPrivatePolicyButton" = "En vous inscrivant, vous acceptez nos CGU & Confidentialité";
+
+"TitleMyEmptyTripsPlaceViewController" = "Découvrez et sauvegarder vos endroits";
 
 "TitlePageChoiceNotificationViewController" = "Être notifié des nouveaux endroits et changements ?";
 
@@ -116,7 +144,9 @@
 
 "TitleSearchPlaceDetailViewController" = "Résultats";
 
-"UserNotFound" = "Le compte utilisateur n'existe pas";
+"TripsBtn" = "Trips";
+
+"UserNotFound" = "Le compte utilisateur n'éxiste pas";
 
 "ValidateButton" = "Valider";
 

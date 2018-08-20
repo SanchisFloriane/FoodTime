@@ -8,9 +8,11 @@
 
 "ActivateNotificationsButton" = "Activate notifications";
 
+"Alphabetical" = "Alphabetical";
+
 "Cancel" = "Cancel";
 
-"CreateANewTrip" = "Create a new trip";
+"CreateATrip" = "Create a trip";
 
 "CreateUserAccount" = "Create user account";
 
@@ -22,6 +24,10 @@
 
 "DescriptionPageChoiceTypePlaceViewController" = "Select the type of places you like to be or you plan to go (1 or +)";
 
+"DescriptionMyEmptyTripsViewController" = "Create a trip then tap to the heart icon on places to add a trip.";
+
+"Details" = "Details";
+
 "Email" = "Your email";
 
 "EmailSignInButton" = "Use your email";
@@ -29,6 +35,10 @@
 "EmailSignUpButton" = "Use your email";
 
 "EmailTitle" = "Use your email";
+
+"EnterAName" = "Enter a name...";
+
+"EndDate" = "End date";
 
 "ErrorEmail" = "Please specify a valid email addres.";
 
@@ -66,6 +76,10 @@
 
 "MyProfileButton" = "My profile";
 
+"MyTrips" = "My trips";
+
+"NameTrip" = "Name trip";
+
 "NewsTitle" = "News";
 
 "No" = "No";
@@ -84,6 +98,10 @@
 
 "PlaceOpenNow" = "Open now";
 
+"Recent" = "Recent";
+
+"RecentlyViewedBtn" = "Recently viewed";
+
 "RecommandationsButton" = "For you";
 
 "RemoveToATripAlertTitle" = "Remove to a trip";
@@ -91,6 +109,8 @@
 "RemoveToATripOrPlaceAlertTitle" = "Remove the place";
 
 "Reviews" = "Reviews";
+
+"Save" = "Sauvegarder";
 
 "SaveToATripAlertTitle" = "Save to a trip ?";
 
@@ -102,9 +122,17 @@
 
 "SkipButton" = "Skip";
 
+"SortedBy" = "Sorted by :";
+
+"SortByAlert" = "Sort by";
+
+"StartDate" = "Start date";
+
 "TaglineTextMainPage" = "Track your favourite food and drink place";
 
 "TermsPrivatePolicyButton" = "By sign up, you agree to our Terms & Private policy";
+
+"TitleMyEmptyTripsPlaceViewController" = "Discover and save your places";
 
 "TitlePageChoiceNotificationViewController" = "Get notified of new places and releases";
 
@@ -115,6 +143,8 @@
 "TitlePageChoiceTypePlaceViewController" = "What is your favorite type of place ?";
 
 "TitleSearchPlaceDetailViewController" = "Results";
+
+"TripsBtn" = "Trips";
 
 "UserNotFound" = "User account does not exist.";
 

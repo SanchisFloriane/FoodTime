@@ -83,6 +83,8 @@ class Service {
     static let SearchPlaceIdCell : String = "searchPlaceCell"
     //table view cell for SearchPlaceViewController
     static let SearchPlaceDetailIdCell : String = "searchPlaceDetailCell"
+    //table view cell for MyListTripsViewController
+    static let MyListTripsIdCell : String = "myListTripsCell"
     
     
     static func showAlert(on: UIViewController, style: UIAlertControllerStyle, title: String?, message: String?, actions: [UIAlertAction] = [UIAlertAction(title: "Ok", style: .default, handler: nil)], completion: (() -> Swift.Void)? = nil) {
