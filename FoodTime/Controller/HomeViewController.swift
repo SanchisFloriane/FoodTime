@@ -62,15 +62,53 @@ class HomeViewController: UIViewController, UITabBarDelegate {
         self.navigationItem.hidesBackButton = true
     }
     
+    func loadUserTrip(completion:@escaping ([UserTrip])->())
+    {
+        var userTripList : [UserTrip] = [UserTrip]()
+        let idUser = Auth.auth().currentUser!.uid
+        
+        //Get all trips of the current user
+        Database.database().reference().child("\(ModelDB.user_trip)/\(idUser)").observeSingleEvent(of: .value, with: { (snapchot) in
+            
+            if snapchot.childrenCount > 0
+            {
+                let listChildren = snapchot.children
+                while let child = listChildren.nextObject() as? DataSnapshot
+                {
+                    let idTrip = child.value as? String
+                    userTripList.append(UserTrip(idUser: idUser, idTrip: idTrip!))
+                }
+                completion(userTripList)
+            }
+            else
+            {
+                completion(userTripList)
+            }
+        })
+    }
+    
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        
         let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
-        var desController : UIViewController!
         
         let item = tabBar.selectedItem
         if item == placesButton
         {
-            desController = mainStoryboard.instantiateViewController(withIdentifier: Service.MyPlacesViewController) as! MyPlacesViewController
-            self.navigationController?.pushViewController(desController, animated: true)
+            loadUserTrip(completion: { (userTripList) in
+                
+                if !(userTripList.isEmpty)
+                {
+                    let desController : MyListTripsViewController = mainStoryboard.instantiateViewController(withIdentifier: Service.MyListTripsViewController) as! MyListTripsViewController
+                    desController.userTripList = userTripList
+                    self.navigationController?.pushViewController(desController, animated: true)
+                }
+                else
+                {
+                    let desController : MyEmptyTripsViewController = mainStoryboard.instantiateViewController(withIdentifier: Service.MyEmptyTripsViewController) as! MyEmptyTripsViewController
+                    self.navigationController?.pushViewController(desController, animated: true)
+                }
+                
+            })
         }
         else if item == recommandationsButton
         {

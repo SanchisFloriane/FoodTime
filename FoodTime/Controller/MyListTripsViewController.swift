@@ -1,15 +1,23 @@
 //
-//  MyTripsViewController.swift
+//  MyListTripsViewController.swift
 //  FoodTime
 //
-//  Created by bob on 8/14/18.
+//  Created by bob on 8/20/18.
 //  Copyright © 2018 sanchisfloriane. All rights reserved.
 //
 
 import UIKit
 
-class MyTripsViewController: UIViewController {
+class MyListTripsViewController: UIViewController {
 
+    @IBOutlet weak var RecentlyViewedBtn: UIButton!
+    @IBOutlet weak var SortBtn: UIButton!
+    @IBOutlet weak var TripsBtn: UIButton!
+    @IBOutlet weak var TripsTableView: UITableView!
+    
+    var userTripList : [UserTrip] = [UserTrip]()
+    var tripList : [Trip] = [Trip]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -529,14 +529,13 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
             let createTrip = UIAlertAction(title: UIMessages.localizeWithoutComment(key: UIMessages.CreateANewTrip), style: .default) { (action:UIAlertAction) in
                 //Change view controller to create trip view controller
                 print("You've press to create a trip");
-                /* self.dismiss(animated: true, completion: nil)
+                
+                self.dismiss(animated: true, completion: nil)
                  
-                 let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
-                 let desController : UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.CreateTripViewController) as! CreateTripViewController
-                 self.navigationController?.pushViewController(desController, animated: false)
-                 
-                 self.changeLikeIcon()
-                 */
+                let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
+                let desController : UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.CreateTripViewController) as! CreateTripViewController
+                self.navigationController?.pushViewController(desController, animated: false)
+                self.changeLikeIcon()
             }
             
             let cancel = UIAlertAction(title: UIMessages.localizeWithoutComment(key: UIMessages.Cancel), style: .cancel){ (action:UIAlertAction) in
@@ -587,12 +586,8 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-       /* if !isUserLocalized {
-            
-            locationManager.stopUpdatingLocation()
-            self.mapView.camera = GMSCameraPosition(target: selectedCoordinate!.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
-        } else */if let location = locations.first {
+       
+        if let location = locations.first {
             
             self.mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
 

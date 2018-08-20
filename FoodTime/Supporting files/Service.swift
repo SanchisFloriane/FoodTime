@@ -47,6 +47,7 @@ class Service {
     static let LanguageApp : String = Locale.current.languageCode!
     
     //Name of the ViewControllers
+    static let CreateTripViewController : String = "CreateTripViewController"
     static let ChoicePlaceViewController : String = "ChoicePlaceViewController"
     static let ChoiceTypeFoodViewController : String = "ChoiceTypeFoodViewController"
     static let ChoiceTypeDrinkViewController : String = "ChoiceTypeDrinkViewController"
@@ -55,8 +56,8 @@ class Service {
     static let GetStartedViewController : String = "GetStartedViewController"
     static let HomeViewController : String = "HomeViewController"
     static let LoginViewController : String = "LoginViewController"
-    static let MyPlacesViewController : String = "MyPlacesViewController"
-    static let MyTripsViewController : String = "MyTripsViewController"
+    static let MyEmptyTripsViewController : String = "MyEmptyTripsViewController"
+    static let MyListTripsViewController : String = "MyListTripsViewController"
     static let PlaceViewController : String = "PlaceViewController"
     static let SearchPlaceViewController : String = "SearchPlaceViewController"
     static let SearchPlaceDetailViewController : String = "SearchPlaceDetailViewController"
@@ -98,7 +99,7 @@ class Service {
         hud.dismiss(afterDelay: delay, animated: true)
     }
     
-    func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
+    static func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
         image.draw(in: CGRect(origin: CGPoint.zero, size: CGSize(width: newSize.width, height: newSize.height)))
         let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!

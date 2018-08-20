@@ -63,7 +63,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "450"
             endingLineNumber = "450"
-            landmarkName = "removePlaceUser()"
+            landmarkName = "showAlertRemoveTripUserList(on:style:title:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
