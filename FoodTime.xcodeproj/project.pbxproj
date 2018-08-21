@@ -24,6 +24,8 @@
 		C45C9C0220FEAD58004A4369 /* UILabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C9C0120FEAD58004A4369 /* UILabels.swift */; };
 		C45C9C0920FFA9F3004A4369 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C45C9C0B20FFA9F3004A4369 /* Localizable.strings */; };
 		C45C9C0F20FFB6A9004A4369 /* Roboto in Resources */ = {isa = PBXBuildFile; fileRef = C45C9C0E20FFB6A9004A4369 /* Roboto */; };
+		C46C3868212CAC4600894E2C /* CarouselButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46C3867212CAC4600894E2C /* CarouselButton.swift */; };
+		C46C386A212CB45200894E2C /* CarouselTrips.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46C3869212CB45200894E2C /* CarouselTrips.swift */; };
 		C4923A2520F556F500641EA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4923A2420F556F500641EA9 /* AppDelegate.swift */; };
 		C4923A2A20F556F500641EA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4923A2820F556F500641EA9 /* Main.storyboard */; };
 		C4923A2C20F556FD00641EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4923A2B20F556FD00641EA9 /* Assets.xcassets */; };
@@ -88,6 +90,8 @@
 		C45C9C0A20FFA9F3004A4369 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C45C9C0C20FFA9F5004A4369 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C45C9C0E20FFB6A9004A4369 /* Roboto */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Roboto; sourceTree = "<group>"; };
+		C46C3867212CAC4600894E2C /* CarouselButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselButton.swift; sourceTree = "<group>"; };
+		C46C3869212CB45200894E2C /* CarouselTrips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselTrips.swift; sourceTree = "<group>"; };
 		C4923A2120F556F500641EA9 /* FoodTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4923A2420F556F500641EA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4923A2920F556F500641EA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 		C414FECA20F686B1008D5AE5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C46C3866212CABEC00894E2C /* Carousel */,
 				C4F848DC21092DFD009EDBBD /* TableViewCell */,
 				F4121DF12106609200252594 /* Extension */,
 				C414FECC20F68EB1008D5AE5 /* GetStartedViewController.swift */,
@@ -238,6 +243,15 @@
 				C45C9C0E20FFB6A9004A4369 /* Roboto */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C46C3866212CABEC00894E2C /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				C46C3867212CAC4600894E2C /* CarouselButton.swift */,
+				C46C3869212CB45200894E2C /* CarouselTrips.swift */,
+			);
+			path = Carousel;
 			sourceTree = "<group>";
 		};
 		C4923A1820F556F400641EA9 = {
@@ -519,11 +533,13 @@
 				C4F848E6210A4E25009EDBBD /* Settings.swift in Sources */,
 				C4F848EB210A65BD009EDBBD /* TypePlace.swift in Sources */,
 				F4A8ED6F21014517007FAB61 /* HomeViewController.swift in Sources */,
+				C46C386A212CB45200894E2C /* CarouselTrips.swift in Sources */,
 				F4F28CAA2112AC890095E29F /* SearchPlaceDetailViewController.swift in Sources */,
 				C4A1A123210F8BD000DFC005 /* CaseIterable.swift in Sources */,
 				F4121DF3210660AF00252594 /* UIViewController.swift in Sources */,
 				C45B7409212B3E820044D280 /* MyEmptyTripsViewController.swift in Sources */,
 				C4F848E021094078009EDBBD /* ChoiceTypeDrinkViewController.swift in Sources */,
+				C46C3868212CAC4600894E2C /* CarouselButton.swift in Sources */,
 				C4182B5C2108F7B1004AE88E /* ModelDB.swift in Sources */,
 				F4F28CA6211139230095E29F /* SearchPlaceTableViewCell.swift in Sources */,
 				C45B740D212B3EB40044D280 /* CreateTripViewController.swift in Sources */,

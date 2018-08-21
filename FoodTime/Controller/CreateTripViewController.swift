@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CreateTripViewController: UIViewController {
 
@@ -22,9 +23,12 @@ class CreateTripViewController: UIViewController {
     @IBOutlet weak var TripNameLbl: UILabel!
     
     
+    let idUser = Auth.auth().currentUser!.uid
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        self.hideKeyboardWhenTappedAround()
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,8 +44,37 @@ class CreateTripViewController: UIViewController {
         DetailsLbl.text = UILabels.localizeWithoutComment(key: UILabels.Details)
         TripNameLbl.text = UILabels.localizeWithoutComment(key: UILabels.NameTrip)
         TripNameTxtField.placeholder = UILabels.localizeWithoutComment(key: UILabels.EnterAName)
+        TripNameTxtField.text = ""
         StartDateLbl.text = UILabels.localizeWithoutComment(key: UILabels.StartDate)
         EndDateLbl.text = UILabels.localizeWithoutComment(key: UILabels.StartDate)
     }
-
+    
+    @IBAction func back(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func save(_ sender: UIBarButtonItem) {
+        
+        //Get data fro; view
+        let nameTrip = TripNameTxtField.text
+        let startDate = StartDatePicker.date
+        let endDate = EndDatePicker.date
+        let trip = Trip(idTrip: nil, name: nameTrip, startDate: startDate, endDate: endDate)
+        let values : [String : String] = trip.getData()
+        
+        //Save into trip DB
+        let refTrip = Database.database().reference().child("\(ModelDB.trips)").childByAutoId()
+        refTrip.setValue(values)
+        let idTrip = refTrip.key
+        
+        //Save into user trip DB
+       /* let refUserTrip = Database.database().reference().child("\(ModelDB.user_trip)").childByAutoId()
+        let values : [String : String] = [self.idUser : idTrip]
+        refUserTrip.setValue(values)*/
+        
+        let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
+        let desController : UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.MyListTripsViewController) as! MyListTripsViewController
+        self.navigationController?.pushViewController(desController, animated: false)
+    }
 }

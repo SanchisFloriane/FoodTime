@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodTime/Controller/SearchPlaceViewController.swift"
-            timestampString = "556052803.800163"
+            timestampString = "556570583.187395"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "228"
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodTime/Controller/PlaceViewController.swift"
-            timestampString = "556496111.777619"
+            timestampString = "556582056.1847529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "450"
-            endingLineNumber = "450"
+            startingLineNumber = "438"
+            endingLineNumber = "438"
             landmarkName = "showAlertRemoveTripUserList(on:style:title:completion:)"
             landmarkType = "7">
          </BreakpointContent>

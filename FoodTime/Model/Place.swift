@@ -42,6 +42,11 @@ class Place
     
     init() {}
     
+    init(idPlace: String!)
+    {
+        self.idPlace = idPlace
+    }
+    
     init(idPlace: String?, name: String?, typePlace: [String?], typeFood: String?, typeDrink: String?, rating: String?, priceLevel: String?, menu: String?, website: String?, phoneNumber: String?, openingHours: [String?], address: String?, city: String?, state: String?, zipCode: String?, country: String?, photosLink: [String?], icon: String?, openNow: Bool, formattedAddress: String?, latLocation: Double?, lngLocation: Double?, latNortheast: Double?, lngNortheast: Double?, latSouthwest: Double?, lngSouthwest: Double?) {
         
         self.idPlace = idPlace

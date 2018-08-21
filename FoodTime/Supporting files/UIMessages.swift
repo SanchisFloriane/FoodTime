@@ -26,8 +26,6 @@ class UIMessages {
     
     static let Cancel : String = "Cancel"
     
-    static let CreateANewTrip : String = "CreateANewTrip"
-    
     static let ErrorTitle : String = "ErrorTitle"
     
     static let ErrorEmail : String = "ErrorEmail"

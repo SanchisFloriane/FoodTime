@@ -64,7 +64,11 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         //self.mapView.clear()
         self.localizeUser()
         
-        loadPlace()
+        
+        GoogleServices.loadPlace(idPlace: place.idPlace!, completion: {(placeConverted) in
+            self.place = placeConverted
+            self.loadData()
+        })
     }
     
     fileprivate func setupView()
@@ -90,22 +94,6 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         // Use if you need just to show the stars without getting user's input
         self.ratingView.settings.updateOnTouch = false
         
-    }
-    
-    func loadPlace()
-    {
-        let idPlace : String = "&placeid=\(place.idPlace!)"
-        let APIKey : String = "&key=\(Service.AraGooglePlaceAPIKey)"
-        let language : String = "&language=\(Locale.current.languageCode!)"
-        var url = "https://maps.googleapis.com/maps/api/place/details/json?"
-        let query = ("\(idPlace)\(APIKey)\(language)").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        url.append("\(query!)")
-        GoogleServices.performGoogleQuery(url: URL(string: url)!, completion: { (json) in
-            Place.jsonToPlace(tab: json, requestPhoto: true, completion: { (placeConverted) in
-                self.place = placeConverted
-            })
-            self.loadData()
-        })
     }
     
     func loadData()
@@ -526,7 +514,7 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
                 }
             }
             
-            let createTrip = UIAlertAction(title: UIMessages.localizeWithoutComment(key: UIMessages.CreateANewTrip), style: .default) { (action:UIAlertAction) in
+            let createTrip = UIAlertAction(title: UIMessages.localizeWithoutComment(key: UILabels.CreateATrip), style: .default) { (action:UIAlertAction) in
                 //Change view controller to create trip view controller
                 print("You've press to create a trip");
                 
@@ -625,8 +613,7 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         if option == iCarouselOption.spacing
         {
             return value
-        }
-        
+        }        
         return value
     }
     

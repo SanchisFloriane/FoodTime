@@ -38,7 +38,20 @@ class GoogleServices
         task.resume()
     }
     
-    
+    static func loadPlace(idPlace: String!, completion:@escaping (Place)->())
+    {
+        let idPlace : String = "&placeid=\(idPlace!)"
+        let APIKey : String = "&key=\(Service.AraGooglePlaceAPIKey)"
+        let language : String = "&language=\(Locale.current.languageCode!)"
+        var url = "https://maps.googleapis.com/maps/api/place/details/json?"
+        let query = ("\(idPlace)\(APIKey)\(language)").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        url.append("\(query!)")
+        GoogleServices.performGoogleQuery(url: URL(string: url)!, completion: { (json) in
+            Place.jsonToPlace(tab: json, requestPhoto: true, completion: { (placeConverted) in
+                completion(placeConverted)
+            })
+        })
+    }
     
     
     // If there is another page of results,

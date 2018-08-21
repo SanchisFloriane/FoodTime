@@ -3,13 +3,24 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "closure #1 in PlaceViewController.loadTrip(userTripList:completion:):PlaceViewController.swift">
+         contextName = "ChoiceTypeFoodViewController.tableView(_:numberOfRowsInSection:):ChoiceTypeFoodViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "child.key">
+               value = "listTypeFood.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MyListTripsViewController.tableView(_:cellForRowAt:):MyListTripsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "placeList.count">
             </PersistentString>
             <PersistentString
-               value = "endDate">
+               value = "self.tripList">
+            </PersistentString>
+            <PersistentString
+               value = "cell.idTrip">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -28,6 +39,50 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in PlaceViewController.loadTrip(userTripList:completion:):PlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "child.key">
+            </PersistentString>
+            <PersistentString
+               value = "endDate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in PlaceViewController.showAlertTripUserList(on:style:title:message:completion:):PlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "field.key">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChoicePlaceViewController.nextPage():ChoicePlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "buttonPlace.tag">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in closure #1 in MyListTripsViewController.tableView(_:cellForRowAt:):MyListTripsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.CarouselTrip.tempviews.count">
+            </PersistentString>
+            <PersistentString
+               value = "place.idPlace">
+            </PersistentString>
+            <PersistentString
+               value = "cell.idTrip">
+            </PersistentString>
+            <PersistentString
+               value = "index">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "SearchPlaceViewController.tableView(_:cellForRowAt:):SearchPlaceViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -39,106 +94,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ChoiceTypeFoodViewController.tableView(_:numberOfRowsInSection:):ChoiceTypeFoodViewController.swift">
+         contextName = "closure #1 in closure #1 in closure #1 in closure #1 in MyListTripsViewController.tableView(_:cellForRowAt:):MyListTripsViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "listTypeFood.count">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "static TypePlace.typePlace(typePlace:):TypePlace.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "typeDrinkPlace.rawValue">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in SearchPlaceViewController.performGoogleQuery(url:):SearchPlaceViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "url">
-            </PersistentString>
-            <PersistentString
-               value = "place[&quot;price_level&quot;]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in static TypePlace.toString(typePlace:completion:):TypePlace.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "&quot;\(ModelDB.typePlace)/\(Service.LanguageApp)/\(typePlace.rawValue.description)&quot;">
-            </PersistentString>
-            <PersistentString
-               value = "typePlace">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in PlaceViewController.loadUserTrip(completion:):PlaceViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.idUser">
-            </PersistentString>
-            <PersistentString
-               value = "child.key">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in PlaceViewController.removePlaceUser():PlaceViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.place.idPlace">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "SearchPlaceViewController.tableView(_:didSelectRowAt:):SearchPlaceViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "cell.namePlaceLbl.text">
-            </PersistentString>
-            <PersistentString
-               value = "tableViewPlace.cellForRow(at: indexPath)">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in SearchPlaceViewController.searchBar(_:shouldChangeTextIn:replacementText:):SearchPlaceViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "SearchPlaceViewController.tableView(_:numberOfRowsInSection:):SearchPlaceViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "isSearchPlaceBar">
-            </PersistentString>
-            <PersistentString
-               value = "Service.GooglePlaceAPIKey">
-            </PersistentString>
-            <PersistentString
-               value = "arrayLocation">
-            </PersistentString>
-            <PersistentString
-               value = "placeArray">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ChoiceTypeFoodViewController.tableView(_:cellForRowAt:):ChoiceTypeFoodViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "cell.title">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ChoicePlaceViewController.nextPage():ChoicePlaceViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "buttonPlace.tag">
+               value = "place.idPlace">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -165,18 +124,134 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in PlaceViewController.showAlertTripUserList(on:style:title:message:completion:):PlaceViewController.swift">
+         contextName = "static TypePlace.typePlace(typePlace:):TypePlace.swift">
          <PersistentStrings>
             <PersistentString
-               value = "field.key">
+               value = "typeDrinkPlace.rawValue">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in PlaceViewController.removePlaceUser():PlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.place.idPlace">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in MyListTripsViewController.tableView(_:cellForRowAt:):MyListTripsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.placePhotoCarousel">
+            </PersistentString>
+            <PersistentString
+               value = "placeList">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SearchPlaceViewController.tableView(_:didSelectRowAt:):SearchPlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.namePlaceLbl.text">
+            </PersistentString>
+            <PersistentString
+               value = "tableViewPlace.cellForRow(at: indexPath)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MyListTripsViewController.getPlaceFromTrip(completion:):MyListTripsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "child.key">
+            </PersistentString>
+            <PersistentString
+               value = "child.value as? [String : String]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SearchPlaceViewController.tableView(_:numberOfRowsInSection:):SearchPlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "isSearchPlaceBar">
+            </PersistentString>
+            <PersistentString
+               value = "Service.GooglePlaceAPIKey">
+            </PersistentString>
+            <PersistentString
+               value = "arrayLocation">
+            </PersistentString>
+            <PersistentString
+               value = "placeArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MyListTripsViewController.viewDidLoad():MyListTripsViewController.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in LoginViewController.saveUserIntoFirebaseDatabase():LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in static TypePlace.toString(typePlace:completion:):TypePlace.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "typePlace">
+            </PersistentString>
+            <PersistentString
+               value = "&quot;\(ModelDB.typePlace)/\(Service.LanguageApp)/\(typePlace.rawValue.description)&quot;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MyListTripsViewController.carousel(_:valueFor:withDefault:):MyListTripsViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CreateTripViewController.back(_:):CreateTripViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in PlaceViewController.loadUserTrip(completion:):PlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.idUser">
+            </PersistentString>
+            <PersistentString
+               value = "child.key">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChoiceTypeFoodViewController.tableView(_:cellForRowAt:):ChoiceTypeFoodViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.title">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in SearchPlaceViewController.searchBar(_:shouldChangeTextIn:replacementText:):SearchPlaceViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in SearchPlaceViewController.performGoogleQuery(url:):SearchPlaceViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "url">
+            </PersistentString>
+            <PersistentString
+               value = "place[&quot;price_level&quot;]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
