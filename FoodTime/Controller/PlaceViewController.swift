@@ -300,11 +300,11 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         var userTripList : [UserTrip] = [UserTrip]()
         
         //Get all trips of the current user
-        Database.database().reference().child("\(ModelDB.user_trip)/\(idUser)").observeSingleEvent(of: .value, with: { (snapchot) in
+        Database.database().reference().child("\(ModelDB.user_trip)/\(idUser)").observeSingleEvent(of: .value, with: { (snapshot) in
             
-            if snapchot.childrenCount > 0
+            if snapshot.childrenCount > 0
             {
-                let listChildren = snapchot.children
+                let listChildren = snapshot.children
                 while let child = listChildren.nextObject() as? DataSnapshot
                 {
                     let idTrip = child.value as? String
@@ -336,11 +336,11 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         var userPlaceTripList : [UserTrip] = [UserTrip]()
         
         //Get all trips of the current user for the place selected
-        Database.database().reference().child("\(ModelDB.user_place)/\(idUser)/\(self.place.idPlace!)").observeSingleEvent(of: .value, with: { (snapchot) in
+        Database.database().reference().child("\(ModelDB.user_place)/\(idUser)/\(self.place.idPlace!)").observeSingleEvent(of: .value, with: { (snapshot) in
             
-            if snapchot.childrenCount > 0
+            if snapshot.childrenCount > 0
             {
-                let listChildren = snapchot.children
+                let listChildren = snapshot.children
                 while let child = listChildren.nextObject() as? DataSnapshot
                 {
                     let idTrip = child.value as? String
@@ -366,11 +366,11 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
         var index = 0
         for userTrip in userTripList
         {
-            Database.database().reference().child("\(ModelDB.trips)/\(userTrip.idTrip!)").queryOrdered(byChild: ModelDB.Trip_name).observeSingleEvent(of: .value, with: { (snapchot) in
+            Database.database().reference().child("\(ModelDB.trips)/\(userTrip.idTrip!)").queryOrdered(byChild: ModelDB.Trip_name).observeSingleEvent(of: .value, with: { (snapshot) in
                 
-                if snapchot.childrenCount > 0
+                if snapshot.childrenCount > 0
                 {
-                    let listChildren = snapchot.children
+                    let listChildren = snapshot.children
                     var name : String?
                     var startDate : Date?
                     var endDate : Date?
@@ -437,11 +437,11 @@ class PlaceViewController: UIViewController, UITextViewDelegate, CLLocationManag
                             let idTrip = trip.idTrip
                             let idPlace = self.place.idPlace
                             
-                            Database.database().reference().child("\(ModelDB.user_place)/\(self.idUser)/\(idPlace!)").observeSingleEvent(of: .value, with: { (snapchot) in
+                            Database.database().reference().child("\(ModelDB.user_place)/\(self.idUser)/\(idPlace!)").observeSingleEvent(of: .value, with: { (snapshot) in
                                 
-                                if snapchot.childrenCount > 0
+                                if snapshot.childrenCount > 0
                                 {
-                                    let listChildren = snapchot.children
+                                    let listChildren = snapshot.children
                                     while let child = listChildren.nextObject() as? DataSnapshot
                                     {
                                         if child.value as? String == idTrip!

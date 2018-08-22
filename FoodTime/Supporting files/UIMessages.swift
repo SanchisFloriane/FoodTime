@@ -51,6 +51,10 @@ class UIMessages {
     static let SaveToATripAlertTitle : String = "SaveToATripAlertTitle"
     
     static let SaveToAnotherTrip : String = "SaveToAnotherTrip"
+    
+    static let SortEndDate : String = "SortEndDate"
+    
+    static let SortStartDate : String = "SortStartDate"
         
     static let UserNotFound : String = "UserNotFound"
     

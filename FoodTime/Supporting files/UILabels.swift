@@ -26,8 +26,6 @@ class UILabels {
     
     static let ActivateNotificationsButton : String = "ActivateNotificationsButton"
     
-    static let Alphabetical : String = "Alphabetical"
-    
     static let Cancel : String = "Cancel"
     
     static let CreateUserAccount : String = "CreateUserAccount"
@@ -72,8 +70,6 @@ class UILabels {
     
     static let LogginButton : String = "LogginButton"
     
-    static let NewsTitle : String = "NewsTitle"
-    
     static let Miles : String = "Miles"
     
     static let MyNewsButton : String = "MyNewsButton"
@@ -85,6 +81,8 @@ class UILabels {
     static let MyTrips : String = "MyTrips"
     
     static let NameTrip : String = "NameTrip"
+    
+    static let NewsTitle : String = "NewsTitle"
     
     static let NoPhoneNumber : String = "NoPhoneNumber"
     

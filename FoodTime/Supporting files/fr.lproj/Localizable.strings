@@ -8,8 +8,6 @@
 
 "ActivateNotificationsButton" = "Activer les notifications";
 
-"Alphabetical" = "Alphabet";
-
 "Cancel" = "Annuler";
 
 "CreateATrip" = "Créer un trip";
@@ -126,13 +124,17 @@
 
 "SortByAlert" = "Trié par";
 
+"SortEndDate" = "Date de fin de trip";
+
+"SortStartDate" = "Date de début de trip";
+
 "StartDate" = "Date de début";
 
 "TaglineTextMainPage" = "Gérer vos endroits préférés";
 
 "TermsPrivatePolicyButton" = "En vous inscrivant, vous acceptez nos CGU & Confidentialité";
 
-"TitleMyEmptyTripsPlaceViewController" = "Découvrez et sauvegarder vos endroits";
+"TitleMyEmptyTripsViewController" = "Découvrez et sauvegarder vos endroits";
 
 "TitlePageChoiceNotificationViewController" = "Être notifié des nouveaux endroits et changements ?";
 

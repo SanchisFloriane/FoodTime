@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class UserTrip {
     
@@ -29,5 +30,30 @@ class UserTrip {
     {
         return [ModelDB.UserTrip_idUser: self.idUser ?? "",
                 ModelDB.UserTrip_idTrip : self.idTrip ?? ""]
+    }
+    
+    static func loadUserTrip(completion:@escaping ([UserTrip])->())
+    {
+        var userTripList : [UserTrip] = [UserTrip]()
+        let idUser = Auth.auth().currentUser!.uid
+        
+        //Get all trips of the current user
+        Database.database().reference().child("\(ModelDB.user_trip)/\(idUser)").observeSingleEvent(of: .value, with: { (snapchot) in
+            
+            if snapchot.childrenCount > 0
+            {
+                let listChildren = snapchot.children
+                while let child = listChildren.nextObject() as? DataSnapshot
+                {
+                    let idTrip = child.value as? String
+                    userTripList.append(UserTrip(idUser: idUser, idTrip: idTrip!))
+                }
+                completion(userTripList)
+            }
+            else
+            {
+                completion(userTripList)
+            }
+        })
     }
 }

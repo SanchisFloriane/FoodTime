@@ -31,7 +31,12 @@ class MyEmptyTripsViewController: UIViewController, UITabBarDelegate {
         super.didReceiveMemoryWarning()
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        NavigationBar.hidesBackButton = true
+    }
+    
    fileprivate func setupView()
    {
         TabBar.delegate = self

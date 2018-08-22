@@ -27,7 +27,7 @@ class Service {
     static let buttonBackgroundColorSignInWithFacebook = UIColor(red: 88/255, green: 86/255, blue: 214/255, alpha: 1)
     
     //Formatter
-    static let formatterDate : String = "yyyy-MM-dd"
+    static let formatterDate : String = "yyyy-MM-dd HH:mm:ss Z"
     
     //Image
     static let BookmarkEmptyIcon : String = "bookmark-icon"

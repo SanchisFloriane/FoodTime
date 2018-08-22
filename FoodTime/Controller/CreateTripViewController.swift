@@ -47,6 +47,12 @@ class CreateTripViewController: UIViewController {
         TripNameTxtField.text = ""
         StartDateLbl.text = UILabels.localizeWithoutComment(key: UILabels.StartDate)
         EndDateLbl.text = UILabels.localizeWithoutComment(key: UILabels.StartDate)
+        
+        //Set dates
+        let today = Date()
+        let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: today)
+        StartDatePicker.setDate(today, animated: false)
+        EndDatePicker.setDate(tomorrow!, animated: false)
     }
     
     @IBAction func back(_ sender: UIBarButtonItem) {
@@ -61,20 +67,62 @@ class CreateTripViewController: UIViewController {
         let startDate = StartDatePicker.date
         let endDate = EndDatePicker.date
         let trip = Trip(idTrip: nil, name: nameTrip, startDate: startDate, endDate: endDate)
-        let values : [String : String] = trip.getData()
+        let valuesTrip : [String : String] = trip.getData()
         
         //Save into trip DB
         let refTrip = Database.database().reference().child("\(ModelDB.trips)").childByAutoId()
-        refTrip.setValue(values)
+        refTrip.setValue(valuesTrip)
         let idTrip = refTrip.key
         
         //Save into user trip DB
-       /* let refUserTrip = Database.database().reference().child("\(ModelDB.user_trip)").childByAutoId()
-        let values : [String : String] = [self.idUser : idTrip]
-        refUserTrip.setValue(values)*/
+        let refUserTrip = Database.database().reference().child("\(ModelDB.user_trip)").child("\(idUser)")
+        var tripArray : [String] = [String]()
+        //Add new trip
+        tripArray.append(idTrip)
         
-        let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
-        let desController : UIViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.MyListTripsViewController) as! MyListTripsViewController
-        self.navigationController?.pushViewController(desController, animated: false)
+        //Get trips from user
+        refUserTrip.observeSingleEvent(of: .value, with: { (snapshot) in
+                
+            if snapshot.childrenCount > 0
+            {
+                let listChildren = snapshot.children
+                while let trip = listChildren.nextObject() as? DataSnapshot
+                {
+                    let idTrip = trip.value as? String
+                    tripArray.append(idTrip!)
+                }
+                
+                let refNewTrip = Database.database().reference().child("\(ModelDB.user_trip)")
+                let valuesUserTrip : [String : [String]] = [self.idUser : tripArray]
+                refNewTrip.setValue(valuesUserTrip)
+                self.redirectionPageTrip()
+            }
+            else
+            {
+                let refNewTrip = Database.database().reference().child("\(ModelDB.user_trip)")
+                let valuesUserTrip : [String : [String]] = [self.idUser : tripArray]
+                refNewTrip.setValue(valuesUserTrip)
+                self.redirectionPageTrip()
+            }
+        })
+    }
+    
+    func redirectionPageTrip()
+    {
+        UserTrip.loadUserTrip(completion: { (userTripList) in
+            
+            let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
+            if !(userTripList.isEmpty)
+            {
+                let desController : MyListTripsViewController = mainStoryboard.instantiateViewController(withIdentifier: Service.MyListTripsViewController) as! MyListTripsViewController
+                desController.userTripList = userTripList
+                self.navigationController?.pushViewController(desController, animated: true)
+            }
+            else
+            {
+                let desController : MyEmptyTripsViewController = mainStoryboard.instantiateViewController(withIdentifier: Service.MyEmptyTripsViewController) as! MyEmptyTripsViewController
+                self.navigationController?.pushViewController(desController, animated: true)
+            }
+        })
     }
 }

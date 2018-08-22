@@ -102,6 +102,9 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #2 in MyListTripsViewController.sortList(tripList:typeOrder:completion:):MyListTripsViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in PlaceViewController.loadPlace():PlaceViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -132,6 +135,26 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "MyEmptyTripsViewController.viewWillAppear(_:):MyEmptyTripsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "NavigationBar.rightBarButtonItems">
+            </PersistentString>
+            <PersistentString
+               value = "NavigationBar.backBarButtonItem">
+            </PersistentString>
+            <PersistentString
+               value = "NavigationBar.leftBarButtonItems">
+            </PersistentString>
+            <PersistentString
+               value = "self.navigationController?.navigationItem.leftBarButtonItems">
+            </PersistentString>
+            <PersistentString
+               value = "NavigationBar">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in PlaceViewController.removePlaceUser():PlaceViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -158,6 +181,25 @@
             </PersistentString>
             <PersistentString
                value = "tableViewPlace.cellForRow(at: indexPath)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MyListTripsViewController.loadTrip(typeOrder:completion:):MyListTripsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "userTrip.idTrip!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in CreateTripViewController.save(_:):CreateTripViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "idUser">
+            </PersistentString>
+            <PersistentString
+               value = "idTrip">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -204,10 +246,10 @@
          contextName = "closure #1 in static TypePlace.toString(typePlace:completion:):TypePlace.swift">
          <PersistentStrings>
             <PersistentString
-               value = "typePlace">
+               value = "&quot;\(ModelDB.typePlace)/\(Service.LanguageApp)/\(typePlace.rawValue.description)&quot;">
             </PersistentString>
             <PersistentString
-               value = "&quot;\(ModelDB.typePlace)/\(Service.LanguageApp)/\(typePlace.rawValue.description)&quot;">
+               value = "typePlace">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

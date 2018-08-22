@@ -75,6 +75,11 @@ class SearchPlaceViewController: UIViewController, CLLocationManagerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func back() {
+        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 extension SearchPlaceViewController: UITableViewDelegate, UITableViewDataSource

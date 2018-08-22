@@ -8,8 +8,6 @@
 
 "ActivateNotificationsButton" = "Activate notifications";
 
-"Alphabetical" = "Alphabetical";
-
 "Cancel" = "Cancel";
 
 "CreateATrip" = "Create a trip";
@@ -126,13 +124,17 @@
 
 "SortByAlert" = "Sort by";
 
+"SortEndDate" = "End date trip";
+
+"SortStartDate" = "Start date trip";
+
 "StartDate" = "Start date";
 
 "TaglineTextMainPage" = "Track your favourite food and drink place";
 
 "TermsPrivatePolicyButton" = "By sign up, you agree to our Terms & Private policy";
 
-"TitleMyEmptyTripsPlaceViewController" = "Discover and save your places";
+"TitleMyEmptyTripsViewController" = "Discover and save your places";
 
 "TitlePageChoiceNotificationViewController" = "Get notified of new places and releases";
 

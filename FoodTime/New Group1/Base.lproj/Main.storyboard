@@ -655,14 +655,12 @@
                     <connections>
                         <outlet property="CreateTripBtn" destination="yeA-3c-6IN" id="MzS-5R-beq"/>
                         <outlet property="DescriptionTxtView" destination="zLg-pb-fgT" id="nny-wd-5rs"/>
-                        <outlet property="DescriptionView" destination="zLg-pb-fgT" id="e8Y-vW-kbE"/>
                         <outlet property="ForYouBtn" destination="B6n-Wl-smy" id="L35-Od-z8f"/>
                         <outlet property="MyNewsBtn" destination="dYe-uk-feF" id="H8y-Wz-eej"/>
                         <outlet property="MyPlaces" destination="mDX-bA-UzF" id="lbU-3D-ndO"/>
                         <outlet property="MyProfileBtn" destination="Fhu-43-Jwn" id="dSm-kX-3W0"/>
                         <outlet property="NavigationBar" destination="8Gj-dB-h3m" id="JKu-c1-4Eq"/>
                         <outlet property="TabBar" destination="WAm-h9-2py" id="KED-K1-yOQ"/>
-                        <outlet property="Title" destination="PHT-5T-LiG" id="RjR-v0-l7P"/>
                         <outlet property="TitleLbl" destination="PHT-5T-LiG" id="lr3-A8-4L9"/>
                     </connections>
                 </viewController>
@@ -1131,7 +1129,7 @@
                                 </constraints>
                                 <state key="normal" image="cross"/>
                                 <connections>
-                                    <segue destination="dXA-hG-Kpz" kind="show" id="Ibs-RD-DdX"/>
+                                    <action selector="back" destination="Shq-1d-cWE" eventType="touchUpInside" id="s3J-g7-NVr"/>
                                 </connections>
                             </button>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Near by ..." translatesAutoresizingMaskIntoConstraints="NO" id="rNR-yP-xcu">
@@ -2090,7 +2088,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Qty-7Z-TSZ"/>
-        <segue reference="ebB-Tz-Pom"/>
-        <segue reference="mdx-rg-fci"/>
+        <segue reference="R1K-RF-SYf"/>
+        <segue reference="A23-40-yJ9"/>
     </inferredMetricsTieBreakers>
 </document>

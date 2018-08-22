@@ -31,8 +31,7 @@ class Trip {
     
     func getData() -> [String: String]
     {
-        return [ModelDB.Trip_idTrip : self.idTrip ?? "",
-                ModelDB.Trip_name: self.name ?? "",
+        return [ModelDB.Trip_name: self.name ?? "",
                 ModelDB.Trip_startDate : self.startDate?.description ?? "",
                 ModelDB.Trip_endDate : self.endDate?.description ?? ""]
     }
