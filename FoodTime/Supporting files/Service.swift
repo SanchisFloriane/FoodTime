@@ -58,6 +58,8 @@ class Service {
     static let HomeViewController : String = "HomeViewController"
     static let LoginViewController : String = "LoginViewController"
     static let ManageTripViewController : String = "ManageTripViewController"
+    static let ManageTripEmptyViewController : String = "ManageTripEmptyViewController"
+    static let ModifyTripViewController : String = "ModifyTripViewController"
     static let MyEmptyTripsViewController : String = "MyEmptyTripsViewController"
     static let MyListTripsViewController : String = "MyListTripsViewController"
     static let PlaceViewController : String = "PlaceViewController"

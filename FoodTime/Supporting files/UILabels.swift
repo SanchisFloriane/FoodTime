@@ -34,6 +34,8 @@ class UILabels {
     
     static let CreateATrip : String = "CreateATrip"
     
+    static let Delete : String = "Delete"
+    
     static let DescriptionPageChoiceNotificationViewController : String = "DescriptionPageChoiceNotificationViewController"
     
     static let DescriptionPageChoiceTypeFoodViewController : String = "DescriptionPageChoiceTypeFoodViewController"
@@ -43,6 +45,8 @@ class UILabels {
     static let DescriptionPageChoiceTypePlaceViewController : String = "DescriptionPageChoiceTypePlaceViewController"
 
     static let DescriptionMyEmptyTripsViewController : String = "DescriptionMyEmptyTripsViewController"
+    
+    static let DescriptionPageManageTripEmptyViewController : String = "DescriptionPageManageTripEmptyViewController"
     
     static let Details : String = "Details"
     
@@ -77,6 +81,8 @@ class UILabels {
     static let ManageMyTrip : String = "ManageMyTrip"
     
     static let Map : String = "Map"
+    
+    static let ModifyTrip : String = "ModifyTrip"
     
     static let MyNewsButton : String = "MyNewsButton"
     
@@ -147,5 +153,7 @@ class UILabels {
     static let ValidateButton : String = "ValidateButton"
     
     static let VisitWebsiteLink : String = "VisitWebsiteLink"
+    
+    static let Update : String = "Update"
 
 }

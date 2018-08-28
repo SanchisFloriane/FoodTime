@@ -107,6 +107,18 @@ class CreateTripViewController: UIViewController {
         })
     }
     
+    @IBAction func textFieldEditingDidChange() {
+    
+        if TripNameTxtField.text?.count == 0
+        {
+            SaveBarBtn.isEnabled = false
+        }
+        else
+        {
+            SaveBarBtn.isEnabled = true
+        }
+    }
+    
     func redirectionPageTrip()
     {
         UserTrip.loadUserTrip(completion: { (userTripList) in

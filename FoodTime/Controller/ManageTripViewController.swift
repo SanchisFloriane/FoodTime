@@ -64,6 +64,10 @@ class ManageTripViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func manage(_ sender: UIBarButtonItem) {
     
+        let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
+        let desController : ModifyTripViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.ModifyTripViewController) as! ModifyTripViewController
+        desController.trip = self.trip
+        self.navigationController?.pushViewController(desController, animated: true)
     }
     
     @IBAction func showMap() {

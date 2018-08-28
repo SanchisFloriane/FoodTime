@@ -26,6 +26,10 @@
 
 "DescriptionMyEmptyTripsViewController" = "Create a trip then tap to the heart icon on places to add a trip.";
 
+"DescriptionPageManageTripEmptyViewController" = "You haven't saved anything into this trip yet.\r When you like something you like on Food Time, tap the heart button icon to save it into a trip and start planning.\r View all of your saves on one map.";
+
+"Delete" = "Delete";
+
 "Details" = "Details";
 
 "Email" = "Your email";
@@ -73,6 +77,8 @@
 "Map" = "Map";
 
 "Miles" = "Miles";
+
+"ModifyTrip" = "Modify trip";
 
 "MyNewsButton" = "My news";
 
@@ -159,6 +165,8 @@
 "ValidateButton" = "Validate";
 
 "VisitWebsiteLink" = "Visit website";
+
+"Update" = "Update";
 
 "Yes" = "Yes";
 

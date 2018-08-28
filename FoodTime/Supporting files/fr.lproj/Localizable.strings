@@ -26,6 +26,10 @@
 
 "DescriptionMyEmptyTripsViewController" = "Créez un nouveau trip puis cliqué sur le coeur pour ajouter l'endroit à un trip.";
 
+"DescriptionPageManageTripEmptyViewController" = "Vous n'avez pas encore ajouté d'endroit pour ce trip.\r Quand vous aimez un endroit, cliquez sur l'icon coeur pour l'ajouter à un trip.\r Vous pourrez ensuite les voir sur la carte.";
+
+"Delete" = "Supprimer";
+
 "Details" = "Détails";
 
 "Email" = "Votre email";
@@ -71,6 +75,8 @@
 "ManageMyTrip" = "Manage my trip";
 
 "Map" = "Carte";
+
+"ModifyTrip" = "Modifier le trip";
 
 "MyNewsButton" = "Mes nouveautées";
 
@@ -159,5 +165,7 @@
 "ValidateButton" = "Valider";
 
 "VisitWebsiteLink" = "Voir site";
+
+"Update" = "Modifier";
 
 "Yes" = "Oui";

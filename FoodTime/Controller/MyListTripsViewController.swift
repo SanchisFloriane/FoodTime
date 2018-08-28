@@ -376,9 +376,19 @@ extension MyListTripsViewController: UITableViewDelegate, UITableViewDataSource,
     @objc func showManageTripViewController(_ sender: FoodTimeButton) {
         
         let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
-        let desController : ManageTripViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.ManageTripViewController) as! ManageTripViewController
-        desController.trip = sender.trip
-        self.navigationController?.pushViewController(desController, animated: true)
+        
+        if sender.trip!.placeList.isEmpty
+        {
+            let desController : ManageTripEmptyViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.ManageTripEmptyViewController) as! ManageTripEmptyViewController
+            desController.trip = sender.trip
+            self.navigationController?.pushViewController(desController, animated: true)
+        }
+        else
+        {
+            let desController : ManageTripViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.ManageTripViewController) as! ManageTripViewController
+            desController.trip = sender.trip
+            self.navigationController?.pushViewController(desController, animated: true)
+        }
     }
     
     func loadFirstPhotoForPlace(carouselView: iCarousel, placeID: String, completion:@escaping ()->())

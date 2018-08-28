@@ -53,6 +53,8 @@
 		F44C64AC2107C5F7003B8039 /* ChoiceUserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C64AB2107C5F7003B8039 /* ChoiceUserPageViewController.swift */; };
 		F44C64AE2107FE43003B8039 /* UIPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C64AD2107FE43003B8039 /* UIPageViewController.swift */; };
 		F44C64B121080137003B8039 /* PageObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C64B021080137003B8039 /* PageObservation.swift */; };
+		F459D32A2134E4B9007AC849 /* ManageTripEmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F459D3292134E4B8007AC849 /* ManageTripEmptyViewController.swift */; };
+		F459D32C2135DB96007AC849 /* ModifyTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F459D32B2135DB96007AC849 /* ModifyTripViewController.swift */; };
 		F4A73786211C04C6002C4B75 /* SearchPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471F5BC21112DC6001AA9E2 /* SearchPlaceViewController.swift */; };
 		F4A8ED6B21010DC6007FAB61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8ED6A21010DC6007FAB61 /* User.swift */; };
 		F4A8ED6D21014507007FAB61 /* ChoicePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8ED6C21014507007FAB61 /* ChoicePlaceViewController.swift */; };
@@ -125,6 +127,8 @@
 		F44C64AB2107C5F7003B8039 /* ChoiceUserPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceUserPageViewController.swift; sourceTree = "<group>"; };
 		F44C64AD2107FE43003B8039 /* UIPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewController.swift; sourceTree = "<group>"; };
 		F44C64B021080137003B8039 /* PageObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageObservation.swift; sourceTree = "<group>"; };
+		F459D3292134E4B8007AC849 /* ManageTripEmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTripEmptyViewController.swift; sourceTree = "<group>"; };
+		F459D32B2135DB96007AC849 /* ModifyTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyTripViewController.swift; sourceTree = "<group>"; };
 		F471F5BC21112DC6001AA9E2 /* SearchPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewController.swift; sourceTree = "<group>"; };
 		F4A8ED6A21010DC6007FAB61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = "FoodTime/Supporting files/User.swift"; sourceTree = SOURCE_ROOT; };
 		F4A8ED6C21014507007FAB61 /* ChoicePlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoicePlaceViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +226,8 @@
 				C45B740A212B3E910044D280 /* MyListTripsViewController.swift */,
 				C45B740C212B3EB40044D280 /* CreateTripViewController.swift */,
 				F4BF0447213495AF00966083 /* ManageTripViewController.swift */,
+				F459D3292134E4B8007AC849 /* ManageTripEmptyViewController.swift */,
+				F459D32B2135DB96007AC849 /* ModifyTripViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -551,6 +557,7 @@
 				C46C386A212CB45200894E2C /* CarouselTrips.swift in Sources */,
 				F4F28CAA2112AC890095E29F /* SearchPlaceDetailViewController.swift in Sources */,
 				C4A1A123210F8BD000DFC005 /* CaseIterable.swift in Sources */,
+				F459D32A2134E4B9007AC849 /* ManageTripEmptyViewController.swift in Sources */,
 				F4121DF3210660AF00252594 /* UIViewController.swift in Sources */,
 				C45B7409212B3E820044D280 /* MyEmptyTripsViewController.swift in Sources */,
 				C4F848E021094078009EDBBD /* ChoiceTypeDrinkViewController.swift in Sources */,
@@ -567,6 +574,7 @@
 				C4923A2520F556F500641EA9 /* AppDelegate.swift in Sources */,
 				C4F848F1210A6CD0009EDBBD /* TypeDrink.swift in Sources */,
 				F4A8ED6D21014507007FAB61 /* ChoicePlaceViewController.swift in Sources */,
+				F459D32C2135DB96007AC849 /* ModifyTripViewController.swift in Sources */,
 				C4C7A6AF2118D5CB00087B80 /* String.swift in Sources */,
 				F4121DF02106585300252594 /* EmailLoginViewController.swift in Sources */,
 				F41F9216212749C4005D7A1C /* NSMutableAttributedString.swift in Sources */,
