@@ -3,10 +3,29 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "ManageTripViewController.tableView(_:cellForRowAt:):ManageTripViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.trip?.placeList[indexPath.row].name">
+            </PersistentString>
+            <PersistentString
+               value = "self.trip">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in LoginViewController.userExists():LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "snapchot.childrenCount">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MyListTripsViewController.loadTrip(typeOrder:completion:):MyListTripsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.userTripList.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -54,10 +73,10 @@
          contextName = "LoginViewController.userExists():LoginViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.newUser">
+               value = "Auth.auth().currentUser!.uid">
             </PersistentString>
             <PersistentString
-               value = "Auth.auth().currentUser!.uid">
+               value = "self.newUser">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -133,15 +152,23 @@
          contextName = "HomeViewController.viewWillAppear(_:):HomeViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.navigationController?.toolbarItems">
+               value = "navigationItem.hidesBackButton">
             </PersistentString>
             <PersistentString
-               value = "navigationItem.hidesBackButton">
+               value = "self.navigationController?.toolbarItems">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "CreateUserAccountViewController.userExists():CreateUserAccountViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ManageTripViewController.tableView(_:numberOfRowsInSection:):ManageTripViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.trip?.placeList.count">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "SearchPlaceViewController.searchBar(_:shouldChangeTextIn:replacementText:):SearchPlaceViewController.swift">
@@ -302,10 +329,10 @@
          contextName = "PlaceViewController.numberOfItems(in:):PlaceViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "&#10; tabPhotos">
+               value = "tabPhotos.count">
             </PersistentString>
             <PersistentString
-               value = "tabPhotos.count">
+               value = "&#10; tabPhotos">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -333,6 +360,14 @@
          <PersistentStrings>
             <PersistentString
                value = "isSearchPlaceBar">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MyListTripsViewController.tableView(_:cellForRowAt:):MyListTripsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tripList[indexPath.row].name">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

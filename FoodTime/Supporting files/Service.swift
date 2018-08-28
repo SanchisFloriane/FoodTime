@@ -57,17 +57,20 @@ class Service {
     static let GetStartedViewController : String = "GetStartedViewController"
     static let HomeViewController : String = "HomeViewController"
     static let LoginViewController : String = "LoginViewController"
+    static let ManageTripViewController : String = "ManageTripViewController"
     static let MyEmptyTripsViewController : String = "MyEmptyTripsViewController"
     static let MyListTripsViewController : String = "MyListTripsViewController"
     static let PlaceViewController : String = "PlaceViewController"
-    static let SearchPlaceViewController : String = "SearchPlaceViewController"
     static let SearchPlaceDetailViewController : String = "SearchPlaceDetailViewController"
+    static let SearchPlaceMapViewController : String = "SearchPlaceMapViewController"
+    static let SearchPlaceViewController : String = "SearchPlaceViewController"
     
     //TableViewCell
     static let ChoiceTypeFoodTableViewCell : String = "ChoiceTypeFoodTableViewCell"
     static let ChoiceTypeDrinkTableViewCell : String = "ChoiceTypeDrinkTableViewCell"
     static let SearchPlaceTableViewCell : String = "SearchPlaceTableViewCell"
     static let SearchPlaceDetailTableViewCell : String = "SearchPlaceDetailTableViewCell"
+    static let ManageTripTableViewCell : String = "ManageTripTableViewCell"
     
     //Notification by ViewController
     //LoginViewController
@@ -86,6 +89,8 @@ class Service {
     static let SearchPlaceDetailIdCell : String = "searchPlaceDetailCell"
     //table view cell for MyListTripsViewController
     static let MyListTripsIdCell : String = "myListTripsCell"
+    //table viez cell for ManageTripViewController
+    static let ManageTripIdCell : String = "manageTripCell"
     
     
     static func showAlert(on: UIViewController, style: UIAlertControllerStyle, title: String?, message: String?, actions: [UIAlertAction] = [UIAlertAction(title: "Ok", style: .default, handler: nil)], completion: (() -> Swift.Void)? = nil) {

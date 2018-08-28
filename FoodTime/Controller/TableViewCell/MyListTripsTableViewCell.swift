@@ -12,7 +12,7 @@ import iCarousel
 class MyListTripsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var CarouselTrip: CarouselTrips!
-    @IBOutlet weak var TitleTrip: UILabel!
+    @IBOutlet weak var titleTripButton: FoodTimeButton!
     
     //Data not in the view
     var idTrip : String?
@@ -26,8 +26,6 @@ class MyListTripsTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

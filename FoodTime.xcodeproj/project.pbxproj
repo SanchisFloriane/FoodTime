@@ -24,7 +24,7 @@
 		C45C9C0220FEAD58004A4369 /* UILabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C9C0120FEAD58004A4369 /* UILabels.swift */; };
 		C45C9C0920FFA9F3004A4369 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C45C9C0B20FFA9F3004A4369 /* Localizable.strings */; };
 		C45C9C0F20FFB6A9004A4369 /* Roboto in Resources */ = {isa = PBXBuildFile; fileRef = C45C9C0E20FFB6A9004A4369 /* Roboto */; };
-		C46C3868212CAC4600894E2C /* CarouselButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46C3867212CAC4600894E2C /* CarouselButton.swift */; };
+		C46C3868212CAC4600894E2C /* FoodTimeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46C3867212CAC4600894E2C /* FoodTimeButton.swift */; };
 		C46C386A212CB45200894E2C /* CarouselTrips.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46C3869212CB45200894E2C /* CarouselTrips.swift */; };
 		C4923A2520F556F500641EA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4923A2420F556F500641EA9 /* AppDelegate.swift */; };
 		C4923A2A20F556F500641EA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4923A2820F556F500641EA9 /* Main.storyboard */; };
@@ -57,6 +57,8 @@
 		F4A8ED6B21010DC6007FAB61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8ED6A21010DC6007FAB61 /* User.swift */; };
 		F4A8ED6D21014507007FAB61 /* ChoicePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8ED6C21014507007FAB61 /* ChoicePlaceViewController.swift */; };
 		F4A8ED6F21014517007FAB61 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8ED6E21014517007FAB61 /* HomeViewController.swift */; };
+		F4BF0448213495B000966083 /* ManageTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BF0447213495AF00966083 /* ManageTripViewController.swift */; };
+		F4BF044A21349F2500966083 /* ManageTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BF044921349F2500966083 /* ManageTripTableViewCell.swift */; };
 		F4C2443A2117BED500EFC64E /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C244392117BED500EFC64E /* Float.swift */; };
 		F4F28CA6211139230095E29F /* SearchPlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F28CA5211139230095E29F /* SearchPlaceTableViewCell.swift */; };
 		F4F28CA82112AC670095E29F /* SearchPlaceDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F28CA72112AC660095E29F /* SearchPlaceDetailTableViewCell.swift */; };
@@ -90,7 +92,7 @@
 		C45C9C0A20FFA9F3004A4369 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C45C9C0C20FFA9F5004A4369 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C45C9C0E20FFB6A9004A4369 /* Roboto */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Roboto; sourceTree = "<group>"; };
-		C46C3867212CAC4600894E2C /* CarouselButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselButton.swift; sourceTree = "<group>"; };
+		C46C3867212CAC4600894E2C /* FoodTimeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTimeButton.swift; sourceTree = "<group>"; };
 		C46C3869212CB45200894E2C /* CarouselTrips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselTrips.swift; sourceTree = "<group>"; };
 		C4923A2120F556F500641EA9 /* FoodTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4923A2420F556F500641EA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,8 @@
 		F4A8ED6A21010DC6007FAB61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = "FoodTime/Supporting files/User.swift"; sourceTree = SOURCE_ROOT; };
 		F4A8ED6C21014507007FAB61 /* ChoicePlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoicePlaceViewController.swift; sourceTree = "<group>"; };
 		F4A8ED6E21014517007FAB61 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F4BF0447213495AF00966083 /* ManageTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTripViewController.swift; sourceTree = "<group>"; };
+		F4BF044921349F2500966083 /* ManageTripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTripTableViewCell.swift; sourceTree = "<group>"; };
 		F4C244392117BED500EFC64E /* Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
 		F4F28CA5211139230095E29F /* SearchPlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceTableViewCell.swift; sourceTree = "<group>"; };
 		F4F28CA72112AC660095E29F /* SearchPlaceDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 		C414FECA20F686B1008D5AE5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F4BF044B2134A3EB00966083 /* Personnalization */,
 				C46C3866212CABEC00894E2C /* Carousel */,
 				C4F848DC21092DFD009EDBBD /* TableViewCell */,
 				F4121DF12106609200252594 /* Extension */,
@@ -216,6 +221,7 @@
 				C45B7408212B3E820044D280 /* MyEmptyTripsViewController.swift */,
 				C45B740A212B3E910044D280 /* MyListTripsViewController.swift */,
 				C45B740C212B3EB40044D280 /* CreateTripViewController.swift */,
+				F4BF0447213495AF00966083 /* ManageTripViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -248,7 +254,6 @@
 		C46C3866212CABEC00894E2C /* Carousel */ = {
 			isa = PBXGroup;
 			children = (
-				C46C3867212CAC4600894E2C /* CarouselButton.swift */,
 				C46C3869212CB45200894E2C /* CarouselTrips.swift */,
 			);
 			path = Carousel;
@@ -293,6 +298,7 @@
 				F4F28CA5211139230095E29F /* SearchPlaceTableViewCell.swift */,
 				F4F28CA72112AC660095E29F /* SearchPlaceDetailTableViewCell.swift */,
 				C45B740E212B41AA0044D280 /* MyListTripsTableViewCell.swift */,
+				F4BF044921349F2500966083 /* ManageTripTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -327,6 +333,14 @@
 				C4A1A122210F8BD000DFC005 /* CaseIterable.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		F4BF044B2134A3EB00966083 /* Personnalization */ = {
+			isa = PBXGroup;
+			children = (
+				C46C3867212CAC4600894E2C /* FoodTimeButton.swift */,
+			);
+			path = Personnalization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -530,6 +544,7 @@
 				F4F28CB0211396720095E29F /* CCLocationDistance.swift in Sources */,
 				F4121DF92106986D00252594 /* UIMessages.swift in Sources */,
 				F44C64AC2107C5F7003B8039 /* ChoiceUserPageViewController.swift in Sources */,
+				F4BF0448213495B000966083 /* ManageTripViewController.swift in Sources */,
 				C4F848E6210A4E25009EDBBD /* Settings.swift in Sources */,
 				C4F848EB210A65BD009EDBBD /* TypePlace.swift in Sources */,
 				F4A8ED6F21014517007FAB61 /* HomeViewController.swift in Sources */,
@@ -539,10 +554,11 @@
 				F4121DF3210660AF00252594 /* UIViewController.swift in Sources */,
 				C45B7409212B3E820044D280 /* MyEmptyTripsViewController.swift in Sources */,
 				C4F848E021094078009EDBBD /* ChoiceTypeDrinkViewController.swift in Sources */,
-				C46C3868212CAC4600894E2C /* CarouselButton.swift in Sources */,
+				C46C3868212CAC4600894E2C /* FoodTimeButton.swift in Sources */,
 				C4182B5C2108F7B1004AE88E /* ModelDB.swift in Sources */,
 				F4F28CA6211139230095E29F /* SearchPlaceTableViewCell.swift in Sources */,
 				C45B740D212B3EB40044D280 /* CreateTripViewController.swift in Sources */,
+				F4BF044A21349F2500966083 /* ManageTripTableViewCell.swift in Sources */,
 				F4121DF521068DA500252594 /* GetStartedChoiceCreationViewController.swift in Sources */,
 				C45C9C0220FEAD58004A4369 /* UILabels.swift in Sources */,
 				F4F28CA82112AC670095E29F /* SearchPlaceDetailTableViewCell.swift in Sources */,

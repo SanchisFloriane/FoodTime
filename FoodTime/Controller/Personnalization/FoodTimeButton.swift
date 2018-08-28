@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-class CarouselButton : UIButton
+class FoodTimeButton : UIButton
 {
     var idPlace : String?
+    var trip : Trip?
 }

@@ -282,7 +282,9 @@ extension MyListTripsViewController: UITableViewDelegate, UITableViewDataSource,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell : MyListTripsTableViewCell = TripsTableView.dequeueReusableCell(withIdentifier: Service.MyListTripsIdCell) as! MyListTripsTableViewCell
-        cell.TitleTrip.text = tripList[indexPath.row].name
+        cell.titleTripButton.sizeToFit()
+        cell.titleTripButton.setTitle(tripList[indexPath.row].name, for: .normal)
+        
         cell.idTrip = tripList[indexPath.row].idTrip
         cell.CarouselTrip.tempviews.removeAll()
         
@@ -296,7 +298,7 @@ extension MyListTripsViewController: UITableViewDelegate, UITableViewDataSource,
                 {
                     let tempView = UIView(frame: CGRect(x: 0, y: 0, width: cell.CarouselTrip.frame.width/3, height: cell.CarouselTrip.frame.height))
                     tempView.backgroundColor = self.view?.backgroundColor
-                    let button = CarouselButton(frame: tempView.frame)
+                    let button = FoodTimeButton(frame: tempView.frame)
                     var img = UIImage(named: Service.CrossIcon)
                     img = Service.imageWithImage(image: img!, scaledToSize: CGSize(width: cell.CarouselTrip.frame.width/3, height: cell.CarouselTrip.frame.height))
                     button.setImage(img, for: .normal)
@@ -306,6 +308,9 @@ extension MyListTripsViewController: UITableViewDelegate, UITableViewDataSource,
                 }
                 cell.CarouselTrip.reloadData()
                 cell.CarouselTrip.currentItemIndex = 1
+                cell.titleTripButton.trip = Trip(idTrip: self.tripList[indexPath.row].idTrip, name: self.tripList[indexPath.row].name, startDate: self.tripList[indexPath.row].startDate, endDate: self.tripList[indexPath.row].endDate)
+                cell.titleTripButton.trip?.placeList = placeList
+                cell.titleTripButton.addTarget(self, action: #selector(self.showManageTripViewController(_:)), for: .touchUpInside)
             }
             else
             {
@@ -318,7 +323,7 @@ extension MyListTripsViewController: UITableViewDelegate, UITableViewDataSource,
                             //add photo to carousel
                             let tempView = UIView(frame: CGRect(x: 0, y: 0, width: cell.CarouselTrip.frame.width/3, height: cell.CarouselTrip.frame.height))
                             tempView.backgroundColor = self.view?.backgroundColor
-                            let button = CarouselButton(frame: tempView.frame)
+                            let button = FoodTimeButton(frame: tempView.frame)
                             self.placePhotoCarousel = Service.imageWithImage(image: self.placePhotoCarousel!, scaledToSize: CGSize(width: cell.CarouselTrip.frame.width/3, height: cell.CarouselTrip.frame.height))
                             button.setImage(self.placePhotoCarousel, for: .normal)
                             button.idPlace = place.idPlace
@@ -336,7 +341,7 @@ extension MyListTripsViewController: UITableViewDelegate, UITableViewDataSource,
                                     {
                                         let tempView = UIView(frame: CGRect(x: 0, y: 0, width: cell.CarouselTrip.frame.width/3, height: cell.CarouselTrip.frame.height))
                                         tempView.backgroundColor = self.view?.backgroundColor
-                                        let button = CarouselButton(frame: tempView.frame)
+                                        let button = FoodTimeButton(frame: tempView.frame)
                                         var img = UIImage(named: Service.CrossIcon)
                                         img = Service.imageWithImage(image: img!, scaledToSize: CGSize(width: cell.CarouselTrip.frame.width/3, height: cell.CarouselTrip.frame.height))
                                         button.setImage(img, for: .normal)
@@ -347,6 +352,9 @@ extension MyListTripsViewController: UITableViewDelegate, UITableViewDataSource,
                                 }
                                 cell.CarouselTrip.reloadData()
                                 cell.CarouselTrip.currentItemIndex = 1
+                                cell.titleTripButton.trip = Trip(idTrip: self.tripList[indexPath.row].idTrip, name: self.tripList[indexPath.row].name, startDate: self.tripList[indexPath.row].startDate, endDate: self.tripList[indexPath.row].endDate)
+                                cell.titleTripButton.trip?.placeList = placeList
+                                cell.titleTripButton.addTarget(self, action: #selector(self.showManageTripViewController(_:)), for: .touchUpInside)
                             }
                         })
                     })
@@ -356,11 +364,20 @@ extension MyListTripsViewController: UITableViewDelegate, UITableViewDataSource,
         return cell
     }
     
-    @objc func showPlaceViewController(_ sender: CarouselButton) {
+    @objc func showPlaceViewController(_ sender: FoodTimeButton) {
         
         let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
         let desController : PlaceViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.PlaceViewController) as! PlaceViewController
         desController.place.idPlace = sender.idPlace
+        self.navigationController?.pushViewController(desController, animated: true)
+    }
+    
+    
+    @objc func showManageTripViewController(_ sender: FoodTimeButton) {
+        
+        let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
+        let desController : ManageTripViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.ManageTripViewController) as! ManageTripViewController
+        desController.trip = sender.trip
         self.navigationController?.pushViewController(desController, animated: true)
     }
     

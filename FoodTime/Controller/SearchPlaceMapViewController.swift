@@ -31,6 +31,11 @@ class SearchPlaceMapViewController: UIViewController, CLLocationManagerDelegate 
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func back(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             let span = MKCoordinateSpanMake(0.05, 0.05)

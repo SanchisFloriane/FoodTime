@@ -18,6 +18,7 @@ class Trip {
     var endDate: Date?
     
     //Attributes no in DB
+    var placeList : [Place] = [Place]()
     
     init() {}
     

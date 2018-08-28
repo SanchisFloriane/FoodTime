@@ -24,6 +24,8 @@ class UILabels {
         return NSLocalizedString(key, comment: "")
     }
     
+    static let AddTrip : String = "AddTrip"
+    
     static let ActivateNotificationsButton : String = "ActivateNotificationsButton"
     
     static let Cancel : String = "Cancel"
@@ -71,6 +73,10 @@ class UILabels {
     static let LogginButton : String = "LogginButton"
     
     static let Miles : String = "Miles"
+    
+    static let ManageMyTrip : String = "ManageMyTrip"
+    
+    static let Map : String = "Map"
     
     static let MyNewsButton : String = "MyNewsButton"
     
