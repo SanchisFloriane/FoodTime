@@ -46,6 +46,11 @@ class ManageTripViewController: UIViewController, CLLocationManagerDelegate {
         
         setupView()
         loadTrip()
+        
+        getPlaceFromTrip(idTrip: trip!.idTrip!, completion: { (placeListFromTrip) in
+            self.trip?.placeList = placeListFromTrip
+            self.tripTableView.reloadData()
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -218,6 +223,29 @@ extension ManageTripViewController: UITableViewDelegate, UITableViewDataSource
         })
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == UITableViewCellEditingStyle.delete
+        {
+            //self.trip?.placeList.remove(at: indexPath.row)
+            let cell : ManageTripTableViewCell = tripTableView.cellForRow(at: indexPath) as! ManageTripTableViewCell
+            
+            //Get all trips of the current user for the place selected
+            Database.database().reference().child("\(ModelDB.user_place)/\(idUser)").child("\(cell.idPlace!)").removeValue { (error, ref) in
+                if error != nil {
+                    print("error \(String(describing: error))")
+                }
+                else
+                {
+                    self.getPlaceFromTrip(idTrip: self.trip!.idTrip!, completion: { (placeListFromTrip) in
+                        self.trip?.placeList = placeListFromTrip
+                        self.tripTableView.reloadData()
+                    })
+                }
+            }
+        }
     }
     
     func localizeUser()

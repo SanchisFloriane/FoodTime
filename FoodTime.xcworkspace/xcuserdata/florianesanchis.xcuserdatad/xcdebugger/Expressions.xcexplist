@@ -222,6 +222,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in ManageTripViewController.tableView(_:commit:forRowAt:):ManageTripViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "static Place.jsonToPlace(tab:requestPhoto:onePlace:completion:):Place.swift">
          <PersistentStrings>
             <PersistentString
