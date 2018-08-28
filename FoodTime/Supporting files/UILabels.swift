@@ -36,6 +36,8 @@ class UILabels {
     
     static let Delete : String = "Delete"
     
+    static let DescriptionModifyTripViewController : String = "DescriptionModifyTripViewController"
+    
     static let DescriptionPageChoiceNotificationViewController : String = "DescriptionPageChoiceNotificationViewController"
     
     static let DescriptionPageChoiceTypeFoodViewController : String = "DescriptionPageChoiceTypeFoodViewController"
@@ -135,6 +137,8 @@ class UILabels {
     static let TaglineTextMainPage : String = "TaglineTextMainPage"
     
     static let TermsPrivatePolicyButton : String = "TermsPrivatePolicyButton"
+    
+    static let TitleModifyTripViewController : String = "TitleModifyTripViewController"
     
     static let TitlePageChoiceNotificationViewController : String = "TitlePageChoiceNotificationViewController"
     

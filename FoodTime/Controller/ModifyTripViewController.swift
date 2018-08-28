@@ -67,14 +67,13 @@ class ModifyTripViewController: UIViewController {
         }
     }
     
-    @IBAction func delete() {
-    
+    fileprivate func deleteTrip()
+    {
         //Delete all places with idtrip
-        
         for place in self.trip!.placeList
         {
             Database.database().reference().child("\(ModelDB.user_place)/\(idUser)").child("\(place.idPlace!)").removeValue { (error, ref) in
-               
+                
                 if error != nil {
                     print("error \(String(describing: error))")
                 }
@@ -107,7 +106,24 @@ class ModifyTripViewController: UIViewController {
             {
                 
             }
-        }        
+        }
+    }
+    
+    @IBAction func delete() {
+    
+        let alert = UIAlertController(title: UILabels.localizeWithoutComment(key: UILabels.TitleModifyTripViewController), message: UILabels.localizeWithoutComment(key: UILabels.DescriptionModifyTripViewController), preferredStyle: .alert)
+        
+        let yes = UIAlertAction(title: UIMessages.localizeWithoutComment(key: UIMessages.Yes), style: .default) { (action:UIAlertAction) in
+            //Remove to a trip
+            self.deleteTrip()
+        }
+        
+        let no = UIAlertAction(title: UIMessages.localizeWithoutComment(key: UIMessages.No), style: .default)
+        
+        alert.addAction(yes)
+        alert.addAction(no)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func back(_ sender: UIBarButtonItem) {

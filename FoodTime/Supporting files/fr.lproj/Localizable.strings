@@ -16,6 +16,9 @@
 
 "CreateUserAccount" = "Création compte utilisateur";
 
+
+"DescriptionModifyTripViewController" = "La suppréssion de ce trip supprimera tous les items liés à ce dernier. Êtes-vous sûr de vouloir supprimer ce trip ?";
+
 "DescriptionPageChoiceNotificationViewController" = "Nous vous enverrons des rappels quand vos endroits seront modifiés ou que de nouveaux seront disponibles.";
 
 "DescriptionPageChoiceTypeFoodViewController" = "Sélectionnez le type de nourriture que vous aimez ou que vous comptez manger (1 ou +)";
@@ -147,6 +150,8 @@
 "TermsPrivatePolicyButton" = "En vous inscrivant, vous acceptez nos CGU & Confidentialité";
 
 "TitleMyEmptyTripsViewController" = "Découvrez et sauvegarder vos endroits";
+
+"TitleModifyTripViewController" = "Supprimer ce trip ?";
 
 "TitlePageChoiceNotificationViewController" = "Être notifié des nouveaux endroits et changements ?";
 
