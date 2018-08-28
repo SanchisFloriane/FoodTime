@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ManageTripEmptyViewController: UIViewController {
 
@@ -22,6 +23,7 @@ class ManageTripEmptyViewController: UIViewController {
     @IBOutlet weak var descriptionPageTxtView: UITextView!
     
     var trip : Trip?
+    var idUser = Auth.auth().currentUser?.uid
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,51 @@ class ManageTripEmptyViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
+        getPlaceFromTrip(idTrip: trip!.idTrip!, completion: { (placeListFromTrip) in
+            self.trip?.placeList = placeListFromTrip
+            
+            if self.trip!.placeList.count > 0
+            {
+                let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
+                let desController : ManageTripViewController = mainStoryboard.instantiateViewController(withIdentifier: Service.ManageTripViewController) as! ManageTripViewController
+                desController.trip = self.trip
+                self.navigationController?.pushViewController(desController, animated: true)
+            }
+        })
+    }
+    
+    
+    
+    func getPlaceFromTrip(idTrip: String, completion:@escaping ([Place])->())
+    {
+        var placeFromTripList : [Place] = [Place]()
+        
+        //Get all trips of the current user for the place selected
+        Database.database().reference().child("\(ModelDB.user_place)/\(self.idUser!)").observeSingleEvent(of: .value, with: { (snapchot) in
+            
+            if snapchot.childrenCount > 0
+            {
+                let listChildren = snapchot.children
+                while let child = listChildren.nextObject() as? DataSnapshot
+                {
+                    let idPlace = child.key
+                    let listTrips = child.value as? [String : String]
+                    for tripPlace in listTrips!
+                    {
+                        if idTrip == tripPlace.key
+                        {
+                            placeFromTripList.append(Place(idPlace: idPlace))
+                        }
+                    }
+                }
+                completion(placeFromTripList)
+            }
+            else
+            {
+                completion(placeFromTripList)
+            }
+        })
     }
     
     fileprivate func setupView()
@@ -50,7 +97,24 @@ class ManageTripEmptyViewController: UIViewController {
     
     @IBAction func back(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
-        navigationController?.popViewController(animated: true)
+        
+        let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
+        
+        UserTrip.loadUserTrip(completion: { (userTripList) in
+            
+            if !(userTripList.isEmpty)
+            {
+                let desController : MyListTripsViewController = mainStoryboard.instantiateViewController(withIdentifier: Service.MyListTripsViewController) as! MyListTripsViewController
+                desController.userTripList = userTripList
+                self.navigationController?.pushViewController(desController, animated: true)
+            }
+            else
+            {
+                let desController : MyEmptyTripsViewController = mainStoryboard.instantiateViewController(withIdentifier: Service.MyEmptyTripsViewController) as! MyEmptyTripsViewController
+                self.navigationController?.pushViewController(desController, animated: true)
+            }
+            
+        })
     }
     
     @IBAction func manageTrip(_ sender: UIBarButtonItem) {

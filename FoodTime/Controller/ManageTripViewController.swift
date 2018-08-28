@@ -59,7 +59,24 @@ class ManageTripViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func back(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
-        navigationController?.popViewController(animated: true)
+       
+        let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
+        
+        UserTrip.loadUserTrip(completion: { (userTripList) in
+            
+            if !(userTripList.isEmpty)
+            {
+                let desController : MyListTripsViewController = mainStoryboard.instantiateViewController(withIdentifier: Service.MyListTripsViewController) as! MyListTripsViewController
+                desController.userTripList = userTripList
+                self.navigationController?.pushViewController(desController, animated: true)
+            }
+            else
+            {
+                let desController : MyEmptyTripsViewController = mainStoryboard.instantiateViewController(withIdentifier: Service.MyEmptyTripsViewController) as! MyEmptyTripsViewController
+                self.navigationController?.pushViewController(desController, animated: true)
+            }
+            
+        })
     }
     
     @IBAction func manage(_ sender: UIBarButtonItem) {
@@ -95,7 +112,18 @@ class ManageTripViewController: UIViewController, CLLocationManagerDelegate {
         
         getPlaceFromTrip(idTrip: trip!.idTrip!, completion: { (placeListFromTrip) in
             self.trip?.placeList = placeListFromTrip
-            self.tripTableView.reloadData()
+            
+            if self.trip!.placeList.count > 0
+            {
+                self.tripTableView.reloadData()
+            }
+            else
+            {
+                let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
+                let desController : ManageTripEmptyViewController = mainStoryboard.instantiateViewController(withIdentifier: Service.ManageTripEmptyViewController) as! ManageTripEmptyViewController
+                desController.trip = self.trip
+                self.navigationController?.pushViewController(desController, animated: true)
+            }
         })
     }
     

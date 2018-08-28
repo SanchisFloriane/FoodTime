@@ -83,8 +83,7 @@ class HomeViewController: UIViewController, UITabBarDelegate {
                 {
                     let desController : MyEmptyTripsViewController = mainStoryboard.instantiateViewController(withIdentifier: Service.MyEmptyTripsViewController) as! MyEmptyTripsViewController
                     self.navigationController?.pushViewController(desController, animated: true)
-                }
-                
+                }                
             })
         }
         else if item == recommandationsButton

@@ -67,21 +67,87 @@ class ModifyTripViewController: UIViewController {
         }
     }
     
-    fileprivate func deleteTrip()
+    fileprivate func deletePlacesTrip(completion:@escaping ()->())
     {
-        //Delete all places with idtrip
-        for place in self.trip!.placeList
+        var index : Int = 0
+        if self.trip!.placeList.count > 0
         {
-            Database.database().reference().child("\(ModelDB.user_place)/\(idUser)").child("\(place.idPlace!)").removeValue { (error, ref) in
-                
-                if error != nil {
-                    print("error \(String(describing: error))")
+            for place in self.trip!.placeList
+            {
+                Database.database().reference().child("\(ModelDB.user_place)").child("\(self.idUser!)").child("\(place.idPlace!)").removeValue { (error, ref) in
+                    
+                    if error != nil {
+                        print("error \(String(describing: error))")
+                    }
+                    else
+                    {
+                        index += 1
+                        
+                        if index == self.trip!.placeList.count
+                        {
+                            completion()
+                        }
+                    }
                 }
             }
         }
+        else
+        {
+            completion()
+        }
+    }
+    
+    fileprivate func deleteTrip(completion:@escaping ()->())
+    {
+        //Delete all places with idtrip
+        self.deletePlacesTrip(completion: {
         
-        //Delete user trip
-        Database.database().reference().child("\(ModelDB.user_trip)\(self.idUser)").observeSingleEvent(of: .value) { (snapchot) in
+            //Delete user trip
+            self.deleteUserTrip { (keyIdTrip) in
+                
+                if keyIdTrip != nil
+                {
+                    Database.database().reference().child("\(ModelDB.user_trip)").child("\(self.idUser!)").child(keyIdTrip!).removeValue(){ (error, ref) in
+                        
+                        if error != nil {
+                            print("error \(String(describing: error))")
+                        }
+                        else
+                        {
+                            //Delete trip
+                            Database.database().reference().child("\(ModelDB.trips)").child("\(self.trip!.idTrip!)").removeValue() { (error, ref) in
+                                if error != nil {
+                                    print("error \(String(describing: error))")
+                                }
+                                else
+                                {
+                                    completion()
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    //Delete trip
+                    Database.database().reference().child("\(ModelDB.trips)").child("\(self.trip!.idTrip!)").removeValue() { (error, ref) in
+                        if error != nil {
+                            print("error \(String(describing: error))")
+                        }
+                        else
+                        {
+                            completion()
+                        }
+                    }
+                }
+                
+            }
+        })
+    }
+    
+    func deleteUserTrip(completion:@escaping (String?)->())
+    {
+        Database.database().reference().child("\(ModelDB.user_trip)").child("\(self.idUser!)").observeSingleEvent(of: .value) { (snapchot) in
             
             if snapchot.childrenCount > 0
             {
@@ -91,20 +157,13 @@ class ModifyTripViewController: UIViewController {
                     let idTrip = child.value as? String
                     if idTrip == self.trip!.idTrip
                     {
-                        child.setValue(nil, forKey: child.key)
+                        completion(child.key)
                     }
                 }
             }
-        }
-        
-        //Delete trip
-        Database.database().reference().child("\(ModelDB.trips)").child("\(self.trip!.idTrip)").removeValue { (error, ref) in
-            if error != nil {
-                print("error \(String(describing: error))")
-            }
             else
             {
-                
+                completion(nil)
             }
         }
     }
@@ -115,7 +174,9 @@ class ModifyTripViewController: UIViewController {
         
         let yes = UIAlertAction(title: UIMessages.localizeWithoutComment(key: UIMessages.Yes), style: .default) { (action:UIAlertAction) in
             //Remove to a trip
-            self.deleteTrip()
+            self.deleteTrip(completion: {
+                self.redirectionPageTrip()
+            })
         }
         
         let no = UIAlertAction(title: UIMessages.localizeWithoutComment(key: UIMessages.No), style: .default)
@@ -132,7 +193,8 @@ class ModifyTripViewController: UIViewController {
     }
     
     @IBAction func update(_ sender: UIBarButtonItem) {
-        //Get data fro; view
+        
+        //Get data from view
         let nameTrip = nameTripTxtField.text
         let startDate = startDatepicker.date
         let endDate = endDatePicker.date
