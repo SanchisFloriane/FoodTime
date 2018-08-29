@@ -16,7 +16,6 @@ class CreateUserAccountViewController: UIViewController {
     @IBOutlet weak var PwdConfirmTxtView: UITextField!
     @IBOutlet weak var PwdTxtView: UITextField!
     @IBOutlet weak var TitleView: UILabel!
-    @IBOutlet weak var backButton: UIButton!
     
     var currentUser: User?
     var values : [String : [String: String]]?
@@ -38,6 +37,7 @@ class CreateUserAccountViewController: UIViewController {
     fileprivate func setupView(){
         
         clearTextView()
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         
         if EmailTxtView.text?.count == 0 || PwdTxtView.text?.count == 0 || PwdConfirmTxtView.text?.count == 0
         {
@@ -132,7 +132,7 @@ class CreateUserAccountViewController: UIViewController {
         return returnValue
     }
     
-    fileprivate func checkFields() -> Bool
+    fileprivate func checkFields(completion:@escaping (Bool)->())
     {
         var check : Bool = false
         
@@ -140,42 +140,56 @@ class CreateUserAccountViewController: UIViewController {
         {
             if checkPassword()
             {
-                if isUserExists()
-                {
-                    Service.showAlert(on: self, style: .alert, title: UIMessages.localizeWithoutComment(key: UIMessages.ErrorTitle), message:  UIMessages.localizeWithoutComment(key: UIMessages.ErrorEmailExists))
-                }
-                else
-                {
-                    check = true
-                }
+                self.isUserExists(completion: { (userExists) in
+                    
+                    if userExists
+                    {
+                        Service.showAlert(on: self, style: .alert, title: UIMessages.localizeWithoutComment(key: UIMessages.ErrorTitle), message:  UIMessages.localizeWithoutComment(key: UIMessages.ErrorEmailExists))
+                        completion(check)
+                    }
+                    else
+                    {
+                        check = true
+                        completion(check)
+                    }
+                })
+            }
+            else
+            {
+                completion(check)
             }
         }
-        
-        return check
+        else
+        {
+            completion(check)
+        }
     }
     
     @IBAction func createUserAccount() {
         
-        if checkFields()
-        {
-            Auth.auth().createUser(withEmail: EmailTxtView.text!, password: PwdTxtView.text!) { (authResult, error) in
+        self.checkFields(completion: { (check) in
+            
+            if check
+            {
+                Auth.auth().createUser(withEmail: self.EmailTxtView.text!, password: self.PwdTxtView.text!) { (authResult, error) in
                 
-                if error != nil {
-                    if self.isExists
-                    {
-                        Service.showAlert(on: self, style: .alert, title: UIMessages.localizeWithoutComment(key: UIMessages.ErrorTitle), message:  UIMessages.localizeWithoutComment(key: UIMessages.ErrorEmailExists))
+                    if error != nil {
+                        if self.isExists
+                        {
+                            Service.showAlert(on: self, style: .alert, title: UIMessages.localizeWithoutComment(key: UIMessages.ErrorTitle), message:  UIMessages.localizeWithoutComment(key: UIMessages.ErrorEmailExists))
+                        }
+                        else
+                        {
+                            print("Error creation user with error : \(String(describing: error?.localizedDescription))")
+                        }
+                        return
                     }
-                    else
-                    {
-                        print("Error creation user with error : \(String(describing: error?.localizedDescription))")
-                    }
-                    return
+                
+                    self.uploadData()
+                    print("Creation user account succeed !")
                 }
-                
-                self.uploadData()
-                print("Creation user account succeed !")
             }
-        }
+        })
     }
     
     override func viewDidLoad() {
@@ -191,7 +205,7 @@ class CreateUserAccountViewController: UIViewController {
         
         setupView()
         // Hide the navigation bar on the this view controller
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func didReceiveMemoryWarning() {
@@ -210,7 +224,7 @@ class CreateUserAccountViewController: UIViewController {
         self.saveUser()
     }
     
-    fileprivate func isUserExists() -> Bool
+    fileprivate func isUserExists(completion:@escaping (Bool)->())
     {
         self.isExists = false
         
@@ -223,10 +237,13 @@ class CreateUserAccountViewController: UIViewController {
             if auth != nil
             {
                 self.isExists = true
+                completion(self.isExists)
+            }
+            else
+            {
+                completion(self.isExists)
             }
         })
-        
-        return self.isExists
     }
     
     fileprivate func saveUser() {
