@@ -206,8 +206,10 @@ extension SearchPlaceViewController: UITableViewDelegate, UITableViewDataSource
                 GoogleServices.performGoogleQuery(url: URL(string: url)!, completion: { (json) in
                     
                     Place.jsonToPlaces(tab: json, requestPhoto: false, completion: { (placesConverted) in
-                        self.arrayPlace = placesConverted
-                        self.tableViewPlace.reloadData()
+                        DispatchQueue.main.async(execute: {
+                            self.arrayPlace = placesConverted
+                            self.tableViewPlace.reloadData()
+                        })
                     })
                 })
             }
@@ -394,6 +396,7 @@ extension SearchPlaceViewController: UISearchBarDelegate
                                     }
                                 }
                                 
+                                self.arrayPlace.removeAll()
                                 self.arrayPlace = resultarrayPlace
                                 self.tableViewPlace.reloadData()
                             }
@@ -407,6 +410,7 @@ extension SearchPlaceViewController: UISearchBarDelegate
                             
                             if error == nil && result != nil
                             {
+                                self.arrayLocation.removeAll()
                                 self.arrayLocation = result!
                                 self.tableViewPlace.reloadData()
                             }
