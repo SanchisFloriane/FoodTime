@@ -93,6 +93,8 @@ class Service {
     static let MyListTripsIdCell : String = "myListTripsCell"
     //table viez cell for ManageTripViewController
     static let ManageTripIdCell : String = "manageTripCell"
+    //table viez cell for ManageTripViewController
+    static let MyListPlaceRecentlyViewedIdCell : String = "myListPlaceRecentlyViewedCell"
     
     
     static func showAlert(on: UIViewController, style: UIAlertControllerStyle, title: String?, message: String?, actions: [UIAlertAction] = [UIAlertAction(title: "Ok", style: .default, handler: nil)], completion: (() -> Swift.Void)? = nil) {

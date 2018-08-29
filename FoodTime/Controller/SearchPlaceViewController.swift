@@ -9,6 +9,7 @@
 import UIKit
 import GooglePlaces
 import GoogleMaps
+import Firebase
 
 class SearchPlaceViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -16,6 +17,8 @@ class SearchPlaceViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var searchPlaceBar: UISearchBar!
     @IBOutlet weak var searchLocationBar: UISearchBar!
     @IBOutlet weak var tableViewPlace: UITableView!
+    
+    var idUser = Auth.auth().currentUser?.uid
     
     //Localisation user
     let locationManager = CLLocationManager()
@@ -216,11 +219,56 @@ extension SearchPlaceViewController: UITableViewDelegate, UITableViewDataSource
         }
         else
         {
-            let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
-            let desController : PlaceViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.PlaceViewController) as! PlaceViewController
             
-            desController.place.idPlace = cell.placeId
-            self.navigationController?.pushViewController(desController, animated: true)
+            //Save place into historic
+            let refUserHPlace = Database.database().reference().child("\(ModelDB.user_hplace)").child("\(self.idUser!)")
+            var placeArray : [String] = [String]()
+            //Add new trip
+            placeArray.append(cell.placeId)
+            
+            refUserHPlace.observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                if snapshot.childrenCount > 0
+                {
+                    let listChildren = snapshot.children
+                    var index : Int = 0
+                    while let place = listChildren.nextObject() as? DataSnapshot
+                    {
+                        if index < 9
+                        {
+                            let idPlace = place.value as? String
+                            placeArray.append(idPlace!)
+                            index += 1
+                        }
+                        else
+                        {
+                            break
+                        }
+                    }
+                    
+                    let refNewUserHPlace = Database.database().reference().child("\(ModelDB.user_hplace)")
+                    let valuesUserHPlace : [String : [String]] = [self.idUser! : placeArray]
+                    refNewUserHPlace.setValue(valuesUserHPlace)
+                   
+                    let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
+                    let desController : PlaceViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.PlaceViewController) as! PlaceViewController
+                    
+                    desController.place.idPlace = cell.placeId
+                    self.navigationController?.pushViewController(desController, animated: true)
+                }
+                else
+                {
+                    let refNewUserHPlace = Database.database().reference().child("\(ModelDB.user_hplace)")
+                    let valuesUserHPlace : [String : [String]] = [self.idUser! : placeArray]
+                    refNewUserHPlace.setValue(valuesUserHPlace)
+                   
+                    let mainStoryboard: UIStoryboard! = UIStoryboard(name: Service.MainStoryboard, bundle: nil)
+                    let desController : PlaceViewController! = mainStoryboard.instantiateViewController(withIdentifier: Service.PlaceViewController) as! PlaceViewController
+                    
+                    desController.place.idPlace = cell.placeId
+                    self.navigationController?.pushViewController(desController, animated: true)
+                }
+            })
         }
     }
 }

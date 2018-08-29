@@ -42,6 +42,8 @@
 		C4F848EB210A65BD009EDBBD /* TypePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848EA210A65BD009EDBBD /* TypePlace.swift */; };
 		C4F848EF210A6B16009EDBBD /* TypeFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848EE210A6B16009EDBBD /* TypeFood.swift */; };
 		C4F848F1210A6CD0009EDBBD /* TypeDrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F848F0210A6CD0009EDBBD /* TypeDrink.swift */; };
+		F40CBAC121372C890046C35C /* MyListPlaceRecentlyViewedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40CBAC021372C890046C35C /* MyListPlaceRecentlyViewedTableViewCell.swift */; };
+		F40CBAC321373FA50046C35C /* UserHPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40CBAC221373FA50046C35C /* UserHPlace.swift */; };
 		F4121DF02106585300252594 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4121DEF2106585300252594 /* EmailLoginViewController.swift */; };
 		F4121DF3210660AF00252594 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4121DF2210660AF00252594 /* UIViewController.swift */; };
 		F4121DF521068DA500252594 /* GetStartedChoiceCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4121DF421068DA500252594 /* GetStartedChoiceCreationViewController.swift */; };
@@ -115,6 +117,8 @@
 		C4F848EE210A6B16009EDBBD /* TypeFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeFood.swift; sourceTree = "<group>"; };
 		C4F848F0210A6CD0009EDBBD /* TypeDrink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDrink.swift; sourceTree = "<group>"; };
 		DD15A0B6A377C607834AE140 /* Pods-FoodTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodTime/Pods-FoodTime.release.xcconfig"; sourceTree = "<group>"; };
+		F40CBAC021372C890046C35C /* MyListPlaceRecentlyViewedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListPlaceRecentlyViewedTableViewCell.swift; sourceTree = "<group>"; };
+		F40CBAC221373FA50046C35C /* UserHPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHPlace.swift; sourceTree = "<group>"; };
 		F4121DEF2106585300252594 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		F4121DF2210660AF00252594 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		F4121DF421068DA500252594 /* GetStartedChoiceCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedChoiceCreationViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 				C418A6EB211BBFD500C43DA6 /* UserPlace.swift */,
 				C418A6ED212352C200C43DA6 /* Trip.swift */,
 				C418A6EF2123724000C43DA6 /* UserTrip.swift */,
+				F40CBAC221373FA50046C35C /* UserHPlace.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 				F4F28CA72112AC660095E29F /* SearchPlaceDetailTableViewCell.swift */,
 				C45B740E212B41AA0044D280 /* MyListTripsTableViewCell.swift */,
 				F4BF044921349F2500966083 /* ManageTripTableViewCell.swift */,
+				F40CBAC021372C890046C35C /* MyListPlaceRecentlyViewedTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -556,6 +562,7 @@
 				F4A8ED6F21014517007FAB61 /* HomeViewController.swift in Sources */,
 				C46C386A212CB45200894E2C /* CarouselTrips.swift in Sources */,
 				F4F28CAA2112AC890095E29F /* SearchPlaceDetailViewController.swift in Sources */,
+				F40CBAC121372C890046C35C /* MyListPlaceRecentlyViewedTableViewCell.swift in Sources */,
 				C4A1A123210F8BD000DFC005 /* CaseIterable.swift in Sources */,
 				F459D32A2134E4B9007AC849 /* ManageTripEmptyViewController.swift in Sources */,
 				F4121DF3210660AF00252594 /* UIViewController.swift in Sources */,
@@ -571,6 +578,7 @@
 				F4F28CA82112AC670095E29F /* SearchPlaceDetailTableViewCell.swift in Sources */,
 				C42E618F211A10B600CE7885 /* PlaceViewController.swift in Sources */,
 				C45B740F212B41AA0044D280 /* MyListTripsTableViewCell.swift in Sources */,
+				F40CBAC321373FA50046C35C /* UserHPlace.swift in Sources */,
 				C4923A2520F556F500641EA9 /* AppDelegate.swift in Sources */,
 				C4F848F1210A6CD0009EDBBD /* TypeDrink.swift in Sources */,
 				F4A8ED6D21014507007FAB61 /* ChoicePlaceViewController.swift in Sources */,

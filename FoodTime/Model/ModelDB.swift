@@ -20,6 +20,7 @@ class ModelDB {
     static let typePlace : String = "typePlace"
     static let settings : String = "settings"
     static let users : String = "users"
+    static let user_hplace : String = "user_hplace"
     static let user_place : String = "user_place"
     static let user_trip : String = "user_trip"
     

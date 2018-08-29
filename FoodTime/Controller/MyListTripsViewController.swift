@@ -19,6 +19,7 @@ class MyListTripsViewController: UIViewController, UITabBarDelegate {
     @IBOutlet weak var MyPlacesBtn: UITabBarItem!
     @IBOutlet weak var MyProfileBtn: UITabBarItem!
     @IBOutlet weak var NavigationBar: UINavigationItem!
+    @IBOutlet weak var PlacesTableView: UITableView!
     @IBOutlet weak var RecentlyViewedBtn: UIButton!
     @IBOutlet weak var SortBtn: UIButton!
     @IBOutlet weak var TabBar: UITabBar!
@@ -28,14 +29,17 @@ class MyListTripsViewController: UIViewController, UITabBarDelegate {
     //Trip list
     var userTripList : [UserTrip] = [UserTrip]()
     var tripList : [Trip] = [Trip]()
+    var placeList : [Place] = [Place]()
     let idUser = Auth.auth().currentUser!.uid
     
     //Carousel
     var indexLastSubViewCarousel : Int?
-    var placePhotoCarousel : UIImage?
+    var placePhoto : UIImage?
     
     //Configuration Google Place API
     var placesClient : GMSPlacesClient!
+    
+    var recentlyViewedActived : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +66,69 @@ class MyListTripsViewController: UIViewController, UITabBarDelegate {
         })
     }
     
+    fileprivate func loadRecentlyViewed()
+    {
+        self.loadPlacesRecentlyViewed(completion: { (placesList) in
+            
+            self.placeList = placesList
+            DispatchQueue.main.async(execute: {
+                self.PlacesTableView.reloadData()
+            })
+        })
+    }
+    
+    fileprivate func loadPlacesRecentlyViewed(completion:@escaping ([Place])->())
+    {
+        getPlaces(completion: { (placeTab) in
+            
+            for place in placeTab
+            {
+                GMSPlacesClient.shared().autocompleteQuery(searchStr, bounds: nil, filter: nil, callback: { (result, error) in
+                    
+                    if error == nil && result != nil
+                    {
+                        if result!.count > 0
+                        {
+                            for resultPlace in result!
+                            {
+                                let newPlace = Place()
+                                newPlace.name = resultPlace.attributedPrimaryText.string
+                                newPlace.formattedAddress = resultPlace.attributedSecondaryText?.string
+                                newPlace.idPlace = resultPlace.placeID
+                                
+                                self.placeList.append(newPlace)
+                            }
+                        }
+                        
+                    }
+                })
+            }
+        })
+    }
+    
+    func getPlaces(completion: @escaping ([Place])->())
+    {
+        var placeTab : [Place] = [Place]()
+        
+        Database.database().reference().child("\(ModelDB.user_hplace)").child("\(self.idUser)").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if snapshot.childrenCount > 0
+            {
+                let listChildren = snapshot.children
+                while let place = listChildren.nextObject() as? DataSnapshot
+                {
+                    placeTab.append(Place(idPlace: place.value as? String))
+                }
+                
+                completion(placeTab)
+            }
+            else
+            {
+                completion(placeTab)
+            }
+        })
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
@@ -73,6 +140,8 @@ class MyListTripsViewController: UIViewController, UITabBarDelegate {
     fileprivate func setupView()
     {
         TabBar.delegate = self
+        PlacesTableView.isHidden = true
+        recentlyViewedActived = false
         
         MyNewsBtn.title = UILabels.localizeWithoutComment(key: UILabels.MyNewsButton)
         MyPlacesBtn.title = UILabels.localizeWithoutComment(key: UILabels.MyPlacesButton)
@@ -86,7 +155,7 @@ class MyListTripsViewController: UIViewController, UITabBarDelegate {
         RecentlyViewedBtn.setTitle(UILabels.localizeWithoutComment(key: UILabels.RecentlyViewedBtn), for: .normal)
         RecentlyViewedBtn.setTitleColor(UIColor.white, for: .selected)
         RecentlyViewedBtn.setTitleColor(UIColor.orange, for: .normal)
-        //RecentlyViewedBtn.isEnabled = false
+        
         let sortTitle = "\(UILabels.localizeWithoutComment(key: UILabels.SortedBy)) \(UILabels.localizeWithoutComment(key: UILabels.NameTrip))"
         SortBtn.setTitle(sortTitle, for: .normal)
         
@@ -223,6 +292,22 @@ class MyListTripsViewController: UIViewController, UITabBarDelegate {
                 RecentlyViewedBtn.backgroundColor = UIColor.groupTableViewBackground
                 RecentlyViewedBtn.isSelected = false
             }
+            
+            if sender == TripsBtn
+            {
+                PlacesTableView.isHidden = true
+                TripsTableView.isHidden = false
+                recentlyViewedActived = false
+                self.loadTrips(typeOrder: ModelDB.Trip_name)
+            }
+            else
+            {
+                TripsTableView.isHidden = true
+                recentlyViewedActived = true
+                PlacesTableView.isHidden = false
+                self.loadRecentlyViewed()
+                
+            }
         }
     }
     
@@ -281,87 +366,112 @@ extension MyListTripsViewController: UITableViewDelegate, UITableViewDataSource,
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell : MyListTripsTableViewCell = TripsTableView.dequeueReusableCell(withIdentifier: Service.MyListTripsIdCell) as! MyListTripsTableViewCell
-        cell.titleTripButton.sizeToFit()
-        cell.titleTripButton.setTitle(tripList[indexPath.row].name, for: .normal)
-        
-        cell.idTrip = tripList[indexPath.row].idTrip
-        cell.CarouselTrip.tempviews.removeAll()
-        
-        getPlaceFromTrip(idTrip: cell.idTrip!, completion: { (placeList) in
-            //load each place in the carousel for the cell
-            var index : Int = 0
-            if placeList.isEmpty
-            {
-                cell.CarouselTrip.isScrollEnabled = false
-                while index<3
+        if recentlyViewedActived
+        {
+            let cell : MyListPlaceRecentlyViewedTableViewCell = PlacesTableView.dequeueReusableCell(withIdentifier: Service.MyListPlaceRecentlyViewedIdCell) as! MyListPlaceRecentlyViewedTableViewCell
+            
+            cell.namePlace.text = placeList[indexPath.row].name
+            cell.idPlace = placeList[indexPath.row].idPlace
+            cell.addressPlace.text = placeList[indexPath.row].formattedAddress
+            
+            GoogleServices.loadPlace(idPlace: cell.idPlace, completion: { (place) in
+                
+                //load first photo of the place
+                self.loadFirstPhotoForPlace(carouselView: nil, placeID: place.idPlace!, completion: {
+                    
+                    //add photo to carousel
+                    if self.placePhoto != nil
+                    {
+                      cell.imagePlace.image = Service.imageWithImage(image: self.placePhoto!, scaledToSize: CGSize(width: cell.imagePlace.frame.width, height: cell.imagePlace.frame.height))
+                    }
+                })
+            })
+            return cell
+        }
+        else
+        {
+            let cell : MyListTripsTableViewCell = TripsTableView.dequeueReusableCell(withIdentifier: Service.MyListTripsIdCell) as! MyListTripsTableViewCell
+            cell.titleTripButton.sizeToFit()
+            cell.titleTripButton.setTitle(tripList[indexPath.row].name, for: .normal)
+            
+            cell.idTrip = tripList[indexPath.row].idTrip
+            cell.CarouselTrip.tempviews.removeAll()
+            
+            getPlaceFromTrip(idTrip: cell.idTrip!, completion: { (placeList) in
+                //load each place in the carousel for the cell
+                var index : Int = 0
+                if placeList.isEmpty
                 {
-                    let tempView = UIView(frame: CGRect(x: 0, y: 0, width: cell.CarouselTrip.frame.width/3, height: cell.CarouselTrip.frame.height))
-                    tempView.backgroundColor = self.view?.backgroundColor
-                    let button = FoodTimeButton(frame: tempView.frame)
-                    var img = UIImage(named: Service.CrossIcon)
-                    img = Service.imageWithImage(image: img!, scaledToSize: CGSize(width: cell.CarouselTrip.frame.width/3, height: cell.CarouselTrip.frame.height))
-                    button.setImage(img, for: .normal)
-                    tempView.addSubview(button)
-                    cell.CarouselTrip.tempviews.append(tempView)
-                    index += 1
+                    cell.CarouselTrip.isScrollEnabled = false
+                    while index<3
+                    {
+                        let tempView = UIView(frame: CGRect(x: 0, y: 0, width: cell.CarouselTrip.frame.width/3, height: cell.CarouselTrip.frame.height))
+                        tempView.backgroundColor = self.view?.backgroundColor
+                        let button = FoodTimeButton(frame: tempView.frame)
+                        var img = UIImage(named: Service.CrossIcon)
+                        img = Service.imageWithImage(image: img!, scaledToSize: CGSize(width: cell.CarouselTrip.frame.width/3, height: cell.CarouselTrip.frame.height))
+                        button.setImage(img, for: .normal)
+                        tempView.addSubview(button)
+                        cell.CarouselTrip.tempviews.append(tempView)
+                        index += 1
+                    }
+                    cell.CarouselTrip.reloadData()
+                    cell.CarouselTrip.currentItemIndex = 1
+                    cell.titleTripButton.trip = Trip(idTrip: self.tripList[indexPath.row].idTrip, name: self.tripList[indexPath.row].name, startDate: self.tripList[indexPath.row].startDate, endDate: self.tripList[indexPath.row].endDate)
+                    cell.titleTripButton.trip?.placeList = placeList
+                    cell.titleTripButton.addTarget(self, action: #selector(self.showManageTripViewController(_:)), for: .touchUpInside)
                 }
-                cell.CarouselTrip.reloadData()
-                cell.CarouselTrip.currentItemIndex = 1
-                cell.titleTripButton.trip = Trip(idTrip: self.tripList[indexPath.row].idTrip, name: self.tripList[indexPath.row].name, startDate: self.tripList[indexPath.row].startDate, endDate: self.tripList[indexPath.row].endDate)
-                cell.titleTripButton.trip?.placeList = placeList
-                cell.titleTripButton.addTarget(self, action: #selector(self.showManageTripViewController(_:)), for: .touchUpInside)
-            }
-            else
-            {
-                for place in placeList
+                else
                 {
-                    GoogleServices.loadPlace(idPlace: place.idPlace, completion: { (place) in
-                        
-                        //load first photo of the place
-                        self.loadFirstPhotoForPlace(carouselView: cell.CarouselTrip, placeID: place.idPlace!, completion: {
-                            //add photo to carousel
-                            let tempView = UIView(frame: CGRect(x: 0, y: 0, width: cell.CarouselTrip.frame.width/3, height: cell.CarouselTrip.frame.height))
-                            tempView.backgroundColor = self.view?.backgroundColor
-                            let button = FoodTimeButton(frame: tempView.frame)
-                            self.placePhotoCarousel = Service.imageWithImage(image: self.placePhotoCarousel!, scaledToSize: CGSize(width: cell.CarouselTrip.frame.width/3, height: cell.CarouselTrip.frame.height))
-                            button.setImage(self.placePhotoCarousel, for: .normal)
-                            button.idPlace = place.idPlace
-                            button.addTarget(self, action: #selector(self.showPlaceViewController(_:)), for: .touchUpInside)
-                            tempView.addSubview(button)
-                            cell.CarouselTrip.tempviews.append(tempView)
-                            index += 1
+                    for place in placeList
+                    {
+                        GoogleServices.loadPlace(idPlace: place.idPlace, completion: { (place) in
                             
-                            if index == placeList.count
-                            {
-                                if placeList.count < 3
+                            //load first photo of the place
+                            self.loadFirstPhotoForPlace(carouselView: cell.CarouselTrip, placeID: place.idPlace!, completion: {
+                                //add photo to carousel
+                                let tempView = UIView(frame: CGRect(x: 0, y: 0, width: cell.CarouselTrip.frame.width/3, height: cell.CarouselTrip.frame.height))
+                                tempView.backgroundColor = self.view?.backgroundColor
+                                let button = FoodTimeButton(frame: tempView.frame)
+                                self.placePhoto = Service.imageWithImage(image: self.placePhoto!, scaledToSize: CGSize(width: cell.CarouselTrip.frame.width/3, height: cell.CarouselTrip.frame.height))
+                                button.setImage(self.placePhoto, for: .normal)
+                                button.idPlace = place.idPlace
+                                button.addTarget(self, action: #selector(self.showPlaceViewController(_:)), for: .touchUpInside)
+                                tempView.addSubview(button)
+                                cell.CarouselTrip.tempviews.append(tempView)
+                                index += 1
+                                
+                                if index == placeList.count
                                 {
-                                    cell.CarouselTrip.isScrollEnabled = false
-                                    while index<3
+                                    if placeList.count < 3
                                     {
-                                        let tempView = UIView(frame: CGRect(x: 0, y: 0, width: cell.CarouselTrip.frame.width/3, height: cell.CarouselTrip.frame.height))
-                                        tempView.backgroundColor = self.view?.backgroundColor
-                                        let button = FoodTimeButton(frame: tempView.frame)
-                                        var img = UIImage(named: Service.CrossIcon)
-                                        img = Service.imageWithImage(image: img!, scaledToSize: CGSize(width: cell.CarouselTrip.frame.width/3, height: cell.CarouselTrip.frame.height))
-                                        button.setImage(img, for: .normal)
-                                        tempView.addSubview(button)
-                                        cell.CarouselTrip.tempviews.append(tempView)
-                                        index += 1
+                                        cell.CarouselTrip.isScrollEnabled = false
+                                        while index<3
+                                        {
+                                            let tempView = UIView(frame: CGRect(x: 0, y: 0, width: cell.CarouselTrip.frame.width/3, height: cell.CarouselTrip.frame.height))
+                                            tempView.backgroundColor = self.view?.backgroundColor
+                                            let button = FoodTimeButton(frame: tempView.frame)
+                                            var img = UIImage(named: Service.CrossIcon)
+                                            img = Service.imageWithImage(image: img!, scaledToSize: CGSize(width: cell.CarouselTrip.frame.width/3, height: cell.CarouselTrip.frame.height))
+                                            button.setImage(img, for: .normal)
+                                            tempView.addSubview(button)
+                                            cell.CarouselTrip.tempviews.append(tempView)
+                                            index += 1
+                                        }
                                     }
+                                    cell.CarouselTrip.reloadData()
+                                    cell.CarouselTrip.currentItemIndex = 1
+                                    cell.titleTripButton.trip = Trip(idTrip: self.tripList[indexPath.row].idTrip, name: self.tripList[indexPath.row].name, startDate: self.tripList[indexPath.row].startDate, endDate: self.tripList[indexPath.row].endDate)
+                                    cell.titleTripButton.trip?.placeList = placeList
+                                    cell.titleTripButton.addTarget(self, action: #selector(self.showManageTripViewController(_:)), for: .touchUpInside)
                                 }
-                                cell.CarouselTrip.reloadData()
-                                cell.CarouselTrip.currentItemIndex = 1
-                                cell.titleTripButton.trip = Trip(idTrip: self.tripList[indexPath.row].idTrip, name: self.tripList[indexPath.row].name, startDate: self.tripList[indexPath.row].startDate, endDate: self.tripList[indexPath.row].endDate)
-                                cell.titleTripButton.trip?.placeList = placeList
-                                cell.titleTripButton.addTarget(self, action: #selector(self.showManageTripViewController(_:)), for: .touchUpInside)
-                            }
+                            })
                         })
-                    })
+                    }
                 }
-            }
-        })
-        return cell
+            })
+            return cell
+        }
     }
     
     @objc func showPlaceViewController(_ sender: FoodTimeButton) {
@@ -391,9 +501,9 @@ extension MyListTripsViewController: UITableViewDelegate, UITableViewDataSource,
         }
     }
     
-    func loadFirstPhotoForPlace(carouselView: iCarousel, placeID: String, completion:@escaping ()->())
+    func loadFirstPhotoForPlace(carouselView: iCarousel?, placeID: String, completion:@escaping ()->())
     {
-        placePhotoCarousel = nil
+        placePhoto = nil
         placesClient.lookUpPhotos(forPlaceID: placeID) { (photos, error) -> Void in
             if let error = error {
                 // TODO: handle the error.
@@ -409,7 +519,7 @@ extension MyListTripsViewController: UITableViewDelegate, UITableViewDataSource,
             }
             else
             {
-                self.placePhotoCarousel = UIImage(named: Service.CrossIcon)
+                self.placePhoto = UIImage(named: Service.CrossIcon)
                 completion()
             }
         }
@@ -423,7 +533,7 @@ extension MyListTripsViewController: UITableViewDelegate, UITableViewDataSource,
                 // TODO: handle the error.
                 print("Error: \(error.localizedDescription)")
             } else {
-                self.placePhotoCarousel = photo
+                self.placePhoto = photo
                 completion()
             }
         })
@@ -462,7 +572,14 @@ extension MyListTripsViewController: UITableViewDelegate, UITableViewDataSource,
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.tripList.count
+        if recentlyViewedActived
+        {
+            return self.placeList.count
+        }
+        else
+        {
+            return self.tripList.count
+        }
     }
 }
 
